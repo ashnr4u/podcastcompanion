@@ -1,0 +1,542 @@
+{
+  "evaluation": {
+    "name": "fermi_podcast_companion",
+    "timestamp": "2026-09-03T00:34:36.384954",
+    "num_cases": 5,
+    "max_retrieval_chunks": 10
+  },
+  "summary": {
+    "total_cases": 5,
+    "completed": 5,
+    "errors": 0,
+    "retrieval": {
+      "source_coverage": 1.0,
+      "evidence_recall": 0.8,
+      "precision_at_10": 0.14
+    },
+    "average_latency_seconds": 24.48,
+    "by_category": {
+      "precise": {
+        "cases": 5,
+        "source_coverage": 1.0,
+        "evidence_recall": 0.8,
+        "precision_at_10": 0.14,
+        "average_latency_seconds": 24.48
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "case_11_alt",
+      "category": "precise",
+      "question": "What specific metric does Shannon's formula for channel capacity depend on logarithmically, rather than linearly?",
+      "rewritten_query": "What specific metric does Shannon's formula for channel capacity depend on logarithmically, rather than linearly?",
+      "answer": "Shannon’s channel‑capacity formula grows with the **signal‑to‑noise ratio (SNR)** inside a logarithm. In other words, capacity = bandwidth × log₂(1 + SNR), so the SNR contributes only logarithmically—not linearly—to the achievable rate.  \n\n[Episode: Great Papers 04 - Shannon and the Birth of Information, 29:35‑30:12]",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 1.0,
+          "precision_at_10": 0.1,
+          "matched_evidence": 1,
+          "expected_evidence": 1,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "is compared to the noisefogging it up. And the capacity is the bandwidth multiplied by the logarithm of one plus the signalto noise ratio. Let me unpack the shape of that. More bandwidth, more capacity. A wider pipe carries morestraightforwardly. But the dependence on signal strength is logarithmic, which is the interestingpart. To double the information rate by brute force, cranking up the power, you don't double thepower. You have to square the signal to",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1775.36,
+            "timestamp_end": 1812.108322147651,
+            "rerank_score": 3.402872085571289
+          },
+          {
+            "rank": 2,
+            "text": "floor. You can't compress below the entropy and a ceiling. You can't transmitreliably above the capacity. And essentially all of digital technology lives in the gap betweenthose two lines. Every time your phone shows bars of signal, it's reporting roughly how muchcapacity the channel to the tower has right now. A Shannon quantity.Every time a music or video file streams to you, it's been compressed toward its entropy floor.A Shannon quantity, and then protected with error correcting codes",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1892.9546308724832,
+            "timestamp_end": 1929.7029530201344,
+            "rerank_score": 2.8967812061309814
+          },
+          {
+            "rank": 3,
+            "text": "it was encoded against a channel whose capacity Shannontaught us to compute. Hard drives, Wi-Fi, the entire internet, moving unimaginable rivers of bitswith near perfect fidelity. All of it operates in the space Shannon defined using the framework hebuilt. Who was Shannon though? Was information theory his one big idea or one of several?Remarkably, it wasn't even his first foundational one. About a decade earlier,still a young man, his master's thesis showed that electrical switching circuits",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1951.7519463087249,
+            "timestamp_end": 1988.500268456376,
+            "rerank_score": 2.671342372894287
+          },
+          {
+            "rank": 4,
+            "text": "reliability,all bounded by Shannon's capacity. They are quite literally living inside a 1948 equation.Now let's pull all the way back, because I want you to see how total the reach of this is.Please, because so far this is telephone lines and codes. Make me feel how big it got.Think about what everything is bits bounded by two limits actually swallows.Shannon gave us a floor. You can't compress below the entropy and a ceiling. You can't transmitreliably",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1863.5559731543624,
+            "timestamp_end": 1900.3042953020135,
+            "rerank_score": 2.522303819656372
+          },
+          {
+            "rank": 5,
+            "text": "economics of communication. It's why spectrum,bandwidth, is such fiercely fought over, expensive real estate, worth billions at auction.Because widening the pipe pays off linearly, while just pumping up the power pays off onlylogarithmically. Every engineer designing a phone network, a Wi-Fi standard, a satellite link,is doing a dance inside this one formula. Trading bandwidth against power, against reliability,all bounded by Shannon's capacity. They are quite literally living inside a 1948 equation",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1834.1573154362416,
+            "timestamp_end": 1870.9056375838927,
+            "rerank_score": 2.434967041015625
+          },
+          {
+            "rank": 6,
+            "text": "50 years being right essentially. He drew a line on faithin the mathematics and generations of engineers slowly climbed to it. Is there a formula for wherethat line the capacity actually sits? What sets a channel's number? There is. And for the most importantcase it's clean and famous. Sometimes called the Shannon Hartley formula. It says the capacity of achannel depends on two things. It's bandwidth. Roughly the range of frequencies you're allowed to use,how much",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1743.4989915966387,
+            "timestamp_end": 1777.273781512605,
+            "rerank_score": 2.210810422897339
+          },
+          {
+            "rank": 7,
+            "text": "cranking up the power, you don't double thepower. You have to square the signal to noise ratio. Loudness gives you rapidly diminishing returns.Room bandwidth is the cheaper way to buy capacity than sheer volume. That logarithm is doing a lotof quiet work. It's why you can't just shout your way to infinite bandwidth. The returns collapse.Perhaps precisely, and it shapes the whole economics of communication. It's why spectrum,bandwidth, is such fiercely fought over, expensive real",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1804.7586577181207,
+            "timestamp_end": 1841.506979865772,
+            "rerank_score": 1.5325512886047363
+          },
+          {
+            "rank": 8,
+            "text": "line is noisy,some of what I send gets mangled, and the harder I push, the worse it gets. How could that not be true?And this is where Shannon detonates the intuition. He proves that every noisy channel has a definitenumber attached to it, its capacity, a maximum rate measured in bits per second, and then comes the shock,the noisy channel coding theorem. He proves that as long as you transmit at any rate below thatcapacity, below the channel's number,",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1274.1591596638657,
+            "timestamp_end": 1308.7171428571428,
+            "rerank_score": -0.22653470933437347
+          },
+          {
+            "rank": 9,
+            "text": "proves that as long as you transmit at any rate below thatcapacity, below the channel's number, you can make the probability of error as small as you desire,not smaller, as small as you desire. One error in a billion, one in a trillion, one in whateveryou name, achievable over a noisy channel without infinite power and without slowing to a crawl.Reliable communication through noise is not a fantasy. It's guaranteed as long as you stay underthe capacity, and the flip",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1301.8055462184873,
+            "timestamp_end": 1336.3635294117646,
+            "rerank_score": -1.858046531677246
+          },
+          {
+            "rank": 10,
+            "text": ". How much redundancy to keep is a genuine tension and makingthat tension precise is the second half of Shannon's paper. That's a lovely unification. The informationin a thing is the length of its shortest faithful description. Okay, compression is the floor,you keep teasing a ceiling and something about noise. This is the crown jewel, set it up for me.Here's the setup and to feel the impact you have to first inhabit what everyone believed before Shannon.Every real communication channel is noisy.",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1191.22,
+            "timestamp_end": 1225.7779831932774,
+            "rerank_score": -1.8749158382415771
+          }
+        ]
+      },
+      "latency_seconds": 76.174,
+      "status": "success"
+    },
+    {
+      "case_id": "case_12_alt",
+      "category": "precise",
+      "question": "According to the paper, how many hydrogen bonds form between a Guanine (G) and a Cytosine (C) base pair in the DNA double helix?",
+      "rewritten_query": "According to the paper, how many hydrogen bonds form between a Guanine (G) and a Cytosine (C) base pair in the DNA double helix?",
+      "answer": "The Watson‑Crick paper states that a guanine–cytosine (G–C) pair is held together by **three hydrogen bonds**【Episode: Great Papers 03 - The Double Helix, Watson and Crick 1953, 19:17-19:50】. This three‑bond “handshake” makes G–C pairs more tightly bound than A–T pairs, which have only two hydrogen bonds【Episode: Great Papers 03 - The Double Helix, Watson and Crick 1953, 27:29-28:03】.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 1.0,
+          "precision_at_10": 0.2,
+          "matched_evidence": 1,
+          "expected_evidence": 1,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "a C, the number of G's must equal the number of C's.Chargaf's mysterious rule A equals T and G equals C isn't a coincidence and isn't a free floating fact.It's the direct fingerprint of base pairing.The structure predicts the rule.The moment you see the ladder with its A, T and G, C, rungs,chargaf's numbers stop being a mystery and become a consequence.That's the kind of thing that tells you you're not just fitting the data,",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1236.3572329246936,
+            "timestamp_end": 1269.2644133099825,
+            "rerank_score": 0.35131585597991943
+          },
+          {
+            "rank": 2,
+            "text": "a weak attraction, a little molecular handshake that forms when certain atoms line up just so.And when Watson and Crick looked at where the hands stick out on each base, where the hydrogen bonds could form, they found that A and T fit together perfectly.Their handshake points lining up so the two bases clasp with two hydrogen bonds.And G and C fit together perfectly, clasping with three hydrogen bonds.But A with C or G with T, the hands don't line up, they don't cl",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1157.38,
+            "timestamp_end": 1190.287180385289,
+            "rerank_score": -0.1213599368929863
+          },
+          {
+            "rank": 3,
+            "text": ".But A with C or G with T, the hands don't line up, they don't clasp.So the chemistry itself selects the partners.A pairs with T, G pairs with C.Each is a purine with a pyrimidine, so the width is constant, and each makes a clean hydrogen bonded clasp.So the fit is specific.A with T, G with C and weight.A equals T, G equals C.That's chargaf, that's the click you told me to wait for",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1183.7057443082313,
+            "timestamp_end": 1216.6129246935202,
+            "rerank_score": -0.40536072850227356
+          },
+          {
+            "rank": 4,
+            "text": ".The grooves.When two strands twist around each other, they don't cover the whole surface evenly.The winding leaves two spiral channels running along the outside of the helix.One wider and one narrower called the major and minor grooves.And here's the key.Although the bodies of the bases are buried in the middle, the edges of each base pair face outward into those grooves.Each kind of pair, an A, T, a G, C, presents a distinctive little pattern of chemical bumps and",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1289.008721541156,
+            "timestamp_end": 1321.9159019264448,
+            "rerank_score": -0.6818327903747559
+          },
+          {
+            "rank": 5,
+            "text": ", an A, T, a G, C, presents a distinctive little pattern of chemical bumps and hollows along the groove.So a protein can slide along the groove and in effect, feel the sequence by touch.Read which letters are there from the outside without ever unzipping the helix.So reading and copying are two different operations.Copying needs you to unzip, but just reading the sequence to decide which gene to switch on, you can do from the",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1315.334465849387,
+            "timestamp_end": 1345.28,
+            "rerank_score": -0.9378142356872559
+          },
+          {
+            "rank": 6,
+            "text": "T, G equals C.That's chargaf, that's the click you told me to wait for.That's the click.Listen to how completely it lands.If every single A in the molecule is sitting across the ladder from a T holding hands with it, then the number of A's must equal the number of T's.Automatically, structurally, with no other explanation needed.And if every G faces a C, the number of G's must equal the number of C's.Chargaf's mysterious",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1210.0314886164624,
+            "timestamp_end": 1242.9386690017514,
+            "rerank_score": -1.3928347826004028
+          },
+          {
+            "rank": 7,
+            "text": "hydrogen bonds, and an AT rung only two, GC pairs grip harder.So a stretch of DNA rich in Gs and Cs is more stable, more tightly zipped, than a stretch rich in A's and T's.You can measure this directly. If you heat DNA, it eventually melts.The two strands come apart, and DNA with more GC content has to be heated hotter before it lets go.That's not a curiosity. It matters to how cells regulate which stretches get opened and read,and it",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1676.5572222222222,
+            "timestamp_end": 1710.581527777778,
+            "rerank_score": -2.908475399017334
+          },
+          {
+            "rank": 8,
+            "text": "g exactly the same width is to always pair one big base with one small base.A purine across from a pyrimidine every time.So width alone tells you big always pairs with small, but that still leaves choices.A big A could pair with either small base, T or C.What nails it down to specific partners?Two things nail it and they agree, which is how they knew they were right.The first is the chemistry of how the bases can touch, specifically hydrogen bonds.A hydrogen bond is",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1130.381139896373,
+            "timestamp_end": 1164.92,
+            "rerank_score": -2.9809350967407227
+          },
+          {
+            "rank": 9,
+            "text": "firmly.So the cell can peel the strands apart locally, a stretch at a time, with modest effort.A dedicated enzyme runs along and unzips it, while the molecule as a whole stays intact and archival.And does the two versus three bond difference between AT and GC actually show up anywhere? Or is it just bookkeeping?It shows up very concretely.Because a GC rung has three hydrogen bonds, and an AT rung only two, GC pairs grip harder.So a stretch of DNA",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1649.3377777777778,
+            "timestamp_end": 1683.3620833333334,
+            "rerank_score": -2.996845006942749
+          },
+          {
+            "rank": 10,
+            "text": "the mirror image of the first.Redundant in information, but that redundancy is the entire secret of copying. Watch what it buys you.Suppose you want to duplicate the molecule. You take the double helix and you unzip it down the middle.You break the weak hydrogen bond handshakes holding the rungs together and the two strands separate like a zipper coming apart.Now you have two lonely single strands, each one an exposed row of unpaired bases.But each of those single strands carries in its sequence",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1448.9240275387262,
+            "timestamp_end": 1483.8190361445784,
+            "rerank_score": -4.804682731628418
+          }
+        ]
+      },
+      "latency_seconds": 5.494,
+      "status": "success"
+    },
+    {
+      "case_id": "case_13_alt",
+      "category": "precise",
+      "question": "What did Stephen Hawking set out to prove regarding black hole temperature when he began his 1975 calculation, before the mathematics forced him to a different conclusion?",
+      "rewritten_query": "What did Stephen Hawking set out to prove regarding black hole temperature when he began his 1975 calculation, before the mathematics forced him to a different conclusion?",
+      "answer": "Stephen Hawking began the 1975 work **trying to prove that a black‑hole’s temperature was zero** – in other words, that black holes did **not** radiate.  He entered the calculation expecting to confirm the conventional view that nothing can escape a horizon, but the quantum‑vacuum math produced a non‑zero, thermal temperature instead【Source 2, 07:47‑08:22】.  The same point is made elsewhere: he “sets out to prove the temperature is zero” and only after the math was done did he find a finite temperature【Source 5, 41:39‑42:14】, with the mathematics “dragging him … to the conclusion that they do” radiate【Source 4, 08:15‑08:51】.  Thus his original goal was to show black holes have zero temperature, which the calculation later overturned.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 1.0,
+          "precision_at_10": 0.2,
+          "matched_evidence": 1,
+          "expected_evidence": 1,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,where empty and particle, depend on the observer, tracks the vacuum through a collapseand finds the far away observer bathed in a perfect thermal glow. Temperature turns out to runinversely with mass, so small holes are hot and explosive, and big ones are colder than the sky.Entropy comes out to exactly a quarter of the horizon area, which hints that informationlives on surfaces, holog",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2527.7559731543624,
+            "timestamp_end": 2563.6922147651007,
+            "rerank_score": 4.383274555206299
+          },
+          {
+            "rank": 2,
+            "text": "thatnothing gets out. So Hawking's reaction was, reasonably, this shows Beckenstein has gone too far.The temperature of a black hole must really be zero. The entropy business is just a suggestiveanalogy and I'll do the calculation that proves it. So the paper we're celebrating was born as anattempt to debunk the very thing it ended up confirming. That's the shape of it.He set out to show black holes don't radiate and the mathematics dragged him apparently against hisexpectations",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 467.4373154362416,
+            "timestamp_end": 502.76953020134226,
+            "rerank_score": 4.0710344314575195
+          },
+          {
+            "rank": 3,
+            "text": "Hawking didn't postulate that black holes glow. He didn't add a force or a particleor a new law. He took general relativity and quantum field theory. Two theories built forcompletely different purposes, neither one designed with this in mind, and insisted they be true at thesame time in the same place around a horizon. And the mere consistency of the two with nothing elseadded says, the blackest object in the universe is a warm, glowing, dying thing with an entropy",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2585.2539597315435,
+            "timestamp_end": 2621.190201342282,
+            "rerank_score": 3.951322078704834
+          },
+          {
+            "rank": 4,
+            "text": "set out to show black holes don't radiate and the mathematics dragged him apparently against hisexpectations to the conclusion that they do. And the reason the calculation surprised himis that to do it properly you can't stay inside general relativity. You have to ask what thequantum vacuum does in the strong gravity around a black hole and the quantum vacuum is a muchstranger place than empty space has any right to be. Let's slow down there because the quantum vacuumis one of those phrases",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 495.70308724832216,
+            "timestamp_end": 531.0353020134228,
+            "rerank_score": 3.5028181076049805
+          },
+          {
+            "rank": 5,
+            "text": ". And every bit of that50-year conversation is downstream of this one paper's discovery that black holes glow.Let me try to hold the whole thing in one breath. General relativity gives you a perfectly blacketernal hole, with a horizon whose area only ever grows. Beckenstein hears,only ever grows and says that area is entropy, which saves the second law but forces the hole tohave a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2499.006979865772,
+            "timestamp_end": 2534.94322147651,
+            "rerank_score": 3.1502492427825928
+          },
+          {
+            "rank": 6,
+            "text": ". And in just the last several years, a set of new calculations. People talk aboutislands and fine-grained entropy that seem to show the information leaking out after allin exactly the subtle correlations Hawking's approximation dropped. It feels close to resolved incertain idealized settings and still genuinely mysterious in the full realistic case.So the fair status is, the door is mostly but not entirely walked through. And every bit of that50-year conversation is downstream of this one paper's discovery that black holes",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2470.2579865771813,
+            "timestamp_end": 2506.1942281879196,
+            "rerank_score": 2.942173957824707
+          },
+          {
+            "rank": 7,
+            "text": "out to exactly a quarter of the horizon area, which hints that informationlives on surfaces, holography. And because the glow is featureless, evaporation seems to destroyinformation, which quantum mechanics forbids, leaving us the paradox we're still chewing on.That's the whole arc, and the thing I'd want to leave you holding is how little was assumed to getall of it. Hawking didn't postulate that black holes glow. He didn't add a force or a particle",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2556.504966442953,
+            "timestamp_end": 2592.4412080536913,
+            "rerank_score": 2.924988269805908
+          },
+          {
+            "rank": 8,
+            "text": "it must have a temperature some definite number ofdegrees and anything with a non-zero temperature radiates. A hot poker glows red. Your own body glowsin the infrared. Everything with a temperature above absolute zero gives off thermal radiation.So Beckenstein's idea taken seriously demands that a black hole radiate and that is flatlyobviously impossible in general relativity because we just spent ten minutes establishing thatnothing gets out. So Hawking's reaction was, reasonably, this shows Beckenstein has gone",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 439.1715436241611,
+            "timestamp_end": 474.50375838926175,
+            "rerank_score": 2.307258129119873
+          },
+          {
+            "rank": 9,
+            "text": "number of degrees.That was the moment the debunking became a discovery. He set out to show the temperature was zeroand the mathematics handed him a clean non-zero temperature. You keep saying perfect black body.Is it literally perfect? Indistinguishable from a glowing furnace?Very nearly, with one real asterisk worth knowing. The radiation is generated with a perfectlythermal spectrum at the horizon. But to reach us, it has to climb out through the black hole's owngravitational field. And that field",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 879.1351351351351,
+            "timestamp_end": 913.358108108108,
+            "rerank_score": 1.8065540790557861
+          },
+          {
+            "rank": 10,
+            "text": "four of them matching up one for one.The horizon area played the role of entropy. A quantity called the surface gravity played therole of temperature. But everyone thought it was a formal analogy, a coincidence of equationsbecause a black hole obviously had no real temperature. Hawking's radiation is what turned theanalogy into an identity. The surface gravity isn't like a temperature, it is the temperature.The area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2075.5143676222597,
+            "timestamp_end": 2111.1703541315346,
+            "rerank_score": 1.7099250555038452
+          }
+        ]
+      },
+      "latency_seconds": 4.343,
+      "status": "success"
+    },
+    {
+      "case_id": "case_14_alt",
+      "category": "precise",
+      "question": "What is the exact ratio that defines the entropy of a black hole in terms of its horizon area when measured in Planck units?",
+      "rewritten_query": "What is the exact ratio that defines the entropy of a black hole in terms of its horizon area when measured in Planck units?",
+      "answer": "The entropy \\(S\\) of a black hole is **one‑quarter of its horizon area \\(A\\)** when the area is expressed in Planck‑scale units (i.e., in units of Planck‑sized “tiles”). In formula form:\n\n\\[\nS \\;=\\; \\frac{1}{4}\\,A \\qquad\\text{(with }A\\text{ measured in Planck units).}\n\\]\n\nThis exact \\(1/4\\) ratio is stated directly in the podcast:\n\n- “A black hole's entropy is one‑quarter of its horizon area measured in natural quantum gravity units.” [Episode: *Great Papers 02 – How Black Holes Radiate, Hawking 1975*, 30:17‑30:51]  \n- “The entropy of a black hole is … its surface area in Planck‑sized tiles, divided by four.” [Episode: *Great Papers 02 – How Black Holes Radiate, Hawking 1975*, 30:44‑31:19]",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 1.0,
+          "precision_at_10": 0.2,
+          "matched_evidence": 1,
+          "expected_evidence": 1,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "ends with Beckensteinnot just rescued but made exact. Once you know the black hole's temperature thermodynamics lets youcompute its entropy precisely and the answer is stunningly clean. A black hole's entropy is onequarter of its horizon area measured in natural quantum gravity units. Let me unpack natural units.There's a fundamental smallest-ish length in physics, the plank length, built out of theconstants of gravity, quantum mechanics and the speed of light. It's the scale where gravity andquantum theory both",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1817.0378523489933,
+            "timestamp_end": 1851.635167785235,
+            "rerank_score": 4.398292541503906
+          },
+          {
+            "rank": 2,
+            "text": ", quantum mechanics and the speed of light. It's the scale where gravity andquantum theory both matter at once and it is fantastically tiny. Tile the horizon's surface withlittle squares that size, count them and the black hole's entropy is one quarter of that count.The entropy of a black hole is quite literally its surface area in plank sized tiles,divided by four. That is a strange and specific fact. Entropy usually scales with volume,the amount of stuff inside. Why is a",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1844.7157046979864,
+            "timestamp_end": 1879.313020134228,
+            "rerank_score": 3.2564854621887207
+          },
+          {
+            "rank": 3,
+            "text": "be fully described by data on its edge,like a hologram. Whole frameworks for uniting gravity and quantum mechanics are built on itand it all traces back to that factor. Entropy equals a quarter of the area. Give me a feel forhow much entropy we're talking about. Is a black hole's entropy a little? A lot? It is and this numbergenuinely startles people the first time because the entropy is the horizons area,counted in those unimaginably tiny plank",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1927.7492617449664,
+            "timestamp_end": 1962.346577181208,
+            "rerank_score": 2.8423409461975098
+          },
+          {
+            "rank": 4,
+            "text": "people the first time because the entropy is the horizons area,counted in those unimaginably tiny plank tiles and even a modest black hole has a horizon thatis enormous compared to that tile, the count is beyond astronomical. A single black hole of a fewsolar masses has more entropy, more hidden internal disorder, more microscopic arrangements,than all the ordinary matter, all the stars and gas in a large chunk of the visible universe combined.Take our own sun's worth of material. As a star,",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1955.4271140939595,
+            "timestamp_end": 1990.0244295302016,
+            "rerank_score": 2.7360448837280273
+          },
+          {
+            "rank": 5,
+            "text": "strange and specific fact. Entropy usually scales with volume,the amount of stuff inside. Why is a black hole's entropy about its surface, its area,not its volume? You've put your finger on maybe the most consequential clue in theoretical physicsof the last half century. For a box of gas, the entropy, the number of ways to arrange theinsides grows with the volume because that's where the stuff is. For a black hole it grows with thearea of the boundary and that",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1872.39355704698,
+            "timestamp_end": 1906.9908724832217,
+            "rerank_score": 2.613966464996338
+          },
+          {
+            "rank": 6,
+            "text": "you drop that hot gas in the black hole's mass increases a littleso its horizon area increases a little. And if area is entropy the hole's entropy goes up by at leastas much as the entropy you lost. The book's balance. The second law is saved but only if you acceptthat the black hole carries entropy and that its entropy is measured by its horizon area.That's the generalized second law. The entropy outside plus the entropy of the horizonsthat total never decreases. I can",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 382.64,
+            "timestamp_end": 417.97221476510066,
+            "rerank_score": 2.5132522583007812
+          },
+          {
+            "rank": 7,
+            "text": "directly tests the mechanism that a horizon plus a quantum or even just a wavy vacuum makes thermalradiation. Now with the glow established let's collect the prize that started this whole thingbecause Beckenstein turns out to be vindicated in the most complete way. Right we started with Beckensteinsaying area is entropy and Hawking trying to knock it down. How does it end? It ends with Beckensteinnot just rescued but made exact. Once you know the black hole's temperature therm",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1789.36,
+            "timestamp_end": 1823.9573154362415,
+            "rerank_score": 2.106581211090088
+          },
+          {
+            "rank": 8,
+            "text": "Horizon area on one hand entropy onthe other. And a graduate student named Jacob Beckenstein looked at that parallel and did something bold.He said, maybe that's not a coincidence. Maybe the area of a black hole's horizon literallyis a kind of entropy. That feels like a leap from these two things behave similarly tothey are the same thing. Why did he need to make it? Why not just admire the resemblance?Because without it black holes let you break the second law and that's intoler",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 298.69805792163544,
+            "timestamp_end": 332.76620102214656,
+            "rerank_score": 1.768723487854004
+          },
+          {
+            "rank": 9,
+            "text": "the black hole's own entropy went up by at least as much as you threw in. Exactly theescape. Beckenstein says, when",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 380.4616013628621,
+            "timestamp_end": 389.66,
+            "rerank_score": 1.5837461948394775
+          },
+          {
+            "rank": 10,
+            "text": "four of them matching up one for one.The horizon area played the role of entropy. A quantity called the surface gravity played therole of temperature. But everyone thought it was a formal analogy, a coincidence of equationsbecause a black hole obviously had no real temperature. Hawking's radiation is what turned theanalogy into an identity. The surface gravity isn't like a temperature, it is the temperature.The area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2075.5143676222597,
+            "timestamp_end": 2111.1703541315346,
+            "rerank_score": 1.3180656433105469
+          }
+        ]
+      },
+      "latency_seconds": 15.016,
+      "status": "success"
+    },
+    {
+      "case_id": "case_15_alt",
+      "category": "precise",
+      "question": "According to the 2017 paper, what specific architectural element was removed from the prior state-of-the-art models to enable full parallelism during training?",
+      "rewritten_query": "According to the 2017 paper, what specific architectural element was removed from the prior state-of-the-art models to enable full parallelism during training?",
+      "answer": "The 2017 paper got rid of the **sequential (recurrent) part of the architecture** – the “sequential machinery” that forced the model to read and remember tokens one‑by‑one. By dropping that recurrent, order‑by‑order component and keeping only attention, the model could look at all positions simultaneously and train with full parallelism【Source 5, 31:55‑32:29】【Source 4, 18:25‑18:59】.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.0,
+          "precision_at_10": 0.0,
+          "matched_evidence": 0,
+          "expected_evidence": 1,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "orous property underneath.It parallelizes so its scales. The history of this recent AI era is largely the history of takingthis architecture and making it bigger, and that traces to one decision in one 2017 paper,to trust that attention all by itself was enough, and to throw away the sequential machinerythat everyone assumed you needed. They were right, it was all you needed,and almost everything the world now calls artificial intelligence is a tower of the attention theydescribed, scaled past anything they put in the",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 2117.3217821782177,
+            "timestamp_end": 2153.1910891089105,
+            "rerank_score": -0.8621441125869751
+          },
+          {
+            "rank": 2,
+            "text": "model of the world as expressedin text. And the vessel that made training at that scale possible, the thing that could soak up allthat data on parallel hardware was the transformer from this paper. Was the architecture alone enoughto cause all this? Or did other things have to line up at the same time?Other things absolutely had to line up. And it's important not to hand the architecture all the creditbecause it was really the missing third leg of a stool. The other two legs were",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1657.174149659864,
+            "timestamp_end": 1693.282993197279,
+            "rerank_score": -3.701582193374634
+          },
+          {
+            "rank": 3,
+            "text": "hardware. That's why it acted like adetonator. The explosive had been sitting there for years. The transformer was the missing trigger.So the lineage is this paper builds the scalable engine. And then a few years later, peoplepour the entire internet through a giant version of it with a predict the next word goal.And outcome something that can converse. And the names, GPT and the others, those are allthis architecture underneath. All of them underneath are transformers. That tower of attention layersscaled",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1743.83537414966,
+            "timestamp_end": 1779.9442176870748,
+            "rerank_score": -3.946502208709717
+          },
+          {
+            "rank": 4,
+            "text": "theother. Here replacing read in order and remember, with look at everything at once and wait by relevance,simultaneously gave direct long-range connections and full parallelism.And I want to flag something because it's the real lesson of the paper hiding behind the accuracynumbers. At the time this was presented as a better translation system and it was. It beat theprevious burst while training much faster. But the parallelism is the thing that mattered for historybecause it meant the architecture could",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1105.863164983165,
+            "timestamp_end": 1139.920404040404,
+            "rerank_score": -4.08695125579834
+          },
+          {
+            "rank": 5,
+            "text": "again and it'sworth sitting with why because it's a real pattern in how breakthroughs work. The authors weren'ttrying to invent the era of large language models. They were trying to translate faster and betterand they made a clean architectural choice to get there. Drop the sequential part, keep only attention.But that clean choice happened to remove the exact bottleneck, the sequential wallthat had been quietly capping how big these models could get. And once you remove a bottleneckyou often unleash something much larger",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1915.1027027027028,
+            "timestamp_end": 1949.6972972972976,
+            "rerank_score": -4.178443908691406
+          },
+          {
+            "rank": 6,
+            "text": "those are allthis architecture underneath. All of them underneath are transformers. That tower of attention layersscaled up and trained on next word prediction. The systems people call large language models,the ones behind the AI assistants that have swept through the world in the last few yearsare at their core direct descendants of this architecture. The T in the most famous of those namesstands literally for transformer. And it went beyond text. The same attention machinery got appliedto images to audio to biology. The models that predict how",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1772.722448979592,
+            "timestamp_end": 1808.831292517007,
+            "rerank_score": -4.211925983428955
+          },
+          {
+            "rank": 7,
+            "text": "apping how big these models could get. And once you remove a bottleneckyou often unleash something much larger than the problem you were solving because everyone else cannow push through the opening. They optimized for translation and accidentally handed the world ascalable substrate for intelligence like behavior. The lesson isn't that they foresaw the future,it's that removing a fundamental constraint tends to have consequences far past your intentions.All right, you promised me a self-referential closing and I think we've earned it. Make",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1942.7783783783784,
+            "timestamp_end": 1977.372972972973,
+            "rerank_score": -4.798809051513672
+          },
+          {
+            "rank": 8,
+            "text": "something else and says attention alone is enough,and finally, we'll see why that one architectural choice, which looks like a detail,is precisely what unlocked the scaling that gave us the large language models of today.The punchline, which we'll earn, the very system helping make this episode is one of these things.The paper describes the machinery that is, in a sense, narrating it.That's a great hook to end on, so let's earn it. Start with the problem. Why is language hard",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 105.88991452991456,
+            "timestamp_end": 138.98051282051284,
+            "rerank_score": -4.815243244171143
+          },
+          {
+            "rank": 9,
+            "text": "legs couldn't hold anything up on their own because the raining architecture,the sequential recurrent network couldn't actually use them. It couldn't parallelize to soak up thecompute so it couldn't practically be trained on all that data. The data and the compute were like aloaded spring with nothing to release it. The transformer was the release, an architecture thatcould finally pour that much data through that much parallel hardware. That's why it acted like adetonator. The explosive had been sitting there for years",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1714.948299319728,
+            "timestamp_end": 1751.057142857143,
+            "rerank_score": -4.856441974639893
+          },
+          {
+            "rank": 10,
+            "text": "all coming,and the truth is more interesting than that. This paper does not contain the large language models,it doesn't propose chat GPT or anything like it. What it did was hand the field an architecturewith a magic property. It got better in a smooth, reliable way as you made it bigger and fed it moredata, and because of the parallelism you actually could make it bigger and feed it more on real hardwarewithout hitting the wall the old network's hit. So what happened over the",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1537.1190893760538,
+            "timestamp_end": 1571.8138617200673,
+            "rerank_score": -4.996671676635742
+          }
+        ]
+      },
+      "latency_seconds": 21.371,
+      "status": "success"
+    }
+  ],
+    "Note": "answer generated using context-aware parent-child retrieval which spans all files"
+
+}

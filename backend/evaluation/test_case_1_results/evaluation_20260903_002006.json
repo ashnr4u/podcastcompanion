@@ -1,0 +1,337 @@
+{
+  "evaluation": {
+    "name": "fermi_podcast_companion",
+    "timestamp": "2026-09-03T00:20:06.088233",
+    "num_cases": 3,
+    "max_retrieval_chunks": 10
+  },
+  "summary": {
+    "total_cases": 3,
+    "completed": 3,
+    "errors": 0,
+    "retrieval": {
+      "source_coverage": 0.778,
+      "evidence_recall": 0.296,
+      "precision_at_10": 0.267
+    },
+    "average_latency_seconds": 43.7,
+    "by_category": {
+      "multi_source": {
+        "cases": 3,
+        "source_coverage": 0.778,
+        "evidence_recall": 0.296,
+        "precision_at_10": 0.267,
+        "average_latency_seconds": 43.7
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "case_01",
+      "category": "multi_source",
+      "question": "How do Shannon's concepts of information and entropy help us understand the information-storing role of DNA and the information-processing approach of the Transformer?",
+      "rewritten_query": "How do Shannon's concepts of information and entropy help us understand the information-storing role of DNA and the information-processing approach of the Transformer?",
+      "answer": "I couldn't find enough information in the provided episodes.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 0.667,
+          "evidence_recall": 0.111,
+          "precision_at_10": 0.1,
+          "matched_evidence": 1,
+          "expected_evidence": 9,
+          "required_sources_found": 2,
+          "required_sources": 3
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "medium, a scratch, a stray particle flipping abit years down the line. So both of Shannon's theorems apply to storage exactly as they do to a phonecall. Compress the data toward its entropy to fit more in and wrap it in error correcting codesso it survives the trip through time. That's why a scratched disk still plays perfectly,and why your files don't quietly rot. And you can even look at biology this way. DNA is a messagebeing sent across billions of years, carrying its own error correcting machinery, which is a thoughtthat ties this paper straight back to the double helix. Channel through space, channel through time,one mathematics. It's strange to realise that information, as a measurable thing, is younger thanthe automobile. That before 1948, nobody could have told you how many bits are in a sentencebecause the question was meaningless. That's the part that still stops me.He didn't discover a law of information that was lying around waiting.He created the very framework in which such laws could be stated, and then proved the two deepestones, the floor and the ceiling in the same paper. And he did it largely alone in one stroke,laying out a field so complete that the decade since have mostly been about filling in the engineeringhe left as an exercise. The bit, entropy, compression limits, channel capacity, error correction.That's not a contribution to a field. It's the field arriving nearly whole.One",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2070.56,
+            "timestamp_end": 2177.86,
+            "rerank_score": -0.04311777278780937
+          },
+          {
+            "rank": 2,
+            "text": "information seriously is that the demon has to measure and remember which molecules are which.It accumulates information and eventually it has to erase that memory to keep working,and Land Hours Principle says that erasure dumps exactly enough heat to save the second law.The demon's bookkeeping is what pays the entropy bill. So Shannon's entropy and thermodynamic entropyaren't look-alikes with a shared name, they're the same quantity seen from two sides.Information is physical, and that idea that entropy counts hidden information is the very same threadthat runs through a black hole's entropy, which we talked about in another of these episodes.Can you make the entropy idea concrete? Give me a coin or something I can hold. A coin is the perfecthandle. Take a fair coin, heads and tails equally likely. Before the flip, you're maximally uncertain.It's a balanced two-way choice, so one flip of a fair coin carries exactly one bit of informationby definition. Now take a biased coin, say it comes up heads almost every time, tails only rarely.Now you're much less uncertain before the flip. You can guess heads and usually be right,so an outcome carries less information on average, because most of the time it just confirms whatyou expected. The entropy of that biased coin is less than one bit, and push it to the extremea two-headed coin heads every single time. Now there's no uncertainty at all, the outcome is certain,and the entropy is zero",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 742.9,
+            "timestamp_end": 849.96,
+            "rerank_score": -0.3966202139854431
+          },
+          {
+            "rank": 3,
+            "text": "English don't come up equally often.E is far more common than z. So Shannon needs a way to measure the average information of a sourcewhose symbols have different probabilities. And that's the quantity he calls entropy.Entropy. That's a word borrowed from physics, from thermodynamics, heat and disorder.Why does it show up in a paper about telephone lines?Because the mathematics turned out to be the same shape and there's a famous little story aboutthe name. As it's told, and I'll flag that this one is probably too good to be entirely true,Shannon wasn't sure what to call his new quantity and the great mathematician John von Neumanntold him to call it entropy for two reasons. One, the same formula already appears in statistical mechanicsand two, since nobody really understands what entropy is anyway, he'd always win an argument about it.Apocryphal or not, the name fit because Shannon's entropy measures exactly the thing thermodynamicentropy measures in spirit, disorder, unpredictability, the amount of uncertainty in a system.For a message source, entropy is the average number of bits of information each symbol carries.The average surprise per symbol. Hold on, is it literally the same entropy as in physics or justthe same equation that happens to wear the same name? For decades people assumed it was just asuggestive coincidence of formulas, same shape, different worlds. But it turned out to run much deeper.Shannon's information entropy",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 565.74,
+            "timestamp_end": 673.58,
+            "rerank_score": -0.8401143550872803
+          },
+          {
+            "rank": 4,
+            "text": "of the surprise, and Shannon proved that this particularformula is essentially the only one that behaves the way a sensible measure of information must.It's forced, not arbitrary. That's the thermometer finished. Now he can start proving theorems about it,and the first one is about squeezing messages. Squeezing, you mean compression,making a message smaller. Where does entropy come into that? Entropy turns out to be the exactfloor of compression, and this is Shannon's first great theorem, the source coding theorem.Here's the setup. A source produces messages, say, English text. That text is redundant,it has patterns, predictabilities. The letter Q is almost always followed by U.E is everywhere. After TH, you can guess an E is coming. All that predictability means the raw textis a wasteful way to store the actual information. Shannon's theorem says, you can compress anysource down to its entropy, down to the true number of bits of genuine information per symbol,and you can get as close to that floor as you like, but you cannot go below it, not without losinginformation. Entropy is the hard, unbeatable floor. So when I zip a file and it gets smaller,I'm squeezing out the redundancy, the predictable part, and the theorem says there's a limit.Once I've squeezed out all the predictability, what's left is the pure information, and that won'tcompress any further. You've",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 909.14,
+            "timestamp_end": 1011.66,
+            "rerank_score": -1.4339215755462646
+          },
+          {
+            "rank": 5,
+            "text": "all of digital technology lives in the gap betweenthose two lines. Every time your phone shows bars of signal, it's reporting roughly how muchcapacity the channel to the tower has right now. A Shannon quantity.Every time a music or video file streams to you, it's been compressed toward its entropy floor.A Shannon quantity, and then protected with error correcting codes so it survives the trip.Shannon's other theorem. Every scratched CD or DVD that still plays perfectly is error correctionquietly repairing the damage exactly as the coding theorem promised.Every photograph beamed back across billions of miles from a probe out past Pluto, arriving faintand buried in noise gets through because it was encoded against a channel whose capacity Shannontaught us to compute. Hard drives, Wi-Fi, the entire internet, moving unimaginable rivers of bitswith near perfect fidelity. All of it operates in the space Shannon defined using the framework hebuilt. Who was Shannon though? Was information theory his one big idea or one of several?Remarkably, it wasn't even his first foundational one. About a decade earlier,still a young man, his master's thesis showed that electrical switching circuits,networks of simple relays and switches could carry out logic,true and false, and or not, the operations of Boolean algebra.He showed that machines built from nothing but on-off switches could evaluate logical statements.That is the theoretical bedrock under every digital circuit and every computer chip ever built,and he laid it as a",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 1895.58,
+            "timestamp_end": 2013.54,
+            "rerank_score": -4.038365364074707
+          },
+          {
+            "rank": 6,
+            "text": "as real and unbreakable as the speed of light,or the second law of thermodynamics. You cannot compress below the entropy. You cannot transmitreliably above the capacity. Those aren't engineering difficulties to be overcome by a bettergadget next year. Their mathematical walls, true forever. And yet inside those walls, he showedthere's a astonishing freedom, near perfect communication through a storm of noise if you're cleverenough. A floor, a ceiling, and a proof that the ceiling can be reached. That's the founding ofthe information age in one paper by one person out of essentially nothing. Information has a floorand a ceiling, and we live in between them. Thanks for walking through how a quiet paper fromBell Labs turned information from a metaphor into a measurable, law-bound quantity, and quietly becamethe physics of everything digital. Next time your phone shows a full bar of signal, you'll know you'relooking at a number Claude Shannon taught the world how to compute.",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2320.92,
+            "timestamp_end": 2392.08,
+            "rerank_score": -6.759979724884033
+          },
+          {
+            "rank": 7,
+            "text": "aboutwhat's inside a black hole is somehow encoded on its two-dimensional surface, not its three-dimensionalinterior. That single hint, information living on the boundary, grew into the holographic principle,the idea that a region of space and everything in it can be fully described by data on its edge,like a hologram. Whole frameworks for uniting gravity and quantum mechanics are built on itand it all traces back to that factor. Entropy equals a quarter of the area. Give me a feel forhow much entropy we're talking about. Is a black hole's entropy a little? A lot? It is and this numbergenuinely startles people the first time because the entropy is the horizons area,counted in those unimaginably tiny plank tiles and even a modest black hole has a horizon thatis enormous compared to that tile, the count is beyond astronomical. A single black hole of a fewsolar masses has more entropy, more hidden internal disorder, more microscopic arrangements,than all the ordinary matter, all the stars and gas in a large chunk of the visible universe combined.Take our own sun's worth of material. As a star, it has a certain entropy,collapse it into a black hole and its entropy leaps up by something like a factor of a billion billion.Black holes are, by a staggering margin, the most disordered, information-rich objectsthe universe knows how to make. They are where entropy goes to pile up.That reframes them entirely,",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1903.84,
+            "timestamp_end": 2014.02,
+            "rerank_score": -7.110243797302246
+          },
+          {
+            "rank": 8,
+            "text": "up by something like a factor of a billion billion.Black holes are, by a staggering margin, the most disordered, information-rich objectsthe universe knows how to make. They are where entropy goes to pile up.That reframes them entirely, not empty pits, the most information dense things there are.The densest possible in fact, there's a limit, the beckonstein bound that says a region of a given sizecan hold only so much entropy before it collapses into a black hole and the black hole is the objectthat saturates that limit exactly. It is the maximally packed hard drive that physics permits andthat's really the deepest reason the area not volume fact matters. The most information you cancram into any region is set by the area of its boundary, not the volume inside, which brings us towhat that did to physics. So this one paper doesn't just make black holes glow, it reorganises how peoplethink space and information relate. It does, and there's a neat closing of the circle in the purethermodynamics too. Before Hawking people had noticed that the mathematical laws governing black holeslooked eerily like the laws of thermodynamics. There were four of them matching up one for one.The horizon area played the role of entropy. A quantity called the surface gravity played therole of temperature. But everyone thought it was a formal analogy, a coincidence of equationsbecause a black hole obviously had no real temperature. Hawking's radiation",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1989.94,
+            "timestamp_end": 2095.24,
+            "rerank_score": -8.089560508728027
+          },
+          {
+            "rank": 9,
+            "text": "lets youcompute its entropy precisely and the answer is stunningly clean. A black hole's entropy is onequarter of its horizon area measured in natural quantum gravity units. Let me unpack natural units.There's a fundamental smallest-ish length in physics, the plank length, built out of theconstants of gravity, quantum mechanics and the speed of light. It's the scale where gravity andquantum theory both matter at once and it is fantastically tiny. Tile the horizon's surface withlittle squares that size, count them and the black hole's entropy is one quarter of that count.The entropy of a black hole is quite literally its surface area in plank sized tiles,divided by four. That is a strange and specific fact. Entropy usually scales with volume,the amount of stuff inside. Why is a black hole's entropy about its surface, its area,not its volume? You've put your finger on maybe the most consequential clue in theoretical physicsof the last half century. For a box of gas, the entropy, the number of ways to arrange theinsides grows with the volume because that's where the stuff is. For a black hole it grows with thearea of the boundary and that suggests something almost heretical that all the information aboutwhat's inside a black hole is somehow encoded on its two-dimensional surface, not its three-dimensionalinterior. That single hint, information living on the boundary, grew into the holographic principle,the idea that a region of space and everything in",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1817.94,
+            "timestamp_end": 1929.62,
+            "rerank_score": -8.837026596069336
+          },
+          {
+            "rank": 10,
+            "text": "with its position instead of feeding them in order.So now I think I have the whole machine. Words become queries, keys, and values. Each wordattends to all the others by matching queries to keys and blending values. You do that with multipleheads for different relationships, and you stamp positions on so order survives. Is that the transformer?That's the beating heart of it, yes. There's some standard surrounding machinery I'll gesture outwithout belaboring. The attention layers are stacked many deep, so the model can build up moreand more abstract relationships layer by layer. There are ordinary processing steps between theattention layers, and there are engineering tricks that help very deep networks train without fallingapart. And in the original paper, the whole thing is arranged as an encoder and a decoder.One stack to read and understand the English sentence, another to generate the German one withattention connecting them. But you don't need those details to hold the essential idea.The essential idea is a tower of attention layers where at every layer every position looks at everyother position and gathers what's relevant in parallel. That's the transformer, and that tower is whatgot scaled up into everything that followed. You mentioned the original had an encoder and a decoder,a reading half and a writing half. Did that split end up mattering for what came later?It did in a rather elegant way. The original transformer had those two halves,an encoder that reads the whole input and builds up a",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1329.38,
+            "timestamp_end": 1437.28,
+            "rerank_score": -8.889760971069336
+          }
+        ]
+      },
+      "latency_seconds": 72.171,
+      "status": "success"
+    },
+    {
+      "case_id": "case_02",
+      "category": "multi_source",
+      "question": "How do Shannon's information entropy and Hawking's black-hole thermodynamics connect information with physical processes, and how does this compare with the way information is represented and copied in DNA?",
+      "rewritten_query": "How do Shannon's information entropy and Hawking's black-hole thermodynamics connect information with physical processes, and how does this compare with the way information is represented and copied in DNA?",
+      "answer": "**Shannon’s entropy ↔ physical processes**\n\n- In Shannon’s theory the quantity called *entropy* is mathematically the same formula that physicists use for thermodynamic entropy.  The podcast points out that this is not a coincidence: the two entropies are “the same quantity seen from two sides” [Source 2, 12:22‑14:09].  \n- Because the entropy counts hidden information, erasing a single bit of that information must dump a minimum amount of heat into the surroundings (Landauer’s principle).  Deleting a file therefore has a real thermodynamic cost [Source 1, 10:47‑12:40].  \n- The classic “Maxwell’s demon” paradox is resolved by recognizing that the demon’s memory‑keeping and eventual erasure pay exactly the entropy (heat) price required by the second law [Source 1, 10:47‑12:40].\n\n**Hawking’s black‑hole thermodynamics ↔ information**\n\n- Hawking showed that a black‑hole’s *surface gravity* is an actual temperature and that the *horizon area* is an actual entropy, not just a formal analogy.  The black‑hole obeys the same four laws of thermodynamics as ordinary matter [Source 4, 34:29‑36:26] and the first law matches energy‑entropy‑work terms directly [Source 10, 35:59‑38:00].  \n- The entropy of a black‑hole is precisely one‑quarter of its horizon area measured in Planck‑size tiles, meaning the amount of information about what lies inside is encoded on the two‑dimensional surface [Source 6, 30:17‑32:09].  This “information‑on‑the‑boundary” idea grew into the holographic principle [Source 7, 31:43‑33:34].\n\n**DNA as a physical carrier of information**\n\n- The podcast treats DNA as a long‑distance message that has been travelling for billions of years.  Its sequence stores information, and the molecule carries its own error‑correcting machinery so that the message can be copied reliably across time [Source 9, 34:30‑36:17].  \n- The same Shannon theorems that set limits on compression and error correction for electronic data also apply to biological storage: you can compress a source down to its entropy and you need error‑correcting codes to keep the data (DNA) intact [Source 9, 34:30‑36:17] (and earlier discussion of compression in Source 5).\n\n**Comparison**\n\n| Aspect | Shannon ↔ Physics (Landauer, Maxwell’s demon) | Hawking ↔ Black‑hole physics | DNA |\n|--------|-----------------------------------------------|-----------------------------|-----|\n| **What counts as information?** | Bits measured by entropy; each bit has a physical heat cost when erased [Source 1, 10:47‑12:40]. | Bits measured by horizon‑area entropy; the “bits” are encoded on the surface of the hole [Source 6, 30:17‑32:09]. | Bits are the nucleotide sequence; the molecule itself is the physical substrate [Source 9, 34:30‑36:17]. |\n| **Physical consequence** | Erasing a bit releases a minimum amount of heat (thermodynamic cost). | A black‑hole radiates (Hawking radiation) at a temperature set by its surface gravity; its area can only increase (second law). | Replication copies the sequence; built‑in error‑correction preserves the information over time. |\n| **Link to thermodynamics** | Entropy = hidden information; Landauer’s principle ties information loss to entropy increase [Source 1, 10:47‑12:40]. | Entropy = horizon area; temperature = surface gravity; black‑hole obeys the four laws of thermodynamics [Source 4, 34:29‑36:26]. | Information is stored in a material (DNA) that must obey physical chemistry; the podcast frames this using Shannon’s channel‑coding ideas [Source 9, 34:30‑36:17]. |\n\nIn short, both Shannon’s entropy and Hawking’s black‑hole entropy treat information as a physical quantity that carries thermodynamic weight—heat when bits are erased, temperature and area when a black‑hole radiates.  DNA, while a biological molecule, also embodies information physically: its sequence is a string of bits, and the cell’s replication machinery implements the same kind of error‑correction and compression limits that Shannon’s theory describes.  Thus all three cases illustrate that “information” is not abstract alone; it is always tied to a concrete physical substrate and obeys physical laws.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 0.667,
+          "evidence_recall": 0.556,
+          "precision_at_10": 0.5,
+          "matched_evidence": 5,
+          "expected_evidence": 9,
+          "required_sources_found": 2,
+          "required_sources": 3
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "as in physics or justthe same equation that happens to wear the same name? For decades people assumed it was just asuggestive coincidence of formulas, same shape, different worlds. But it turned out to run much deeper.Shannon's information entropy and the physicist's thermodynamic entropy are genuinelyphysically connected. The bridge is an idea called Land Hours Principle from some years later.It says that erasing one bit of information, truly discarding it, resetting a memory to blank,carries an unavoidable physical price. It must dump at least a certain tiny minimum of heat intothe surroundings. Information is not a free floating abstraction, manipulating it has real thermodynamicconsequences, real energy costs. To erase a bit is to pay in heat. That's wild. Deleting a filehas a thermodynamic cost in principle. Does that connect to anything famous? It resolves a puzzlethat had haunted physics for nearly a century. Maxwell's demon. Imagine a tiny intelligent beingguarding a door between two boxes of gas, letting fast molecules through one way and slow ones theother. Sorting them, which would create a temperature difference from nothing and violate thesecond law of thermodynamics, the one that says disorder always increases. The escape once you takeinformation seriously is that the demon has to measure and remember which molecules are which.It accumulates information and eventually it has to erase that memory to keep working,and Land Hours Principle says that erasure dumps exactly enough heat to save the second law.",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 647.6,
+            "timestamp_end": 760.54,
+            "rerank_score": 3.112119674682617
+          },
+          {
+            "rank": 2,
+            "text": "information seriously is that the demon has to measure and remember which molecules are which.It accumulates information and eventually it has to erase that memory to keep working,and Land Hours Principle says that erasure dumps exactly enough heat to save the second law.The demon's bookkeeping is what pays the entropy bill. So Shannon's entropy and thermodynamic entropyaren't look-alikes with a shared name, they're the same quantity seen from two sides.Information is physical, and that idea that entropy counts hidden information is the very same threadthat runs through a black hole's entropy, which we talked about in another of these episodes.Can you make the entropy idea concrete? Give me a coin or something I can hold. A coin is the perfecthandle. Take a fair coin, heads and tails equally likely. Before the flip, you're maximally uncertain.It's a balanced two-way choice, so one flip of a fair coin carries exactly one bit of informationby definition. Now take a biased coin, say it comes up heads almost every time, tails only rarely.Now you're much less uncertain before the flip. You can guess heads and usually be right,so an outcome carries less information on average, because most of the time it just confirms whatyou expected. The entropy of that biased coin is less than one bit, and push it to the extremea two-headed coin heads every single time. Now there's no uncertainty at all, the outcome is certain,and the entropy is zero",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 742.9,
+            "timestamp_end": 849.96,
+            "rerank_score": 3.0863401889801025
+          },
+          {
+            "rank": 3,
+            "text": "English don't come up equally often.E is far more common than z. So Shannon needs a way to measure the average information of a sourcewhose symbols have different probabilities. And that's the quantity he calls entropy.Entropy. That's a word borrowed from physics, from thermodynamics, heat and disorder.Why does it show up in a paper about telephone lines?Because the mathematics turned out to be the same shape and there's a famous little story aboutthe name. As it's told, and I'll flag that this one is probably too good to be entirely true,Shannon wasn't sure what to call his new quantity and the great mathematician John von Neumanntold him to call it entropy for two reasons. One, the same formula already appears in statistical mechanicsand two, since nobody really understands what entropy is anyway, he'd always win an argument about it.Apocryphal or not, the name fit because Shannon's entropy measures exactly the thing thermodynamicentropy measures in spirit, disorder, unpredictability, the amount of uncertainty in a system.For a message source, entropy is the average number of bits of information each symbol carries.The average surprise per symbol. Hold on, is it literally the same entropy as in physics or justthe same equation that happens to wear the same name? For decades people assumed it was just asuggestive coincidence of formulas, same shape, different worlds. But it turned out to run much deeper.Shannon's information entropy",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 565.74,
+            "timestamp_end": 673.58,
+            "rerank_score": 0.8548024892807007
+          },
+          {
+            "rank": 4,
+            "text": "one.The horizon area played the role of entropy. A quantity called the surface gravity played therole of temperature. But everyone thought it was a formal analogy, a coincidence of equationsbecause a black hole obviously had no real temperature. Hawking's radiation is what turned theanalogy into an identity. The surface gravity isn't like a temperature, it is the temperature.The area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects,they are thermodynamic objects. They have a temperature you could in principle read off a thermometeran entropy and they obey the same laws as steam and gas. That unification is the quiet triumph ofthe paper. You said four laws matching one for one. I want to hear the match because four laws thatline up is a strong claim. What are they? They're a genuinely pretty parallel and physicists wrote themdown deliberately as the four laws of black hole mechanics to mirror the four laws of thermodynamics.Start with what's called the zeroth law. In thermodynamics the zeroth law says a system inequilibrium has one uniform temperature throughout, no hot corners. The black hole version says thesurface gravity is the same everywhere across the horizon, uniform like a temperature at equilibrium.That's the first rhyme and it's a real theorem not a slogan. So uniform surface gravity plays therole of uniform temperature. What's the first law? The first law of thermodynamics is energyaccounting. The change in a",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2069.18,
+            "timestamp_end": 2186.58,
+            "rerank_score": 0.8362581133842468
+          },
+          {
+            "rank": 5,
+            "text": "of the surprise, and Shannon proved that this particularformula is essentially the only one that behaves the way a sensible measure of information must.It's forced, not arbitrary. That's the thermometer finished. Now he can start proving theorems about it,and the first one is about squeezing messages. Squeezing, you mean compression,making a message smaller. Where does entropy come into that? Entropy turns out to be the exactfloor of compression, and this is Shannon's first great theorem, the source coding theorem.Here's the setup. A source produces messages, say, English text. That text is redundant,it has patterns, predictabilities. The letter Q is almost always followed by U.E is everywhere. After TH, you can guess an E is coming. All that predictability means the raw textis a wasteful way to store the actual information. Shannon's theorem says, you can compress anysource down to its entropy, down to the true number of bits of genuine information per symbol,and you can get as close to that floor as you like, but you cannot go below it, not without losinginformation. Entropy is the hard, unbeatable floor. So when I zip a file and it gets smaller,I'm squeezing out the redundancy, the predictable part, and the theorem says there's a limit.Once I've squeezed out all the predictability, what's left is the pure information, and that won'tcompress any further. You've",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 909.14,
+            "timestamp_end": 1011.66,
+            "rerank_score": 0.5622297525405884
+          },
+          {
+            "rank": 6,
+            "text": "lets youcompute its entropy precisely and the answer is stunningly clean. A black hole's entropy is onequarter of its horizon area measured in natural quantum gravity units. Let me unpack natural units.There's a fundamental smallest-ish length in physics, the plank length, built out of theconstants of gravity, quantum mechanics and the speed of light. It's the scale where gravity andquantum theory both matter at once and it is fantastically tiny. Tile the horizon's surface withlittle squares that size, count them and the black hole's entropy is one quarter of that count.The entropy of a black hole is quite literally its surface area in plank sized tiles,divided by four. That is a strange and specific fact. Entropy usually scales with volume,the amount of stuff inside. Why is a black hole's entropy about its surface, its area,not its volume? You've put your finger on maybe the most consequential clue in theoretical physicsof the last half century. For a box of gas, the entropy, the number of ways to arrange theinsides grows with the volume because that's where the stuff is. For a black hole it grows with thearea of the boundary and that suggests something almost heretical that all the information aboutwhat's inside a black hole is somehow encoded on its two-dimensional surface, not its three-dimensionalinterior. That single hint, information living on the boundary, grew into the holographic principle,the idea that a region of space and everything in",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1817.94,
+            "timestamp_end": 1929.62,
+            "rerank_score": 0.1486944854259491
+          },
+          {
+            "rank": 7,
+            "text": "aboutwhat's inside a black hole is somehow encoded on its two-dimensional surface, not its three-dimensionalinterior. That single hint, information living on the boundary, grew into the holographic principle,the idea that a region of space and everything in it can be fully described by data on its edge,like a hologram. Whole frameworks for uniting gravity and quantum mechanics are built on itand it all traces back to that factor. Entropy equals a quarter of the area. Give me a feel forhow much entropy we're talking about. Is a black hole's entropy a little? A lot? It is and this numbergenuinely startles people the first time because the entropy is the horizons area,counted in those unimaginably tiny plank tiles and even a modest black hole has a horizon thatis enormous compared to that tile, the count is beyond astronomical. A single black hole of a fewsolar masses has more entropy, more hidden internal disorder, more microscopic arrangements,than all the ordinary matter, all the stars and gas in a large chunk of the visible universe combined.Take our own sun's worth of material. As a star, it has a certain entropy,collapse it into a black hole and its entropy leaps up by something like a factor of a billion billion.Black holes are, by a staggering margin, the most disordered, information-rich objectsthe universe knows how to make. They are where entropy goes to pile up.That reframes them entirely,",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 1903.84,
+            "timestamp_end": 2014.02,
+            "rerank_score": -0.5140048265457153
+          },
+          {
+            "rank": 8,
+            "text": "a horizon. And the mere consistency of the two with nothing elseadded says, the blackest object in the universe is a warm, glowing, dying thing with an entropywritten on its skin. The horizon plus the vacuum was all it took. And the reason a physicist wouldcall this beautiful isn't decoration. It's that a single calculation reached across three fields at once.That's just it. Before this, gravity, quantum theory, and thermodynamics were three separateprovinces with separate languages. Hawking's temperature is a bridge that touches all three in oneequation. Gravity sets the horizon. Quantum theory supplies the vacuum. Thermodynamics reads offthe entropy. It's one of the very few places in physics where you can see all three shaking hands.We don't yet have the full theory of quantum gravity that this is clearly a clue toward. But whateverthat theory turns out to be, it has to reproduce this. A black hole of a given mass has this temperatureand this entropy. It's a fixed point on the map, a known answer that the final theory must return.That's why half a century on, people are still circling back to a paper about how the darkestthing in the sky manages quietly to shine. Black holes ain't so black. Thanks for walking throughhow a debunking turned into a revolution. Next time you picture a black hole, don't picture a perfectvoid. Picture something faintly warm, slowly exhaling itself back into the universe.",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2605.88,
+            "timestamp_end": 2710.86,
+            "rerank_score": -0.6123126745223999
+          },
+          {
+            "rank": 9,
+            "text": "medium, a scratch, a stray particle flipping abit years down the line. So both of Shannon's theorems apply to storage exactly as they do to a phonecall. Compress the data toward its entropy to fit more in and wrap it in error correcting codesso it survives the trip through time. That's why a scratched disk still plays perfectly,and why your files don't quietly rot. And you can even look at biology this way. DNA is a messagebeing sent across billions of years, carrying its own error correcting machinery, which is a thoughtthat ties this paper straight back to the double helix. Channel through space, channel through time,one mathematics. It's strange to realise that information, as a measurable thing, is younger thanthe automobile. That before 1948, nobody could have told you how many bits are in a sentencebecause the question was meaningless. That's the part that still stops me.He didn't discover a law of information that was lying around waiting.He created the very framework in which such laws could be stated, and then proved the two deepestones, the floor and the ceiling in the same paper. And he did it largely alone in one stroke,laying out a field so complete that the decade since have mostly been about filling in the engineeringhe left as an exercise. The bit, entropy, compression limits, channel capacity, error correction.That's not a contribution to a field. It's the field arriving nearly whole.One",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2070.56,
+            "timestamp_end": 2177.86,
+            "rerank_score": -0.7855702638626099
+          },
+          {
+            "rank": 10,
+            "text": "at equilibrium.That's the first rhyme and it's a real theorem not a slogan. So uniform surface gravity plays therole of uniform temperature. What's the first law? The first law of thermodynamics is energyaccounting. The change in a system's energy equals its temperature times the change in its entropyplus any work done. The black hole first law has the identical shape. The change in the hole's massand mass's energy equals a term with the surface gravity multiplied by the change in horizon areaplus work terms if the hole spins or is charged. Put those side by side and surface gravity sitsexactly where temperature sits and area sits exactly where entropy sits. The second law we've alreadymet twice entropy never decreases, area never decreases, same law and the third law rhymes too.Thermodynamics says you can't chill anything all the way to absolute zero in finite stepsand the black hole version says you can't spin down or discharge a hole to zero surface gravity,zero temperature in finite steps either, four for four. But before Hawking everyone read that as acute coincidence of equations, not real thermodynamics. Right because the hole edifice had a holein it so to speak. If the surface gravity really were a temperature the black hole would have toradiate at that temperature and it plainly couldn't so people treated the match as a formal curiositysuggestive but surely not literal. The temperature in those laws was a stand-in symbol. Hawking'sradi",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2159.78,
+            "timestamp_end": 2280.06,
+            "rerank_score": -1.1961597204208374
+          }
+        ]
+      },
+      "latency_seconds": 15.404,
+      "status": "success"
+    },
+    {
+      "case_id": "case_03",
+      "category": "multi_source",
+      "question": "How does the Transformer's shift from sequential processing to parallel attention change how relationships between pieces of information are represented, and how does this compare with Shannon's view of information sequences and DNA's physical organization of information?",
+      "rewritten_query": "How does the Transformer's shift from sequential processing to parallel attention change how relationships between pieces of information are represented, and how does this compare with Shannon's view of information sequences and DNA's physical organization of information?",
+      "answer": "The transformer replaces the old “one‑word‑after‑another” chain with a **set‑like** view of a sentence.  \nInstead of passing a single running memory from word 1 to word 2 to word 3, every word **creates its own query, key and value and compares them to all the other words at the same time**【Source 3, 16:36‑18:18】.  \nBecause each word can attend to every other word in one step, the model can run the whole attention matrix in parallel on a GPU【Source 3, 16:36‑18:18】, and the computation no longer depends on the order in which the words were read【Source 4, 05:34‑07:24】.\n\nTo capture the many ways words relate, the transformer runs **multiple attention heads in parallel**; each head learns a different kind of relationship (e.g., subject‑verb agreement, pronoun resolution, topic tracking) and the results are merged【Source 1, 19:21‑21:09】.  \nThe stacked layers then build increasingly abstract connections layer‑by‑layer【Source 2, 22:09‑23:57】, while **positional encodings** are added so that the model still knows the original order【Source 2, 22:09‑23:57】.\n\n---\n\n### Contrast with Shannon’s view of information\n\nShannon treats information as an **abstract sequence of symbols** whose only measurable property is the amount of surprise (entropy) it carries【Source 9, 37:15‑39:08】.  \nHe separates “information” from meaning, defines the bit as the basic unit, and shows that any sequence can be compressed only down to its entropy and transmitted only up to a channel’s capacity【Source 9, 37:15‑39:08】.  \nIn this framework the **relationships between symbols are not represented explicitly**; they are implicit in the statistical distribution of the sequence.\n\n---\n\n### Contrast with DNA’s physical organization\n\nDNA stores information **physically** in a double‑helix where two anti‑parallel strands are linked by complementary base pairs (A‑T, G‑C)【Source 8, 22:38‑24:23】.  \nBecause each base on one strand uniquely determines the base on the opposite strand, the two strands carry the **same information redundantly**【Source 8, 22:38‑24:23】.  \nThe organization is spatial (complementary pairing) rather than computational; the “relationships” between bases are encoded by the chemistry of the helix, not by a set of weighted connections.\n\n---\n\n### Summary\n\n* **Transformer:** moves from a sequential memory chain to a parallel attention matrix; relationships are represented as learned attention weights in multiple heads that simultaneously link every token to every other token.  \n* **Shannon:** views information as a linear sequence measured by entropy; it does not describe how individual symbols relate, only how much uncertainty they carry.  \n* **DNA:** encodes information in a physical, complementary structure where each strand mirrors the other, giving redundancy and enabling copying, again without a computational attention‑style representation.  \n\nThus, the transformer’s parallel attention creates an explicit, learnable map of many simultaneous relationships, whereas Shannon’s theory abstracts away relational structure, and DNA stores relational information in its molecular geometry.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.222,
+          "precision_at_10": 0.2,
+          "matched_evidence": 2,
+          "expected_evidence": 9,
+          "required_sources_found": 3,
+          "required_sources": 3
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "A single attention operation lets each word gather informationaccording to one notion of relevance. But words relate to each other in many different ways at once.In a sentence, one word might need to find its grammatical subject and also track what a pronounrefers to and also register the overall topic. Several different kinds of relationship simultaneously.So instead of doing attention just once, the transformer does it several times in parallelwith several independent sets of queries, keys and values. Each one called a head.Each head can learn to specialize in a different type of relationship.One head might learn to track subject verb agreement. Another might learn to link pronouns to thenouns they stand for. Another might follow the topic. Then you combine what all the heads found.It's like having several readers examine the same sentence, each looking for a different kind ofconnection and then pooling their nodes. Several parallel attention operations. Each learning a differentkind of relationship then merged. That's elegant. And you said something earlier that's been nagging me.Attention treats the sentence almost like a set, looking at all words at once. But order mattersin language. If it looks at everything simultaneously, how does it know that dog bit man isn't man bit dog?You have put your finger on the one thing, the mechanism, as I've described it, genuinely lacks.And the authors had to add a fix for it. You're exactly right. Pure attention is blind to order.If every word",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1161.66,
+            "timestamp_end": 1269.62,
+            "rerank_score": -0.7549549341201782
+          },
+          {
+            "rank": 2,
+            "text": "with its position instead of feeding them in order.So now I think I have the whole machine. Words become queries, keys, and values. Each wordattends to all the others by matching queries to keys and blending values. You do that with multipleheads for different relationships, and you stamp positions on so order survives. Is that the transformer?That's the beating heart of it, yes. There's some standard surrounding machinery I'll gesture outwithout belaboring. The attention layers are stacked many deep, so the model can build up moreand more abstract relationships layer by layer. There are ordinary processing steps between theattention layers, and there are engineering tricks that help very deep networks train without fallingapart. And in the original paper, the whole thing is arranged as an encoder and a decoder.One stack to read and understand the English sentence, another to generate the German one withattention connecting them. But you don't need those details to hold the essential idea.The essential idea is a tower of attention layers where at every layer every position looks at everyother position and gathers what's relevant in parallel. That's the transformer, and that tower is whatgot scaled up into everything that followed. You mentioned the original had an encoder and a decoder,a reading half and a writing half. Did that split end up mattering for what came later?It did in a rather elegant way. The original transformer had those two halves,an encoder that reads the whole input and builds up a",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1329.38,
+            "timestamp_end": 1437.28,
+            "rerank_score": -1.1542562246322632
+          },
+          {
+            "rank": 3,
+            "text": "it refers to. You can in a real sense see the model reading. That's a strikingimage. You can watch it decide what it means. Got it? And that recipe is the same for every word.And every word does it at the same time. Which I'm now realizing is the answer to problem two,the parallelism one. You just got there before I could tear it up. And yes, that's the secondthing that dissolved and truly the more world changing of the two. Because there's no running memorybeing passed hand-to-hand, there's no forced order to the computation. Every word can compute its query,its keys, its match scores, and its blended result at the very same time as every other word.The whole sentence's attention can be done in one big simultaneous batch of arithmetic. And thatis exactly the shape of computation that graphics chips devour. Thousands of independent multiplicationshappening in parallel. So the transformer maps perfectly onto the hardware where the recurrent networkfought it. Suddenly you could train on far more data, far faster, and build far bigger modelsbecause you were finally using the full width of the highway instead of driving single file.So attention didn't just fix the forgetting. It fixed it in a way that happens to also be massivelyparallel, which the old sequential reading could never be. Those feel like they should be a trade-offand instead you got both. Both at once, from one idea. That's exactly why it",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 996.88,
+            "timestamp_end": 1098.02,
+            "rerank_score": -4.024979591369629
+          },
+          {
+            "rank": 4,
+            "text": "reads strictly in order and each step depends on the memory from the step beforeyou cannot do the steps out of order or at the same time. You cannot start processing word fiveuntil you've finished words one through four because word five needs the running memory that wordsone through four produced. The computation is inherently sequential, a chain each link waiting on thelast and that matters enormously because the hardware that powers modern AI, graphics chips,GPUs is built to do thousands of calculations simultaneously in parallel. A sequential algorithmcan't use that power. It's like having a thousand lane highway and being forced to drive singlefile. So these networks were slow to train and worse, they were slow in a way that got punishingas you tried to make them bigger and feed them more data. The sequential nature was a wall.So you've got a method that forgets across long distances and can't be sped up by parallel hardwareand I'm guessing attention is the fix for at least one of those. Where does the word come from?Attention actually predates this paper by a few years and it's worth being accurate about thatbecause the fame of this paper sometimes obscures it. Attention was originally invented as a patch,a helper bolted onto those very recurrent networks to fix problem one, the forgetting.The idea of the patch was lovely. Instead of forcing all the information about the inputsentence through that one narrow running memory, let the network at each moment look back at all thewords of the input",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 334.4,
+            "timestamp_end": 444.08,
+            "rerank_score": -4.924111366271973
+          },
+          {
+            "rank": 5,
+            "text": "a decoder,a reading half and a writing half. Did that split end up mattering for what came later?It did in a rather elegant way. The original transformer had those two halves,an encoder that reads the whole input and builds up a rich understanding of it, and a decoder thatgenerates the output one word at a time. Afterward, people realized you don't always need both,depending on your goal. If what you want is to understand text, to answer questions about it,judge its sentiment, fill in missing words, you can keep just the encoder half.One famous early family of models called Bert took that route. It trained by hiding random wordsin a sentence and learning to fill them back in, which forces a deep two directional understanding oflanguage. If instead what you want is to generate text, to continue a prompt, hold a conversation,write an essay, you keep just the decoder half, which produces words one at a time, each new wordattending back over everything written so far. That second route is the GPT family,and it's the direct lineage behind the conversational assistance everyone now uses.Same attention machinery from this paper just cleaved two ways. One shape tuned for reading,one for writing. So Bert's style is the reader, GPT style is the writer, and both adjust the attentiontower pointed at different jobs. So let's finally cash the scaling check. The paper is abouttranslating English to German. How",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1413.18,
+            "timestamp_end": 1524.94,
+            "rerank_score": -4.952642440795898
+          },
+          {
+            "rank": 6,
+            "text": "few years later, peoplepour the entire internet through a giant version of it with a predict the next word goal.And outcome something that can converse. And the names, GPT and the others, those are allthis architecture underneath. All of them underneath are transformers. That tower of attention layersscaled up and trained on next word prediction. The systems people call large language models,the ones behind the AI assistants that have swept through the world in the last few yearsare at their core direct descendants of this architecture. The T in the most famous of those namesstands literally for transformer. And it went beyond text. The same attention machinery got appliedto images to audio to biology. The models that predict how proteins fold which transformed adecades old problem in molecular biology lean on attention. It turned out that let every part of theinput attend to every other part in parallel was a shockingly general recipe far beyond the translationtask it was invented for. This one architecture became a kind of universal engine for machine learning.Is there a catch to all this? Every word attends to every word sounds like it might get expensiveas the text gets longer. It absolutely does and it's the mechanism's central limitation.Worth being clear about rather than glossing over. If every word has to compare itself against everyother word then the amount of work grows with the square of the number of words. Double the length oftext and you quadruple the work. Make it ten times longer and it costs a hundred",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1742.78,
+            "timestamp_end": 1858.0,
+            "rerank_score": -6.727889060974121
+          },
+          {
+            "rank": 7,
+            "text": ". That's the black hole information paradox. And which side one?Half a century is a long time to leave a paradox lying around. The centre of gravity of the fieldhas shifted over decades toward quantum mechanics wins, the information does come out.Famously, Hawking himself eventually conceded a bet on it. But conceding that it must come outis not the same as understanding how. And the how is where the real action has been.It drove the invention of holography, of the deep dualities between gravity and ordinary quantumsystems. And in just the last several years, a set of new calculations. People talk aboutislands and fine-grained entropy that seem to show the information leaking out after allin exactly the subtle correlations Hawking's approximation dropped. It feels close to resolved incertain idealized settings and still genuinely mysterious in the full realistic case.So the fair status is, the door is mostly but not entirely walked through. And every bit of that50-year conversation is downstream of this one paper's discovery that black holes glow.Let me try to hold the whole thing in one breath. General relativity gives you a perfectly blacketernal hole, with a horizon whose area only ever grows. Beckenstein hears,only ever grows and says that area is entropy, which saves the second law but forces the hole tohave a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,where empty and particle, depend on",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2431.7,
+            "timestamp_end": 2544.12,
+            "rerank_score": -9.2915678024292
+          },
+          {
+            "rank": 8,
+            "text": "it. No unzipping required.Copying the whole molecule is the big disruptive operation where you split it down the middle.Reading a stretch to control it is the gentle everyday one where a protein palpates the groove.The structure supports both, buried enough to protect the message, exposed enough at the edges to let it be read.Now, with all that in hand, cash out the famous sentence.Right, we have the structure, a double helix, two anti-parallel backbones outside, base rung pairs inside, A with T and G with C.How does this shape tell you how DNA copies itself?Here's the magic, and it really is one idea doing two jobs. Look at the pairing rule again.A always goes with T, G always goes with C. That means the two strands are not independent, they are complementary.If I tell you the sequence of bases along one strand, you can tell me the sequence along the other strand exactly with no additional information just by applying the rule.Wherever I have an A, you must have a T. Wherever I have a G, you must have a C.Each strand completely determines its partner. The two strands carry the same information twice, written in complementary form, like a photograph and its negative.So the second strand is redundant in a sense. It doesn't add new information, it's the mirror image of the first.Redundant in information, but that redundancy is the entire secret of",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1358.74,
+            "timestamp_end": 1463.92,
+            "rerank_score": -9.416175842285156
+          },
+          {
+            "rank": 9,
+            "text": "connection at this moment,descends from that analysis. Same person, same trick, make the intangible measurable,turned on secrets instead of signals. Let me try to hold the whole thing in one breath.Shannon walks into a world where communication is a pile of tricks and information is just a word.He separates information from meaning so that what's left to measure is surprise,the resolution of uncertainty. He defines the unit, the bit, one binary choice, and entropy,the average surprise of a source. From that he proves a flaw. You can compress down to the entropyand no further. Then he proves a ceiling. Every noisy channel has a capacity,and below it you can communicate with as little error as you want, through the noise using clevercodes. A result nobody believed possible. He proves those codes exist without building them,and it takes 50 years to actually reach his line. And the whole digital world, every bit thatstored, compressed, or sent, lives between his floor and his ceiling. That's the arc, and the thingI'd want you to carry, is the shape of the achievement. He made an intangible thing measurable,and the moment it was measurable, it had laws. Hard limits as real and unbreakable as the speed of light,or the second law of thermodynamics. You cannot compress below the entropy. You cannot transmitreliably above the capacity. Those aren't engineering difficulties to be overcome by a bettergadget",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2235.18,
+            "timestamp_end": 2348.28,
+            "rerank_score": -9.646410942077637
+          },
+          {
+            "rank": 10,
+            "text": "medium, a scratch, a stray particle flipping abit years down the line. So both of Shannon's theorems apply to storage exactly as they do to a phonecall. Compress the data toward its entropy to fit more in and wrap it in error correcting codesso it survives the trip through time. That's why a scratched disk still plays perfectly,and why your files don't quietly rot. And you can even look at biology this way. DNA is a messagebeing sent across billions of years, carrying its own error correcting machinery, which is a thoughtthat ties this paper straight back to the double helix. Channel through space, channel through time,one mathematics. It's strange to realise that information, as a measurable thing, is younger thanthe automobile. That before 1948, nobody could have told you how many bits are in a sentencebecause the question was meaningless. That's the part that still stops me.He didn't discover a law of information that was lying around waiting.He created the very framework in which such laws could be stated, and then proved the two deepestones, the floor and the ceiling in the same paper. And he did it largely alone in one stroke,laying out a field so complete that the decade since have mostly been about filling in the engineeringhe left as an exercise. The bit, entropy, compression limits, channel capacity, error correction.That's not a contribution to a field. It's the field arriving nearly whole.One",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2070.56,
+            "timestamp_end": 2177.86,
+            "rerank_score": -9.71965217590332
+          }
+        ]
+      },
+      "latency_seconds": 43.525,
+      "status": "success"
+    }
+  ],
+  "note" :"#this is  episode-balanced retrieval which spans all files"
+}

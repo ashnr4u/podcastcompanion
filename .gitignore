@@ -33,11 +33,9 @@ logs/
 Fermi_AI_Engineering_Intern_Work_Trials/
 backend/src/debug_ingestion.py
 backend/src/debug.txt
-backend/src/ingestion_v2.py
-backend/src/retrieve2.py
-backend/src/retrieve3.py
-EVAL.md
+backend/src/experiments/
 backend/notes.md
+backend/.env
 backend/src/evaluate/
 
 retrievalreport.md
@@ -45,3 +43,6 @@ retrievalreport.md
 
 # Architecture doc (if you don't want to track it)
 architecture.md
+case1.md
+case2.md
+case3.md

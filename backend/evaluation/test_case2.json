@@ -1,0 +1,168 @@
+[
+  {
+    "id": "case_07",
+    "category": "deep_single_source",
+    "question": "What were the two essential jobs a gene must perform, and how did the double helix's structure satisfy both requirements simultaneously?",
+    "required_sources": [
+      "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+        "timestamp_start": 140.46,
+        "timestamp_end": 162.3,
+        "concept": "Job one: store information; job two: copy itself faithfully."
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+        "timestamp_start": 1405.8,
+        "timestamp_end": 1439.4,
+        "concept": "The pairing rule (A=T, G=C) means each strand determines the other."
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+        "timestamp_start": 1464.68,
+        "timestamp_end": 1530.18,
+        "concept": "Unzipping and each strand templating a new partner enables copying."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 3
+    }
+  },
+  {
+    "id": "case_08",
+    "category": "deep_single_source",
+    "question": "How did Claude Shannon separate information from meaning, and what two fundamental limits did he establish for communication systems?",
+    "required_sources": [
+      "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+        "timestamp_start": 236.76,
+        "timestamp_end": 262.32,
+        "concept": "Meaning is irrelevant to the engineering problem; faithful reproduction matters."
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+        "timestamp_start": 938.88,
+        "timestamp_end": 986.12,
+        "concept": "Source coding theorem: you can compress down to entropy but no further."
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+        "timestamp_start": 1285.24,
+        "timestamp_end": 1327.36,
+        "concept": "Noisy channel coding theorem: reliable communication below capacity."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 3
+    }
+  },
+  {
+    "id": "case_09",
+    "category": "deep_single_source",
+    "question": "What is Hawking radiation, and how did Beckenstein's entropy argument force Hawking to reconsider his initial skepticism about black holes radiating?",
+    "required_sources": [
+      "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+        "timestamp_start": 291.1,
+        "timestamp_end": 313.44,
+        "concept": "Beckenstein proposed horizon area is literally entropy."
+      },
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+        "timestamp_start": 465.94,
+        "timestamp_end": 490.22,
+        "concept": "Hawking initially set out to prove temperature is zero."
+      },
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+        "timestamp_start": 846.88,
+        "timestamp_end": 867.72,
+        "concept": "The vacuum through collapse produces a perfect thermal spectrum."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 3
+    }
+  },
+  {
+    "id": "case_10",
+    "category": "deep_single_source",
+    "question": "How did Einstein use the failure to detect the ether and the asymmetry in the magnet-wire loop puzzle to develop his two postulates, and what consequences did these postulates have for simultaneity?",
+    "required_sources": [
+      "Great Papers 01 - Einstein_s Special Relativity.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+        "timestamp_start": 238.32,
+        "timestamp_end": 245.12,
+        "concept": "The Michelson-Morley experiment detected no ether wind."
+      },
+      {
+        "source": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+        "timestamp_start": 326.66,
+        "timestamp_end": 338.58,
+        "concept": "The magnet-wire loop puzzle gives two different stories for one current."
+      },
+      {
+        "source": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+        "timestamp_start": 701.7,
+        "timestamp_end": 736.26,
+        "concept": "Simultaneity is not absolute; it depends on the observer's motion."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 3
+    }
+  },
+  {
+    "id": "case_11",
+    "category": "deep_single_source",
+    "question": "What were the two major limitations of recurrent neural networks for language processing, and how did the Transformer's attention mechanism solve both problems?",
+    "required_sources": [
+      "Great Papers 05 - Attention Is All You Need, 2017.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+        "timestamp_start": 223.96,
+        "timestamp_end": 256.42,
+        "concept": "Recurrent neural networks process sequences sequentially."
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+        "timestamp_start": 296.94,
+        "timestamp_end": 321.52,
+        "concept": "Sequential processing makes long-range dependencies difficult."
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+        "timestamp_start": 507.58,
+        "timestamp_end": 521.58,
+        "concept": "The Transformer uses attention without recurrence."
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+        "timestamp_start": 711.9,
+        "timestamp_end": 743.48,
+        "concept": "Attention creates direct connections between words."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 3
+    }
+  }
+]

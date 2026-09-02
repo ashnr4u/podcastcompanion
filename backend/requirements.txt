@@ -2,4 +2,10 @@ faster-whisper
 chromadb
 sentence-transformers
 tiktoken
-pip install rank-bm25
+rank-bm25
+
+langgraph
+langchain-core
+langchain-groq
+python-dotenv
+streamlit 

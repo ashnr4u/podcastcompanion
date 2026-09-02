@@ -1,0 +1,336 @@
+{
+  "evaluation": {
+    "name": "fermi_podcast_companion",
+    "timestamp": "2026-09-03T00:25:48.125660",
+    "num_cases": 3,
+    "max_retrieval_chunks": 10
+  },
+  "summary": {
+    "total_cases": 3,
+    "completed": 3,
+    "errors": 0,
+    "retrieval": {
+      "source_coverage": 0.444,
+      "evidence_recall": 0.148,
+      "precision_at_10": 0.133
+    },
+    "average_latency_seconds": 25.343,
+    "by_category": {
+      "multi_source": {
+        "cases": 3,
+        "source_coverage": 0.444,
+        "evidence_recall": 0.148,
+        "precision_at_10": 0.133,
+        "average_latency_seconds": 25.343
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "case_01",
+      "category": "multi_source",
+      "question": "How do Shannon's concepts of information and entropy help us understand the information-storing role of DNA and the information-processing approach of the Transformer?",
+      "rewritten_query": "How do Shannon's concepts of information and entropy help us understand the information-storing role of DNA and the information-processing approach of the Transformer?",
+      "answer": "I couldn't find enough information in the provided episodes.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 0.333,
+          "evidence_recall": 0.111,
+          "precision_at_10": 0.1,
+          "matched_evidence": 1,
+          "expected_evidence": 9,
+          "required_sources_found": 1,
+          "required_sources": 3
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "much deeper.Shannon's information entropy and the physicist's thermodynamic entropy are genuinelyphysically connected. The bridge is an idea called Land Hours Principle from some years later.It says that erasing one bit of information, truly discarding it, resetting a memory to blank,carries an unavoidable physical price. It must dump at least a certain tiny minimum of heat intothe surroundings. Information is not a free floating abstraction, manipulating it has real thermodynamicconsequences, real energy costs. To erase a",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 671.8128934010152,
+            "timestamp_end": 708.7265989847716,
+            "rerank_score": 0.7440739870071411
+          },
+          {
+            "rank": 2,
+            "text": "the slow decay of the medium, a scratch, a stray particle flipping abit years down the line. So both of Shannon's theorems apply to storage exactly as they do to a phonecall. Compress the data toward its entropy to fit more in and wrap it in error correcting codesso it survives the trip through time. That's why a scratched disk still plays perfectly,and why your files don't quietly rot. And you can even look at biology this way. DNA is a messagebeing",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2071.493220338983,
+            "timestamp_end": 2105.923728813559,
+            "rerank_score": 0.2159871757030487
+          },
+          {
+            "rank": 3,
+            "text": "says that erasure dumps exactly enough heat to save the second law.The demon's bookkeeping is what pays the entropy bill. So Shannon's entropy and thermodynamic entropyaren't look-alikes with a shared name, they're the same quantity seen from two sides.Information is physical, and that idea that entropy counts hidden information is the very same threadthat runs through a black hole's entropy, which we talked about in another of these episodes.Can you make the entropy idea concrete? Give me a coin or",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 760.4057868020304,
+            "timestamp_end": 797.3194923857868,
+            "rerank_score": -0.41173821687698364
+          },
+          {
+            "rank": 4,
+            "text": "person, same trick, make the intangible measurable,turned on secrets instead of signals. Let me try to hold the whole thing in one breath.Shannon walks into a world where communication is a pile of tricks and information is just a word.He separates information from meaning so that what's left to measure is surprise,the resolution of uncertainty. He defines the unit, the bit, one binary choice, and entropy,the average surprise of a source. From that he proves a flaw. You can compress down to",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2241.5075675675675,
+            "timestamp_end": 2276.362297297297,
+            "rerank_score": -0.8175872564315796
+          },
+          {
+            "rank": 5,
+            "text": "theory. Then we'll watch him make three movesthat build the whole field. Move one, he separates information from meaning, which sounds like a lossand is actually the key that unlocks everything. Move two, he defines the unit, the bit,and a quantity called entropy, that measures how much information a source produces.And move three, the crown jewel. He asks how much you can push through a noisy channel and provesomething nobody believed, that you can communicate essentially perfectly through noise.By the end",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 80.58819561551434,
+            "timestamp_end": 114.16661045531198,
+            "rerank_score": -1.2756757736206055
+          },
+          {
+            "rank": 6,
+            "text": "needs a way to measure the average information of a sourcewhose symbols have different probabilities. And that's the quantity he calls entropy.Entropy. That's a word",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 578.2875675675675,
+            "timestamp_end": 589.4,
+            "rerank_score": -1.4033143520355225
+          },
+          {
+            "rank": 7,
+            "text": "amount of uncertainty in a system.For a message source, entropy is the average number of bits of information each symbol carries.The average surprise per symbol. Hold on, is it literally the same entropy as in physics or justthe same equation that happens to wear the same name? For decades people assumed it was just asuggestive coincidence of formulas, same shape, different worlds. But it turned out to run much deeper.Shannon's information entropy and the physicist's thermodynamic entropy are genuinelyphysically connected.",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 642.2819289340101,
+            "timestamp_end": 679.1956345177665,
+            "rerank_score": -1.4815083742141724
+          },
+          {
+            "rank": 8,
+            "text": "great mathematician John von Neumanntold him to call it entropy for two reasons. One, the same formula already appears in statistical mechanicsand two, since nobody really understands what entropy is anyway, he'd always win an argument about it.Apocryphal or not, the name fit because Shannon's entropy measures exactly the thing thermodynamicentropy measures in spirit, disorder, unpredictability, the amount of uncertainty in a system.For a message source, entropy is the average number of bits of information",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 612.7509644670051,
+            "timestamp_end": 649.6646700507614,
+            "rerank_score": -1.5692386627197266
+          },
+          {
+            "rank": 9,
+            "text": "A floor, a ceiling, and a proof that the ceiling can be reached. That's the founding ofthe information age in one paper by one person out of essentially nothing. Information has a floorand a ceiling, and we live in between them. Thanks for walking through how a quiet paper fromBell Labs turned information from a metaphor into a measurable, law-bound quantity, and quietly becamethe physics of everything digital. Next time your phone shows a full bar of signal, you'll know you're",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2353.0427027027026,
+            "timestamp_end": 2387.897432432432,
+            "rerank_score": -1.6439803838729858
+          },
+          {
+            "rank": 10,
+            "text": "always followed by U.E is everywhere. After TH, you can guess an E is coming. All that predictability means the raw textis a wasteful way to store the actual information. Shannon's theorem says, you can compress anysource down to its entropy, down to the true number of bits of genuine information per symbol,and you can get as close to that floor as you like, but you cannot go below it, not without losinginformation. Entropy is the hard, unbeatable floor.",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 955.9102546689304,
+            "timestamp_end": 989.7540577249576,
+            "rerank_score": -1.9808578491210938
+          }
+        ]
+      },
+      "latency_seconds": 67.415,
+      "status": "success"
+    },
+    {
+      "case_id": "case_02",
+      "category": "multi_source",
+      "question": "How do Shannon's information entropy and Hawking's black-hole thermodynamics connect information with physical processes, and how does this compare with the way information is represented and copied in DNA?",
+      "rewritten_query": "How do Shannon's information entropy and Hawking's black-hole thermodynamics connect information with physical processes, and how does this compare with the way information is represented and copied in DNA?",
+      "answer": "I couldn't find enough information in the provided episodes.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 0.667,
+          "evidence_recall": 0.333,
+          "precision_at_10": 0.3,
+          "matched_evidence": 3,
+          "expected_evidence": 9,
+          "required_sources_found": 2,
+          "required_sources": 3
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "much deeper.Shannon's information entropy and the physicist's thermodynamic entropy are genuinelyphysically connected. The bridge is an idea called Land Hours Principle from some years later.It says that erasing one bit of information, truly discarding it, resetting a memory to blank,carries an unavoidable physical price. It must dump at least a certain tiny minimum of heat intothe surroundings. Information is not a free floating abstraction, manipulating it has real thermodynamicconsequences, real energy costs. To erase a",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 671.8128934010152,
+            "timestamp_end": 708.7265989847716,
+            "rerank_score": 4.124713897705078
+          },
+          {
+            "rank": 2,
+            "text": "says that erasure dumps exactly enough heat to save the second law.The demon's bookkeeping is what pays the entropy bill. So Shannon's entropy and thermodynamic entropyaren't look-alikes with a shared name, they're the same quantity seen from two sides.Information is physical, and that idea that entropy counts hidden information is the very same threadthat runs through a black hole's entropy, which we talked about in another of these episodes.Can you make the entropy idea concrete? Give me a coin or",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 760.4057868020304,
+            "timestamp_end": 797.3194923857868,
+            "rerank_score": 3.7764017581939697
+          },
+          {
+            "rank": 3,
+            "text": "four of them matching up one for one.The horizon area played the role of entropy. A quantity called the surface gravity played therole of temperature. But everyone thought it was a formal analogy, a coincidence of equationsbecause a black hole obviously had no real temperature. Hawking's radiation is what turned theanalogy into an identity. The surface gravity isn't like a temperature, it is the temperature.The area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2075.5143676222597,
+            "timestamp_end": 2111.1703541315346,
+            "rerank_score": 3.0888853073120117
+          },
+          {
+            "rank": 4,
+            "text": "area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects,they are thermodynamic objects. They have a temperature you could in principle read off a thermometeran entropy and they obey the same laws as steam and gas. That unification is the quiet triumph ofthe paper. You said four laws matching one for one. I want to hear the match because four laws thatline up is a strong claim. What are they? They're a genuinely pretty parallel and",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2104.0391568296795,
+            "timestamp_end": 2139.6951433389545,
+            "rerank_score": 2.9022622108459473
+          },
+          {
+            "rank": 5,
+            "text": "which brings us towhat that did to physics. So this one paper doesn't just make black holes glow, it reorganises how peoplethink space and information relate. It does, and there's a neat closing of the circle in the purethermodynamics too. Before Hawking people had noticed that the mathematical laws governing black holeslooked eerily like the laws of thermodynamics. There were four of them matching up one for one.The horizon area played the role of entropy. A quantity called",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2046.98957841484,
+            "timestamp_end": 2082.6455649241148,
+            "rerank_score": 2.810281753540039
+          },
+          {
+            "rank": 6,
+            "text": "a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,where empty and particle, depend on the observer, tracks the vacuum through a collapseand finds the far away observer bathed in a perfect thermal glow. Temperature turns out to runinversely with mass, so small holes are hot and explosive, and big ones are colder than the sky.Entropy comes out to exactly a quarter of the horizon area, which hints that informationlives on surfaces, holog",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2527.7559731543624,
+            "timestamp_end": 2563.6922147651007,
+            "rerank_score": 2.7199370861053467
+          },
+          {
+            "rank": 7,
+            "text": "thatnothing gets out. So Hawking's reaction was, reasonably, this shows Beckenstein has gone too far.The temperature of a black hole must really be zero. The entropy business is just a suggestiveanalogy and I'll do the calculation that proves it. So the paper we're celebrating was born as anattempt to debunk the very thing it ended up confirming. That's the shape of it.He set out to show black holes don't radiate and the mathematics dragged him apparently against hisexpectations",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 467.4373154362416,
+            "timestamp_end": 502.76953020134226,
+            "rerank_score": 2.542057514190674
+          },
+          {
+            "rank": 8,
+            "text": "information free, hence the information is destroyedwhen the hole evaporates. Quantum mechanics says that's impossible. The information must come outsomehow, presumably hidden in subtle correlations in the radiation that the leading order calculationmisses. Both can't be right. That's the black hole information paradox. And which side one?Half a century is a long time to leave a paradox lying around. The centre of gravity of the fieldhas shifted over decades toward quantum mechanics wins, the information does come out.F",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2412.76,
+            "timestamp_end": 2448.6962416107385,
+            "rerank_score": 2.2037353515625
+          },
+          {
+            "rank": 9,
+            "text": "amount of uncertainty in a system.For a message source, entropy is the average number of bits of information each symbol carries.The average surprise per symbol. Hold on, is it literally the same entropy as in physics or justthe same equation that happens to wear the same name? For decades people assumed it was just asuggestive coincidence of formulas, same shape, different worlds. But it turned out to run much deeper.Shannon's information entropy and the physicist's thermodynamic entropy are genuinelyphysically connected.",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 642.2819289340101,
+            "timestamp_end": 679.1956345177665,
+            "rerank_score": 1.8648306131362915
+          },
+          {
+            "rank": 10,
+            "text": "second law. The entropy outside plus the entropy of the horizonsthat total never decreases. I can feel the trap closing though because in ordinary physics if somethinghas entropy it also has a temperature. Yes, you found the land mine and this is precisely whereHawking enters initially as a skeptic. In thermodynamics entropy and temperature are joined at thehip. If a black hole genuinely has entropy then it must have a temperature some definite number ofdegrees and anything with a non-zero temperature radiates.",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 410.9057718120805,
+            "timestamp_end": 446.2379865771812,
+            "rerank_score": 1.5911871194839478
+          }
+        ]
+      },
+      "latency_seconds": 4.283,
+      "status": "success"
+    },
+    {
+      "case_id": "case_03",
+      "category": "multi_source",
+      "question": "How does the Transformer's shift from sequential processing to parallel attention change how relationships between pieces of information are represented, and how does this compare with Shannon's view of information sequences and DNA's physical organization of information?",
+      "rewritten_query": "How does the Transformer's shift from sequential processing to parallel attention change how relationships between pieces of information are represented, and how does this compare with Shannon's view of information sequences and DNA's physical organization of information?",
+      "answer": "I couldn't find enough information in the provided episodes.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 0.333,
+          "evidence_recall": 0.0,
+          "precision_at_10": 0.0,
+          "matched_evidence": 0,
+          "expected_evidence": 9,
+          "required_sources_found": 1,
+          "required_sources": 3
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "simultaneously.So instead of doing attention just once, the transformer does it several times in parallelwith several independent sets of queries, keys and values. Each one called a head.",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1187.600538720539,
+            "timestamp_end": 1199.18,
+            "rerank_score": 1.579058051109314
+          },
+          {
+            "rank": 2,
+            "text": "-head attention is a refinement and it's intuitiveonce you have the basic mechanism. A single attention operation lets each word gather informationaccording to one notion of relevance. But words relate to each other in many different ways at once.In a sentence, one word might need to find its grammatical subject and also track what a pronounrefers to and also register the overall topic. Several different kinds of relationship simultaneously.So instead of doing attention just once, the transformer does it several times in parallelwith several independent",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1160.3547474747477,
+            "timestamp_end": 1194.4119865319867,
+            "rerank_score": 1.3777772188186646
+          },
+          {
+            "rank": 3,
+            "text": "of arithmetic. And thatis exactly the shape of computation that graphics chips devour. Thousands of independent multiplicationshappening in parallel. So the transformer maps perfectly onto the hardware where the recurrent networkfought it. Suddenly you could train on far more data, far faster, and build far bigger modelsbecause you were finally using the full width of the highway instead of driving single file.So attention didn't just fix the forgetting. It fixed it in a way that happens to also be massivelyparallel, which",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1051.3715824915826,
+            "timestamp_end": 1085.4288215488216,
+            "rerank_score": 1.249013900756836
+          },
+          {
+            "rank": 4,
+            "text": "much faster. But the parallelism is the thing that mattered for historybecause it meant the architecture could scale. You could keep making it bigger and feeding itmore and the hardware could keep up. That scalability is what everything after this is built on.Let me hold that thought about scaling. But first, you mentioned there are a few more pieces.Multi-head attention was one. What's that? Multi-head attention is a refinement and it's intuitiveonce you have the basic mechanism. A single attention operation",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1133.1089562289562,
+            "timestamp_end": 1167.1661952861953,
+            "rerank_score": 0.16108663380146027
+          },
+          {
+            "rank": 5,
+            "text": "theother. Here replacing read in order and remember, with look at everything at once and wait by relevance,simultaneously gave direct long-range connections and full parallelism.And I want to flag something because it's the real lesson of the paper hiding behind the accuracynumbers. At the time this was presented as a better translation system and it was. It beat theprevious burst while training much faster. But the parallelism is the thing that mattered for historybecause it meant the architecture could",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1105.863164983165,
+            "timestamp_end": 1139.920404040404,
+            "rerank_score": -0.6997182369232178
+          },
+          {
+            "rank": 6,
+            "text": "a tower of attention layers where at every layer every position looks at everyother position and gathers what's relevant in parallel. That's the transformer, and that tower is whatgot scaled up into everything that followed. You mentioned the original had an encoder and a decoder,a reading half and a writing half. Did that split end up mattering for what came later?It did in a rather elegant way. The original transformer had those two halves,an encoder that reads the whole input and builds up a rich",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1398.34,
+            "timestamp_end": 1433.0347723440134,
+            "rerank_score": -1.4095604419708252
+          },
+          {
+            "rank": 7,
+            "text": "those are allthis architecture underneath. All of them underneath are transformers. That tower of attention layersscaled up and trained on next word prediction. The systems people call large language models,the ones behind the AI assistants that have swept through the world in the last few yearsare at their core direct descendants of this architecture. The T in the most famous of those namesstands literally for transformer. And it went beyond text. The same attention machinery got appliedto images to audio to biology. The models that predict how",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1772.722448979592,
+            "timestamp_end": 1808.831292517007,
+            "rerank_score": -2.7846453189849854
+          },
+          {
+            "rank": 8,
+            "text": "The original transformer had those two halves,an encoder that reads the whole input and builds up a rich understanding of it, and a decoder thatgenerates the output one word at a time. Afterward, people realized you don't always need both,depending on your goal. If what you want is to understand text, to answer questions about it,judge its sentiment, fill in missing words, you can keep just the encoder half.One famous early family of models called Bert took that route. It trained",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1426.0958178752107,
+            "timestamp_end": 1460.7905902192242,
+            "rerank_score": -3.0347681045532227
+          },
+          {
+            "rank": 9,
+            "text": "order.So now I think I have the whole machine. Words become queries, keys, and values. Each wordattends to all the others by matching queries to keys and blending values. You do that with multipleheads for different relationships, and you stamp positions on so order survives. Is that the transformer?That's the beating heart of it, yes. There's some standard surrounding machinery I'll gesture outwithout belaboring. The attention layers are stacked many deep, so the model can build up",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1339.770220713073,
+            "timestamp_end": 1374.7277758913413,
+            "rerank_score": -3.120328903198242
+          },
+          {
+            "rank": 10,
+            "text": "the fifth position. Now the attentionmechanism can take order into account because the position is baked right into what each word offers.They restore the sense of sequence not by processing in sequence, but by labeling each word withwhere it sits. That's clever. You get to keep the all at once parallelism, and you recover word orderby just tagging each word with its position instead of feeding them in order.So now I think I have the whole machine. Words become queries, keys, and values.",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1311.8041765704584,
+            "timestamp_end": 1346.7617317487266,
+            "rerank_score": -3.3227667808532715
+          }
+        ]
+      },
+      "latency_seconds": 4.331,
+      "status": "success"
+    }
+  ]
+}

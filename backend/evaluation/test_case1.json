@@ -1,0 +1,229 @@
+[
+  {
+    "id": "case_01",
+    "category": "multi_source",
+    "question": "How do Shannon's concepts of information and entropy help us understand the information-storing role of DNA and the information-processing approach of the Transformer?",
+    "required_sources": [
+      "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+      "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+      "Great Papers 05 - Attention Is All You Need, 2017.json"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 314.64,
+        "timestamp_end": 340.0,
+        "concept": "Information as resolution of uncertainty"
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 465.4,
+        "timestamp_end": 485.66,
+        "concept": "The bit as binary digit"
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 577.58,
+        "timestamp_end": 593.66,
+        "concept": "Shannon entropy measures average surprise"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 145.58,
+        "timestamp_end": 162.3,
+        "concept": "DNA stores information in its physical structure"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 1196.72,
+        "timestamp_end": 1216.56,
+        "concept": "Base pairing and Chargaff's rules"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 1575.84,
+        "timestamp_end": 1589.52,
+        "concept": "DNA as a four-letter code"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 462.98,
+        "timestamp_end": 483.08,
+        "concept": "Attention as a patch for long-range dependency"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 553.22,
+        "timestamp_end": 607.28,
+        "concept": "Attention as soft lookup with queries, keys, values"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 1025.24,
+        "timestamp_end": 1050.5,
+        "concept": "Parallelism enables scaling"
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 3,
+      "required_concepts": [
+        "Shannon information",
+        "DNA information storage",
+        "Transformer attention"
+      ],
+      "minimum_expected_evidence": 3
+    }
+  },
+  {
+    "id": "case_02",
+    "category": "multi_source",
+    "question": "How do Shannon's information entropy and Hawking's black-hole thermodynamics connect information with physical processes, and how does this compare with the way information is represented and copied in DNA?",
+    "required_sources": [
+      "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+      "Great Papers 02 - How Black Holes Radiate, Hawking 1975.json",
+      "Great Papers 03 - The Double Helix, Watson and Crick 1953.json"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 641.02,
+        "timestamp_end": 660.24,
+        "concept": "Shannon entropy measures average surprise"
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 680.94,
+        "timestamp_end": 713.52,
+        "concept": "Landauer's principle - information erasure costs heat"
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 713.52,
+        "timestamp_end": 774.02,
+        "concept": "Information is physical - Maxwell's demon resolved"
+      },
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.json",
+        "timestamp_start": 1824.86,
+        "timestamp_end": 1865.14,
+        "concept": "Black hole entropy = quarter of horizon area"
+      },
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.json",
+        "timestamp_start": 1903.84,
+        "timestamp_end": 1936.34,
+        "concept": "Information lives on surfaces - holographic principle"
+      },
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.json",
+        "timestamp_start": 2358.66,
+        "timestamp_end": 2399.6,
+        "concept": "Information paradox - information cannot be destroyed"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 182.24,
+        "timestamp_end": 204.0,
+        "concept": "DNA stores and copies information"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 469.68,
+        "timestamp_end": 486.48,
+        "concept": "Message written in base sequence"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 1965.56,
+        "timestamp_end": 2013.34,
+        "concept": "Four-letter alphabet of DNA"
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 3,
+      "required_concepts": [
+        "Shannon entropy",
+        "Hawking black hole entropy",
+        "DNA information storage"
+      ],
+      "minimum_expected_evidence": 3
+    }
+  },
+  {
+    "id": "case_03",
+    "category": "multi_source",
+    "question": "How does the Transformer's shift from sequential processing to parallel attention change how relationships between pieces of information are represented, and how does this compare with Shannon's view of information sequences and DNA's physical organization of information?",
+    "required_sources": [
+      "Great Papers 05 - Attention Is All You Need, 2017.json",
+      "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+      "Great Papers 03 - The Double Helix, Watson and Crick 1953.json"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 223.96,
+        "timestamp_end": 256.42,
+        "concept": "Recurrent networks process sequentially with memory"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 296.94,
+        "timestamp_end": 321.52,
+        "concept": "Long-range dependencies degrade over distance"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 327.76,
+        "timestamp_end": 386.44,
+        "concept": "Sequential processing cannot use parallel hardware"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 507.58,
+        "timestamp_end": 521.58,
+        "concept": "Transformer uses pure attention, no recurrence"
+      },
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.json",
+        "timestamp_start": 711.9,
+        "timestamp_end": 743.48,
+        "concept": "Every word directly connects to every other word"
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 320.54,
+        "timestamp_end": 347.0,
+        "concept": "Information reduces uncertainty over time"
+      },
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.json",
+        "timestamp_start": 986.12,
+        "timestamp_end": 1006.24,
+        "concept": "Compression removes predictability over sequences"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 145.58,
+        "timestamp_end": 162.3,
+        "concept": "DNA stores information in a physical structure"
+      },
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.json",
+        "timestamp_start": 1390.54,
+        "timestamp_end": 1439.4,
+        "concept": "Complementary strands store the same information twice"
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 3,
+      "required_concepts": [
+        "RNN sequential limitations",
+        "Transformer attention",
+        "Transformer parallelism",
+        "Shannon information sequences",
+        "DNA physical organization"
+      ],
+      "minimum_expected_evidence": 3
+    }
+  }
+]

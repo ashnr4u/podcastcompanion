@@ -1,0 +1,541 @@
+{
+  "evaluation": {
+    "name": "fermi_podcast_companion",
+    "timestamp": "2026-09-03T00:10:54.858022",
+    "num_cases": 5,
+    "max_retrieval_chunks": 10
+  },
+  "summary": {
+    "total_cases": 5,
+    "completed": 5,
+    "errors": 0,
+    "retrieval": {
+      "source_coverage": 1.0,
+      "evidence_recall": 0.367,
+      "precision_at_10": 0.18
+    },
+    "average_latency_seconds": 25.101,
+    "by_category": {
+      "deep_single_source": {
+        "cases": 5,
+        "source_coverage": 1.0,
+        "evidence_recall": 0.367,
+        "precision_at_10": 0.18,
+        "average_latency_seconds": 25.101
+      }
+    }
+  },
+  "results": [
+    {
+      "case_id": "case_07",
+      "category": "deep_single_source",
+      "question": "What were the two essential jobs a gene must perform, and how did the double helix's structure satisfy both requirements simultaneously?",
+      "rewritten_query": "What were the two essential jobs a gene must perform, and how did the double helix's structure satisfy both requirements simultaneously?",
+      "answer": "The podcast says a gene has to do **two things**:\n\n1. **Store a huge, specific message** – the genetic material must be able to hold the complete set of instructions for an organism.  \n   *[Episode: Great Papers 03 - The Double Helix, Watson and Crick 1953, 02:13‑02:46]*  \n\n2. **Make that message available for copying/reading** – the same molecule must let the information be accessed so it can be duplicated (and later read to build proteins).  \n   *[Episode: Great Papers 03 - The Double Helix, Watson and Crick 1953, 22:45‑23:20]*  \n\n**How the double‑helix meets both requirements**\n\n- The two anti‑parallel sugar‑phosphate backbones lie on the **outside** of the helix, keeping the bases **buried** and protected, which satisfies the need to **store** the information safely.  \n  *[Episode: Great Papers 03 - The Double Helix, Watson and Crick 1953, 22:45‑23:20]*  \n\n- The bases form **paired rungs** (A‑T, G‑C) in the **interior** of the helix. When the strands are separated (the “zipper” opening), each single strand serves as a template; new complementary bases are added according to the pairing rule, producing an exact copy of the original. This built‑in complementarity lets the molecule be **read and faithfully replicated**.  \n  *[Episode: Great Papers 03 - The Double Helix, Watson and Crick 1953, 24:08‑25:11]*  \n\nThus, the double‑helix’s geometry – protected outer backbones plus exposed, predictable base‑pairing inside – simultaneously fulfills the gene’s twin jobs of **information storage** and **accurate copying/reading**.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.667,
+          "precision_at_10": 0.4,
+          "matched_evidence": 2,
+          "expected_evidence": 3,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "is the gentle everyday one where a protein palpates the groove.The structure supports both, buried enough to protect the message, exposed enough at the edges to let it be read.Now, with all that in hand, cash out the famous sentence.Right, we have the structure, a double helix, two anti-parallel backbones outside, base rung pairs inside, A with T and G with C.How does this shape tell you how DNA copies itself?Here's the magic, and it really is",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1365.1760068846816,
+            "timestamp_end": 1400.0710154905337,
+            "rerank_score": 0.07482144981622696
+          },
+          {
+            "rank": 2,
+            "text": "own complement.And when it's done, you don't have one double helix, you have two, each a perfect copy of the original, each made of one old strand and one freshly built one.Oh, that's clean. You don't copy the whole thing as a unit, you split it in half and let each half rebuild the missing side.And because the pairing rule is rigid, the rebuild is forced to be faithful.That's exactly it, and that's why the structure is the mechanism",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1504.7560413080896,
+            "timestamp_end": 1539.6510499139415,
+            "rerank_score": -0.12925377488136292
+          },
+          {
+            "rank": 3,
+            "text": "the mirror image of the first.Redundant in information, but that redundancy is the entire secret of copying. Watch what it buys you.Suppose you want to duplicate the molecule. You take the double helix and you unzip it down the middle.You break the weak hydrogen bond handshakes holding the rungs together and the two strands separate like a zipper coming apart.Now you have two lonely single strands, each one an exposed row of unpaired bases.But each of those single strands carries in its sequence",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1448.9240275387262,
+            "timestamp_end": 1483.8190361445784,
+            "rerank_score": -0.3289491534233093
+          },
+          {
+            "rank": 4,
+            "text": ", each one an exposed row of unpaired bases.But each of those single strands carries in its sequence the complete recipe for its missing partner because of the pairing rule.So the cell just walks along each lonely strand and wherever there's an exposed A, it brings in a fresh T.Wherever there's a G, it brings in a fresh C.Each old strand acts as a template that reconstructs its own complement.And when it's done, you don't have one double helix, you have two",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 1476.8400344234078,
+            "timestamp_end": 1511.73504302926,
+            "rerank_score": -1.518526554107666
+          },
+          {
+            "rank": 5,
+            "text": "DNA look like.It's what kind of object could possibly do the two jobs a gene has to do at once.Then we'll lay out the clues on the table in 1953 because they didn't work in the dark.There were three big hints, and one of them is a photograph. Then we'll build the structure piece by piece the way they built it.Two chains, a backbone, and the pairing rule that is the whole ball game.And then we'll cash out that understated sentence.",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 80.12689655172413,
+            "timestamp_end": 113.51310344827584,
+            "rerank_score": -2.6387267112731934
+          },
+          {
+            "rank": 6,
+            "text": "the pairing rule that is the whole ball game.And then we'll cash out that understated sentence. How a shape tells you how life copies itself, and deal squarely with the story of who got the credit.Two strands and one pairing rule, and the mechanism of heredity falls out.Start with the problem then. What are the two jobs a gene has to do?Because I think most people, me included, just think genes carry traits and stop there.Right, and carry traits hides the difficulty",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 106.83586206896553,
+            "timestamp_end": 140.22206896551722,
+            "rerank_score": -3.010674476623535
+          },
+          {
+            "rank": 7,
+            "text": ", me included, just think genes carry traits and stop there.Right, and carry traits hides the difficulty. Think about what heredity actually requires of a molecule.Job one, it has to store information, a staggering amount of it.The full set of instructions to build and run a living thing, an entire organism has to be written down somewhere inside a cell in molecular form.So whatever the genetic material is, it needs to be able to hold a huge specific message.Job two, and this is the one",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 133.5448275862069,
+            "timestamp_end": 166.9310344827586,
+            "rerank_score": -3.843541145324707
+          },
+          {
+            "rank": 8,
+            "text": "to the deepest question in biology, precisely because it's a shape, and that's the thing I most want you to feel by the end of the hour.That here, uniquely, the structure of the molecule, and the mechanism of life, turn out to be the same discovery.So here's our plan. First, I'll set up the problem they were actually facing, which is stranger than what does DNA look like.It's what kind of object could possibly do the two jobs a gene has to do",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 53.41793103448275,
+            "timestamp_end": 86.80413793103448,
+            "rerank_score": -4.462138652801514
+          },
+          {
+            "rank": 9,
+            "text": "reference volume so you don't drag the original around.Then that RNA copy is read out and used to assemble a protein that's translation and proteins of the actual machines they build structures run the chemistry do the work of being alive.So the main flow of information is DNA to RNA to protein archive working copy machine the double helix is the archive at the top of that chain and the scale of the archive.And if you took the DNA from that one cell and stretched it out into a straight thread it would be",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 2092.9078498293516,
+            "timestamp_end": 2133.6348122866893,
+            "rerank_score": -5.223357200622559
+          },
+          {
+            "rank": 10,
+            "text": "now had an address, but a chromosome is made of two kinds of stuff mixed together, protein and DNA.So the question sharpened to which of those two actually carries the information.And once the experiments answered the DNA, there was only one question left standing.What does the DNA look like because its shape must be how it does the job?Exactly, and that's the door Watson and Crick walked through.Notice the whole march, Mendel's abstract factor, to a gene with an address",
+            "episode": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+            "timestamp_start": 364.8534256055363,
+            "timestamp_end": 400.52,
+            "rerank_score": -5.516030311584473
+          }
+        ]
+      },
+      "latency_seconds": 54.373,
+      "status": "success"
+    },
+    {
+      "case_id": "case_08",
+      "category": "deep_single_source",
+      "question": "How did Claude Shannon separate information from meaning, and what two fundamental limits did he establish for communication systems?",
+      "rewritten_query": "How did Claude Shannon separate information from meaning, and what two fundamental limits did he establish for communication systems?",
+      "answer": "Claude Shannon’s breakthrough was to **strip “information” of any semantic content** and treat it only as the *surprise* that resolves uncertainty. By putting meaning aside, what remained was a purely statistical quantity that could be measured – the amount of uncertainty eliminated when a message is received【Source 2, 37:21‑37:56】.  \n\nFrom that viewpoint he was able to state **two absolute bounds for any communication system**:\n\n1. **A lower bound (the “floor”)** – the smallest number of bits that a source must produce, i.e., the average uncertainty or entropy of the source.  \n2. **An upper bound (the “ceiling”)** – the maximum rate at which a noisy channel can reliably convey those bits, known as the channel’s capacity.  \n\nShannon showed that every digital system operates **between these two limits**, and he even proved that the upper limit can be reached, meaning you can transmit essentially perfectly through noise【Source 3, 01:47‑02:21】【Source 10, 39:13‑39:47】.  \n\nSo, by separating information from meaning and defining entropy, Shannon established a **floor (source entropy) and a ceiling (channel capacity)** that together govern all communication.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.0,
+          "precision_at_10": 0.0,
+          "matched_evidence": 0,
+          "expected_evidence": 3,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "theory. Then we'll watch him make three movesthat build the whole field. Move one, he separates information from meaning, which sounds like a lossand is actually the key that unlocks everything. Move two, he defines the unit, the bit,and a quantity called entropy, that measures how much information a source produces.And move three, the crown jewel. He asks how much you can push through a noisy channel and provesomething nobody believed, that you can communicate essentially perfectly through noise.By the end",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 80.58819561551434,
+            "timestamp_end": 114.16661045531198,
+            "rerank_score": 4.927672386169434
+          },
+          {
+            "rank": 2,
+            "text": "person, same trick, make the intangible measurable,turned on secrets instead of signals. Let me try to hold the whole thing in one breath.Shannon walks into a world where communication is a pile of tricks and information is just a word.He separates information from meaning so that what's left to measure is surprise,the resolution of uncertainty. He defines the unit, the bit, one binary choice, and entropy,the average surprise of a source. From that he proves a flaw. You can compress down to",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2241.5075675675675,
+            "timestamp_end": 2276.362297297297,
+            "rerank_score": 4.074625492095947
+          },
+          {
+            "rank": 3,
+            "text": "a noisy channel and provesomething nobody believed, that you can communicate essentially perfectly through noise.By the end, you'll see that everything digital, every phone bar, every file that compresses,every photo from a space probe lives inside the two limits he drew. Start with the mess then.What did communication engineering look like in 1948? And why did it need a Shannon?Picture the state of the art. You had the telegraph, which is about a century old by then,sending dots",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 107.45092748735244,
+            "timestamp_end": 141.0293423271501,
+            "rerank_score": 3.5977187156677246
+          },
+          {
+            "rank": 4,
+            "text": "In 1948, an engineer at Bell Labs named Claude Shannon publishes a paper with the very dry title,a mathematical theory of communication. And in it he does something that when you say it out loudsounds almost impossible. He takes the word information, this vague human slippery thing,and turns it into a number, a precise, measurable, physical quantity, with a unit like length or mass.He also, in that same paper, more or less hands us the word bit. George, before this paper,",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 0.0,
+            "timestamp_end": 33.578414839797645,
+            "rerank_score": 3.2925024032592773
+          },
+          {
+            "rank": 5,
+            "text": "of everything digital. Next time your phone shows a full bar of signal, you'll know you'relooking at a number Claude Shannon taught the world how to compute",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2380.9264864864863,
+            "timestamp_end": 2392.08,
+            "rerank_score": 2.8923330307006836
+          },
+          {
+            "rank": 6,
+            "text": "of the great intellectual moves of thecentury, and the reason it lands so hard is that Shannon didn't just measure something peoplealready understood. He first had to invent what the thing even was. So here's the plan for thehour. We'll start with the mess he was walking into, communication engineering in the 1940s,which was a pile of clever tricks with no unifying theory. Then we'll watch him make three movesthat build the whole field. Move one,",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 53.72546374367622,
+            "timestamp_end": 87.30387858347387,
+            "rerank_score": 2.4966673851013184
+          },
+          {
+            "rank": 7,
+            "text": "in that same paper, more or less hands us the word bit. George, before this paper,information was a figure of speech. After it, it's a science. I want to understand how one person doesthat, how you put a number on information, and why it turns out to be one of the most consequentialthings anyone did in the 20th century. It's genuinely one of the great intellectual moves of thecentury, and the reason it lands so hard is that Shannon",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 26.86273187183811,
+            "timestamp_end": 60.44114671163575,
+            "rerank_score": 2.1993699073791504
+          },
+          {
+            "rank": 8,
+            "text": "Here's thebeautiful pivot. Once you set meaning aside, what's left, and what turns out to be measurable,is choice and surprise. Information in Shannon's sense is the resolution of uncertainty.Think about it from the receiver's side. Before a message arrives, you're uncertain about what it'llsay. There are many possibilities. After it arrives, that uncertainty is gone. You know whichpossibility it was. Information is the amount of uncertainty that got removed. A message that tellsyou something",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 298.7108108108108,
+            "timestamp_end": 332.21418918918914,
+            "rerank_score": 2.0032958984375
+          },
+          {
+            "rank": 9,
+            "text": "ibility it was. Information is the amount of uncertainty that got removed. A message that tellsyou something you already knew for certain carries no information, zero, because it removed nouncertainty. A message that resolves a huge range of possibilities carries a lot. So informationisn't about meaning. It's about how many possibilities got knocked out when the message picked one.So a message is informative to the extent that I couldn't have predicted it. The surprise isthe information. The surprise is the information",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 325.5135135135135,
+            "timestamp_end": 359.0168918918919,
+            "rerank_score": 1.8161420822143555
+          },
+          {
+            "rank": 10,
+            "text": "A floor, a ceiling, and a proof that the ceiling can be reached. That's the founding ofthe information age in one paper by one person out of essentially nothing. Information has a floorand a ceiling, and we live in between them. Thanks for walking through how a quiet paper fromBell Labs turned information from a metaphor into a measurable, law-bound quantity, and quietly becamethe physics of everything digital. Next time your phone shows a full bar of signal, you'll know you're",
+            "episode": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+            "timestamp_start": 2353.0427027027026,
+            "timestamp_end": 2387.897432432432,
+            "rerank_score": 1.1727612018585205
+          }
+        ]
+      },
+      "latency_seconds": 4.833,
+      "status": "success"
+    },
+    {
+      "case_id": "case_09",
+      "category": "deep_single_source",
+      "question": "What is Hawking radiation, and how did Beckenstein's entropy argument force Hawking to reconsider his initial skepticism about black holes radiating?",
+      "rewritten_query": "What is Hawking radiation, and how did Beckenstein's entropy argument force Hawking to reconsider his initial skepticism about black holes radiating?",
+      "answer": "**Hawking radiation**  \nWhen Stephen Hawking applied quantum‑field theory to the strong‑gravity region around a black‑hole horizon, he found that an observer far away would see a **perfect thermal glow**.  The radiation has a temperature that scales inversely with the hole’s mass – small holes are hot and explode, large ones are colder than the sky – and the associated entropy comes out to one‑quarter of the horizon area【Source 9, 42:07‑42:43】.  In other words, a black hole is not perfectly black; it slowly emits thermal particles and loses mass.\n\n**How Bekenstein’s entropy argument changed Hawking’s view**  \nJacob Bekenstein had proposed that the horizon area of a black hole should be identified with **entropy**.  In ordinary thermodynamics, entropy and temperature are linked: any system that carries entropy must have a non‑zero temperature and therefore must radiate【Source 6, 06:50‑07:26】.  This created a “land‑mine” for Hawking, who initially assumed the black‑hole temperature was zero and set out to prove it【Source 1, 07:47‑08:22】.  \n\nBekenstein’s claim forced Hawking to confront the implication that a black hole with entropy must also have a temperature and thus emit radiation【Source 4, 07:19‑07:54】.  Trying to test this, Hawking introduced the quantum vacuum into the collapse calculation and discovered that the far‑away observer indeed sees a thermal flux – the very radiation Bekenstein’s argument had demanded【Source 9, 42:07‑42:43】.  The result turned the earlier formal analogy between surface gravity and temperature into an identity: the surface gravity **is** the temperature, and the horizon area **is** the entropy【Source 7, 34:35‑35:11】.  \n\nSo, Bekenstein’s entropy proposal turned Hawking’s skepticism into a concrete calculation that revealed black holes do radiate, giving us the phenomenon now called **Hawking radiation**.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.333,
+          "precision_at_10": 0.2,
+          "matched_evidence": 1,
+          "expected_evidence": 3,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "thatnothing gets out. So Hawking's reaction was, reasonably, this shows Beckenstein has gone too far.The temperature of a black hole must really be zero. The entropy business is just a suggestiveanalogy and I'll do the calculation that proves it. So the paper we're celebrating was born as anattempt to debunk the very thing it ended up confirming. That's the shape of it.He set out to show black holes don't radiate and the mathematics dragged him apparently against hisexpectations",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 467.4373154362416,
+            "timestamp_end": 502.76953020134226,
+            "rerank_score": 3.4802019596099854
+          },
+          {
+            "rank": 2,
+            "text": "Hawking didn't postulate that black holes glow. He didn't add a force or a particleor a new law. He took general relativity and quantum field theory. Two theories built forcompletely different purposes, neither one designed with this in mind, and insisted they be true at thesame time in the same place around a horizon. And the mere consistency of the two with nothing elseadded says, the blackest object in the universe is a warm, glowing, dying thing with an entropy",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2585.2539597315435,
+            "timestamp_end": 2621.190201342282,
+            "rerank_score": 2.9788103103637695
+          },
+          {
+            "rank": 3,
+            "text": ". And every bit of that50-year conversation is downstream of this one paper's discovery that black holes glow.Let me try to hold the whole thing in one breath. General relativity gives you a perfectly blacketernal hole, with a horizon whose area only ever grows. Beckenstein hears,only ever grows and says that area is entropy, which saves the second law but forces the hole tohave a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2499.006979865772,
+            "timestamp_end": 2534.94322147651,
+            "rerank_score": 2.90842866897583
+          },
+          {
+            "rank": 4,
+            "text": "it must have a temperature some definite number ofdegrees and anything with a non-zero temperature radiates. A hot poker glows red. Your own body glowsin the infrared. Everything with a temperature above absolute zero gives off thermal radiation.So Beckenstein's idea taken seriously demands that a black hole radiate and that is flatlyobviously impossible in general relativity because we just spent ten minutes establishing thatnothing gets out. So Hawking's reaction was, reasonably, this shows Beckenstein has gone",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 439.1715436241611,
+            "timestamp_end": 474.50375838926175,
+            "rerank_score": 2.6964244842529297
+          },
+          {
+            "rank": 5,
+            "text": "out to exactly a quarter of the horizon area, which hints that informationlives on surfaces, holography. And because the glow is featureless, evaporation seems to destroyinformation, which quantum mechanics forbids, leaving us the paradox we're still chewing on.That's the whole arc, and the thing I'd want to leave you holding is how little was assumed to getall of it. Hawking didn't postulate that black holes glow. He didn't add a force or a particle",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2556.504966442953,
+            "timestamp_end": 2592.4412080536913,
+            "rerank_score": 2.546175479888916
+          },
+          {
+            "rank": 6,
+            "text": "second law. The entropy outside plus the entropy of the horizonsthat total never decreases. I can feel the trap closing though because in ordinary physics if somethinghas entropy it also has a temperature. Yes, you found the land mine and this is precisely whereHawking enters initially as a skeptic. In thermodynamics entropy and temperature are joined at thehip. If a black hole genuinely has entropy then it must have a temperature some definite number ofdegrees and anything with a non-zero temperature radiates.",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 410.9057718120805,
+            "timestamp_end": 446.2379865771812,
+            "rerank_score": 2.4453234672546387
+          },
+          {
+            "rank": 7,
+            "text": "four of them matching up one for one.The horizon area played the role of entropy. A quantity called the surface gravity played therole of temperature. But everyone thought it was a formal analogy, a coincidence of equationsbecause a black hole obviously had no real temperature. Hawking's radiation is what turned theanalogy into an identity. The surface gravity isn't like a temperature, it is the temperature.The area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2075.5143676222597,
+            "timestamp_end": 2111.1703541315346,
+            "rerank_score": 2.2861523628234863
+          },
+          {
+            "rank": 8,
+            "text": ". And in just the last several years, a set of new calculations. People talk aboutislands and fine-grained entropy that seem to show the information leaking out after allin exactly the subtle correlations Hawking's approximation dropped. It feels close to resolved incertain idealized settings and still genuinely mysterious in the full realistic case.So the fair status is, the door is mostly but not entirely walked through. And every bit of that50-year conversation is downstream of this one paper's discovery that black holes",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2470.2579865771813,
+            "timestamp_end": 2506.1942281879196,
+            "rerank_score": 2.225728988647461
+          },
+          {
+            "rank": 9,
+            "text": "a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,where empty and particle, depend on the observer, tracks the vacuum through a collapseand finds the far away observer bathed in a perfect thermal glow. Temperature turns out to runinversely with mass, so small holes are hot and explosive, and big ones are colder than the sky.Entropy comes out to exactly a quarter of the horizon area, which hints that informationlives on surfaces, holog",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 2527.7559731543624,
+            "timestamp_end": 2563.6922147651007,
+            "rerank_score": 2.1966354846954346
+          },
+          {
+            "rank": 10,
+            "text": "set out to show black holes don't radiate and the mathematics dragged him apparently against hisexpectations to the conclusion that they do. And the reason the calculation surprised himis that to do it properly you can't stay inside general relativity. You have to ask what thequantum vacuum does in the strong gravity around a black hole and the quantum vacuum is a muchstranger place than empty space has any right to be. Let's slow down there because the quantum vacuumis one of those phrases",
+            "episode": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+            "timestamp_start": 495.70308724832216,
+            "timestamp_end": 531.0353020134228,
+            "rerank_score": 1.7217503786087036
+          }
+        ]
+      },
+      "latency_seconds": 14.446,
+      "status": "success"
+    },
+    {
+      "case_id": "case_10",
+      "category": "deep_single_source",
+      "question": "How did Einstein use the failure to detect the ether and the asymmetry in the magnet-wire loop puzzle to develop his two postulates, and what consequences did these postulates have for simultaneity?",
+      "rewritten_query": "How did Einstein use the failure to detect the ether and the asymmetry in the magnet-wire loop puzzle to develop his two postulates, and what consequences did these postulates have for simultaneity?",
+      "answer": "Einstein began by looking at two “odd” facts that the physics of his day could not explain without invoking an invisible, absolute frame of reference.\n\n* **The ether‑experiment failure** – Repeated attempts to measure Earth’s motion through a stationary ether always came up empty.  The transcript notes that “you can never detect absolute motion” and that this “failure to detect any motion relative to the ether” suggested that the idea of an absolute rest frame was empty.  Einstein therefore “promoted it to a principle” – the **principle of relativity**, i.e., the laws of physics are the same in every inertial frame [Source 3, 07:22‑07:56] [Source 1, 06:55‑07:29].\n\n* **The magnet‑wire loop asymmetry** – In the classic generator set‑up a magnet and a conducting loop can be moved relative to each other.  Classical theory gave two different explanations (an electric field in one case, a magnetic force in the other) even though the observed current was identical.  Einstein found this “asymmetry … an artifact of pretending there’s a fact of the matter about who’s moving” and insisted that only the **relative motion** matters [Source 4, 06:28‑07:01] [Source 9, 05:02‑05:36].\n\nPutting these two observations together, Einstein formulated his **two postulates**:\n\n1. **Principle of Relativity** – the laws of physics (including mechanics, electricity, magnetism, and light) are identical in all inertial frames [Source 3, 07:22‑07:56] [Source 2, 08:43‑09:17].\n2. **Constancy of the Speed of Light** – light travels through empty space at a single fixed speed *c* for every inertial observer [Source 2, 08:43‑09:17] [Source 5, 45:57‑46:31].\n\nBecause the speed of light must be the same for all observers, the notion of a universal, shared “now” breaks down.  The transcripts state that “there’s no shared now” and that “moving clocks run slow… each observer sees it happen to the other” precisely because simultaneity is no longer absolute [Source 5, 45:57‑46:31] [Source 8, 46:24‑46:58].\n\n**Consequences for simultaneity:**  \nWith the two postulates in place, events that are simultaneous in one inertial frame need not be simultaneous in another.  Time intervals and the ordering of distant events become observer‑dependent – the classic “relativity of simultaneity” that Einstein derived from his postulates.  This loss of a universal present is the direct logical outcome of insisting on both the relativity principle and the invariant light speed.",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.333,
+          "precision_at_10": 0.1,
+          "matched_evidence": 1,
+          "expected_evidence": 3,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "matters, and the outcome is one and the same.So why does our theory insist on two utterly different mechanisms,depending on an arbitrary choice of who's standing still? The asymmetry is in our description,not in nature. That, he says right at the top, together with the failure to detect any motionrelative to the ether, suggests something bigger. That the very idea of absolute rest,and ether you could measure your motion against is empty. There is no really moving and really still.So he takes",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 415.13458262350935,
+            "timestamp_end": 449.0528109028961,
+            "rerank_score": 2.229889154434204
+          },
+          {
+            "rank": 2,
+            "text": "hour, it feels like sitting still.You felt postulate one. Galileo knew it from mechanics, ships, and dropped balls.Einstein's claim is that it holds for absolutely everything, including electricity, magnetism,and light. And that including light is where the second postulate comes in, and it's the onethat costs you your common sense. Postulate two, the constancy of the speed of light.Light travels through empty space at that one fixed speed, C, and every inertial",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 523.6729131175468,
+            "timestamp_end": 557.5911413969336,
+            "rerank_score": 0.9941653609275818
+          },
+          {
+            "rank": 3,
+            "text": "you could measure your motion against is empty. There is no really moving and really still.So he takes the thing that keeps embarrassing everyone, you can never detect absolute motion,and instead of treating it as a failure to be patched, he promotes it to a law.He promotes it to a principle. That's the whole move, and it's the first of his two postulates.Postulate one, the principle of relativity. The laws of physics are exactly the samein every inertial frame of reference.",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 442.26916524701875,
+            "timestamp_end": 476.18739352640546,
+            "rerank_score": 0.9790370464324951
+          },
+          {
+            "rank": 4,
+            "text": "So this time the cause is a magnetic force on moving charges.Two different causes, an electric field in one story, a magnetic force in the other.But the current that comes out is identical. Depends only on the relative motion of magnet and wire,exactly the same in both cases. And Einstein's discomfort is precise. Nature clearly doesn't care which oneis really moving. Only the relative motion matters, and the outcome is one and the same.So why does our theory insist on two utterly different",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 388.0,
+            "timestamp_end": 421.9182282793867,
+            "rerank_score": 0.9390134811401367
+          },
+          {
+            "rank": 5,
+            "text": "one more consequence. So let me try to say the whole arc back because I wantto feel the shape of it. Einstein starts with a discomfort, one current, two stories, and a stubbornfact. You can't detect motion through the ether. He turns those into two postulates. Physics isthe same for all steady observers, and light has one speed for all of them. To keep light speedrigid, similarity has to become relative. There's no shared now. From that, moving",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 2757.7177326565143,
+            "timestamp_end": 2791.639898477157,
+            "rerank_score": 0.5218983888626099
+          },
+          {
+            "rank": 6,
+            "text": "were never two mechanisms. It was one field and the split intoelectric and magnetic is just a point of view. Exactly that. The asymmetry that bothered Einstein inthe first sentence was an artifact of pretending there's a fact of the matter about who's moving.Once you accept there isn't, the two stories become one story told in two accents.Electricity and magnetism aren't just related, they are literally the same field carved updifferently by observers in relative motion. And notice what Einstein",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 2364.2455172413793,
+            "timestamp_end": 2399.0524137931034,
+            "rerank_score": -0.45704084634780884
+          },
+          {
+            "rank": 7,
+            "text": "seen from different motions, dissolving the original puzzle. And a few months later,the same logic squeezes out mass energy. Two sentences of assumption, and all of that is downstream.That's the arc exactly, and the thing I'd want anyone to carry away is how little raw material ittook. No new particle, no new force, no new experiment of his own. Just two postulates and the refusalto look away from what they imply. The cost was our intuition that space and time are",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 2811.993197969543,
+            "timestamp_end": 2845.915363790186,
+            "rerank_score": -0.7586417198181152
+          },
+          {
+            "rank": 8,
+            "text": "speedrigid, similarity has to become relative. There's no shared now. From that, moving clocks run slowand moving rulers shrink, both by the factor gamma and each observer sees it happen to the other.With no contradiction, because they never share a now. Velocities stop simply adding, whichwalls off the speed of light as uncrossable. Electricity and magnetism merge into one field,seen from different motions, dissolving the original puzzle. And a few months later,the same logic squeez",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 2784.8554653130286,
+            "timestamp_end": 2818.7776311336715,
+            "rerank_score": -1.8226511478424072
+          },
+          {
+            "rank": 9,
+            "text": "you howhis mind worked. He opens the paper not with the ether experiments, but with a piece of textbook physicsthat everybody could already do, and he points at an ugliness in it. It's the case of a magnet and awire loop, a conductor. Here's the setup. You have a magnet and a loop of wire, and you move one relativeto the other. That's how a generator works. Relative motion of magnet and coil drives a current.Now the physics of",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 302.3556756756757,
+            "timestamp_end": 336.00432432432433,
+            "rerank_score": -1.881795883178711
+          },
+          {
+            "rank": 10,
+            "text": ", where space and time are just different directions in onefabric. And that reframing is exactly what led Einstein, a decade on, ask what happens when thatfabric can curve, which is gravity, general relativity. But that's another paper.Here's something that's bothering me on the way out, though. You've spent the whole hourtelling me what observers disagree about, lengths, durations, whether things are simultaneous.Is there anything left that everybody agrees on? Or is it disagreement all",
+            "episode": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+            "timestamp_start": 2866.2686632825717,
+            "timestamp_end": 2900.190829103215,
+            "rerank_score": -2.178514242172241
+          }
+        ]
+      },
+      "latency_seconds": 26.033,
+      "status": "success"
+    },
+    {
+      "case_id": "case_11",
+      "category": "deep_single_source",
+      "question": "What were the two major limitations of recurrent neural networks for language processing, and how did the Transformer's attention mechanism solve both problems?",
+      "rewritten_query": "What were the two major limitations of recurrent neural networks for language processing, and how did the Transformer's attention mechanism solve both problems?",
+      "answer": "The podcast points out two big problems with the recurrent‑neural‑network (RNN) approach to language:\n\n1. **Forgetting long‑range relationships** – an RNN has to keep information in a running memory, so it struggles to retain connections between words that are far apart in the sequence. [Episode: Great Papers 05 – Attention Is All You Need, 03:07‑03:44]\n\n2. **Lack of parallelism** – an RNN processes tokens one after another (“driving single file”), which makes training slow and limits how large a model can be built. [Episode: Great Papers 05 – Attention Is All You Need, 17:31‑18:05]\n\nThe Transformer's attention mechanism addresses both issues:\n\n* **Eliminating forgetting** – attention lets each word *directly* look back at any earlier word that is relevant, rather than hoping the information survived in a sequential memory. [Episode: Great Papers 05 – Attention Is All You Need, 07:33‑08:07]\n\n* **Enabling massive parallelism** – the attention computation consists of many independent multiplications that can be performed simultaneously, using the full width of modern hardware instead of a single‑file pipeline. This makes training much faster and allows the model to scale. [Episode: Great Papers 05 – Attention Is All You Need, 17:31‑18:05]",
+      "retrieval": {
+        "metrics": {
+          "source_coverage": 1.0,
+          "evidence_recall": 0.5,
+          "precision_at_10": 0.2,
+          "matched_evidence": 2,
+          "expected_evidence": 4,
+          "required_sources_found": 1,
+          "required_sources": 1
+        },
+        "evidence": [
+          {
+            "rank": 1,
+            "text": "-head attention is a refinement and it's intuitiveonce you have the basic mechanism. A single attention operation lets each word gather informationaccording to one notion of relevance. But words relate to each other in many different ways at once.In a sentence, one word might need to find its grammatical subject and also track what a pronounrefers to and also register the overall topic. Several different kinds of relationship simultaneously.So instead of doing attention just once, the transformer does it several times in parallelwith several independent",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1160.3547474747477,
+            "timestamp_end": 1194.4119865319867,
+            "rerank_score": 0.6706706285476685
+          },
+          {
+            "rank": 2,
+            "text": "of arithmetic. And thatis exactly the shape of computation that graphics chips devour. Thousands of independent multiplicationshappening in parallel. So the transformer maps perfectly onto the hardware where the recurrent networkfought it. Suddenly you could train on far more data, far faster, and build far bigger modelsbecause you were finally using the full width of the highway instead of driving single file.So attention didn't just fix the forgetting. It fixed it in a way that happens to also be massivelyparallel, which",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1051.3715824915826,
+            "timestamp_end": 1085.4288215488216,
+            "rerank_score": 0.17696520686149597
+          },
+          {
+            "rank": 3,
+            "text": "claim that the helper was actually the hero and everythingelse can be discarded. And when they did that, when they built a model of pure attention with no recurrence,two wonderful things happened at once and both of the old problems dissolved. They named the resultthe transformer. Before you tell me what dissolved, I need to actually understand what attention ismechanically. You've described it as looking back at the relevant words, but that's a metaphor.What's actually happening when a machine pays attention?",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 507.75310924369745,
+            "timestamp_end": 541.5447058823529,
+            "rerank_score": -1.5573163032531738
+          },
+          {
+            "rank": 4,
+            "text": "much faster. But the parallelism is the thing that mattered for historybecause it meant the architecture could scale. You could keep making it bigger and feeding itmore and the hardware could keep up. That scalability is what everything after this is built on.Let me hold that thought about scaling. But first, you mentioned there are a few more pieces.Multi-head attention was one. What's that? Multi-head attention is a refinement and it's intuitiveonce you have the basic mechanism. A single attention operation",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1133.1089562289562,
+            "timestamp_end": 1167.1661952861953,
+            "rerank_score": -1.8192919492721558
+          },
+          {
+            "rank": 5,
+            "text": "those are allthis architecture underneath. All of them underneath are transformers. That tower of attention layersscaled up and trained on next word prediction. The systems people call large language models,the ones behind the AI assistants that have swept through the world in the last few yearsare at their core direct descendants of this architecture. The T in the most famous of those namesstands literally for transformer. And it went beyond text. The same attention machinery got appliedto images to audio to biology. The models that predict how",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1772.722448979592,
+            "timestamp_end": 1808.831292517007,
+            "rerank_score": -1.96062171459198
+          },
+          {
+            "rank": 6,
+            "text": "clause shoved between them.So a machine handling language has to somehow keep track of relationships between wordsthat might be very far apart in the stream. That's the core challenge, sequence, order,and long distance connections. Okay, so how did people handle that before this paper?What was the state of the art in, say, 2016? The dominant tool was something called arecurrent neural network. A recurrent net often a particular kind with a name I'll mostly avoid,but the idea is what",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 187.5,
+            "timestamp_end": 224.14309764309763,
+            "rerank_score": -3.909696102142334
+          },
+          {
+            "rank": 7,
+            "text": "it helped a lot with the long-range problem.So attention lets the model reach back and grab the relevant word directly instead of hopingit survived in the running memory. That makes sense. So what's left for this paper to do if attentionalready existed? Here's the move and it's the whole paper in one sentence. Before attention wasthe sidekick, a helper attached to the main recurrent network which was still doing the sequentialreading. The author's asked a radical question, what if attention isn't",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 453.6865546218487,
+            "timestamp_end": 487.4781512605042,
+            "rerank_score": -5.121429443359375
+          },
+          {
+            "rank": 8,
+            "text": "outwithout belaboring. The attention layers are stacked many deep, so the model can build up moreand more abstract relationships layer by layer. There are ordinary processing steps between theattention layers, and there are engineering tricks that help very deep networks train without fallingapart. And in the original paper, the whole thing is arranged as an encoder and a decoder.One stack to read and understand the English sentence, another to generate the German one withattention connecting them. But you don't need those details",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1367.7362648556875,
+            "timestamp_end": 1402.6938200339555,
+            "rerank_score": -5.14430046081543
+          },
+          {
+            "rank": 9,
+            "text": "running memory, let the network at each moment look back at all thewords of the input directly and decide which ones are relevant right now. When it's translating andabout to produce the German word for keys, it can look back over the entire English sentence and payattention to the word keys, largely ignoring the rest. That selective looking back, focusing onthe relevant parts of the input is attention and it helped a lot with the long-range problem.So attention lets the model reach back and grab the relevant",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 426.6532773109243,
+            "timestamp_end": 460.4448739495798,
+            "rerank_score": -5.168648719787598
+          },
+          {
+            "rank": 10,
+            "text": "The original transformer had those two halves,an encoder that reads the whole input and builds up a rich understanding of it, and a decoder thatgenerates the output one word at a time. Afterward, people realized you don't always need both,depending on your goal. If what you want is to understand text, to answer questions about it,judge its sentiment, fill in missing words, you can keep just the encoder half.One famous early family of models called Bert took that route. It trained",
+            "episode": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+            "timestamp_start": 1426.0958178752107,
+            "timestamp_end": 1460.7905902192242,
+            "rerank_score": -5.182504653930664
+          }
+        ]
+      },
+      "latency_seconds": 25.821,
+      "status": "success"
+    }
+  ],
+  "Note": "answer generated using context-aware parent-child retrieval which spans all files"
+}

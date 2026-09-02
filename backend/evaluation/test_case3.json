@@ -1,0 +1,102 @@
+[
+  {
+    "id": "case_11_alt",
+    "category": "precise",
+    "question": "What specific metric does Shannon's formula for channel capacity depend on logarithmically, rather than linearly?",
+    "required_sources": [
+      "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 04 - Shannon and the Birth of Information, 1948.mp3",
+        "timestamp_start": 1789.38,
+        "timestamp_end": 1797.88,
+        "concept": "Capacity depends on signal-to-noise ratio logarithmically; doubling the rate requires squaring the power."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 1
+    }
+  },
+  {
+    "id": "case_12_alt",
+    "category": "precise",
+    "question": "According to the paper, how many hydrogen bonds form between a Guanine (G) and a Cytosine (C) base pair in the DNA double helix?",
+    "required_sources": [
+      "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+        "timestamp_start": 1175.06,
+        "timestamp_end": 1186.92,
+        "concept": "G and C fit together perfectly, clasping with three hydrogen bonds."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 1
+    }
+  },
+  {
+    "id": "case_13_alt",
+    "category": "precise",
+    "question": "What did Stephen Hawking set out to prove regarding black hole temperature when he began his 1975 calculation, before the mathematics forced him to a different conclusion?",
+    "required_sources": [
+      "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+        "timestamp_start": 471.24,
+        "timestamp_end": 484.5,
+        "concept": "Hawking's reaction was that this shows Beckenstein has gone too far. The temperature of a black hole must really be zero."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 1
+    }
+  },
+  {
+    "id": "case_14_alt",
+    "category": "precise",
+    "question": "What is the exact ratio that defines the entropy of a black hole in terms of its horizon area when measured in Planck units?",
+    "required_sources": [
+      "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+        "timestamp_start": 1824.86,
+        "timestamp_end": 1851.72,
+        "concept": "A black hole's entropy is one quarter of its horizon area measured in natural quantum gravity units."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 1
+    }
+  },
+  {
+    "id": "case_15_alt",
+    "category": "precise",
+    "question": "According to the 2017 paper, what specific architectural element was removed from the prior state-of-the-art models to enable full parallelism during training?",
+    "required_sources": [
+      "Great Papers 05 - Attention Is All You Need, 2017.mp3"
+    ],
+    "expected_evidence": [
+      {
+        "source": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+        "timestamp_start": 495.46,
+        "timestamp_end": 501.54,
+        "concept": "Throw away the recurrent network entirely; the sequential reading, the running memory, all of it."
+      }
+    ],
+    "minimum_evidence": {
+      "required_sources": 1,
+      "required_concepts": 1
+    }
+  }
+]

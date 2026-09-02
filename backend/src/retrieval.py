@@ -1,5 +1,8 @@
-import chromadb
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
+import chromadb
 from sentence_transformers import SentenceTransformer, CrossEncoder
 
 
@@ -10,6 +13,14 @@ from sentence_transformers import SentenceTransformer, CrossEncoder
 BASE_DIR = Path(__file__).resolve().parent.parent
 CHROMA_DIR = BASE_DIR / "data" / "chroma"
 
+ENV_FILE = BASE_DIR / ".env"
+load_dotenv(ENV_FILE)
+
+HF_TOKEN = os.getenv("HF_TOKEN")
+
+if HF_TOKEN:
+    os.environ["HF_TOKEN"] = HF_TOKEN
+
 
 # ============================================================
 # Configuration
@@ -18,67 +29,171 @@ CHROMA_DIR = BASE_DIR / "data" / "chroma"
 EMBED_MODEL_NAME = "all-MiniLM-L6-v2"
 RERANK_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
-# Retrieve a larger candidate pool first
+PER_EPISODE_K = 6
 RETRIEVAL_K = 30
-
-# Only the best chunks are passed to the LLM
 TOP_K = 10
 
 
 # ============================================================
-# Load Models
+# Runtime Resources
 # ============================================================
 
-print("Loading embedding model...")
-embedder = SentenceTransformer(EMBED_MODEL_NAME)
-
-print("Loading reranker...")
-reranker = CrossEncoder(RERANK_MODEL_NAME)
-
-
-# ============================================================
-# Connect to ChromaDB
-# ============================================================
-
-client = chromadb.PersistentClient(
-    path=str(CHROMA_DIR)
-)
-
-collection = client.get_collection(
-    name="fermi_transcripts"
-)
-
-print(f"Connected to ChromaDB: {CHROMA_DIR}")
-print(f"Total chunks: {collection.count()}")
+embedder = None
+reranker = None
+client = None
+collection = None
 
 
 # ============================================================
-# Step 1: Vector Retrieval
+# Initialization
 # ============================================================
 
-def vector_search(query, top_k=RETRIEVAL_K):
+def initialize():
 
-    query_embedding = embedder.encode(query).tolist()
+    global embedder
+    global reranker
+    global client
+    global collection
 
-    results = collection.query(
-        query_embeddings=[query_embedding],
-        n_results=top_k,
-        include=[
-            "documents",
-            "metadatas",
-            "distances"
-        ]
+    # Prevent loading everything twice
+    if (
+        embedder is not None
+        and reranker is not None
+        and collection is not None
+    ):
+        return
+
+    print("\n" + "=" * 60)
+    print("INITIALIZING RETRIEVAL SYSTEM")
+    print("=" * 60)
+
+    # --------------------------------------------------------
+    # Embedding model
+    # --------------------------------------------------------
+
+    if embedder is None:
+
+        print("Loading embedding model...")
+
+        embedder = SentenceTransformer(
+            EMBED_MODEL_NAME
+        )
+
+    # --------------------------------------------------------
+    # Reranker
+    # --------------------------------------------------------
+
+    if reranker is None:
+
+        print("Loading reranker...")
+
+        reranker = CrossEncoder(
+            RERANK_MODEL_NAME
+        )
+
+    # --------------------------------------------------------
+    # ChromaDB
+    # --------------------------------------------------------
+
+    if collection is None:
+
+        print("Connecting to ChromaDB...")
+
+        client = chromadb.PersistentClient(
+            path=str(CHROMA_DIR)
+        )
+
+        collection = client.get_collection(
+            name="fermi_transcripts"
+        )
+
+        print(
+            f"Connected to ChromaDB: {CHROMA_DIR}"
+        )
+
+        print(
+            f"Total chunks: {collection.count()}"
+        )
+
+    print("Retrieval system ready.")
+    print("=" * 60 + "\n")
+
+
+# ============================================================
+# Discover Episodes
+# ============================================================
+
+def get_episodes():
+
+    initialize()
+
+    result = collection.get(
+        include=["metadatas"]
     )
+
+    episodes = set()
+
+    for metadata in result["metadatas"]:
+
+        if metadata and metadata.get("video_id"):
+
+            episodes.add(
+                metadata["video_id"]
+            )
+
+    return sorted(episodes)
+
+
+# ============================================================
+# Step 1: Episode-Balanced Vector Retrieval
+# ============================================================
+
+def vector_search(
+    query,
+    per_episode_k=PER_EPISODE_K
+):
+
+    initialize()
+
+    query_embedding = embedder.encode(
+        query
+    ).tolist()
+
+    episodes = get_episodes()
 
     chunks = []
 
-    for i in range(len(results["documents"][0])):
+    for episode in episodes:
 
-        chunks.append({
-            "text": results["documents"][0][i],
-            "metadata": results["metadatas"][0][i],
-            "distance": results["distances"][0][i]
-        })
+        results = collection.query(
+            query_embeddings=[query_embedding],
+            n_results=per_episode_k,
+            where={
+                "video_id": episode
+            },
+            include=[
+                "documents",
+                "metadatas",
+                "distances"
+            ]
+        )
+
+        documents = results["documents"][0]
+        metadatas = results["metadatas"][0]
+        distances = results["distances"][0]
+
+        for i in range(len(documents)):
+
+            chunks.append({
+                "text": documents[i],
+                "metadata": metadatas[i],
+                "distance": distances[i]
+            })
+
+    print(
+        f"Retrieved {len(chunks)} candidates "
+        f"across {len(episodes)} episodes"
+    )
 
     return chunks
 
@@ -87,7 +202,13 @@ def vector_search(query, top_k=RETRIEVAL_K):
 # Step 2: Cross-Encoder Reranking
 # ============================================================
 
-def rerank(query, chunks, top_k=TOP_K):
+def rerank(
+    query,
+    chunks,
+    top_k=TOP_K
+):
+
+    initialize()
 
     pairs = [
         (query, chunk["text"])
@@ -96,7 +217,11 @@ def rerank(query, chunks, top_k=TOP_K):
 
     scores = reranker.predict(pairs)
 
-    for chunk, score in zip(chunks, scores):
+    for chunk, score in zip(
+        chunks,
+        scores
+    ):
+
         chunk["rerank_score"] = float(score)
 
     chunks = sorted(
@@ -114,13 +239,13 @@ def rerank(query, chunks, top_k=TOP_K):
 
 def retrieve(query):
 
-    # Stage 1: Fast semantic retrieval
+    initialize()
+
     candidates = vector_search(
         query,
-        RETRIEVAL_K
+        PER_EPISODE_K
     )
 
-    # Stage 2: More precise reranking
     final_chunks = rerank(
         query,
         candidates,
@@ -136,6 +261,8 @@ def retrieve(query):
 
 if __name__ == "__main__":
 
+    initialize()
+
     while True:
 
         query = input(
@@ -147,9 +274,14 @@ if __name__ == "__main__":
 
         chunks = retrieve(query)
 
-        print("\n========== FINAL RETRIEVED RESULTS ==========\n")
+        print(
+            "\n========== FINAL RETRIEVED RESULTS ==========\n"
+        )
 
-        for i, chunk in enumerate(chunks, 1):
+        for i, chunk in enumerate(
+            chunks,
+            1
+        ):
 
             metadata = chunk["metadata"]
 
@@ -180,3 +312,4 @@ if __name__ == "__main__":
             )
 
             print("-" * 70)
+
