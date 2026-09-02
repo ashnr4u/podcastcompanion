@@ -1,0 +1,5 @@
+faster-whisper
+chromadb
+sentence-transformers
+tiktoken
+pip install rank-bm25

@@ -1,0 +1,41 @@
+# Python virtual environment
+venv/
+env/
+.venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Audio files (generated)
+audios/
+backend/audios/
+
+# Data files (generated)
+data/
+backend/data/
+
+# IDE
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Trial/old files
+Fermi_AI_Engineering_Intern_Work_Trials/
+backend/src/debug_ingestion.py
+backend/src/debug.txt
+backend/src/ingestion_v2.py
+backend/src/retrieve2.py
+backend/src/retrieve3.py
+
+# Architecture doc (if you don't want to track it)
+architecture.md
