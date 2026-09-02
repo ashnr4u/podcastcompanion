@@ -36,6 +36,12 @@ backend/src/debug.txt
 backend/src/ingestion_v2.py
 backend/src/retrieve2.py
 backend/src/retrieve3.py
+EVAL.md
+backend/notes.md
+backend/src/evaluate/
+
+retrievalreport.md
+
 
 # Architecture doc (if you don't want to track it)
 architecture.md

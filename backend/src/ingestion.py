@@ -28,10 +28,7 @@ CHUNK_OVERLAP = 50
 ENCODER = tiktoken.get_encoding("cl100k_base")
 
 
-# -----------------------------
-# Load transcripts
-# -----------------------------
-
+#returns a list of all transcript JSON objects found in data/raw_transcripts/.
 def load_transcripts():
 
     transcripts = []
@@ -39,12 +36,9 @@ def load_transcripts():
     for path in TRANSCRIPT_DIR.glob("*.json"):
         
         print(f"Loading: {path.name}")
-
         with open(path, "r", encoding="utf-8") as f:
             transcript = json.load(f)
-
         transcripts.append(transcript)
-
     return transcripts
 
 
@@ -142,15 +136,10 @@ def main():
 
     # Process each transcript
     for transcript in transcripts:
-
         filename = transcript["file"]
-
         video_id = Path(filename).stem
-
         print(f"\nProcessing: {filename}")
-
         chunks = create_chunks(transcript)
-
         print(
             f"Created {len(chunks)} chunks "
             f"(300 tokens, 50 token overlap)"
