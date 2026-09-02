@@ -2,14 +2,14 @@
 
 ## 1. Objective
 
-The goal of this evaluation was to measure retrieval quality for the Fermi Podcast Companion and determine which retrieval architecture provides the best balance of:
+The goal of this evaluation was to measure retrieval quality for the Fermi Podcast Companion and select a retrieval architecture based on:
 
 * Retrieval accuracy
 * Ranking quality
 * Latency
 * Context quality
 
-The evaluation compares four retrieval implementations developed during the project.
+Four retrieval implementations were evaluated using the same benchmark and timestamp-overlap correctness criterion.
 
 ---
 
@@ -18,27 +18,23 @@ The evaluation compares four retrieval implementations developed during the proj
 ### Dataset
 
 * **20 manually curated questions**
-* Each question has one or more ground-truth timestamp ranges
-* Ground truth is based on the supplied podcast transcripts
-* A retrieved chunk is considered correct when its timestamp interval overlaps a ground-truth interval
+* Each question has one or more ground-truth timestamp ranges.
+* Ground truth was created from the supplied podcast transcripts.
+* A retrieved chunk is considered relevant when its timestamp interval overlaps a ground-truth interval.
 
 ### Metrics
 
 **Recall@5**
-
-Percentage of questions where at least one relevant chunk appears in the top 5 results.
+Percentage of questions with at least one relevant chunk in the top 5 results.
 
 **Recall@10**
-
-Percentage of questions where at least one relevant chunk appears in the top 10 results.
+Percentage of questions with at least one relevant chunk in the top 10 results.
 
 **MRR (Mean Reciprocal Rank)**
-
 Measures how highly the first relevant result is ranked.
 
 **Average Retrieval Latency**
-
-Average time required to retrieve results for one query.
+Average time required to retrieve and rank results for one query.
 
 ### Evaluation Command
 
@@ -46,15 +42,15 @@ Average time required to retrieve results for one query.
 python src/eval_all.py
 ```
 
-The same dataset, timestamp-overlap correctness criterion, and metrics are used for all four pipelines.
+The same dataset, correctness criterion, and metrics were used across all four implementations.
 
 ---
 
-# 3. Retrieval Pipelines Evaluated
+# 3. Retrieval Pipelines
 
 ## V1 — `retrieve.py`
 
-**Architecture:**
+Baseline vector retrieval.
 
 ```text
 Query
@@ -63,25 +59,22 @@ Embedding
   ↓
 ChromaDB Vector Search
   ↓
-Top-10 chunks
+Top-10 Chunks
 ```
 
 Configuration:
 
-* Flat transcript chunks
-* 300-token chunks
+* Flat 300-token chunks
 * 50-token overlap
 * `all-MiniLM-L6-v2`
 * ChromaDB
 * No reranking
 
-This was used as the baseline.
-
 ---
 
 ## V2 — `retrieve2.py`
 
-**Architecture:**
+Parent-child retrieval with CrossEncoder reranking.
 
 ```text
 Query
@@ -90,26 +83,26 @@ Embedding
   ↓
 Vector Search
   ↓
-Top-30 candidates
+Top-30 Child Candidates
   ↓
 CrossEncoder Reranking
   ↓
-Final results
+Final Results
 ```
 
-Uses the parent-child collection:
+Configuration:
 
 * 600-token parent chunks
 * 100-token child chunks
 * 20-token child overlap
-* Only child chunks are embedded
-* CrossEncoder used for reranking
+* Child chunks embedded for retrieval
+* CrossEncoder reranking
 
 ---
 
 ## V3 — `retrieve2_improved.py`
 
-This version extends the parent-child approach by providing the CrossEncoder with both the retrieved child and its parent context.
+Parent-child retrieval with parent context supplied to the reranker.
 
 ```text
 Query
@@ -125,13 +118,13 @@ CrossEncoder
 Reranked Results
 ```
 
-The goal was to determine whether additional parent context would improve ranking quality.
+The purpose of this experiment was to determine whether providing broader parent context would improve ranking quality.
 
 ---
 
 ## Final — `retrvfinal.py`
 
-The final selected architecture returns to flat transcript chunks while retaining CrossEncoder reranking.
+Flat-chunk retrieval with CrossEncoder reranking.
 
 ```text
 Query
@@ -168,19 +161,17 @@ Configuration:
 
 ### Key observations
 
-The baseline vector search achieved 70% Recall@5.
+Adding CrossEncoder reranking to the parent-child architecture improved Recall@5 from 70% to 85%.
 
-Adding CrossEncoder reranking with parent-child retrieval increased Recall@5 to 85%.
+Adding parent context increased Recall@5 further to 90% and produced the highest MRR of 0.735. However, it also increased latency substantially.
 
-Adding parent context further increased Recall@5 to 90% and produced the highest MRR of 0.735. However, it also increased latency substantially and still failed to retrieve some relevant questions within the top 10.
-
-The final flat-chunk + CrossEncoder approach achieved the best Recall@5 at **95%** while also recovering **100% Recall@10**.
+The final flat-chunk + CrossEncoder architecture achieved the best Recall@5 at **95%** and recovered **100% Recall@10**.
 
 ---
 
 # 5. Improvement Over Baseline
 
-The final system improved Recall@5 from:
+The final system improved Recall@5:
 
 ```text
 70% → 95%
@@ -188,21 +179,19 @@ The final system improved Recall@5 from:
 
 This is a **25 percentage-point improvement**.
 
-MRR improved from:
+MRR also improved:
 
 ```text
 0.604 → 0.707
 ```
 
-The final system therefore provides substantially better top-ranked retrieval than the baseline.
-
-The trade-off is latency:
+The main trade-off was retrieval latency:
 
 ```text
 0.097s → 1.993s
 ```
 
-The increase is primarily due to CrossEncoder reranking of the vector-retrieved candidate set.
+This increase is primarily due to CrossEncoder reranking of the top-30 vector candidates.
 
 ---
 
@@ -212,73 +201,74 @@ The increase is primarily due to CrossEncoder reranking of the vector-retrieved 
 
 > What is the Unruh effect and how does it relate to black hole radiation?
 
-### Results
-
 | Pipeline                | First Correct Rank |
 | ----------------------- | -----------------: |
 | `retrieve.py`           |                  7 |
-| `retrieve2.py`          |      **NOT FOUND** |
-| `retrieve2_improved.py` |      **NOT FOUND** |
+| `retrieve2.py`          |      **Not found** |
+| `retrieve2_improved.py` |      **Not found** |
 | `retrvfinal.py`         |                  6 |
 
-Q8 is a useful failure case because the answer is not contained in one isolated statement.
-
-The conceptual explanation is distributed across several transcript sections:
+Q8 is useful because the explanation is distributed across multiple parts of the transcript rather than appearing as one isolated statement:
 
 ```text
 Unruh effect
-     ↓
+    ↓
 Acceleration produces perceived temperature
-     ↓
+    ↓
 Equivalence between acceleration and gravity
-     ↓
+    ↓
 Gravitational field near a horizon
-     ↓
+    ↓
 Connection to Hawking radiation
 ```
 
-The two parent-child approaches failed to retrieve a ground-truth chunk within the evaluated top-10 results.
+Both parent-child implementations failed to retrieve a ground-truth chunk within the evaluated top-10 results.
 
-The final flat-chunk + CrossEncoder system recovered the relevant evidence at rank 6.
+The final flat-chunk + CrossEncoder system recovered relevant evidence at rank 6.
 
 ### Interpretation
 
-This suggests that, for this dataset, adding hierarchical parent context did not consistently improve retrieval of multi-step conceptual explanations.
-
-The parent-child approaches were more complex but did not outperform the final flat-chunk architecture on the primary Recall@5 metric.
+This failure was important in the final architecture decision. Adding hierarchical parent context did not consistently improve retrieval of multi-step conceptual explanations.
 
 ---
 
 # 7. Why Parent-Child Retrieval Was Not Selected
 
-Parent-child retrieval was tested because smaller child chunks can potentially provide more precise matching while the parent provides broader context.
+Parent-child retrieval was tested because smaller child chunks can provide more precise matching while parent chunks provide broader context.
 
 However, the benchmark showed:
 
-* V2 Recall@5: 85%
-* V3 Recall@5: 90%
-* Final Recall@5: **95%**
+* **V2:** 85% Recall@5
+* **V3:** 90% Recall@5
+* **Final:** **95% Recall@5**
 
-Both parent-child versions also failed Q8.
+V3 achieved the highest MRR, but also had the highest latency at **2.549s/query** and still failed Q8.
 
-V3 additionally had the highest latency at **2.549s/query**.
+The final flat-chunk architecture achieved both:
 
-Therefore, parent-child retrieval was not selected for the final system.
+* **95% Recall@5**
+* **100% Recall@10**
 
-This does not imply that parent-child chunking is generally inferior. It means that **for this corpus and evaluation set, it did not provide enough retrieval improvement to justify its additional complexity and latency.**
+Therefore, parent-child chunking was not used in the final pipeline.
+
+The decision was based on measured performance rather than assuming that a more hierarchical architecture would be better.
+
+> **For this corpus and evaluation set, parent-child retrieval added complexity and latency without providing enough retrieval improvement to justify its use.**
+
+This does not imply that parent-child retrieval is generally inferior. It means that it was not the best trade-off for this specific corpus and benchmark.
 
 ---
 
-# 8. Final Architecture Decision
+# 8. Final Retrieval Architecture
 
-The final retrieval architecture was selected based on measured performance rather than architectural complexity.
+The selected architecture is:
 
 ```text
 Podcast Audio
       ↓
 Transcription
       ↓
-300-token chunks + 50 overlap
+300-token chunks + 50-token overlap
       ↓
 MiniLM Embeddings
       ↓
@@ -308,22 +298,85 @@ Grounded Answer + Timestamp References
 | Final context       | Top 5                                  |
 | Primary metric      | Recall@5                               |
 
+The final architecture was selected using benchmark performance, failure analysis, and latency trade-offs.
+
 ---
 
-# 9. Conclusion
+# 9. End-to-End Evaluation
 
-The evaluation followed an iterative process:
+Retrieval evaluation was complemented by an end-to-end evaluation of the conversational system.
+
+The evaluation contained **13 distinct test cases**, executed repeatedly across **9 evaluation runs**.
+
+The 13 cases covered:
+
+* Deep single-source questions
+* Multi-source questions
+* Precise factual questions
+
+The repeated runs were used to compare retrieval strategies and assess consistency. Therefore:
+
+> **41 executions does not mean 41 unique evaluation cases. The evaluation contains 13 unique cases and 41 total executions across repeated runs.**
+
+### End-to-end findings
+
+The main weaknesses identified were:
+
+1. **Low retrieval precision** — many retrieved chunks were not directly relevant.
+2. **Incomplete evidence recall** — some questions required multiple evidence pieces that were not all retrieved.
+3. **Multi-source degradation** — questions requiring information from multiple episodes were harder to retrieve reliably.
+4. **Service-level failure** — one run encountered an LLM service error even though retrieval itself succeeded.
+
+The evaluation also confirmed that the system generally provides timestamped answers when sufficient podcast evidence is retrieved and refuses unsupported questions rather than relying on unsupported model knowledge.
+
+---
+
+# 10. Conversation Checks
+
+A separate conversational smoke test checked:
+
+| Scenario                   | Result                                        |
+| -------------------------- | --------------------------------------------- |
+| Follow-up question         | Correctly resolved using conversation history |
+| Supported podcast question | Answered with transcript timestamp            |
+| Unsupported question       | Correctly refused                             |
+| Conversational context     | Correctly retained                            |
+
+The system is intentionally grounded in the supplied podcast evidence. Unsupported questions should result in a clear refusal rather than an answer based solely on the model's general knowledge.
+
+### Product limitation
+
+Strict grounding can reduce usefulness for general educational questions.
+
+For example, the system correctly refused:
+
+> "Can you give me an example of a black hole?"
+
+While this is safer from a hallucination perspective, it is less helpful when the user is asking for general educational context.
+
+A future improvement would distinguish between:
+
+* **Podcast-grounded questions** → answer using supplied evidence and timestamps.
+* **General educational questions** → provide clearly labeled outside knowledge.
+
+This would preserve source trust while making the conversational experience more useful.
+
+---
+
+# 11. Conclusion
+
+The retrieval system was developed through an iterative evaluation process:
 
 ```text
 Baseline
    ↓
-Identify retrieval weaknesses
+Measure retrieval weaknesses
    ↓
 Add CrossEncoder reranking
    ↓
 Experiment with parent-child retrieval
    ↓
-Evaluate failures and trade-offs
+Analyze failures and latency
    ↓
 Select the highest-performing architecture
 ```
@@ -334,41 +387,16 @@ The final system achieved:
 * **100% Recall@10**
 * **0.707 MRR**
 
-compared with the baseline's:
+compared with the baseline:
 
 * **70% Recall@5**
 * **100% Recall@10**
 * **0.604 MRR**
 
-The main engineering conclusion is that **a simpler flat-chunk architecture combined with candidate generation and CrossEncoder reranking performed best on this evaluation set**.
+The main engineering conclusion is:
 
-The experiments also demonstrated that more complex hierarchical retrieval does not automatically produce better retrieval quality. The final architecture was therefore chosen based on reproducible benchmark results and observed failure cases rather than complexity alone.
-___________________________________________________________________
-## Conversation Checks
+> **A flat-chunk architecture combined with candidate generation and CrossEncoder reranking provided the best measured retrieval performance for this corpus.**
 
-A small conversational smoke test was used in addition to retrieval evaluation.
+The experiments also demonstrated that increased architectural complexity does not automatically produce better retrieval. Parent-child retrieval improved some ranking metrics, but its additional complexity and latency were not justified by the overall benchmark results.
 
-| Scenario                        | Result                                                |
-| ------------------------------- | ----------------------------------------------------- |
-| Follow-up question              | Correctly resolved using conversation history         |
-| Supported podcast question      | Answered with transcript timestamp                    |
-| Unsupported question            | Correctly refused                                     |
-| Personal conversational context | Correctly remembered the user's stated favorite paper |
-
-The system is designed to remain grounded in the supplied podcast evidence. In
-particular, unsupported questions should return a clear refusal rather than
-using the model's general knowledge.
-### Conversation Failure
-
-The system correctly refused an unsupported question:
-
-> "Can you give me an example of a black hole?"
-
-However, this exposes a product limitation: the assistant is strictly restricted to
-the supplied podcast evidence, so it cannot provide a general educational example
-even when the requested concept is familiar.
-
-This is safe from a hallucination perspective, but less helpful from a learning
-perspective. A future improvement could distinguish between **questions asking
-for podcast-grounded facts** and **general educational requests**, while clearly
-labeling when an answer comes from outside the supplied episodes.
+The final architecture was therefore selected based on **reproducible measurements, failure analysis, and explicit performance trade-offs**, rather than architectural complexity alone.
