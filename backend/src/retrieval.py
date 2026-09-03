@@ -21,7 +21,18 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 if HF_TOKEN:
     os.environ["HF_TOKEN"] = HF_TOKEN
 
+def collection_exists():
 
+    client = chromadb.PersistentClient(
+        path=str(CHROMA_DIR)
+    )
+
+    collections = client.list_collections()
+
+    return any(
+        c.name == "fermi_transcripts"
+        for c in collections
+    )
 # ============================================================
 # Configuration
 # ============================================================

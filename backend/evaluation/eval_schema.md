@@ -1,4 +1,3 @@
-Ah yes — you mean **one example/schema for each evaluation type**.
 
 ### 1. Multi-source
 

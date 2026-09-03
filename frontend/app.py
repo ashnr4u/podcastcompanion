@@ -8,9 +8,14 @@ import streamlit as st
 # ============================================================
 # PATHS
 # ============================================================
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-BACKEND_SRC = BASE_DIR / "backend" / "src"
+BACKEND_DIR = BASE_DIR / "backend"
+BACKEND_SRC = BACKEND_DIR / "src"
+
+sys.path.insert(0, str(BACKEND_SRC))
+sys.path.insert(0, str(BACKEND_DIR))
+
+
 
 sys.path.insert(0, str(BACKEND_SRC))
 
@@ -25,6 +30,12 @@ import retrieval
 
 @st.cache_resource
 def initialize_retrieval():
+
+    if not retrieval.collection_exists():
+
+        from main import prepare_knowledge_base
+
+        prepare_knowledge_base()
 
     retrieval.initialize()
 

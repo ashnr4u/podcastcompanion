@@ -9,3 +9,4 @@ langchain-core
 langchain-groq
 python-dotenv
 streamlit 
+torchvision

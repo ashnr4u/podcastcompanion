@@ -5,10 +5,10 @@ A conversational RAG application for exploring the supplied Fermi podcast episod
 ## Product Note
 
 **User:** Physics learners who want to explore podcast content conversationally.
-
 **Problem:** Podcasts are linear, making it difficult to quickly find specific explanations or ask follow-up questions.
-
 **Solution:** A RAG system that answers questions using transcript evidence and timestamps.
+
+#### Demo Link : https://drive.google.com/file/d/1uW_yZkDwhiQAVAr40LzLQ3U_LELmH4yj/view?usp=sharing
 
 ## Setup
 

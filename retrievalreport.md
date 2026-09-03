@@ -45,5 +45,3 @@ The reranker provides a clear retrieval-quality improvement:
 **Recall@5: 70% → 95%**  
 **MRR: 0.604 → 0.707**
 
-The next experiment is to evaluate **V3: Hybrid Retrieval + Reranker**
-using the same evaluation dataset.
