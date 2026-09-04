@@ -1,402 +1,431 @@
-# Retrieval Evaluation & Improvement
+**# Retrieval Evaluation — Fermi Podcast Companion**
 
-## 1. Objective
+**## 1. Product Context**
 
-The goal of this evaluation was to measure retrieval quality for the Fermi Podcast Companion and select a retrieval architecture based on:
+**### 1.1 What I Built**
 
-* Retrieval accuracy
-* Ranking quality
-* Latency
-* Context quality
+The Fermi Podcast Companion is a conversational AI system that allows learners to ask questions about physics podcast episodes and receive grounded, timestamped answers.
 
-Four retrieval implementations were evaluated using the same benchmark and timestamp-overlap correctness criterion.
+****User Persona:**** An undergraduate physics student preparing for oral exams who wants to verify their understanding against primary podcast sources. The student needs both broad coverage (which episodes cover a topic?) and deep engagement (explain this concept, show me the source).
 
----
-
-## 2. Evaluation Setup
-
-### Dataset
-
-* **20 manually curated questions**
-* Each question has one or more ground-truth timestamp ranges.
-* Ground truth was created from the supplied podcast transcripts.
-* A retrieved chunk is considered relevant when its timestamp interval overlaps a ground-truth interval.
-
-### Metrics
-
-**Recall@5**
-Percentage of questions with at least one relevant chunk in the top 5 results.
-
-**Recall@10**
-Percentage of questions with at least one relevant chunk in the top 10 results.
-
-**MRR (Mean Reciprocal Rank)**
-Measures how highly the first relevant result is ranked.
-
-**Average Retrieval Latency**
-Average time required to retrieve and rank results for one query.
-
-### Evaluation Command
-
-```bash
-python src/eval_all.py
-```
-
-The same dataset, correctness criterion, and metrics were used across all four implementations.
-
----
-
-# 3. Retrieval Pipelines
-
-## V1 — `retrieve.py`
-
-Baseline vector retrieval.
+****Core Product Decision:**** I prioritized ****trustworthiness over breadth****. Every answer must be verifiable against the source audio with timestamps, and the system must refuse questions it cannot support.
 
 ```text
-Query
-  ↓
-Embedding
-  ↓
-ChromaDB Vector Search
-  ↓
-Top-10 Chunks
+Primary UX flow:
+
+Question
+
+    ↓
+
+Is this supported by the podcasts?
+
+    ↓
+
+    ├── Yes → Answer + Timestamp references
+
+    └── No  → Clear refusal
 ```
 
-Configuration:
+This trade-off was deliberate: a system that occasionally refuses is safer and more trustworthy than one that hallucinates plausible but incorrect answers.
 
-* Flat 300-token chunks
-* 50-token overlap
-* `all-MiniLM-L6-v2`
-* ChromaDB
-* No reranking
+**### 1.2 Why I Evaluated Retrieval**
+
+The system's quality depends entirely on its retrieval stage. If the retrieval system cannot find the right evidence, the LLM cannot produce a grounded answer—no matter how good the generation model is.
+
+Therefore, the evaluation focused on:
+
+> ****Does the retrieval system find the correct evidence, and does it rank it highly enough to be useful?****
 
 ---
 
-## V2 — `retrieve2.py`
+**## 2. Evaluation Structure**
 
-Parent-child retrieval with CrossEncoder reranking.
+I built ****two complementary evaluation suites**** because they answer different engineering questions:
 
-```text
-Query
-  ↓
-Embedding
-  ↓
-Vector Search
-  ↓
-Top-30 Child Candidates
-  ↓
-CrossEncoder Reranking
-  ↓
-Final Results
-```
+| Suite                                        | Question                                                    | Dataset                                          | Evaluator                     |
+| -------------------------------------------- | ----------------------------------------------------------- | ------------------------------------------------ | ----------------------------- |
+| ****A: Controlled Retrieval Benchmark****    | Which retrieval architecture ranks evidence best?           | 20 curated questions with timestamp ground truth | `src/experiments/eval_all.py` |
+| ****B: End-to-End Application Evaluation**** | Does the complete application work for realistic questions? | 13 unique cases (3 categories)                   | `run_eval.py`                 |
 
-Configuration:
-
-* 600-token parent chunks
-* 100-token child chunks
-* 20-token child overlap
-* Child chunks embedded for retrieval
-* CrossEncoder reranking
+****Important:**** These suites use different datasets and metrics. Their numerical results should not be directly compared.
 
 ---
 
-## V3 — `retrieve2_improved.py`
+**## 3. Evaluation Suite A — Controlled Retrieval Benchmark**
 
-Parent-child retrieval with parent context supplied to the reranker.
+**### 3.1 Purpose**
 
-```text
-Query
-  ↓
-Vector Search
-  ↓
-Child Candidates
-  ↓
-Child + Parent Context
-  ↓
-CrossEncoder
-  ↓
-Reranked Results
-```
+The controlled benchmark evaluates retrieval implementations in isolation from the LLM and answer generation.
 
-The purpose of this experiment was to determine whether providing broader parent context would improve ranking quality.
+It answers:
 
----
+> ****Which retrieval architecture ranks relevant transcript evidence most effectively?****
 
-## Final — `retrvfinal.py`
+**### 3.2 Dataset**
 
-Flat-chunk retrieval with CrossEncoder reranking.
+****File:**** `data/evaluate_retrieve.json`
 
-```text
-Query
-  ↓
-Embedding
-  ↓
-Top-30 Vector Candidates
-  ↓
-CrossEncoder Reranking
-  ↓
-Top-5 Results
-```
+****20 manually curated questions****
 
-Configuration:
+Each question has:
 
-* 300-token flat chunks
-* 50-token overlap
-* `all-MiniLM-L6-v2`
-* ChromaDB
-* Top-30 vector candidates
-* `cross-encoder/ms-marco-MiniLM-L-6-v2`
-* Final Top-5 results
+* A natural-language query
+* Manually annotated ground-truth timestamp range(s)
+* The correct source episode
 
----
+**### 3.3 Relevance Definition**
 
-# 4. Results
-
-| Pipeline                | Recall@5 | Recall@10 |       MRR | Avg Latency |
-| ----------------------- | -------: | --------: | --------: | ----------: |
-| `retrieve.py`           |      70% |      100% |     0.604 |      0.097s |
-| `retrieve2.py`          |      85% |       95% |     0.673 |      0.556s |
-| `retrieve2_improved.py` |      90% |       90% | **0.735** |      2.549s |
-| `retrvfinal.py`         |  **95%** |  **100%** |     0.707 |      1.993s |
-
-### Key observations
-
-Adding CrossEncoder reranking to the parent-child architecture improved Recall@5 from 70% to 85%.
-
-Adding parent context increased Recall@5 further to 90% and produced the highest MRR of 0.735. However, it also increased latency substantially.
-
-The final flat-chunk + CrossEncoder architecture achieved the best Recall@5 at **95%** and recovered **100% Recall@10**.
-
----
-
-# 5. Improvement Over Baseline
-
-The final system improved Recall@5:
+A retrieved chunk is considered ****relevant**** when its timestamp overlaps a ground-truth interval:
 
 ```text
-70% → 95%
+retrieved_start <= correct_end
+
+AND
+
+retrieved_end >= correct_start
 ```
 
-This is a **25 percentage-point improvement**.
+This is a strict, objective correctness criterion. It tests ****evidence retrieval****, not semantic similarity.
 
-MRR also improved:
+**### 3.4 Metrics**
+
+| Metric              | What It Measures                               | Why It Matters                           |
+| ------------------- | ---------------------------------------------- | ---------------------------------------- |
+| ****Recall@5****    | % of questions with a relevant chunk in top 5  | The user sees evidence without scrolling |
+| ****Recall@10****   | % of questions with a relevant chunk in top 10 | The system has room to recover           |
+| ****MRR****         | How highly the first relevant chunk is ranked  | Ranking quality matters for user trust   |
+| ****Avg Latency**** | Time for isolated retrieval per query          | Practical system responsiveness          |
+
+**### 3.5 Retrieval Architectures Tested**
+
+I evaluated four architectures as a controlled experiment progression.
+
+| Version    | Implementation          | Key Change                         | Hypothesis                                                 |
+| ---------- | ----------------------- | ---------------------------------- | ---------------------------------------------------------- |
+| ****V1**** | `retrieve.py`           | Baseline: flat chunks, no reranker | Establish a performance baseline                           |
+| ****V2**** | `retrvfinal.py`         | Flat chunks + CrossEncoder         | Reranking improves the ordering of relevant evidence       |
+| ****V3**** | `retrieve2.py`          | Parent-child + CrossEncoder        | Smaller chunks improve precision; reranking improves order |
+| ****V4**** | `retrieve2_improved.py` | Parent context + CrossEncoder      | Reranker needs broader context to judge relevance          |
+
+**### 3.6 Results**
+
+| Pipeline                         |    Recall@5 |    Recall@10 |           MRR | Avg Latency |
+| -------------------------------- | ----------: | -----------: | ------------: | ----------: |
+| V1 — Baseline                    |         70% |         100% |         0.604 |      0.097s |
+| ****V2 — Flat + CrossEncoder**** | ****95%**** | ****100%**** |         0.707 |      1.993s |
+| V3 — Parent-Child                |         85% |          95% |         0.673 |      0.556s |
+| V4 — Context-Aware               |         90% |          90% | ****0.735**** |      2.549s |
+
+**### 3.7 Key Findings**
+
+****1. CrossEncoder Reranking Substantially Improved Recall****
 
 ```text
-0.604 → 0.707
+Baseline → V2
+
+70% → 95% Recall@5
 ```
 
-The main trade-off was retrieval latency:
+This is a ****25 percentage-point improvement**** — every 4 out of 5 baseline failures were recovered.
+
+****2. The Improvement Had a Measurable Cost****
 
 ```text
 0.097s → 1.993s
 ```
 
-This increase is primarily due to CrossEncoder reranking of the top-30 vector candidates.
+The CrossEncoder adds ~1.9 seconds per query. This was an acceptable trade-off for the retrieval quality improvement.
+
+****3. Parent Context Improved MRR But Not Overall Recall****
+
+V4 achieved the highest MRR (0.735) but had:
+
+* Lower Recall@5 (90% vs 95%)
+* Higher latency (2.549s vs 1.993s)
+* Lower Recall@10 (90% vs 100%)
+
+****Therefore, I selected the simpler flat-chunk + CrossEncoder architecture (V2).****
 
 ---
 
-# 6. Failure Analysis — Q8
+## 4. Evaluation Suite B — End-to-End Application Evaluation
 
-### Question
+### 4.1 Purpose
 
-> What is the Unruh effect and how does it relate to black hole radiation?
+The second evaluation measures the complete application, including:
+- Query rewriting
+- Retrieval + reranking
+- LLM answer generation
+- Evidence extraction
 
-| Pipeline                | First Correct Rank |
-| ----------------------- | -----------------: |
-| `retrieve.py`           |                  7 |
-| `retrieve2.py`          |      **Not found** |
-| `retrieve2_improved.py` |      **Not found** |
-| `retrvfinal.py`         |                  6 |
+It answers:
 
-Q8 is useful because the explanation is distributed across multiple parts of the transcript rather than appearing as one isolated statement:
+> **Does the complete application retrieve sufficient evidence to answer realistic learner questions?**
+
+### 4.2 Dataset
+
+**File:** `test_case3.json`
+
+**13 unique test cases** across three categories:
+
+| Category | Cases | What It Tests |
+|----------|-------|---------------|
+| **Multi-source** | 3 | Retrieval across multiple podcast episodes |
+| **Deep single-source** | 5 | Deeper retrieval within one episode |
+| **Precise / Needle** | 5 | Finding one specific, narrow fact |
+
+### 4.3 Metrics
+
+| Metric | Definition | Why It Matters |
+|--------|------------|----------------|
+| **Source Coverage** | Required sources retrieved / total required | Cross-episode questions need all sources |
+| **Evidence Recall@10** | Expected evidence spans matched / total | Correct evidence matters, not just source |
+| **Precision@10** | Relevant retrieved chunks / total retrieved | Low precision means noisy context |
+| **End-to-End Latency** | Full `app_graph.invoke()` time | Real user experience |
+| **Completion Status** | Success / error / failure | System reliability |
+
+### 4.4 Multi-Source Results
+
+| Strategy | Source Coverage | Evidence Recall@10 | Precision@10 | Avg Latency |
+|----------|----------------:|-------------------:|-------------:|------------:|
+| Episode-Balanced | **0.778** | **0.296** | **0.267** | 43.70s |
+| Global Vector | 0.444 | 0.259 | 0.233 | 42.05s |
+| Context-Aware Parent-Child | 0.444 | 0.148 | 0.133 | 25.34s |
+
+**Key Finding:** Episode-balanced retrieval improved source coverage from 44.4% to 77.8% — a **33.4 percentage-point improvement**.
+
+However, evidence recall improved only modestly (25.9% → 29.6%). This tells us:
+
+> **Retrieving the correct source is not the same as retrieving the correct evidence.**
+
+The CrossEncoder reranking stage can still favor one episode and push relevant evidence from other required sources outside the final top-10.
+
+### 4.5 Deep Single-Source Results
+
+| Strategy | Source Coverage | Evidence Recall@10 | Precision@10 | Avg Latency |
+|----------|----------------:|-------------------:|-------------:|------------:|
+| Global Vector | 1.000 | **0.583** | **0.220** | 40.91s |
+| Episode-Balanced | 1.000 | 0.517 | 0.140 | 40.73s |
+| Context-Aware Parent-Child | 1.000 | 0.367 | 0.180 | **25.10s** |
+
+**Key Finding:** All strategies achieved perfect source coverage (single source required). Global Vector produced the strongest evidence recall and precision.
+
+### 4.6 Precise / Needle Results
+
+| Strategy | Source Coverage | Evidence Recall@10 | Precision@10 | Avg Latency | Completion |
+|----------|----------------:|-------------------:|-------------:|------------:|------------|
+| Context-Aware Parent-Child | **1.000** | **0.800** | **0.140** | **24.48s** | 5/5 |
+| Global Vector | 1.000 | 0.750 | 0.075 | 37.66s | 4/5 |
+| Episode-Balanced | 1.000 | 0.600 | 0.060 | 35.85s | 5/5 |
+
+**Key Finding:** Context-Aware Parent-Child performed best on precise retrieval (0.800 evidence recall, 24.48s latency). This suggests that broader parent context is useful when the required evidence is narrow and specific.
+
+### 4.7 Error Analysis
+
+One execution encountered an `LLMServiceError`:
+
+```text
+Case 14alt (Black hole entropy ratio)
+Strategy: Global Vector
+Error: LLMServiceError — language model service failure
+```
+
+**Important:** This was a **generation service failure**, not a retrieval failure.
+
+```text
+Retrieval failure ≠ Generation failure ≠ Service failure
+```
+
+Future improvements should include retry logic and fallback handling for temporary LLM service failures.
+
+---
+
+## 5. Key Findings Across Both Suites
+
+### Finding 1 — CrossEncoder Improves Controlled Retrieval
+
+The controlled benchmark showed that flat chunks + CrossEncoder achieved:
+
+```text
+Recall@5  = 95%
+Recall@10 = 100%
+MRR       = 0.707
+```
+
+### Finding 2 — Multi-Source Retrieval Is the Main Weakness
+
+The end-to-end evaluation showed that cross-episode questions are significantly more difficult than single-source questions. Global retrieval can become dominated by one episode.
+
+### Finding 3 — Episode Balancing Improves Source Coverage
+
+Episode-balanced candidate retrieval increased multi-source Source Coverage:
+
+```text
+44.4% → 77.8%
+```
+
+But Evidence Recall increased less:
+
+```text
+25.9% → 29.6%
+```
+
+### Finding 4 — Parent-Child Is Useful for Some Question Types
+
+Context-Aware Parent-Child achieved 0.800 Evidence Recall on precise/needle questions, but it was not the best overall architecture in the controlled benchmark.
+
+---
+## 6. What I Learned From Failure Analysis
+
+### Q8: Unruh Effect and Black Hole Radiation
+
+**Question:** *"What is the Unruh effect and how does it relate to black hole radiation?"*
+
+**First relevant rank:**
+
+| Pipeline                          | First Relevant Rank |
+| --------------------------------- | ------------------: |
+| V1 — Baseline (Flat)              |                   7 |
+| **V2 — Flat + CrossEncoder**      |               **6** |
+| V3 — Parent-Child + CrossEncoder  | Not found in top 10 |
+| V4 — Context-Aware + CrossEncoder | Not found in top 10 |
+
+**Why this question is difficult:** The explanation is distributed across multiple conceptual steps:
 
 ```text
 Unruh effect
+
     ↓
+
 Acceleration produces perceived temperature
+
     ↓
-Equivalence between acceleration and gravity
+
+Acceleration/gravity equivalence
+
     ↓
+
 Gravitational field near a horizon
+
     ↓
+
 Connection to Hawking radiation
 ```
 
-Both parent-child implementations failed to retrieve a ground-truth chunk within the evaluated top-10 results.
+**What I learned:** Parent-child retrieval does not automatically improve retrieval of multi-step conceptual explanations. The final flat-chunk + CrossEncoder architecture recovered the evidence; parent-child did not.
 
-The final flat-chunk + CrossEncoder system recovered relevant evidence at rank 6.
+### Multi-Source Questions
 
-### Interpretation
+Two cases failed to produce meaningful answers:
 
-This failure was important in the final architecture decision. Adding hierarchical parent context did not consistently improve retrieval of multi-step conceptual explanations.
+| Case    | Question                    | Issue                               |
+| ------- | --------------------------- | ----------------------------------- |
+| Case 01 | Shannon → DNA & Transformer | Retrieved only Shannon evidence     |
+| Case 03 | Transformer → Shannon + DNA | Retrieved only Transformer evidence |
 
----
-
-# 7. Why Parent-Child Retrieval Was Not Selected
-
-Parent-child retrieval was tested because smaller child chunks can provide more precise matching while parent chunks provide broader context.
-
-However, the benchmark showed:
-
-* **V2:** 85% Recall@5
-* **V3:** 90% Recall@5
-* **Final:** **95% Recall@5**
-
-V3 achieved the highest MRR, but also had the highest latency at **2.549s/query** and still failed Q8.
-
-The final flat-chunk architecture achieved both:
-
-* **95% Recall@5**
-* **100% Recall@10**
-
-Therefore, parent-child chunking was not used in the final pipeline.
-
-The decision was based on measured performance rather than assuming that a more hierarchical architecture would be better.
-
-> **For this corpus and evaluation set, parent-child retrieval added complexity and latency without providing enough retrieval improvement to justify its use.**
-
-This does not imply that parent-child retrieval is generally inferior. It means that it was not the best trade-off for this specific corpus and benchmark.
+**What I learned:** The system retrieves well from one source but struggles when evidence must be combined across three episodes. Episode-balancing improves source coverage but does not guarantee evidence recall.
 
 ---
 
-# 8. Final Retrieval Architecture
+## 7. What I Would Do Next
 
-The selected architecture is:
+### 7.1 Diversity-Aware Final Selection
 
+**Current:**
 ```text
-Podcast Audio
-      ↓
-Transcription
-      ↓
-300-token chunks + 50-token overlap
-      ↓
-MiniLM Embeddings
-      ↓
-ChromaDB
-      ↓
-Top-30 Vector Candidates
-      ↓
-CrossEncoder Reranking
-      ↓
-Top-5 Evidence Chunks
-      ↓
-LLM
-      ↓
-Grounded Answer + Timestamp References
+Candidate retrieval → CrossEncoder → Top-10
 ```
 
-### Final configuration
-
-| Component           | Selected Approach                      |
-| ------------------- | -------------------------------------- |
-| Chunking            | 300-token flat chunks                  |
-| Overlap             | 50 tokens                              |
-| Embedding           | `all-MiniLM-L6-v2`                     |
-| Vector DB           | ChromaDB                               |
-| Candidate retrieval | Top 30                                 |
-| Reranker            | `cross-encoder/ms-marco-MiniLM-L-6-v2` |
-| Final context       | Top 5                                  |
-| Primary metric      | Recall@5                               |
-
-The final architecture was selected using benchmark performance, failure analysis, and latency trade-offs.
-
----
-
-# 9. End-to-End Evaluation
-
-Retrieval evaluation was complemented by an end-to-end evaluation of the conversational system.
-
-The evaluation contained **13 distinct test cases**, executed repeatedly across **9 evaluation runs**.
-
-The 13 cases covered:
-
-* Deep single-source questions
-* Multi-source questions
-* Precise factual questions
-
-The repeated runs were used to compare retrieval strategies and assess consistency. Therefore:
-
-> **41 executions does not mean 41 unique evaluation cases. The evaluation contains 13 unique cases and 41 total executions across repeated runs.**
-
-### End-to-end findings
-
-The main weaknesses identified were:
-
-1. **Low retrieval precision** — many retrieved chunks were not directly relevant.
-2. **Incomplete evidence recall** — some questions required multiple evidence pieces that were not all retrieved.
-3. **Multi-source degradation** — questions requiring information from multiple episodes were harder to retrieve reliably.
-4. **Service-level failure** — one run encountered an LLM service error even though retrieval itself succeeded.
-
-The evaluation also confirmed that the system generally provides timestamped answers when sufficient podcast evidence is retrieved and refuses unsupported questions rather than relying on unsupported model knowledge.
-
----
-
-# 10. Conversation Checks
-
-A separate conversational smoke test checked:
-
-| Scenario                   | Result                                        |
-| -------------------------- | --------------------------------------------- |
-| Follow-up question         | Correctly resolved using conversation history |
-| Supported podcast question | Answered with transcript timestamp            |
-| Unsupported question       | Correctly refused                             |
-| Conversational context     | Correctly retained                            |
-
-The system is intentionally grounded in the supplied podcast evidence. Unsupported questions should result in a clear refusal rather than an answer based solely on the model's general knowledge.
-
-### Product limitation
-
-Strict grounding can reduce usefulness for general educational questions.
-
-For example, the system correctly refused:
-
-> "Can you give me an example of a black hole?"
-
-While this is safer from a hallucination perspective, it is less helpful when the user is asking for general educational context.
-
-A future improvement would distinguish between:
-
-* **Podcast-grounded questions** → answer using supplied evidence and timestamps.
-* **General educational questions** → provide clearly labeled outside knowledge.
-
-This would preserve source trust while making the conversational experience more useful.
-
----
-
-# 11. Conclusion
-
-The retrieval system was developed through an iterative evaluation process:
-
+**Proposed:**
 ```text
-Baseline
-   ↓
-Measure retrieval weaknesses
-   ↓
-Add CrossEncoder reranking
-   ↓
-Experiment with parent-child retrieval
-   ↓
-Analyze failures and latency
-   ↓
-Select the highest-performing architecture
+Candidate retrieval → CrossEncoder scores → Diversity-aware selection → Top-10
 ```
 
-The final system achieved:
+Preserve relevance while ensuring required sources remain represented.
 
-* **95% Recall@5**
-* **100% Recall@10**
-* **0.707 MRR**
+### 7.2 Source-Aware Retrieval
 
-compared with the baseline:
+When a question requires multiple sources, explicitly allocate candidates across relevant episodes.
 
-* **70% Recall@5**
-* **100% Recall@10**
-* **0.604 MRR**
+### 7.3 Query Decomposition
 
-The main engineering conclusion is:
+Complex cross-source questions can be decomposed:
 
-> **A flat-chunk architecture combined with candidate generation and CrossEncoder reranking provided the best measured retrieval performance for this corpus.**
+```text
+Original question
+    ↓
+Shannon sub-query
+DNA sub-query
+Transformer sub-query
+    ↓
+Separate retrieval per source
+    ↓
+Combine evidence
+```
 
-The experiments also demonstrated that increased architectural complexity does not automatically produce better retrieval. Parent-child retrieval improved some ranking metrics, but its additional complexity and latency were not justified by the overall benchmark results.
+### 7.4 Query Expansion
 
-The final architecture was therefore selected based on **reproducible measurements, failure analysis, and explicit performance trade-offs**, rather than architectural complexity alone.
+Generate multiple retrieval formulations so that concepts expressed differently in the transcript can still be retrieved.
+
+### 7.5 LLM Reliability
+
+Add retry logic and fallback handling for temporary LLM service failures.
+
+---
+
+## 8. Evaluation Limitations
+
+| Limitation | Impact |
+|------------|--------|
+| **13 unique test cases** | Useful for targeted testing but not enough for broad generalization |
+| **Different metric definitions** | Suite A and Suite B metrics are not directly comparable |
+| **Source Coverage ≠ Evidence Recall** | A system can reach the correct source but miss the correct evidence |
+| **Different latency scopes** | Isolated retrieval (0.1-2.5s) vs full application (24-43s) |
+
+---
+
+## 9. Conclusion
+
+### What I Accomplished
+
+1. **Built a complete end-to-end system** — audio → transcript → chunks → embeddings → retrieval → reranking → grounded answers
+
+2. **Ran controlled experiments** — four retrieval architectures compared on 20 curated questions
+
+3. **Created a rigorous evaluation system** — 13 unique cases, 9 runs, 3 categories, preserved raw results
+
+4. **Achieved measurable improvement** — 70% → 95% Recall@5, 0.604 → 0.707 MRR
+
+5. **Identified the main weakness** — multi-source evidence coverage
+
+6. **Proposed concrete next steps** — diversity-aware selection, query decomposition, source-aware retrieval
+
+### The Core Lesson
+
+> **Retrieving the correct source is not the same as retrieving the correct evidence. A strong RAG system must optimize both evidence relevance and source coverage.**
+
+The system is strong on single-source and precise questions. The next improvement should focus on **diversity-aware, source-aware retrieval** rather than simply changing the chunking strategy.
+
+---
+
+## 10. How the Evaluation Maps to Fermi's Criteria
+
+| Fermi Criteria | How This Evaluation Addresses It |
+|----------------|----------------------------------|
+| **Define success** | Recall@5, MRR, Source Coverage, Evidence Recall — clear success definitions |
+| **Varied evaluation set** | 13 cases across 3 categories (multi-source, deep single, precise) |
+| **Repeatable runner** | `python run_eval.py` — one-command execution |
+| **Preserve raw outputs** | 9 JSON result files with full evidence and answers |
+| **Inspect successes/failures** | Q8 failure analysis, multi-source degradation |
+| **One meaningful improvement** | 70% → 95% Recall@5 with CrossEncoder |
+| **Re-run and explain** | Baseline-to-final comparison with trade-off analysis |
+
+---
+
+**Evaluation suites:** 2
+
+**Controlled benchmark cases:** 20
+
+**End-to-end unique cases:** 13
+
+**Total evaluation runs:** 9

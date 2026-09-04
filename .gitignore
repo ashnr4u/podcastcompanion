@@ -33,7 +33,6 @@ logs/
 Fermi_AI_Engineering_Intern_Work_Trials/
 backend/src/debug_ingestion.py
 backend/src/debug.txt
-backend/src/experiments/
 backend/notes.md
 backend/.env
 backend/src/evaluate/
@@ -46,3 +45,5 @@ architecture.md
 case1.md
 case2.md
 case3.md
+
+Prepare_interview
