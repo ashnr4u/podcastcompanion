@@ -35,11 +35,6 @@ class LLMServiceError(Exception):
     pass
 
 
-class RetrievalServiceError(Exception):
-    """Raised when the retrieval pipeline fails."""
-    pass
-
-
 # ============================================================
 # LLM
 # ============================================================
@@ -62,27 +57,7 @@ class GraphState(TypedDict, total=False):
     retrieved_chunks: List[Dict]
     context: str
     answer: str
-
-    # Observability / error state
-    status: str
-    error_type: str
-    error_message: str
-
-
-# ============================================================
-# CASUAL ROUTER
-# ============================================================
-
-CASUAL_PHRASES = {
-    "hi", "hello", "hey", "thanks", "thank you", 
-    "ok", "okay", "cool", "nice", "great", "got it",
-    "good", "alright", "sure"
-}
-
-def is_casual(text: str) -> bool:
-    """Check if message is casual greeting/acknowledgment."""
-    cleaned = text.lower().strip().strip("?!.,")
-    return cleaned in CASUAL_PHRASES or len(cleaned.split()) <= 2
+    status: str  # "success" | "no_evidence"
 
 
 # ============================================================
@@ -299,49 +274,21 @@ Return ONLY the final standalone search query.
 
 
 def rewrite_query(state: GraphState):
+    """Rewrite the user's question into a standalone search query."""
 
     start_time = time.perf_counter()
 
     question = state["question"].strip()
     history = state.get("chat_history", [])
 
-    # --------------------------------------------------------
-    # Casual greeting router
-    # --------------------------------------------------------
-    if is_casual(question):
-        print(f"\n[QUERY REWRITE]")
-        print(f"Input: {question}")
-        print("[QUERY REWRITE] Casual greeting detected — skipping LLM")
-        return {
-            "rewritten_query": question,
-            "status": "casual"
-        }
-
-    # --------------------------------------------------------
-    # No conversation history
-    # --------------------------------------------------------
-
+    # No conversation history → no rewrite needed
     if not history:
-
-        print(
-            f"\n[QUERY REWRITE]"
-            f"\nInput: {question}"
-        )
-
-        print(
-            f"[QUERY REWRITE] "
-            f"Skipped — no conversation history"
-        )
-
         return {
             "rewritten_query": question,
             "status": "success"
         }
 
-    # --------------------------------------------------------
-    # Keep recent conversation only (last 4 messages, truncated)
-    # --------------------------------------------------------
-
+    # Keep recent conversation only (last 4 messages)
     history_text = "\n".join(
         f"{message['role']}: {message['content'][:1200]}"
         for message in history[-4:]
@@ -352,13 +299,8 @@ def rewrite_query(state: GraphState):
         question=question
     )
 
-    print("\n[QUERY REWRITE]")
-    print(f"Input: {question}")
-
     try:
-
         response = llm.invoke(prompt)
-
         rewritten_query = response.content.strip()
 
         if not rewritten_query:
@@ -366,34 +308,12 @@ def rewrite_query(state: GraphState):
 
         elapsed = time.perf_counter() - start_time
 
-        print(
-            f"Output: {rewritten_query}"
-        )
-
-        print(
-            f"[QUERY REWRITE] "
-            f"latency={elapsed:.3f}s"
-        )
-
         return {
             "rewritten_query": rewritten_query,
             "status": "success"
         }
 
     except Exception as e:
-
-        elapsed = time.perf_counter() - start_time
-
-        print(
-            f"[QUERY REWRITE ERROR] "
-            f"type={type(e).__name__} "
-            f"latency={elapsed:.3f}s"
-        )
-
-        print(
-            f"[QUERY REWRITE ERROR DETAILS] {e}"
-        )
-
         raise LLMServiceError(
             "The language model failed while rewriting the query."
         ) from e
@@ -404,45 +324,16 @@ def rewrite_query(state: GraphState):
 # ============================================================
 
 def retrieve(state: GraphState):
-
-    start_time = time.perf_counter()
+    """Retrieve relevant transcript chunks using the rewritten query."""
 
     from retrieval import retrieve as retrieve_chunks
 
     query = state["rewritten_query"]
 
-    print(
-        f"\n[RETRIEVAL]"
-        f"\nQuery: {query}"
-    )
-
     try:
-
         chunks = retrieve_chunks(query)
 
-        elapsed = time.perf_counter() - start_time
-
-        print(
-            f"[RETRIEVAL] "
-            f"Retrieved {len(chunks)} chunks"
-        )
-
-        print(
-            f"[RETRIEVAL] "
-            f"latency={elapsed:.3f}s"
-        )
-
-        # ----------------------------------------------------
-        # No chunks is NOT a retrieval crash.
-        # It simply means no useful evidence was found.
-        # ----------------------------------------------------
-
         if not chunks:
-
-            print(
-                "[RETRIEVAL] No chunks returned"
-            )
-
             return {
                 "retrieved_chunks": [],
                 "status": "no_evidence"
@@ -454,20 +345,7 @@ def retrieve(state: GraphState):
         }
 
     except Exception as e:
-
-        elapsed = time.perf_counter() - start_time
-
-        print(
-            f"[RETRIEVAL ERROR] "
-            f"type={type(e).__name__} "
-            f"latency={elapsed:.3f}s"
-        )
-
-        print(
-            f"[RETRIEVAL ERROR DETAILS] {e}"
-        )
-
-        raise RetrievalServiceError(
+        raise RuntimeError(
             "The retrieval system failed while searching the episodes."
         ) from e
 
@@ -477,95 +355,43 @@ def retrieve(state: GraphState):
 # ============================================================
 
 def format_timestamp(seconds: float) -> str:
+    """Convert seconds to MM:SS format."""
 
     seconds = max(0, float(seconds))
-
     minutes = int(seconds // 60)
     remaining_seconds = int(seconds % 60)
-
-    return (
-        f"{minutes:02d}:"
-        f"{remaining_seconds:02d}"
-    )
+    return f"{minutes:02d}:{remaining_seconds:02d}"
 
 
 def clean_episode_name(title: str) -> str:
+    """Remove file extensions and clean up episode names."""
 
     if not title:
         return "Unknown episode"
 
-    for extension in [
-        ".mp3",
-        ".wav",
-        ".m4a",
-        ".flac",
-        ".aac",
-        ".ogg",
-        ".opus",
-        ".wma"
-    ]:
-
+    for extension in [".mp3", ".wav", ".m4a", ".flac", ".aac", ".ogg", ".opus", ".wma"]:
         if title.lower().endswith(extension):
-
-            title = title[
-                :-len(extension)
-            ]
-
+            title = title[:-len(extension)]
             break
 
     return title.replace("_", " ").strip()
 
 
 def build_context(state: GraphState):
-
-    start_time = time.perf_counter()
+    """Format retrieved chunks into a structured context for the LLM."""
 
     context_parts = []
 
-    for index, chunk in enumerate(
-        state.get("retrieved_chunks", []),
-        start=1
-    ):
+    for index, chunk in enumerate(state.get("retrieved_chunks", []), start=1):
+        metadata = chunk.get("metadata", {})
 
-        metadata = chunk.get(
-            "metadata",
-            {}
-        )
+        episode = metadata.get("title", metadata.get("video_id", "Unknown episode"))
+        episode = clean_episode_name(episode)
 
-        episode = metadata.get(
-            "title",
-            metadata.get(
-                "video_id",
-                "Unknown episode"
-            )
-        )
+        start = metadata.get("start", 0)
+        end = metadata.get("end", 0)
 
-        episode = clean_episode_name(
-            episode
-        )
-
-        start = metadata.get(
-            "start",
-            0
-        )
-
-        end = metadata.get(
-            "end",
-            0
-        )
-
-        start_time_formatted = format_timestamp(
-            start
-        )
-
-        end_time_formatted = format_timestamp(
-            end
-        )
-
-        text = chunk.get(
-            "text",
-            ""
-        ).strip()
+        text = chunk.get("text", "").strip()
 
         if not text:
             continue
@@ -578,32 +404,16 @@ Episode:
 {episode}
 
 Timestamp:
-{start_time_formatted} - {end_time_formatted}
+{format_timestamp(start)} - {format_timestamp(end)}
 
 Transcript:
 {text}
 """
         )
 
-    context = "\n---\n".join(
-        context_parts
-    )
-
-    elapsed = time.perf_counter() - start_time
-
-    print(
-        f"\n[CONTEXT]"
-        f"\nSources used: {len(context_parts)}"
-        f"\nCharacters: {len(context)}"
-        f"\nlatency={elapsed:.3f}s"
-    )
+    context = "\n---\n".join(context_parts)
 
     if not context.strip():
-
-        print(
-            "[CONTEXT] No usable transcript evidence"
-        )
-
         return {
             "context": "",
             "status": "no_evidence"
@@ -642,7 +452,19 @@ You may use:
 - comparisons that can be directly supported by multiple transcript sources
 
 You MUST NOT use outside knowledge, even if you know the answer.
-You can do normal grettings, You are a teacher.
+
+You may respond naturally to simple greetings and acknowledgments.
+
+Examples:
+- "Hi" → "Hello! How can I help you learn from the podcast?"
+- "Thanks" → "You're welcome!"
+- "Got it" → "Great!"
+
+Do not treat a message as casual merely because it is short.
+Messages such as "Why?", "How?", "Explain relativity", "Define entropy",
+or "What about Einstein?" are legitimate questions or follow-ups and
+must be answered using the transcript evidence when possible.
+
 Your internal knowledge must never be used to fill missing evidence.
 
 ========================
@@ -650,12 +472,6 @@ QUESTION
 ========================
 
 {question}
-
-========================
-SEARCH QUERY
-========================
-
-{rewritten_query}
 
 ========================
 TRANSCRIPT EVIDENCE
@@ -861,82 +677,29 @@ ANSWER
 
 
 def generate_answer(state: GraphState):
-
-    start_time = time.perf_counter()
+    """Generate a grounded answer using the provided transcript evidence."""
 
     question = state["question"]
-    rewritten_query = state["rewritten_query"]
     context = state["context"]
 
-    # --------------------------------------------------------
-    # Casual greeting response
-    # --------------------------------------------------------
-    if state.get("status") == "casual":
-        print(
-            "\n[ANSWER]"
-            "\nStatus: casual"
-        )
-        return {
-            "answer": "Hello! How can I help you learn from the podcast?",
-            "status": "casual"
-        }
-
-    # --------------------------------------------------------
-    # No evidence
-    # --------------------------------------------------------
-
+    # No evidence → refuse
     if not context.strip():
-
-        print(
-            "\n[ANSWER]"
-            "\nStatus: no_evidence"
-        )
-
         return {
-            "answer": (
-                "I couldn't find enough information "
-                "in the provided episodes."
-            ),
+            "answer": "I couldn't find enough information in the provided episodes.",
             "status": "no_evidence"
         }
 
     prompt = ANSWER_PROMPT.format(
         question=question,
-        rewritten_query=rewritten_query,
         context=context
     )
 
-    print(
-        "\n[GENERATING ANSWER]"
-    )
-
     try:
-
         response = llm.invoke(prompt)
-
         answer = response.content.strip()
 
-        elapsed = time.perf_counter() - start_time
-
-        print(
-            f"[LLM] "
-            f"latency={elapsed:.3f}s"
-        )
-
         if not answer:
-
-            print(
-                "[LLM] Empty response received"
-            )
-
-            answer = (
-                "I couldn't find enough information "
-                "in the provided episodes."
-            )
-
-        print(
-            "[ANSWER] Successfully generated"
-        )
+            answer = "I couldn't find enough information in the provided episodes."
 
         return {
             "answer": answer,
@@ -944,19 +707,6 @@ def generate_answer(state: GraphState):
         }
 
     except Exception as e:
-
-        elapsed = time.perf_counter() - start_time
-
-        print(
-            f"\n[LLM ERROR]"
-            f"\ntype={type(e).__name__}"
-            f"\nlatency={elapsed:.3f}s"
-        )
-
-        print(
-            f"[LLM ERROR DETAILS] {e}"
-        )
-
         raise LLMServiceError(
             "The language model service failed while generating the answer."
         ) from e
@@ -967,24 +717,13 @@ def generate_answer(state: GraphState):
 # ============================================================
 
 def save_memory(state: GraphState):
+    """Save the conversation to memory for future context."""
 
-    history = state.get(
-        "chat_history",
-        []
-    )
+    history = state.get("chat_history", [])
 
     updated_history = history + [
-
-        {
-            "role": "user",
-            "content": state["question"]
-        },
-
-        {
-            "role": "assistant",
-            "content": state["answer"]
-        }
-
+        {"role": "user", "content": state["question"]},
+        {"role": "assistant", "content": state["answer"]}
     ]
 
     # Keep the latest 10 messages
@@ -1000,78 +739,34 @@ def save_memory(state: GraphState):
 # ============================================================
 
 def create_graph():
+    """Build and compile the LangGraph workflow."""
 
-    graph = StateGraph(
-        GraphState
-    )
+    graph = StateGraph(GraphState)
 
-    graph.add_node(
-        "rewrite_query",
-        rewrite_query
-    )
+    # Add nodes
+    graph.add_node("rewrite_query", rewrite_query)
+    graph.add_node("retrieve", retrieve)
+    graph.add_node("build_context", build_context)
+    graph.add_node("generate_answer", generate_answer)
+    graph.add_node("save_memory", save_memory)
 
-    graph.add_node(
-        "retrieve",
-        retrieve
-    )
+    # Define flow
+    graph.set_entry_point("rewrite_query")
 
-    graph.add_node(
-        "build_context",
-        build_context
-    )
+    graph.add_edge("rewrite_query", "retrieve")
+    graph.add_edge("retrieve", "build_context")
+    graph.add_edge("build_context", "generate_answer")
+    graph.add_edge("generate_answer", "save_memory")
+    graph.add_edge("save_memory", END)
 
-    graph.add_node(
-        "generate_answer",
-        generate_answer
-    )
-
-    graph.add_node(
-        "save_memory",
-        save_memory
-    )
-
-    graph.set_entry_point(
-        "rewrite_query"
-    )
-
-    graph.add_edge(
-        "rewrite_query",
-        "retrieve"
-    )
-
-    graph.add_edge(
-        "retrieve",
-        "build_context"
-    )
-
-    graph.add_edge(
-        "build_context",
-        "generate_answer"
-    )
-
-    graph.add_edge(
-        "generate_answer",
-        "save_memory"
-    )
-
-    graph.add_edge(
-        "save_memory",
-        END
-    )
-
-    # --------------------------------------------------------
-    # LangGraph checkpoint memory
-    # --------------------------------------------------------
-
+    # Memory for conversation history
     memory = MemorySaver()
 
-    return graph.compile(
-        checkpointer=memory
-    )
+    return graph.compile(checkpointer=memory)
 
 
 # ============================================================
 # APPLICATION GRAPH
 # ============================================================
-
+print("Graph ready")
 app_graph = create_graph()
