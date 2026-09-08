@@ -8,7 +8,7 @@ from datetime import datetime
 BASE_DIR = Path(__file__).resolve().parent.parent
 SRC_DIR = BASE_DIR / "src"
 
-CASES_FILE = Path(__file__).resolve().parent / "test_case1.json"
+CASES_FILE = Path(__file__).resolve().parent / "test_case3.json"
 RESULTS_DIR = Path(__file__).resolve().parent / "test_case_3_results_new_eval"
 
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,2445 @@
+{
+  "file": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+  "segments": [
+    {
+      "text": "1905. A 26-year-old is examining patent applications at a desk in Byrne, and in his spare hours he writes a",
+      "start": 0.0,
+      "duration": 9.06
+    },
+    {
+      "text": "paper with the almost boring title on the electrodynamics of moving bodies. No new experiment, no new",
+      "start": 9.06,
+      "duration": 9.1
+    },
+    {
+      "text": "particle, barely any references, and by the time you finish reading it, space and time, the two things",
+      "start": 18.16,
+      "duration": 7.52
+    },
+    {
+      "text": "everyone had assumed were the fixed, silent backdrop of everything are neither fixed nor silent.",
+      "start": 25.68,
+      "duration": 6.619999999999997
+    },
+    {
+      "text": "George, I want to actually understand how a person talks themselves into that.",
+      "start": 33.2,
+      "duration": 4.299999999999997
+    },
+    {
+      "text": "What is Einstein even trying to fix when he sits down?",
+      "start": 38.08,
+      "duration": 3.719999999999999
+    },
+    {
+      "text": "He's trying to fix a crack that had been quietly widening in physics for about 40 years,",
+      "start": 42.18,
+      "duration": 4.939999999999998
+    },
+    {
+      "text": "and the beautiful thing is that the crack is not exotic. It's sitting in the most successful theory of",
+      "start": 47.66,
+      "duration": 6.200000000000003
+    },
+    {
+      "text": "the century. So here's the whole plan for today. We're going to start with that crack, the",
+      "start": 53.86,
+      "duration": 6.299999999999997
+    },
+    {
+      "text": "electrodynamics of moving bodies, and see why it forced a choice. Then Einstein makes two assumptions,",
+      "start": 60.16,
+      "duration": 6.900000000000006
+    },
+    {
+      "text": "just two that sound almost modest, and will state them carefully. And then we spend most of our time",
+      "start": 67.74,
+      "duration": 7.0
+    },
+    {
+      "text": "watching those two assumptions detonate. Simultonarity comes apart, moving clocks run slow,",
+      "start": 74.74,
+      "duration": 6.760000000000005
+    },
+    {
+      "text": "moving rulers shrink, and the speed of light becomes a wall that nothing can cross.",
+      "start": 81.5,
+      "duration": 5.159999999999997
+    },
+    {
+      "text": "Everything today comes off those two postulates. That's the promise, two sentences in, and the rest",
+      "start": 87.56,
+      "duration": 6.3799999999999955
+    },
+    {
+      "text": "is consequence. Let's start with the crack then. What's broken? Nothing is broken in the sense of a",
+      "start": 93.94,
+      "duration": 6.079999999999998
+    },
+    {
+      "text": "wrong prediction. That's what makes it subtle. By 1905 you have Maxwell's theory of electricity",
+      "start": 100.02,
+      "duration": 6.920000000000002
+    },
+    {
+      "text": "and magnetism, and it is spectacular. It unifies electricity, magnetism, and light into one set of",
+      "start": 106.94,
+      "duration": 7.920000000000002
+    },
+    {
+      "text": "equations, and out of those equations falls a specific number, the speed of light. The equations",
+      "start": 114.86,
+      "duration": 6.980000000000004
+    },
+    {
+      "text": "predict that light is a wave rippling through the electromagnetic field, and they hand you its speed,",
+      "start": 121.84,
+      "duration": 5.700000000000003
+    },
+    {
+      "text": "a definite value, about 300,000 kilometers every second. And here's the question that should make",
+      "start": 128.28,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "you uneasy. That speed is measured relative to what? Relative to whatever you're standing on,",
+      "start": 135.02,
+      "duration": 5.840000000000003
+    },
+    {
+      "text": "surely. Like the speed of a train is relative to the platform. That's exactly the intuition,",
+      "start": 141.02,
+      "duration": 6.099999999999994
+    },
+    {
+      "text": "and it's exactly the one that's about to break. Think about sound. Sound is a wave in air,",
+      "start": 147.7,
+      "duration": 5.920000000000016
+    },
+    {
+      "text": "and it has a fixed speed relative to the air. If you run toward a source of sound, you meet the",
+      "start": 154.06,
+      "duration": 5.680000000000007
+    },
+    {
+      "text": "crests faster, so the sound comes at you quicker. If you run away, slower. The speed depends on your",
+      "start": 159.86,
+      "duration": 6.8799999999999955
+    },
+    {
+      "text": "motion through the medium, the air. So everyone reasoned very sensibly that light must be the same.",
+      "start": 166.74,
+      "duration": 6.659999999999997
+    },
+    {
+      "text": "A wave in some medium, and its speed of 300,000 kilometers a second, must be its speed relative",
+      "start": 174.22,
+      "duration": 6.0800000000000125
+    },
+    {
+      "text": "to that medium. They even named the medium. They called it the luminiferous ether. The light",
+      "start": 180.3,
+      "duration": 7.240000000000009
+    },
+    {
+      "text": "ether. This is the thing that fills all of space, so light has something to wave in.",
+      "start": 187.54,
+      "duration": 6.780000000000001
+    },
+    {
+      "text": "That's the one. It has to fill everything, because light crosses the empty space between the stars",
+      "start": 194.68,
+      "duration": 5.639999999999986
+    },
+    {
+      "text": "and us. So the picture is, the whole universe is soaked in this invisible, weightless, perfectly",
+      "start": 200.32,
+      "duration": 7.300000000000011
+    },
+    {
+      "text": "still stuff, and light ripples through it at that fixed speed. And immediately that gives you a",
+      "start": 207.62,
+      "duration": 6.400000000000006
+    },
+    {
+      "text": "prediction you can test. The earth is moving. It's whipping around the sun at about 30 kilometers a",
+      "start": 214.02,
+      "duration": 6.319999999999993
+    },
+    {
+      "text": "second, so the earth must be flying through the ether, and there must be an ether wind blowing past us.",
+      "start": 220.34,
+      "duration": 6.699999999999989
+    },
+    {
+      "text": "Light traveling along the direction of that wind should come out at a slightly different speed",
+      "start": 227.98,
+      "duration": 4.659999999999997
+    },
+    {
+      "text": "than light traveling across it, just like a swimmer going with the current versus across it.",
+      "start": 232.64,
+      "duration": 5.680000000000007
+    },
+    {
+      "text": "So you build an experiment sensitive enough to feel the wind, and I'm guessing since we're here they",
+      "start": 238.32,
+      "duration": 6.800000000000011
+    },
+    {
+      "text": "didn't feel it. They didn't feel a thing. The famous version is the Michelson Morley experiment,",
+      "start": 245.12,
+      "duration": 6.299999999999983
+    },
+    {
+      "text": "a couple of decades earlier, and it was built precisely to detect that difference.",
+      "start": 251.9,
+      "duration": 4.439999999999969
+    },
+    {
+      "text": "Light sent along the motion versus across it, then compared. The expected shift was small,",
+      "start": 257.08,
+      "duration": 6.860000000000014
+    },
+    {
+      "text": "but well within reach of their instrument, and the result was nothing. No wind. Whichever way the",
+      "start": 263.94,
+      "duration": 7.78000000000003
+    },
+    {
+      "text": "earth was moving, light came out at the same speed. People tried to patch it. Maybe the ether gets",
+      "start": 271.72,
+      "duration": 6.859999999999957
+    },
+    {
+      "text": "dragged along by the earth, maybe moving objects physically contract by just the right amount to hide the",
+      "start": 278.58,
+      "duration": 6.400000000000034
+    },
+    {
+      "text": "effect. They were clever patches, but they were patches. Okay, but you said the ether wind wasn't even",
+      "start": 284.98,
+      "duration": 7.139999999999986
+    },
+    {
+      "text": "really Einstein's way in. What was? Right, and this is the part I love because it tells you how",
+      "start": 292.12,
+      "duration": 6.6200000000000045
+    },
+    {
+      "text": "his mind worked. He opens the paper not with the ether experiments, but with a piece of textbook physics",
+      "start": 298.74,
+      "duration": 6.6200000000000045
+    },
+    {
+      "text": "that everybody could already do, and he points at an ugliness in it. It's the case of a magnet and a",
+      "start": 305.36,
+      "duration": 6.680000000000007
+    },
+    {
+      "text": "wire loop, a conductor. Here's the setup. You have a magnet and a loop of wire, and you move one relative",
+      "start": 312.04,
+      "duration": 7.519999999999982
+    },
+    {
+      "text": "to the other. That's how a generator works. Relative motion of magnet and coil drives a current.",
+      "start": 319.56,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "Now the physics of 1905 gave you two completely different stories for that one current,",
+      "start": 326.66,
+      "duration": 5.579999999999984
+    },
+    {
+      "text": "depending on which thing you called moving. Two stories for the same current? Walk me through both.",
+      "start": 332.68,
+      "duration": 5.560000000000002
+    },
+    {
+      "text": "Story one. The wire is at rest, and you move the magnet. A moving magnet means a changing magnetic",
+      "start": 338.58,
+      "duration": 7.580000000000041
+    },
+    {
+      "text": "field where the wire sits, and a changing magnetic field by Faraday's law creates an electric field.",
+      "start": 346.16,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "That electric field pushes on the charges in the wire and you get a current. So the cause in this",
+      "start": 353.86,
+      "duration": 6.819999999999993
+    },
+    {
+      "text": "story is a newly created electric field. Story two. Now hold the magnet still and move the wire instead.",
+      "start": 360.68,
+      "duration": 8.71999999999997
+    },
+    {
+      "text": "There's no changing magnetic field anymore. The field is just sitting there.",
+      "start": 370.36,
+      "duration": 4.199999999999989
+    },
+    {
+      "text": "So there's no induced electric field at all. Instead, the charges in the moving wire are carried",
+      "start": 375.22,
+      "duration": 6.439999999999998
+    },
+    {
+      "text": "through the static magnetic field, and a charge moving through a magnetic field feels a force,",
+      "start": 381.66,
+      "duration": 5.739999999999952
+    },
+    {
+      "text": "the magnetic force. So this time the cause is a magnetic force on moving charges.",
+      "start": 388.0,
+      "duration": 5.8799999999999955
+    },
+    {
+      "text": "Two different causes, an electric field in one story, a magnetic force in the other.",
+      "start": 394.86,
+      "duration": 5.9599999999999795
+    },
+    {
+      "text": "But the current that comes out is identical. Depends only on the relative motion of magnet and wire,",
+      "start": 400.88,
+      "duration": 6.439999999999998
+    },
+    {
+      "text": "exactly the same in both cases. And Einstein's discomfort is precise. Nature clearly doesn't care which one",
+      "start": 407.82,
+      "duration": 7.740000000000009
+    },
+    {
+      "text": "is really moving. Only the relative motion matters, and the outcome is one and the same.",
+      "start": 415.56,
+      "duration": 5.779999999999973
+    },
+    {
+      "text": "So why does our theory insist on two utterly different mechanisms,",
+      "start": 422.3,
+      "duration": 3.819999999999993
+    },
+    {
+      "text": "depending on an arbitrary choice of who's standing still? The asymmetry is in our description,",
+      "start": 426.68,
+      "duration": 5.599999999999966
+    },
+    {
+      "text": "not in nature. That, he says right at the top, together with the failure to detect any motion",
+      "start": 432.66,
+      "duration": 6.3799999999999955
+    },
+    {
+      "text": "relative to the ether, suggests something bigger. That the very idea of absolute rest,",
+      "start": 439.04,
+      "duration": 6.239999999999952
+    },
+    {
+      "text": "and ether you could measure your motion against is empty. There is no really moving and really still.",
+      "start": 445.28,
+      "duration": 8.080000000000041
+    },
+    {
+      "text": "So he takes the thing that keeps embarrassing everyone, you can never detect absolute motion,",
+      "start": 453.62,
+      "duration": 6.180000000000007
+    },
+    {
+      "text": "and instead of treating it as a failure to be patched, he promotes it to a law.",
+      "start": 460.22,
+      "duration": 4.839999999999975
+    },
+    {
+      "text": "He promotes it to a principle. That's the whole move, and it's the first of his two postulates.",
+      "start": 465.46,
+      "duration": 5.400000000000034
+    },
+    {
+      "text": "Postulate one, the principle of relativity. The laws of physics are exactly the same",
+      "start": 471.78,
+      "duration": 5.800000000000011
+    },
+    {
+      "text": "in every inertial frame of reference. Let me unpack inertial frame. It just means a point of view",
+      "start": 477.58,
+      "duration": 7.420000000000016
+    },
+    {
+      "text": "that's moving at constant velocity, not speeding up, not turning, no forces jostling you.",
+      "start": 485.0,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "A smooth train at constant speed, a ship gliding on still water, the lab floor.",
+      "start": 492.0,
+      "duration": 5.420000000000016
+    },
+    {
+      "text": "The principle says, do any experiment you like inside a sealed, smoothly moving cabin,",
+      "start": 498.22,
+      "duration": 5.319999999999993
+    },
+    {
+      "text": "and you cannot tell whether you're moving or at rest. There's no experiment, mechanical,",
+      "start": 503.86,
+      "duration": 5.360000000000014
+    },
+    {
+      "text": "electrical, optical, anything that reveals an absolute speed. Motion at constant velocity has no",
+      "start": 509.68,
+      "duration": 7.160000000000025
+    },
+    {
+      "text": "signature. That part I can almost swallow because I've felt it. On a really smooth flight coffee",
+      "start": 516.84,
+      "duration": 6.8799999999999955
+    },
+    {
+      "text": "pours normally, you can't feel the 500 miles an hour, it feels like sitting still.",
+      "start": 523.72,
+      "duration": 5.819999999999936
+    },
+    {
+      "text": "You felt postulate one. Galileo knew it from mechanics, ships, and dropped balls.",
+      "start": 529.88,
+      "duration": 5.6200000000000045
+    },
+    {
+      "text": "Einstein's claim is that it holds for absolutely everything, including electricity, magnetism,",
+      "start": 536.46,
+      "duration": 5.719999999999914
+    },
+    {
+      "text": "and light. And that including light is where the second postulate comes in, and it's the one",
+      "start": 542.46,
+      "duration": 6.1200000000000045
+    },
+    {
+      "text": "that costs you your common sense. Postulate two, the constancy of the speed of light.",
+      "start": 548.58,
+      "duration": 5.740000000000009
+    },
+    {
+      "text": "Light travels through empty space at that one fixed speed, C, and every inertial observer",
+      "start": 555.22,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "measures that same speed, regardless of how the source was moving when it emitted the light.",
+      "start": 561.5,
+      "duration": 5.279999999999973
+    },
+    {
+      "text": "Wait, let me make sure I have the full weight of that. If a spaceship flies toward me at half the",
+      "start": 566.94,
+      "duration": 6.019999999999982
+    },
+    {
+      "text": "speed of light and turns on a headlight, the light from that headlight reaches me at not one and",
+      "start": 572.96,
+      "duration": 6.3799999999999955
+    },
+    {
+      "text": "a half times C, just C. Just C. And if the ship is flying away and shines the light, still C.",
+      "start": 579.34,
+      "duration": 7.759999999999991
+    },
+    {
+      "text": "And if you yourself then start chasing that light beam at enormous speed, trying to catch up,",
+      "start": 587.8,
+      "duration": 5.540000000000077
+    },
+    {
+      "text": "you still measure it pulling away from you at the full C. It refuses to slow down relative to you,",
+      "start": 594.0,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "no matter how hard you chase it. That is the postulate. And notice how violently it disagrees with",
+      "start": 600.1,
+      "duration": 6.860000000000014
+    },
+    {
+      "text": "the sound example, or with any everyday object. If I throw a ball forward from a moving truck,",
+      "start": 606.96,
+      "duration": 6.459999999999923
+    },
+    {
+      "text": "the ball's speed over the ground is the truck's speed, plus the throw. Speed's add.",
+      "start": 613.92,
+      "duration": 5.420000000000073
+    },
+    {
+      "text": "Postulate two says light flatly does not play that game. Look, that sounds not just strange,",
+      "start": 620.42,
+      "duration": 5.6200000000000045
+    },
+    {
+      "text": "but impossible. Speed's add. That's not even physics. That's just counting. If I'm moving toward",
+      "start": 626.04,
+      "duration": 7.920000000000073
+    },
+    {
+      "text": "the light and the light is moving toward me, of course we close the gap faster. Everything in your",
+      "start": 633.96,
+      "duration": 5.819999999999936
+    },
+    {
+      "text": "body is screaming that. And you should trust that scream because following it all the way down is how",
+      "start": 639.78,
+      "duration": 5.639999999999986
+    },
+    {
+      "text": "we find what has to give. So let's follow it. Speed is nothing but distance divided by time.",
+      "start": 645.42,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "How far the thing went, divided by how long it took. If two observers moving relative to each other,",
+      "start": 652.88,
+      "duration": 6.67999999999995
+    },
+    {
+      "text": "both measure the same speed for the same light beam, the same distance over time,",
+      "start": 659.86,
+      "duration": 4.840000000000032
+    },
+    {
+      "text": "but they're in relative motion, then the only way out is that they must disagree about the distances",
+      "start": 665.26,
+      "duration": 5.240000000000009
+    },
+    {
+      "text": "and the times themselves. If the ratio comes out the same, but the situation is different,",
+      "start": 670.5,
+      "duration": 5.840000000000032
+    },
+    {
+      "text": "the top and the bottom of the ratio, the space and the time must be flexible.",
+      "start": 676.34,
+      "duration": 5.240000000000009
+    },
+    {
+      "text": "That's the escape hatch. Space and time are what bend so that the speed of light doesn't have to.",
+      "start": 682.32,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "So to keep light speed rigid, you make space and time negotiable. Where do you even start pulling",
+      "start": 688.74,
+      "duration": 6.360000000000014
+    },
+    {
+      "text": "on that thread? You start with time and specifically with a question that sounds too simple to matter.",
+      "start": 695.1,
+      "duration": 6.019999999999982
+    },
+    {
+      "text": "What does it mean for two things to happen at the same time?",
+      "start": 701.7,
+      "duration": 4.019999999999982
+    },
+    {
+      "text": "Einstein realized that before you can do any physics of moving bodies,",
+      "start": 706.62,
+      "duration": 3.480000000000018
+    },
+    {
+      "text": "you have to say, operationally, concretely, how you'd actually check whether two separated events",
+      "start": 710.58,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "are simultaneous. Not they just are. How would you measure it? I guess I look at two",
+      "start": 716.62,
+      "duration": 7.059999999999945
+    },
+    {
+      "text": "clocks in two places and see if they read the same, but that assumes the two clocks are already",
+      "start": 723.68,
+      "duration": 6.080000000000041
+    },
+    {
+      "text": "synchronised, which is the same problem one step back. Exactly the trap, and Einstein walks right",
+      "start": 729.76,
+      "duration": 6.5
+    },
+    {
+      "text": "into it and solves it with the only tool that has a guaranteed speed. Light. Here's how you synchronise",
+      "start": 736.26,
+      "duration": 7.7999999999999545
+    },
+    {
+      "text": "two clocks sitting some distance apart. You send a flash of light from clock A toward clock B,",
+      "start": 744.06,
+      "duration": 6.780000000000086
+    },
+    {
+      "text": "note when it leaves and when it returns after bouncing back. Since light goes at the same speed both",
+      "start": 751.5,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "ways you define the clocks as synchronised when the light takes exactly as long to go as to come back.",
+      "start": 757.94,
+      "duration": 6.139999999999986
+    },
+    {
+      "text": "You split the round trip down the middle. That's it. Two clocks are in sync when a light signal treats",
+      "start": 764.84,
+      "duration": 7.419999999999959
+    },
+    {
+      "text": "them even handedly. It's a clean physical definition. There's nothing to argue with. That does sound",
+      "start": 772.26,
+      "duration": 7.060000000000059
+    },
+    {
+      "text": "airtight. So where's the catch? The catch is hiding in the words at the same time, and it only jumps out",
+      "start": 779.32,
+      "duration": 7.139999999999986
+    },
+    {
+      "text": "when a second observer moving relative to the first watches the very same synchronisation and does",
+      "start": 786.46,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "the same even handed procedure with light. Let me give you the cleanest picture. Put an observer exactly",
+      "start": 792.7,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "in the middle of a long train car and put a lamp there. At some moment the lamp flashes and the light",
+      "start": 799.74,
+      "duration": 6.899999999999977
+    },
+    {
+      "text": "races both ways toward the two ends of the car. For the person standing in the middle of the train",
+      "start": 806.64,
+      "duration": 5.919999999999959
+    },
+    {
+      "text": "the light reaches the front end and the back end at the same instant. Equal distance equal speed",
+      "start": 812.56,
+      "duration": 6.6200000000000045
+    },
+    {
+      "text": "so equal time. Front and back simultaneous. Everybody on the train agrees. Sure, middle of the car",
+      "start": 819.18,
+      "duration": 8.56000000000006
+    },
+    {
+      "text": "light goes both ways equally hits both ends together fine. Now watch the same flash from the platform",
+      "start": 827.74,
+      "duration": 7.2999999999999545
+    },
+    {
+      "text": "as the train rushes past. From the platform light still goes at C in both directions.",
+      "start": 835.04,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "That's the postulate. It's the same C for the platform observer. But during the little time the",
+      "start": 842.0,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "light is travelling the train is moving forward. So the back end of the car is rushing toward the point",
+      "start": 848.2,
+      "duration": 6.1200000000000045
+    },
+    {
+      "text": "where the flash was emitted and the front end is running away from it. The light going backward has",
+      "start": 854.32,
+      "duration": 6.459999999999923
+    },
+    {
+      "text": "less distance to cover because the back wall is coming to meet it. The light going forward has to",
+      "start": 860.78,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "chase the retreating front wall. Same speed but shorter trip one way and longer trip the other.",
+      "start": 867.02,
+      "duration": 6.580000000000041
+    },
+    {
+      "text": "So for the platform observer the light hits the back of the car first and the front of the car later.",
+      "start": 874.38,
+      "duration": 5.480000000000018
+    },
+    {
+      "text": "Not simultaneous. Hold on. The exact same two events. Light hits the front, light hits the back.",
+      "start": 880.62,
+      "duration": 7.240000000000009
+    },
+    {
+      "text": "The person on the train says same instant. The person on the platform says back first then front",
+      "start": 888.34,
+      "duration": 6.919999999999959
+    },
+    {
+      "text": "and you're telling me neither of them is wrong. Neither is wrong. Each did the same even-handed",
+      "start": 895.9,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "procedure with light. Each is a perfectly good inertial observer and postulate. One says neither has",
+      "start": 902.1,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "a privileged view. They simply disagree about whether two separated events happened at the same time.",
+      "start": 909.08,
+      "duration": 6.839999999999918
+    },
+    {
+      "text": "Simultaneity which felt like the most absolute obvious thing in the world turns out to depend on your",
+      "start": 917.32,
+      "duration": 6.099999999999909
+    },
+    {
+      "text": "motion. There is no universal now slicing across the universe. Your now and mine tilt relative to",
+      "start": 923.42,
+      "duration": 9.020000000000095
+    },
+    {
+      "text": "each other once we're moving. This is the conceptual heart of the whole paper and almost everything",
+      "start": 932.44,
+      "duration": 6.319999999999936
+    },
+    {
+      "text": "strange that follows is really just this one fact wearing different costumes. That's the sentence",
+      "start": 938.76,
+      "duration": 5.779999999999973
+    },
+    {
+      "text": "I want to sit with. Almost everything strange is this one fact in a costume. Okay give me the first",
+      "start": 944.54,
+      "duration": 7.720000000000027
+    },
+    {
+      "text": "costume. If people disagree about Simultaneity what does that do to a clock? It makes moving",
+      "start": 952.26,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "clocks run slow and I can show you exactly why with the simplest clock you can imagine. A clock made",
+      "start": 958.36,
+      "duration": 7.199999999999932
+    },
+    {
+      "text": "of light itself. Picture two mirrors facing each other, one on the floor and one on the ceiling,",
+      "start": 965.56,
+      "duration": 6.32000000000005
+    },
+    {
+      "text": "a fixed distance apart with a single pulse of light bouncing straight up and down between them.",
+      "start": 972.48,
+      "duration": 5.2999999999999545
+    },
+    {
+      "text": "Every round trip up and back down is one tick. That's a perfectly legitimate clock. In its own",
+      "start": 978.74,
+      "duration": 7.7999999999999545
+    },
+    {
+      "text": "rest frame one tick takes the time for light to go up and come back. Twice the mirror distance",
+      "start": 986.54,
+      "duration": 6.280000000000086
+    },
+    {
+      "text": "divided by C. Clean. A light clock. I like it because there's no gears to argue about.",
+      "start": 992.82,
+      "duration": 7.759999999999991
+    },
+    {
+      "text": "The tick rate is just light and distance. That's why it's the perfect probe.",
+      "start": 1001.08,
+      "duration": 4.279999999999973
+    },
+    {
+      "text": "Now let's put that light clock on our train moving past us with the mirrors oriented so the light",
+      "start": 1006.1800000000001,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "bounces up and down across the direction of motion. You on the platform watch it go by. What path does",
+      "start": 1012.22,
+      "duration": 7.980000000000018
+    },
+    {
+      "text": "that light pulse trace out from your point of view? It leaves the bottom mirror but by the time it",
+      "start": 1020.2,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "reaches the top mirror the whole clock has slid forward and by the time it comes back down it's",
+      "start": 1026.18,
+      "duration": 6.0
+    },
+    {
+      "text": "slid forward again. So from your seat on the platform the light doesn't go straight up and down.",
+      "start": 1032.18,
+      "duration": 5.7000000000000455
+    },
+    {
+      "text": "It traces a long zigzag, a stretched out V like a tent shape. Two diagonal legs instead of two",
+      "start": 1038.48,
+      "duration": 7.379999999999882
+    },
+    {
+      "text": "vertical ones. And a diagonal is longer than straight up. A diagonal is unavoidably longer than",
+      "start": 1045.86,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "the vertical. The light has to cover more distance to complete one tick as you see it.",
+      "start": 1052.04,
+      "duration": 5.319999999999936
+    },
+    {
+      "text": "But and here's where postulate two lands the blow. That light is still traveling at C for you.",
+      "start": 1058.1200000000001,
+      "duration": 6.2199999999998
+    },
+    {
+      "text": "You cannot say well it's going faster along the diagonal to keep up. It goes at exactly C",
+      "start": 1065.1,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "same as always. More distance at the same speed means more time. So one tick of that moving clock",
+      "start": 1071.36,
+      "duration": 7.940000000000055
+    },
+    {
+      "text": "takes longer measured by U than one tick takes for the person riding along with it.",
+      "start": 1079.3,
+      "duration": 5.400000000000091
+    },
+    {
+      "text": "The moving clock ticks slower. Time itself as read by that clock is running slow.",
+      "start": 1085.42,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "From your point of view and you can actually put a number well a factor on how much slower",
+      "start": 1092.44,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "you can and it's the single most famous factor in the subject. It gets the name gamma.",
+      "start": 1098.4,
+      "duration": 5.959999999999809
+    },
+    {
+      "text": "If the clock moves at speed V then gamma is one divided by the square root of the quantity",
+      "start": 1105.24,
+      "duration": 5.519999999999982
+    },
+    {
+      "text": "one minus V squared over C squared. Let me make that breathe. The ratio V over C is how fast",
+      "start": 1110.76,
+      "duration": 8.700000000000045
+    },
+    {
+      "text": "you're going as a fraction of light speed. Square it, subtract it from one, take the square root",
+      "start": 1119.46,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "and flip it over. When V is tiny compared to C every day speeds, V over C is nearly zero,",
+      "start": 1125.76,
+      "duration": 8.200000000000045
+    },
+    {
+      "text": "so gamma is essentially one and moving clocks tick at basically the normal rate.",
+      "start": 1134.42,
+      "duration": 4.960000000000036
+    },
+    {
+      "text": "That's why you've never noticed this. But as V climbs towards C that quantity under the square root",
+      "start": 1140.2600000000002,
+      "duration": 6.359999999999673
+    },
+    {
+      "text": "shrinks towards zero and gamma blows up toward infinity. At about 87% of the speed of light gamma is",
+      "start": 1146.62,
+      "duration": 8.180000000000064
+    },
+    {
+      "text": "two, moving clocks run at half speed, push closer to C and they nearly freeze. So the moving clocks ticks",
+      "start": 1154.8,
+      "duration": 8.1400000000001
+    },
+    {
+      "text": "are stretched by the factor gamma. Is this just light clocks being weird or is it every clock?",
+      "start": 1162.94,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "It has to be every clock and that's forced by postulate one, the principle of relativity.",
+      "start": 1170.28,
+      "duration": 5.720000000000027
+    },
+    {
+      "text": "Suppose only the light clock slowed down and your wristwatch or your heartbeat or the decay of",
+      "start": 1177.0,
+      "duration": 5.900000000000091
+    },
+    {
+      "text": "a radioactive atom didn't. Then you could sit in your sealed cabin, compare the light clock against",
+      "start": 1182.9,
+      "duration": 6.2199999999998
+    },
+    {
+      "text": "your pulse, notice them drifting apart and announce, aha, I'm the one really moving.",
+      "start": 1189.12,
+      "duration": 6.040000000000191
+    },
+    {
+      "text": "That would violate the principle that says you can't detect your own uniform motion.",
+      "start": 1195.66,
+      "duration": 5.1599999999998545
+    },
+    {
+      "text": "So to keep the principle intact, everything that measures time must slow by the identical factor.",
+      "start": 1201.56,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "The moving light clock, the moving wristwatch, the moving biological aging,",
+      "start": 1208.5,
+      "duration": 4.740000000000009
+    },
+    {
+      "text": "the moving atoms decay, all stretched by gamma together. It's not that clock's malfunction,",
+      "start": 1213.24,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "time for that moving system genuinely passes more slowly.",
+      "start": 1221.14,
+      "duration": 4.139999999999873
+    },
+    {
+      "text": "I have to ask the obvious skeptics question, has anyone ever actually seen a moving clock run slow?",
+      "start": 1225.48,
+      "duration": 7.079999999999927
+    },
+    {
+      "text": "Or is this a story we tell on trains that don't exist?",
+      "start": 1233.16,
+      "duration": 3.259999999999991
+    },
+    {
+      "text": "It's measured constantly and I'll give you the cleanest real case. Particles called new ones",
+      "start": 1236.86,
+      "duration": 5.440000000000055
+    },
+    {
+      "text": "a muon is a heavy cousin of the electron and it's unstable. Left alone it decays in about a couple",
+      "start": 1243.24,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "of millions of a second. They're created high in the atmosphere when cosmic rays hit the air",
+      "start": 1249.72,
+      "duration": 5.8599999999999
+    },
+    {
+      "text": "and they come screaming down toward the ground at very close to the speed of light.",
+      "start": 1255.58,
+      "duration": 4.460000000000036
+    },
+    {
+      "text": "Now do the book keeping the old way. Even at light speed in a couple of millions of a second,",
+      "start": 1261.18,
+      "duration": 5.519999999999982
+    },
+    {
+      "text": "they should only make it a fraction of the way down before decaying. Almost none should reach",
+      "start": 1267.08,
+      "duration": 5.160000000000082
+    },
+    {
+      "text": "the ground, but floods of them reach the ground. Why? Because they're moving so fast that their",
+      "start": 1272.24,
+      "duration": 7.379999999999882
+    },
+    {
+      "text": "internal decay clock is dilated, stretched by a large gamma. So from our point of view, they live far",
+      "start": 1279.62,
+      "duration": 6.560000000000173
+    },
+    {
+      "text": "longer than their at rest lifetime, long enough to complete the trip. We don't just believe time",
+      "start": 1286.18,
+      "duration": 6.639999999999873
+    },
+    {
+      "text": "dilation, we get rained on by the evidence. That's wonderful. The sky is running the experiment for free.",
+      "start": 1292.82,
+      "duration": 6.1400000000001
+    },
+    {
+      "text": "All right, clocks stretch. You also promised me rulers shrink. Same idea. Same idea, seen from the side.",
+      "start": 1299.52,
+      "duration": 7.519999999999982
+    },
+    {
+      "text": "Let me get the length contraction from the muon we were just discussing because it's a lovely",
+      "start": 1308.24,
+      "duration": 4.3599999999999
+    },
+    {
+      "text": "consistency check. We on the ground explain the muon reaching us by saying its clock ram slow,",
+      "start": 1312.6,
+      "duration": 6.580000000000155
+    },
+    {
+      "text": "but now ride along with the muon. In its own frame, its clock is perfectly normal. It lives its",
+      "start": 1319.76,
+      "duration": 6.940000000000055
+    },
+    {
+      "text": "ordinary couple of millions of a second, no dilation because it's at rest relative to itself.",
+      "start": 1326.7,
+      "duration": 5.779999999999973
+    },
+    {
+      "text": "So how does it possibly cross all that atmosphere in such a short life? From the muon's point of view,",
+      "start": 1333.04,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "the atmosphere is the thing that's moving, rushing up at it near light speed, and that whole thickness",
+      "start": 1339.96,
+      "duration": 5.940000000000055
+    },
+    {
+      "text": "of atmosphere is contracted, squashed thin along the direction of motion. The distance it has to",
+      "start": 1345.9,
+      "duration": 6.559999999999945
+    },
+    {
+      "text": "travel is shortened by exactly the factor gamma. Short enough to cross in its normal lifetime.",
+      "start": 1352.46,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "So one observer says your clock slowed, the other says your distance shrank, and they both correctly",
+      "start": 1358.64,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "predict the muon hits the ground. They must both get the same physical outcome. The muon either reaches",
+      "start": 1365.38,
+      "duration": 6.7999999999999545
+    },
+    {
+      "text": "the ground, or it doesn't, and everyone has to agree on that. What they don't have to agree on",
+      "start": 1372.18,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "is the explanation in terms of space versus time. One frame spends the effect on time,",
+      "start": 1378.22,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "the other spends it on space, and it always balances, and that gives us the length contraction rule.",
+      "start": 1385.32,
+      "duration": 5.940000000000055
+    },
+    {
+      "text": "An object in motion is shortened along its direction of travel by the factor gamma. A meter stick",
+      "start": 1392.0,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "flying past you lengthwise is measured by you as shorter than a meter. Only along the motion,",
+      "start": 1398.46,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "the dimensions across the motion are untouched, and again, the object isn't crushed or stressed.",
+      "start": 1404.68,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "Space itself measured between those moving points is what's compressed.",
+      "start": 1411.62,
+      "duration": 4.520000000000209
+    },
+    {
+      "text": "Before we go on, can we make this simple teneity thing concrete? You keep saying,",
+      "start": 1416.5,
+      "duration": 5.519999999999982
+    },
+    {
+      "text": "you're now tilts relative to mine, and I believe it, but I want to handle on how much.",
+      "start": 1422.4,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "Is there an actual rule? There is, and it's worth having, because it's the",
+      "start": 1429.0,
+      "duration": 4.599999999999909
+    },
+    {
+      "text": "quantitative core of the whole paper. The piece history remembers as the Lorentz transformation.",
+      "start": 1433.6,
+      "duration": 5.620000000000118
+    },
+    {
+      "text": "Einstein derived it directly from the two postulates. It's just the dictionary that translates the",
+      "start": 1440.38,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "where and when of an event from one frame to another. Take my frame and yours, moving at speed V",
+      "start": 1445.96,
+      "duration": 6.819999999999936
+    },
+    {
+      "text": "relative to me. An event happens at some position and some time in my frame. To get its position in your",
+      "start": 1452.78,
+      "duration": 7.240000000000009
+    },
+    {
+      "text": "frame, you don't simply subtract off how far you've travelled. You do that, and then multiply the",
+      "start": 1460.02,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "whole thing by gamma. And to get its time in your frame, here's the shock. The time isn't just my time",
+      "start": 1465.98,
+      "duration": 6.940000000000055
+    },
+    {
+      "text": "slowed down. It's my time adjusted by a term that depends on where the event happened. Specifically,",
+      "start": 1472.92,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "minus the event's position times V over C squared. The whole thing again scaled by gamma. Wait, stop",
+      "start": 1480.38,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "on that. The time in your frame depends on the position of the event. Time depends on where",
+      "start": 1487.66,
+      "duration": 6.079999999999927
+    },
+    {
+      "text": "something is. That is relativity of simultaneity written as an equation, and it's the single most",
+      "start": 1493.74,
+      "duration": 6.599999999999909
+    },
+    {
+      "text": "important term in the paper. Look at what it says. Two events that happen at the same time in my frame,",
+      "start": 1500.34,
+      "duration": 6.560000000000173
+    },
+    {
+      "text": "but at different places get different times in yours. Because that minus position times V over C",
+      "start": 1507.28,
+      "duration": 6.7999999999999545
+    },
+    {
+      "text": "squared piece is different for each of them. The further apart they are, the bigger the disagreement.",
+      "start": 1514.08,
+      "duration": 5.920000000000073
+    },
+    {
+      "text": "Concretely, if you have a row of clocks all synchronised in their own rest frame, and you go flying",
+      "start": 1521.14,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "past them, they don't all read the same to you. The ones further ahead in your direction of motion",
+      "start": 1526.72,
+      "duration": 5.759999999999991
+    },
+    {
+      "text": "read earlier and earlier. People say it as a slogan, leading clocks lag. The clock out in front",
+      "start": 1532.48,
+      "duration": 7.920000000000073
+    },
+    {
+      "text": "in the direction of motion is the one that's behind. And that offset position times V over C squared",
+      "start": 1540.4,
+      "duration": 7.740000000000009
+    },
+    {
+      "text": "is exactly what makes each observer see the other's clocks as slow without contradiction.",
+      "start": 1548.14,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "Which is the not I think you're about to pull on. You read my mind because that's precisely the",
+      "start": 1554.18,
+      "duration": 5.8599999999999
+    },
+    {
+      "text": "thing that's been nagging me the whole time. And I suspect it's the classic trap. You keep saying",
+      "start": 1560.04,
+      "duration": 6.539999999999964
+    },
+    {
+      "text": "the moving clock runs slow. But by the principle of relativity, the person on the train has every",
+      "start": 1566.58,
+      "duration": 6.8400000000001455
+    },
+    {
+      "text": "right to say they're at rest and I'm the one moving. So they see my clock runs slow. We each see the",
+      "start": 1573.42,
+      "duration": 7.779999999999973
+    },
+    {
+      "text": "others clock running slow. That's a contradiction. Both clocks can't be slower than each other.",
+      "start": 1581.2,
+      "duration": 6.339999999999918
+    },
+    {
+      "text": "This is the objection and it is the exact place where people either give up or finally get it.",
+      "start": 1587.68,
+      "duration": 5.720000000000027
+    },
+    {
+      "text": "So let's get it. Your right that each of us sees the other's clock runs slow",
+      "start": 1594.1200000000001,
+      "duration": 4.979999999999791
+    },
+    {
+      "text": "and your right that it sounds like a flat contradiction. The resolution is the thing we built at",
+      "start": 1599.1,
+      "duration": 6.120000000000118
+    },
+    {
+      "text": "the very beginning. The relativity of similarity. The reason it's not a contradiction is that when I",
+      "start": 1605.22,
+      "duration": 6.639999999999873
+    },
+    {
+      "text": "compare our clocks, I have to decide which reading of your clock to hold up against which reading of",
+      "start": 1611.86,
+      "duration": 5.920000000000073
+    },
+    {
+      "text": "mine and that comparison depends on which distant events I call simultaneous. And you and I",
+      "start": 1617.78,
+      "duration": 7.059999999999945
+    },
+    {
+      "text": "disagree about similarity. So when I line up your clock now against my clock now, I'm using my",
+      "start": 1624.84,
+      "duration": 8.1400000000001
+    },
+    {
+      "text": "notion of now which is tilted relative to yours. We are literally not comparing the same pairs of",
+      "start": 1632.98,
+      "duration": 7.180000000000064
+    },
+    {
+      "text": "events. So we never actually put the two clocks side by side and read them against a shared now",
+      "start": 1640.16,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "because there is no shared now. There's the key. As long as we're flying apart,",
+      "start": 1646.68,
+      "duration": 5.839999999999918
+    },
+    {
+      "text": "every comparison is really each of us slicing the other's timeline with our own tilted sense of",
+      "start": 1652.98,
+      "duration": 5.920000000000073
+    },
+    {
+      "text": "simultaneity and both slices are self-consistent. The only way to get a genuine no-arguing put them",
+      "start": 1658.9,
+      "duration": 7.759999999999991
+    },
+    {
+      "text": "side by side comparison is to bring the clocks back together to one place and to do that at least one",
+      "start": 1666.66,
+      "duration": 6.759999999999991
+    },
+    {
+      "text": "of you has to turn around. Turning around means accelerating and accelerating breaks the symmetry.",
+      "start": 1673.42,
+      "duration": 6.339999999999918
+    },
+    {
+      "text": "The one who turns is no longer just an inertial observer. That's the famous twin situation.",
+      "start": 1680.46,
+      "duration": 5.839999999999918
+    },
+    {
+      "text": "The twin who journeys out and comes back has genuinely aged less and the A symmetry enters",
+      "start": 1686.98,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "precisely at the turnaround. But as long as nobody turns around each sees the other's clock slow",
+      "start": 1693.24,
+      "duration": 6.660000000000082
+    },
+    {
+      "text": "is not a paradox. It's two consistent perspectives that never share a single now.",
+      "start": 1699.9,
+      "duration": 5.6599999999998545
+    },
+    {
+      "text": "You drop the word twin and I can't let it go because that's the version that always breaks my brain.",
+      "start": 1705.8,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "Spell it out. Where exactly does the symmetry break? Let's do it slowly because it's the perfect stress",
+      "start": 1712.66,
+      "duration": 6.3599999999999
+    },
+    {
+      "text": "test of everything we've built. Two twins. One stays home on earth. The other boards a ship",
+      "start": 1719.02,
+      "duration": 7.0
+    },
+    {
+      "text": "flies out to some distant star at close to the speed of light turns around and comes home.",
+      "start": 1726.02,
+      "duration": 5.759999999999991
+    },
+    {
+      "text": "When they reunite the traveling twin is younger genuinely physically younger fewer birthdays.",
+      "start": 1732.16,
+      "duration": 6.539999999999964
+    },
+    {
+      "text": "Now the puzzle. During the trip motion is relative so why doesn't it work both ways?",
+      "start": 1739.56,
+      "duration": 5.900000000000091
+    },
+    {
+      "text": "The home twin says your clock ran slow so your younger. But the traveling twin feeling perfectly",
+      "start": 1746.3,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "at rest in their own ship watching earth recede and return wants to say the exact same thing about the",
+      "start": 1753.04,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "home twin. If it's symmetric they should each be younger than the other which is nonsense when they",
+      "start": 1759.44,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "stand face to face. Right that's the crusher they can't each be younger. So who's actually right",
+      "start": 1765.5,
+      "duration": 6.339999999999918
+    },
+    {
+      "text": "and why isn't it a coin flip? The break is one word turnaround. The home twin stays in a single",
+      "start": 1771.84,
+      "duration": 8.279999999999973
+    },
+    {
+      "text": "inertial frame the whole time. One steady point of view start to finish. The traveling twin does not.",
+      "start": 1780.12,
+      "duration": 7.220000000000027
+    },
+    {
+      "text": "To come back they have to fire the engines, decelerate and accelerate the other way.",
+      "start": 1788.2,
+      "duration": 5.039999999999964
+    },
+    {
+      "text": "During that turnaround they feel a force. They're pressed into the seat and that's the tell.",
+      "start": 1794.36,
+      "duration": 5.400000000000091
+    },
+    {
+      "text": "Acceleration is not relative. There's no ambiguity about who felt it. The traveling twin knows",
+      "start": 1800.74,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "they turned around. The home twin never felt a thing. So the situation was never actually symmetric",
+      "start": 1807.22,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "and you're not allowed to run the each sees the other slow argument from the traveller's seat as if",
+      "start": 1813.44,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "they were one steady inertial observer because they weren't. Okay but I want more than acceleration",
+      "start": 1819.72,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "breaks the tie. What actually happens to the traveller's picture of earth during that turnaround?",
+      "start": 1826.0,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "Because for most of the trip they really are coasting. This is the beautiful part and it's our",
+      "start": 1832.22,
+      "duration": 6.160000000000082
+    },
+    {
+      "text": "similarity term doing the work. For most of the trip the traveller is coasting and yes during the",
+      "start": 1838.38,
+      "duration": 7.139999999999873
+    },
+    {
+      "text": "outbound coast they see earth's clock running slow and during the inbound coast they again see earth's",
+      "start": 1845.52,
+      "duration": 7.019999999999982
+    },
+    {
+      "text": "clock running slow. If that were the whole story they'd predict the home twin is younger, the wrong",
+      "start": 1852.54,
+      "duration": 6.680000000000064
+    },
+    {
+      "text": "answer. What they're missing is the turnaround. Remember leading clock's lag and remember that",
+      "start": 1859.22,
+      "duration": 7.579999999999927
+    },
+    {
+      "text": "the offset depends on distance. At the turnaround the traveller swaps which direction is forward",
+      "start": 1866.8,
+      "duration": 6.580000000000155
+    },
+    {
+      "text": "and the earth is now very far away. That swap does something dramatic to their notion of what",
+      "start": 1873.38,
+      "duration": 6.339999999999918
+    },
+    {
+      "text": "now on earth means. Their line of simultaneity swings and a huge span of earth time that they'd",
+      "start": 1879.72,
+      "duration": 7.599999999999909
+    },
+    {
+      "text": "been skipping over suddenly falls into their now. From the traveller's own accounting earth's clock",
+      "start": 1887.32,
+      "duration": 7.120000000000118
+    },
+    {
+      "text": "races forward during the turnaround. Add it all up, slow coast out, big jump at the turn, slow coast",
+      "start": 1894.44,
+      "duration": 8.019999999999982
+    },
+    {
+      "text": "back and the traveller computes that the home twin aged more. Both twins now agree and they agree",
+      "start": 1902.46,
+      "duration": 7.579999999999927
+    },
+    {
+      "text": "with what the clocks read when they're standing together. So the missing time doesn't vanish,",
+      "start": 1910.04,
+      "duration": 4.360000000000127
+    },
+    {
+      "text": "it's hiding in the moment the traveller flips around and that flip is the thing only one of them",
+      "start": 1914.4,
+      "duration": 6.7199999999998
+    },
+    {
+      "text": "experiences. Precisely. The asymmetry isn't smuggled in, it's the physical fact of who fired their",
+      "start": 1921.12,
+      "duration": 7.620000000000118
+    },
+    {
+      "text": "engines and this is not a thought experiment anymore. It's been done with atomic clocks flown around",
+      "start": 1928.74,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "the world on airliners which come back reading a hair behind clocks that stayed on the ground by just",
+      "start": 1934.94,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "the amount the theory predicts. Flying is very slightly time travel into the future.",
+      "start": 1941.16,
+      "duration": 5.959999999999809
+    },
+    {
+      "text": "So the twin situation isn't a paradox at all, it's one of relativity's most down-to-earth",
+      "start": 1947.78,
+      "duration": 5.620000000000118
+    },
+    {
+      "text": "confirmations that time is a road and different routes through it have different lengths.",
+      "start": 1953.4,
+      "duration": 4.699999999999818
+    },
+    {
+      "text": "That genuinely are not it for me. The symmetry is real and it's only broken by whoever actually changes",
+      "start": 1958.52,
+      "duration": 6.680000000000064
+    },
+    {
+      "text": "their motion. Okay, we've bent time and bent space. Somewhere in here the speed of light becomes",
+      "start": 1965.2,
+      "duration": 7.460000000000036
+    },
+    {
+      "text": "a wall. How does that fall out? It falls out of asking the most natural question left. How do velocities",
+      "start": 1972.66,
+      "duration": 7.439999999999827
+    },
+    {
+      "text": "combine now? We saw that light refuses to obey speeds just add. But ordinary things do they add?",
+      "start": 1980.1,
+      "duration": 8.480000000000018
+    },
+    {
+      "text": "If I'm on a train doing half the speed of light and I fire a ball forward,",
+      "start": 1989.26,
+      "duration": 4.400000000000091
+    },
+    {
+      "text": "also at half the speed of light relative to the train an outside observer sees the ball going.",
+      "start": 1993.66,
+      "duration": 5.5
+    },
+    {
+      "text": "You'd say the whole speed of light, half plus half. Does it? By everything we just did,",
+      "start": 1999.62,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "I'm now nervous to say yes see. Because if it were exactly see, that's fine. But if I fired",
+      "start": 2006.14,
+      "duration": 7.059999999999945
+    },
+    {
+      "text": "something faster I'd exceed see and you've been building a wall. Your nervousness is correct.",
+      "start": 2013.2,
+      "duration": 5.6599999999998545
+    },
+    {
+      "text": "Once space and time bend by gamma, the rule for adding velocities changes. The new rule",
+      "start": 2019.5800000000002,
+      "duration": 6.199999999999818
+    },
+    {
+      "text": "to combine two speeds. Say your speed and the ball speed relative to you, you add them,",
+      "start": 2025.78,
+      "duration": 6.360000000000127
+    },
+    {
+      "text": "but then you divide by a correction factor. One plus the product of the two speeds divided by c",
+      "start": 2032.54,
+      "duration": 6.1400000000001
+    },
+    {
+      "text": "squared. Let me say it plainly with the half and half case. Ordinarily you'd get one whole c,",
+      "start": 2038.68,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "but you divide by one plus a half times a half. One plus a quarter, which is one and a quarter.",
+      "start": 2046.2800000000002,
+      "duration": 6.199999999999818
+    },
+    {
+      "text": "So instead of the full c, you get the combined speed as four fifths of c, less than c.",
+      "start": 2053.24,
+      "duration": 6.260000000000218
+    },
+    {
+      "text": "The correction always pulls the sum back below the speed of light. And if I push the input all",
+      "start": 2060.38,
+      "duration": 5.440000000000055
+    },
+    {
+      "text": "the way up, fire light itself at c from my fast moving train, then watch the rule do its job.",
+      "start": 2065.82,
+      "duration": 7.6599999999998545
+    },
+    {
+      "text": "You put in c for the ball speed. On the top you have your speed plus c. On the bottom,",
+      "start": 2074.2,
+      "duration": 5.920000000000073
+    },
+    {
+      "text": "one plus your speed times c over c squared, which is one plus your speed over c.",
+      "start": 2080.52,
+      "duration": 5.539999999999964
+    },
+    {
+      "text": "Do the algebra and the whole thing collapses back to exactly c. The speed of light plus any speed",
+      "start": 2086.94,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "is still just the speed of light. That's postulate two falling right out of the velocity rule as it must.",
+      "start": 2093.4,
+      "duration": 7.199999999999818
+    },
+    {
+      "text": "And for anything moving slower than light, no matter how you stack speeds, you asymptotically",
+      "start": 2101.4,
+      "duration": 5.519999999999982
+    },
+    {
+      "text": "approach c but never reach it. The speed of light isn't a speed limit because of some engine's",
+      "start": 2106.92,
+      "duration": 6.1599999999998545
+    },
+    {
+      "text": "weakness. It's built into the geometry of how velocities combine. It is the seam of space and time.",
+      "start": 2113.08,
+      "duration": 6.720000000000255
+    },
+    {
+      "text": "But that's a statement about adding up speeds, a bookkeeping rule. Let me be the stubborn engineer.",
+      "start": 2120.02,
+      "duration": 6.320000000000164
+    },
+    {
+      "text": "I don't care about your rule, I strap a big enough rocket to a ship and I just keep burning fuel.",
+      "start": 2126.34,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "Every second I push, I go faster. What physically stops me from crossing c?",
+      "start": 2133.48,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "This is the right pushback and the answer is the other wall, the energy wall.",
+      "start": 2139.88,
+      "duration": 4.880000000000109
+    },
+    {
+      "text": "And it comes out of the same postulates once you ask how momentum and energy have to work for fast",
+      "start": 2145.32,
+      "duration": 5.619999999999891
+    },
+    {
+      "text": "things. Here's the punchline first. As your ship goes faster, it gets harder and harder to speed up.",
+      "start": 2150.94,
+      "duration": 7.299999999999727
+    },
+    {
+      "text": "Not because the rocket weakens, but because the ship's resistance to being pushed,",
+      "start": 2158.84,
+      "duration": 4.119999999999891
+    },
+    {
+      "text": "its inertia grows with speed. The faster you go, the more each additional shove buys you less speed.",
+      "start": 2163.44,
+      "duration": 6.739999999999782
+    },
+    {
+      "text": "And that growth is governed by our friend Gamma again. As V climbs towards c, Gamma runs away",
+      "start": 2170.94,
+      "duration": 6.559999999999945
+    },
+    {
+      "text": "toward infinity, and so does the energy you'd need to squeeze out that last little bit of speed.",
+      "start": 2177.5,
+      "duration": 5.460000000000036
+    },
+    {
+      "text": "So the finish line keeps costing more the closer I get. It costs unboundedly more.",
+      "start": 2183.26,
+      "duration": 5.459999999999582
+    },
+    {
+      "text": "To actually reach c, a ship with mass would need infinite energy. The amount diverges as you approach",
+      "start": 2189.82,
+      "duration": 6.639999999999873
+    },
+    {
+      "text": "the speed of light. There isn't that much energy in the universe, so it simply cannot be done.",
+      "start": 2196.46,
+      "duration": 5.8400000000001455
+    },
+    {
+      "text": "And notice how neatly this dovetails with the velocity edition rule.",
+      "start": 2203.1800000000003,
+      "duration": 3.819999999999709
+    },
+    {
+      "text": "One says you can never add speeds up past c, the other says you could never afford the energy to try.",
+      "start": 2207.74,
+      "duration": 6.200000000000273
+    },
+    {
+      "text": "Kinematics and dynamics agree. And it flips around for light. A particle with no mass like the photon",
+      "start": 2215.08,
+      "duration": 7.099999999999909
+    },
+    {
+      "text": "doesn't pay that price. In fact, it is required to travel at exactly c and can do nothing else.",
+      "start": 2222.18,
+      "duration": 6.940000000000055
+    },
+    {
+      "text": "Masslers means always at c. Massive means forever approaching but never reaching.",
+      "start": 2229.92,
+      "duration": 5.880000000000109
+    },
+    {
+      "text": "The speed of light is the one boundary the universe draws in two independent inks",
+      "start": 2236.86,
+      "duration": 4.900000000000091
+    },
+    {
+      "text": "and gets the same line. So nothing with mass ever gets to c and light, which has no mass,",
+      "start": 2241.76,
+      "duration": 6.4399999999996
+    },
+    {
+      "text": "is stark at exactly c for everyone. That's a strange kind of democracy. It's the most rigid",
+      "start": 2248.68,
+      "duration": 6.800000000000182
+    },
+    {
+      "text": "democracy in physics. Every inertial observer, no exceptions, agrees on that one speed",
+      "start": 2255.48,
+      "duration": 6.559999999999945
+    },
+    {
+      "text": "and disagrees about almost everything else. Lengths, durations, similar to naity.",
+      "start": 2262.04,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "And now we can finally circle back and collect the debt from the beginning of the paper.",
+      "start": 2268.74,
+      "duration": 4.480000000000018
+    },
+    {
+      "text": "Because remember the title is on the electrodynamics of moving bodies.",
+      "start": 2273.8,
+      "duration": 4.119999999999891
+    },
+    {
+      "text": "We've been doing kinematics, clocks and rulers. The second half of the paper is about what all",
+      "start": 2278.76,
+      "duration": 6.399999999999636
+    },
+    {
+      "text": "this does to electricity and magnetism. And it pays off the magnet and conductor puzzle we",
+      "start": 2285.16,
+      "duration": 5.2400000000002365
+    },
+    {
+      "text": "opened with. Right, the two stories for one current, the electric field story and the magnetic",
+      "start": 2290.4,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "four story. How does relativity heal that? By revealing that the electric field and the magnetic",
+      "start": 2296.8,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "field were never two separate things. There are two views of a single object and which view you get",
+      "start": 2303.28,
+      "duration": 6.679999999999836
+    },
+    {
+      "text": "depends on your motion. Take the magnet and conductor. In the frame where the wire sits still",
+      "start": 2309.96,
+      "duration": 6.7199999999998
+    },
+    {
+      "text": "and the magnet moves, you genuinely see a changing magnetic field producing an electric field",
+      "start": 2316.68,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "and that electric field pushes the charges. In the frame where the magnet sits still and the wire",
+      "start": 2323.2400000000002,
+      "duration": 6.239999999999782
+    },
+    {
+      "text": "moves, you genuinely see only a static magnetic field and the charges feel a magnetic force because",
+      "start": 2329.48,
+      "duration": 6.920000000000073
+    },
+    {
+      "text": "they're moving through it. Same current. And Einstein shows that if you take Maxwell's equations",
+      "start": 2336.4,
+      "duration": 6.739999999999782
+    },
+    {
+      "text": "and pass from one frame to the other using the very transformations we've been building,",
+      "start": 2343.14,
+      "duration": 5.059999999999945
+    },
+    {
+      "text": "the ones with gamma in them, the electric and magnetic fields mix into each other.",
+      "start": 2348.68,
+      "duration": 4.760000000000218
+    },
+    {
+      "text": "What one observer calls a pure magnetic field, another moving calls a blend of electric and magnetic.",
+      "start": 2354.4,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "Their components of one unified electromagnetic field seen from different angles in space time.",
+      "start": 2361.82,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "So the two different mechanisms were never two mechanisms. It was one field and the split into",
+      "start": 2368.16,
+      "duration": 6.760000000000218
+    },
+    {
+      "text": "electric and magnetic is just a point of view. Exactly that. The asymmetry that bothered Einstein in",
+      "start": 2374.92,
+      "duration": 8.460000000000036
+    },
+    {
+      "text": "the first sentence was an artifact of pretending there's a fact of the matter about who's moving.",
+      "start": 2383.38,
+      "duration": 5.1599999999998545
+    },
+    {
+      "text": "Once you accept there isn't, the two stories become one story told in two accents.",
+      "start": 2389.42,
+      "duration": 4.779999999999745
+    },
+    {
+      "text": "Electricity and magnetism aren't just related, they are literally the same field carved up",
+      "start": 2395.3,
+      "duration": 5.4399999999996
+    },
+    {
+      "text": "differently by observers in relative motion. And notice what Einstein did and didn't do here.",
+      "start": 2400.74,
+      "duration": 6.040000000000418
+    },
+    {
+      "text": "He didn't modify Maxwell's equations to make this work. He kept them exactly in every frame.",
+      "start": 2407.58,
+      "duration": 5.880000000000109
+    },
+    {
+      "text": "That was postulate one, applied to electrodynamics, and he changed space and time instead",
+      "start": 2413.46,
+      "duration": 6.5
+    },
+    {
+      "text": "so that the equations could hold for everyone. He bent the stage to save the play.",
+      "start": 2419.96,
+      "duration": 5.5
+    },
+    {
+      "text": "There's a phrase you used earlier that I keep coming back to. You didn't change the light,",
+      "start": 2425.66,
+      "duration": 5.0
+    },
+    {
+      "text": "you changed the stage. That's really the whole thing isn't it?",
+      "start": 2431.08,
+      "duration": 3.680000000000291
+    },
+    {
+      "text": "That's the whole thing in nine words. Every other physicist facing the ether trouble",
+      "start": 2435.34,
+      "duration": 5.239999999999782
+    },
+    {
+      "text": "was trying to change the light or the matter or invent a mechanism, a drag, a contraction, a substance.",
+      "start": 2440.58,
+      "duration": 7.680000000000291
+    },
+    {
+      "text": "Einstein left light exactly as Maxwell described it, took its constant speed as sacred,",
+      "start": 2449.4,
+      "duration": 5.179999999999836
+    },
+    {
+      "text": "and asked what space and time must be like for that to be consistent for everybody.",
+      "start": 2454.98,
+      "duration": 4.420000000000073
+    },
+    {
+      "text": "The radical part isn't a new force. There's no new force in this paper at all.",
+      "start": 2460.28,
+      "duration": 4.7199999999998
+    },
+    {
+      "text": "The radical part is that space and time stopped being the fixed God's eye backdrop",
+      "start": 2465.64,
+      "duration": 5.140000000000327
+    },
+    {
+      "text": "and became flexible, observer-dependent, and interwoven.",
+      "start": 2470.78,
+      "duration": 4.019999999999982
+    },
+    {
+      "text": "Does any of this touch light we actually look at? Because so far the light has been signals on trains.",
+      "start": 2474.96,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "What happens to real light? Starlight when I'm moving.",
+      "start": 2481.46,
+      "duration": 3.7799999999997453
+    },
+    {
+      "text": "Two lovely things, and the paper works both out. The first is the Doppler effect for light.",
+      "start": 2485.58,
+      "duration": 5.860000000000127
+    },
+    {
+      "text": "You know the everyday version with sound, a siren rises in pitch as it comes toward you",
+      "start": 2492.2400000000002,
+      "duration": 5.479999999999563
+    },
+    {
+      "text": "and drops as it goes away because the waves get bunched up or stretched out.",
+      "start": 2497.72,
+      "duration": 4.960000000000036
+    },
+    {
+      "text": "Light does the same. A source coming toward you has its waves crowded, shifted toward the blue,",
+      "start": 2503.46,
+      "duration": 6.139999999999873
+    },
+    {
+      "text": "higher frequency. A source moving away is stretched toward the red.",
+      "start": 2510.22,
+      "duration": 4.320000000000164
+    },
+    {
+      "text": "That's why we know distant galaxies are receding. Their light is red-shifted.",
+      "start": 2515.38,
+      "duration": 4.6599999999998545
+    },
+    {
+      "text": "But relativity adds a twist that sound doesn't have.",
+      "start": 2520.7599999999998,
+      "duration": 3.1600000000003092
+    },
+    {
+      "text": "Because moving clocks run slow, the source's own vibration is time-dilated too,",
+      "start": 2524.36,
+      "duration": 5.359999999999673
+    },
+    {
+      "text": "and that folds the factor gamma into the shift.",
+      "start": 2530.32,
+      "duration": 2.6599999999998545
+    },
+    {
+      "text": "So the relativistic Doppler shift isn't quite the same formula as the sound one.",
+      "start": 2533.18,
+      "duration": 5.100000000000364
+    },
+    {
+      "text": "It's not, and the cleanest place to see the difference is the strangest case.",
+      "start": 2538.58,
+      "duration": 4.380000000000109
+    },
+    {
+      "text": "What if the source moves straight across your line of sight?",
+      "start": 2544.08,
+      "duration": 2.8400000000001455
+    },
+    {
+      "text": "Neither toward you nor away, just sideways at the instant you catch it.",
+      "start": 2546.92,
+      "duration": 5.199999999999818
+    },
+    {
+      "text": "For sound, purely sideways motion gives no pitch shift at all because it's not closing or opening",
+      "start": 2552.96,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "the distance. But for light there's still a shift, a red shift, and it comes entirely from time",
+      "start": 2558.92,
+      "duration": 6.6599999999998545
+    },
+    {
+      "text": "dilation. It's called the transverse Doppler effect, and it's a direct, pure look at the moving",
+      "start": 2565.58,
+      "duration": 6.320000000000164
+    },
+    {
+      "text": "clock running slow, with no back and forth motion muddying it. It's been measured. The second",
+      "start": 2571.9,
+      "duration": 6.839999999999691
+    },
+    {
+      "text": "thing is aberration, the apparent positions of the stars shift depending on your motion.",
+      "start": 2578.74,
+      "duration": 5.420000000000073
+    },
+    {
+      "text": "As the Earth moves, starlight seems to come at a slightly tilted angle, as if you're walking",
+      "start": 2585.0,
+      "duration": 5.460000000000036
+    },
+    {
+      "text": "through vertical rain and it appears to slant. At high speed the effect is dramatic,",
+      "start": 2590.46,
+      "duration": 5.699999999999818
+    },
+    {
+      "text": "the stars ahead of you appear to crowd together toward the point you're heading for.",
+      "start": 2596.8,
+      "duration": 4.179999999999836
+    },
+    {
+      "text": "So your motion doesn't just change the colour of the sky, it rearranges where things appear to sit on it.",
+      "start": 2601.7,
+      "duration": 6.120000000000346
+    },
+    {
+      "text": "We should mention the one equation everybody knows because so far you have carefully not said it.",
+      "start": 2607.94,
+      "duration": 6.779999999999745
+    },
+    {
+      "text": "Where does E equals MC squared live in all this?",
+      "start": 2615.06,
+      "duration": 3.7200000000002547
+    },
+    {
+      "text": "I've been holding it back on purpose because there's a detail people usually get wrong.",
+      "start": 2619.12,
+      "duration": 4.200000000000273
+    },
+    {
+      "text": "It is not in this paper. The June paper on the electrodynamics of moving bodies",
+      "start": 2623.96,
+      "duration": 5.599999999999909
+    },
+    {
+      "text": "is the kinematics and the electrodynamics we've discussed.",
+      "start": 2629.56,
+      "duration": 3.6399999999998727
+    },
+    {
+      "text": "Then a few months later in September of 1905, Einstein publishes a tiny follow-up,",
+      "start": 2633.78,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "a three-page afterthought really, with the title as a question,",
+      "start": 2640.86,
+      "duration": 3.7399999999997817
+    },
+    {
+      "text": "does the inertia of a body depend on its energy content?",
+      "start": 2645.26,
+      "duration": 3.599999999999909
+    },
+    {
+      "text": "And that little paper is where the most famous equation in the world is born.",
+      "start": 2649.94,
+      "duration": 3.9600000000000364
+    },
+    {
+      "text": "A three-page afterthought. What's the argument in it?",
+      "start": 2654.18,
+      "duration": 3.600000000000364
+    },
+    {
+      "text": "It's gorgeous and short. He imagines a body sitting still that emits light, energy,",
+      "start": 2657.78,
+      "duration": 6.1599999999998545
+    },
+    {
+      "text": "equally in two opposite directions so it doesn't recoil. It stays put.",
+      "start": 2664.38,
+      "duration": 4.880000000000109
+    },
+    {
+      "text": "He asks how this looks from a moving frame using the relativistic rules for how light's energy",
+      "start": 2670.24,
+      "duration": 5.5600000000004
+    },
+    {
+      "text": "transforms, the ones he just built. And when he balances the books, he finds that the body,",
+      "start": 2675.8,
+      "duration": 6.339999999999691
+    },
+    {
+      "text": "having given off an amount of energy, has also lost a specific amount of mass.",
+      "start": 2682.52,
+      "duration": 4.2199999999998
+    },
+    {
+      "text": "The energy divided by C squared. Emit energy, lose mass. Turn it around and the statement is,",
+      "start": 2687.5400000000004,
+      "duration": 7.899999999999636
+    },
+    {
+      "text": "the mass of a body is a measure of its energy content. Mass and energy are the same thing in different",
+      "start": 2695.94,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "units and the exchange rate between them is C squared. Written out, energy equals mass times the",
+      "start": 2702.36,
+      "duration": 7.920000000000073
+    },
+    {
+      "text": "speed of light squared. And because C squared is an enormous number, a tiny bit of mass is",
+      "start": 2710.28,
+      "duration": 6.4399999999996
+    },
+    {
+      "text": "a colossal amount of energy. A colossal amount. The speed of light squared is a huge conversion",
+      "start": 2716.72,
+      "duration": 6.660000000000309
+    },
+    {
+      "text": "factor, so a sliver of mass carries staggering energy. That single line is the accounting behind",
+      "start": 2723.38,
+      "duration": 7.199999999999818
+    },
+    {
+      "text": "why the sun shines. It's converting a bit of its mass into sunlight every second. And behind",
+      "start": 2730.58,
+      "duration": 6.920000000000073
+    },
+    {
+      "text": "nuclear energy for better and worse. But I want to keep the emphasis where Einstein put it.",
+      "start": 2737.5,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "This isn't a separate discovery bolted on. It's the direct bookkeeping consequence of taking",
+      "start": 2744.56,
+      "duration": 5.800000000000182
+    },
+    {
+      "text": "the constant speed of light seriously and following it into how energy behaves for moving observers.",
+      "start": 2750.36,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "Same two postulates, one more consequence. So let me try to say the whole arc back because I want",
+      "start": 2757.2200000000003,
+      "duration": 6.339999999999691
+    },
+    {
+      "text": "to feel the shape of it. Einstein starts with a discomfort, one current, two stories, and a stubborn",
+      "start": 2763.56,
+      "duration": 7.619999999999891
+    },
+    {
+      "text": "fact. You can't detect motion through the ether. He turns those into two postulates. Physics is",
+      "start": 2771.18,
+      "duration": 7.720000000000255
+    },
+    {
+      "text": "the same for all steady observers, and light has one speed for all of them. To keep light speed",
+      "start": 2778.9,
+      "duration": 6.679999999999836
+    },
+    {
+      "text": "rigid, similarity has to become relative. There's no shared now. From that, moving clocks run slow",
+      "start": 2785.58,
+      "duration": 8.320000000000164
+    },
+    {
+      "text": "and moving rulers shrink, both by the factor gamma and each observer sees it happen to the other.",
+      "start": 2793.9,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "With no contradiction, because they never share a now. Velocities stop simply adding, which",
+      "start": 2801.18,
+      "duration": 7.059999999999945
+    },
+    {
+      "text": "walls off the speed of light as uncrossable. Electricity and magnetism merge into one field,",
+      "start": 2808.24,
+      "duration": 7.080000000000382
+    },
+    {
+      "text": "seen from different motions, dissolving the original puzzle. And a few months later,",
+      "start": 2815.72,
+      "duration": 5.760000000000218
+    },
+    {
+      "text": "the same logic squeezes out mass energy. Two sentences of assumption, and all of that is downstream.",
+      "start": 2821.86,
+      "duration": 7.179999999999836
+    },
+    {
+      "text": "That's the arc exactly, and the thing I'd want anyone to carry away is how little raw material it",
+      "start": 2829.7599999999998,
+      "duration": 5.860000000000127
+    },
+    {
+      "text": "took. No new particle, no new force, no new experiment of his own. Just two postulates and the refusal",
+      "start": 2835.62,
+      "duration": 8.140000000000327
+    },
+    {
+      "text": "to look away from what they imply. The cost was our intuition that space and time are absolute and",
+      "start": 2843.76,
+      "duration": 6.6599999999998545
+    },
+    {
+      "text": "universal. The payoff was a universe that finally made consistent sense from every point of view.",
+      "start": 2850.42,
+      "duration": 6.5
+    },
+    {
+      "text": "And it wasn't the end. It was a doorway. A few years later,",
+      "start": 2857.7200000000003,
+      "duration": 4.359999999999673
+    },
+    {
+      "text": "Herman Minkowski took Einstein's clocks and rulers and showed they fit together into a single",
+      "start": 2862.38,
+      "duration": 5.339999999999691
+    },
+    {
+      "text": "four-dimensional geometry, space time, where space and time are just different directions in one",
+      "start": 2867.72,
+      "duration": 6.100000000000364
+    },
+    {
+      "text": "fabric. And that reframing is exactly what led Einstein, a decade on, ask what happens when that",
+      "start": 2873.82,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "fabric can curve, which is gravity, general relativity. But that's another paper.",
+      "start": 2880.86,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "Here's something that's bothering me on the way out, though. You've spent the whole hour",
+      "start": 2887.04,
+      "duration": 4.220000000000255
+    },
+    {
+      "text": "telling me what observers disagree about, lengths, durations, whether things are simultaneous.",
+      "start": 2891.26,
+      "duration": 6.319999999999709
+    },
+    {
+      "text": "Is there anything left that everybody agrees on? Or is it disagreement all the way down?",
+      "start": 2898.32,
+      "duration": 4.960000000000036
+    },
+    {
+      "text": "There is one thing, and it's the deepest idea in the whole subject.",
+      "start": 2903.5,
+      "duration": 3.6399999999998727
+    },
+    {
+      "text": "It's what Minkowski saw. Observers disagree about the distance in space between two events,",
+      "start": 2907.94,
+      "duration": 6.1599999999998545
+    },
+    {
+      "text": "and they disagree about the laps of time between them. But if you take the time between the events",
+      "start": 2914.72,
+      "duration": 5.380000000000109
+    },
+    {
+      "text": "and the space between them and combine them in a particular way, roughly the time part squared",
+      "start": 2920.1,
+      "duration": 5.860000000000127
+    },
+    {
+      "text": "minus the space part squared, with the speed of light setting the exchange rate,",
+      "start": 2925.96,
+      "duration": 5.099999999999909
+    },
+    {
+      "text": "that specific combination comes out identical for everyone.",
+      "start": 2931.62,
+      "duration": 3.599999999999909
+    },
+    {
+      "text": "It's called the space time interval, and it is invariant. Every inertial observer, however they",
+      "start": 2936.1800000000003,
+      "duration": 6.419999999999618
+    },
+    {
+      "text": "slice space and time separately, computes the same interval between the same two events.",
+      "start": 2942.6,
+      "duration": 5.200000000000273
+    },
+    {
+      "text": "So space and time individually are like shadows, but there's a real object casting them.",
+      "start": 2948.18,
+      "duration": 6.080000000000382
+    },
+    {
+      "text": "That's exactly the right picture, and it's precisely how Minkowski put it.",
+      "start": 2954.64,
+      "duration": 4.260000000000218
+    },
+    {
+      "text": "Space by itself, and time by itself, fade to shadows, and only a union of the two",
+      "start": 2959.62,
+      "duration": 6.079999999999927
+    },
+    {
+      "text": "stands as something real. Think of a stick in a room. You and I might disagree about how much of",
+      "start": 2965.7,
+      "duration": 7.2800000000002
+    },
+    {
+      "text": "it points left right versus toward the wall, because we're facing different ways. Those are just",
+      "start": 2972.98,
+      "duration": 7.139999999999873
+    },
+    {
+      "text": "our chosen axes. But we never disagree about the stick's actual length. Relativity says space and time",
+      "start": 2980.12,
+      "duration": 8.079999999999927
+    },
+    {
+      "text": "are like the left right and toward the wall of that stick. How much of the separation between",
+      "start": 2988.2,
+      "duration": 5.640000000000327
+    },
+    {
+      "text": "two events is space, and how much is time depends on your motion, your orientation in space time,",
+      "start": 2993.84,
+      "duration": 7.779999999999745
+    },
+    {
+      "text": "but the true separation, the interval, is fixed. The disagreements you spent the hour worrying about",
+      "start": 3002.12,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "are just different observers holding the same space time stick at different angles.",
+      "start": 3008.58,
+      "duration": 4.860000000000127
+    },
+    {
+      "text": "That's the calm underneath all the strangeness, not that nothing is absolute,",
+      "start": 3014.12,
+      "duration": 5.079999999999927
+    },
+    {
+      "text": "but that the absolute thing lives in four dimensions, not three plus a separate one.",
+      "start": 3019.66,
+      "duration": 4.940000000000055
+    },
+    {
+      "text": "And the tieback to something you can hold is any of this in daily life,",
+      "start": 3024.8,
+      "duration": 4.539999999999964
+    },
+    {
+      "text": "or is it all trains and muons? It's in your pocket.",
+      "start": 3029.64,
+      "duration": 3.4600000000000364
+    },
+    {
+      "text": "Satellite navigation, the system that tells your phone where you are,",
+      "start": 3034.28,
+      "duration": 3.9599999999995816
+    },
+    {
+      "text": "depends on clocks on satellites that are moving fast, thousands of kilometers up, orbiting the",
+      "start": 3038.24,
+      "duration": 6.160000000000309
+    },
+    {
+      "text": "earth. Because they're moving, the special relativity effect we spend all day on makes their",
+      "start": 3044.4,
+      "duration": 5.819999999999709
+    },
+    {
+      "text": "clocks tick slow relative to hours by a tiny but absolutely real amount. There's also a general",
+      "start": 3050.22,
+      "duration": 6.820000000000164
+    },
+    {
+      "text": "relativity effect from there being higher in earth's gravity, pulling the other way. But the point is,",
+      "start": 3057.04,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "if engineers did not correct for these relativistic shifts, the position your phone reports",
+      "start": 3063.5,
+      "duration": 5.420000000000073
+    },
+    {
+      "text": "were drift off by kilometers within a day. It works because we take Einstein's clocks seriously.",
+      "start": 3068.92,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "Every time your map finds you, it's quietly confirming that 1905 paper.",
+      "start": 3076.56,
+      "duration": 5.019999999999982
+    },
+    {
+      "text": "So the patent clock spare time paper is running silently, every time we find our way home.",
+      "start": 3081.76,
+      "duration": 5.739999999999782
+    },
+    {
+      "text": "Every single time. Two postulates written at a desk between patent applications",
+      "start": 3087.5,
+      "duration": 6.019999999999982
+    },
+    {
+      "text": "and the fixed backdrop of the universe turned out to be a participant.",
+      "start": 3094.06,
+      "duration": 3.800000000000182
+    },
+    {
+      "text": "Space stretches, time slows, the two of them braid together, and the only thing that stays the",
+      "start": 3098.7400000000002,
+      "duration": 5.979999999999563
+    },
+    {
+      "text": "same for everyone is a beam of light. That's where I'd leave it. Einstein didn't change the light,",
+      "start": 3104.72,
+      "duration": 6.0600000000004
+    },
+    {
+      "text": "he changed the stage, and we've been living on the new one ever since.",
+      "start": 3111.32,
+      "duration": 3.7199999999998
+    },
+    {
+      "text": "On the electrodynamics of moving bodies, thanks for walking through it.",
+      "start": 3115.04,
+      "duration": 5.039999999999964
+    },
+    {
+      "text": "Next time you glance at a clock, remember it only agrees with mine because we happen to be",
+      "start": 3120.5,
+      "duration": 5.440000000000055
+    },
+    {
+      "text": "sitting still together, and that agreement is a coincidence of our shared rest, not a law of the universe.",
+      "start": 3125.94,
+      "duration": 7.7599999999997635
+    }
+  ]
+}

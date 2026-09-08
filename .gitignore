@@ -13,8 +13,8 @@ audios/
 backend/audios/
 
 # Data files (generated)
-data/
-backend/data/
+ 
+backend/data/chroma      
 
 # IDE
 .vscode/

@@ -1,0 +1,2065 @@
+{
+  "file": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+  "segments": [
+    {
+      "text": "In 1974, a young physicist stands up at a conference and tells a room full of relativists",
+      "start": 0.0,
+      "duration": 6.68
+    },
+    {
+      "text": "that black holes glow, that they have a temperature, that they slowly boil away into nothing.",
+      "start": 6.68,
+      "duration": 7.040000000000001
+    },
+    {
+      "text": "The reaction in the room was, roughly, that he had lost his mind.",
+      "start": 14.38,
+      "duration": 4.3199999999999985
+    },
+    {
+      "text": "The chair of the session reportedly called it rubbish. The talk was titled,",
+      "start": 19.28,
+      "duration": 4.919999999999998
+    },
+    {
+      "text": "more or less, black hole explosions. And the punchline of the story is that within about a year,",
+      "start": 24.2,
+      "duration": 7.16
+    },
+    {
+      "text": "almost everyone agreed he was right. George, I want to understand how you get from",
+      "start": 31.94,
+      "duration": 5.719999999999995
+    },
+    {
+      "text": "the blackest thing in the universe to it glows because those sound like opposites.",
+      "start": 37.66,
+      "duration": 6.280000000000001
+    },
+    {
+      "text": "They are opposites and that's exactly why this result is one of the great shocks in physics.",
+      "start": 44.12,
+      "duration": 4.980000000000004
+    },
+    {
+      "text": "It comes from slamming two theories together that nobody had properly introduced.",
+      "start": 49.1,
+      "duration": 5.140000000000001
+    },
+    {
+      "text": "So here's our plan for the hour. First we build the classical black hole,",
+      "start": 54.84,
+      "duration": 4.939999999999998
+    },
+    {
+      "text": "the one general relativity gives you, and I'll convince you it really is perfectly black and",
+      "start": 60.34,
+      "duration": 5.079999999999998
+    },
+    {
+      "text": "eternal. Then we bring in a puzzle from thermodynamics, Beckenstein's puzzle, that says a black",
+      "start": 65.42,
+      "duration": 6.840000000000003
+    },
+    {
+      "text": "hole ought to have entropy, which sounds harmless until you realize it forces the hole to have a",
+      "start": 72.26,
+      "duration": 5.780000000000001
+    },
+    {
+      "text": "temperature. Then Hawking, trying to prove that idea wrong, brings in the quantum vacuum,",
+      "start": 78.04,
+      "duration": 6.11999999999999
+    },
+    {
+      "text": "and out falls radiation, a perfect thermal glow. And once we have the glow, everything cascades,",
+      "start": 84.82,
+      "duration": 7.1000000000000085
+    },
+    {
+      "text": "black holes evaporate, they have a genuine thermodynamics, and they hand us a paradox about information",
+      "start": 92.72,
+      "duration": 6.280000000000001
+    },
+    {
+      "text": "that is still open half a century later. Two ingredients are horizon and the quantum vacuum,",
+      "start": 99.0,
+      "duration": 6.760000000000005
+    },
+    {
+      "text": "and the blackest object in the sky turns gray and mortal. Let's build the classical black hole",
+      "start": 105.76,
+      "duration": 6.079999999999998
+    },
+    {
+      "text": "first then. What actually is it? Strip down. Strip it all the way down, and a black hole is a region",
+      "start": 111.84,
+      "duration": 6.97999999999999
+    },
+    {
+      "text": "of space time where gravity is so strong that there's a one way surface around it. A boundary you can",
+      "start": 118.82,
+      "duration": 6.6200000000000045
+    },
+    {
+      "text": "cross going in but never cross going out. That boundary is the event horizon. It's not a wall,",
+      "start": 125.44,
+      "duration": 7.240000000000009
+    },
+    {
+      "text": "not a surface made of stuff. It's a place defined entirely by fate. Inside it, every possible path,",
+      "start": 132.68,
+      "duration": 8.079999999999984
+    },
+    {
+      "text": "even a path traced by a beam of light leads further in. Light is the fastest thing there is,",
+      "start": 141.12,
+      "duration": 6.439999999999998
+    },
+    {
+      "text": "and if light can't climb out, nothing can. So classically, the name is literal and complete.",
+      "start": 147.92,
+      "duration": 6.140000000000015
+    },
+    {
+      "text": "It is black because no light leaves, and it is a hole because things only fall in.",
+      "start": 154.82,
+      "duration": 5.219999999999999
+    },
+    {
+      "text": "And where does the horizon come from? Is it a real edge or a mathematical one?",
+      "start": 160.04,
+      "duration": 5.5
+    },
+    {
+      "text": "It's real in the sense that crossing it seals your fate, but it's subtle in that if you fell through",
+      "start": 165.9,
+      "duration": 5.139999999999986
+    },
+    {
+      "text": "it, locally you might notice nothing special at the moment of crossing. For a big enough hole,",
+      "start": 171.04,
+      "duration": 5.360000000000014
+    },
+    {
+      "text": "no wall, no flash. It's a global feature defined by where paths can and can't go in the long run.",
+      "start": 176.74,
+      "duration": 6.939999999999998
+    },
+    {
+      "text": "The size of it is set by the mass, more mass, bigger horizon.",
+      "start": 184.48000000000002,
+      "duration": 4.21999999999997
+    },
+    {
+      "text": "And here's a fact that's going to matter enormously later. The horizon has an area,",
+      "start": 189.68,
+      "duration": 4.859999999999985
+    },
+    {
+      "text": "a definite surface area, and for a simple black hole, that area is fixed by the mass alone.",
+      "start": 195.0,
+      "duration": 5.52000000000001
+    },
+    {
+      "text": "Double the influence of the mass, the horizon grows. Keep that word area in your pocket.",
+      "start": 201.58,
+      "duration": 6.299999999999983
+    },
+    {
+      "text": "It's the hinge of the whole story. Okay, so classically, black, one way,",
+      "start": 208.6,
+      "duration": 4.800000000000011
+    },
+    {
+      "text": "eternal, and it has an area set by its mass. Where does thermodynamics even get a foot in the door?",
+      "start": 213.7,
+      "duration": 6.660000000000025
+    },
+    {
+      "text": "That's the physics of heat and steam engines. What's it doing there a black hole?",
+      "start": 221.04,
+      "duration": 5.0400000000000205
+    },
+    {
+      "text": "It gets in through a theorem that Hawking himself proved a couple of years earlier,",
+      "start": 226.34,
+      "duration": 3.9199999999999875
+    },
+    {
+      "text": "and it's a beautiful one, the area theorem. It says, in any process involving black holes,",
+      "start": 230.66,
+      "duration": 6.8799999999999955
+    },
+    {
+      "text": "obeying classical general relativity, the total area of the horizons can never decrease.",
+      "start": 237.88,
+      "duration": 5.340000000000003
+    },
+    {
+      "text": "You can throw things in and the area grows. Two black holes can merge and the area of the result",
+      "start": 243.74,
+      "duration": 6.739999999999981
+    },
+    {
+      "text": "is at least the sum of the two you started with. But nothing you can do will ever make the total",
+      "start": 250.48,
+      "duration": 5.460000000000008
+    },
+    {
+      "text": "horizon area go down. It only ever climbs or stays flat. Never decreases. That phrasing is",
+      "start": 255.94,
+      "duration": 7.699999999999989
+    },
+    {
+      "text": "ringing a very specific bell. It should be deafening because there's exactly one other quantity",
+      "start": 263.64,
+      "duration": 5.939999999999998
+    },
+    {
+      "text": "in all of physics, famous for only ever going up. And that's entropy. The second law of thermodynamics.",
+      "start": 269.58,
+      "duration": 7.360000000000014
+    },
+    {
+      "text": "Entropy loosely is a measure of disorder of the number of microscopic arrangements consistent with",
+      "start": 277.84000000000003,
+      "duration": 6.239999999999952
+    },
+    {
+      "text": "what you see. And the second law says the total entropy of a closed system never decreases.",
+      "start": 284.08,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "So here you have two never decreases laws sitting side-by-side. Horizon area on one hand entropy on",
+      "start": 291.09999999999997,
+      "duration": 8.54000000000002
+    },
+    {
+      "text": "the other. And a graduate student named Jacob Beckenstein looked at that parallel and did something bold.",
+      "start": 299.64,
+      "duration": 6.819999999999993
+    },
+    {
+      "text": "He said, maybe that's not a coincidence. Maybe the area of a black hole's horizon literally",
+      "start": 307.3,
+      "duration": 6.139999999999986
+    },
+    {
+      "text": "is a kind of entropy. That feels like a leap from these two things behave similarly to",
+      "start": 313.44,
+      "duration": 5.6200000000000045
+    },
+    {
+      "text": "they are the same thing. Why did he need to make it? Why not just admire the resemblance?",
+      "start": 319.06,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "Because without it black holes let you break the second law and that's intolerable.",
+      "start": 325.76,
+      "duration": 4.720000000000027
+    },
+    {
+      "text": "Here's the thought experiment that forced his hand. The second law is supposed to be sacred.",
+      "start": 331.16,
+      "duration": 5.359999999999957
+    },
+    {
+      "text": "The entropy of the universe always goes up. Now take a cup of hot gas which has a lot of entropy,",
+      "start": 337.12,
+      "duration": 6.9599999999999795
+    },
+    {
+      "text": "a lot of disorder, and toss it into a black hole. It's gone. It crossed the horizon.",
+      "start": 344.08,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "You can never see it again. So the entropy you threw in has vanished from the outside universe.",
+      "start": 351.06,
+      "duration": 5.519999999999982
+    },
+    {
+      "text": "If the black hole itself has no entropy then the total entropy of everything outside just went down.",
+      "start": 357.24,
+      "duration": 6.159999999999968
+    },
+    {
+      "text": "You'd have a perfect entropy disposal machine. Feed the universe's disorder into black holes",
+      "start": 364.46,
+      "duration": 5.740000000000009
+    },
+    {
+      "text": "and the books look cleaner and cleaner. The second law would be a joke. You could violate it any",
+      "start": 370.2,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "afternoon unless the black hole's own entropy went up by at least as much as you threw in. Exactly the",
+      "start": 376.3,
+      "duration": 6.339999999999975
+    },
+    {
+      "text": "escape. Beckenstein says, when you drop that hot gas in the black hole's mass increases a little",
+      "start": 382.64,
+      "duration": 7.020000000000039
+    },
+    {
+      "text": "so its horizon area increases a little. And if area is entropy the hole's entropy goes up by at least",
+      "start": 389.66,
+      "duration": 7.259999999999991
+    },
+    {
+      "text": "as much as the entropy you lost. The book's balance. The second law is saved but only if you accept",
+      "start": 396.92,
+      "duration": 7.1200000000000045
+    },
+    {
+      "text": "that the black hole carries entropy and that its entropy is measured by its horizon area.",
+      "start": 404.04,
+      "duration": 5.199999999999989
+    },
+    {
+      "text": "That's the generalized second law. The entropy outside plus the entropy of the horizons",
+      "start": 410.18,
+      "duration": 6.339999999999975
+    },
+    {
+      "text": "that total never decreases. I can feel the trap closing though because in ordinary physics if something",
+      "start": 416.52,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "has entropy it also has a temperature. Yes, you found the land mine and this is precisely where",
+      "start": 423.48,
+      "duration": 7.4599999999999795
+    },
+    {
+      "text": "Hawking enters initially as a skeptic. In thermodynamics entropy and temperature are joined at the",
+      "start": 430.94,
+      "duration": 7.019999999999982
+    },
+    {
+      "text": "hip. If a black hole genuinely has entropy then it must have a temperature some definite number of",
+      "start": 437.96,
+      "duration": 6.5400000000000205
+    },
+    {
+      "text": "degrees and anything with a non-zero temperature radiates. A hot poker glows red. Your own body glows",
+      "start": 444.5,
+      "duration": 8.0
+    },
+    {
+      "text": "in the infrared. Everything with a temperature above absolute zero gives off thermal radiation.",
+      "start": 452.5,
+      "duration": 5.8799999999999955
+    },
+    {
+      "text": "So Beckenstein's idea taken seriously demands that a black hole radiate and that is flatly",
+      "start": 459.3,
+      "duration": 6.639999999999986
+    },
+    {
+      "text": "obviously impossible in general relativity because we just spent ten minutes establishing that",
+      "start": 465.94,
+      "duration": 5.300000000000011
+    },
+    {
+      "text": "nothing gets out. So Hawking's reaction was, reasonably, this shows Beckenstein has gone too far.",
+      "start": 471.24,
+      "duration": 7.199999999999989
+    },
+    {
+      "text": "The temperature of a black hole must really be zero. The entropy business is just a suggestive",
+      "start": 479.08,
+      "duration": 5.420000000000016
+    },
+    {
+      "text": "analogy and I'll do the calculation that proves it. So the paper we're celebrating was born as an",
+      "start": 484.5,
+      "duration": 5.720000000000027
+    },
+    {
+      "text": "attempt to debunk the very thing it ended up confirming. That's the shape of it.",
+      "start": 490.22,
+      "duration": 4.899999999999977
+    },
+    {
+      "text": "He set out to show black holes don't radiate and the mathematics dragged him apparently against his",
+      "start": 495.9,
+      "duration": 5.840000000000032
+    },
+    {
+      "text": "expectations to the conclusion that they do. And the reason the calculation surprised him",
+      "start": 501.74,
+      "duration": 6.019999999999982
+    },
+    {
+      "text": "is that to do it properly you can't stay inside general relativity. You have to ask what the",
+      "start": 507.76,
+      "duration": 5.8799999999999955
+    },
+    {
+      "text": "quantum vacuum does in the strong gravity around a black hole and the quantum vacuum is a much",
+      "start": 513.64,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "stranger place than empty space has any right to be. Let's slow down there because the quantum vacuum",
+      "start": 520.08,
+      "duration": 6.339999999999918
+    },
+    {
+      "text": "is one of those phrases people nod at without really having a picture. What do you actually mean by it?",
+      "start": 526.42,
+      "duration": 6.82000000000005
+    },
+    {
+      "text": "I mean that in quantum theory empty space is not nothing. The vacuum space with all the",
+      "start": 533.24,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "particles removed the emptiest possible state is still restless. The fields that fill the universe,",
+      "start": 539.76,
+      "duration": 7.399999999999977
+    },
+    {
+      "text": "the electromagnetic field and the rest are always very slightly trembling because quantum",
+      "start": 547.7,
+      "duration": 5.3599999999999
+    },
+    {
+      "text": "mechanics forbids them from sitting perfectly still at exactly zero. It's the same rule that keeps",
+      "start": 553.06,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "an atom's electron from falling to perfect rest at the nucleus. So the vacuum has a kind of",
+      "start": 559.3,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "permanent low level jitter. Physicists picture it as fleeting pairs of particles, a particle and",
+      "start": 565.48,
+      "duration": 7.0
+    },
+    {
+      "text": "its antiparticle flickering into brief existence and annihilating back so quickly that you can never",
+      "start": 572.48,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "catch them directly. They're called virtual particles. In flat empty quiet space all that jitter",
+      "start": 578.58,
+      "duration": 7.899999999999977
+    },
+    {
+      "text": "perfectly cancels and you'd measure nothing. Empty looks empty. So the vacuum is seething,",
+      "start": 586.48,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "but in ordinary space the seething hides itself. What does a black hole do to it? To answer that",
+      "start": 593.62,
+      "duration": 6.82000000000005
+    },
+    {
+      "text": "I have to tell you the single most disorienting idea in this whole subject and it's more fundamental",
+      "start": 600.44,
+      "duration": 5.67999999999995
+    },
+    {
+      "text": "than the pairs picture. It's this. What counts as a particle and even what counts as empty space",
+      "start": 606.12,
+      "duration": 7.840000000000032
+    },
+    {
+      "text": "is not absolute. It depends on the observer on how you're moving and on the shape of space time",
+      "start": 613.96,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "around you. One observer's perfect vacuum can be another observer's warm bath of particles.",
+      "start": 620.54,
+      "duration": 6.160000000000082
+    },
+    {
+      "text": "There is no universal everyone agrees answer to the question how many particles are here?",
+      "start": 627.38,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "That's a hard pill. Empty is empty surely. If I've removed everything everyone should agree there's",
+      "start": 633.56,
+      "duration": 6.880000000000109
+    },
+    {
+      "text": "nothing there. It's the pill you have to swallow and there's a cleaner cousin of the effect that",
+      "start": 640.44,
+      "duration": 5.139999999999986
+    },
+    {
+      "text": "makes it believable. It's called the unru effect. Take genuinely empty space the flat quiet vacuum",
+      "start": 645.58,
+      "duration": 7.740000000000009
+    },
+    {
+      "text": "and let one person float through it unaccelerated. They see nothing cold and empty as expected.",
+      "start": 653.32,
+      "duration": 7.079999999999927
+    },
+    {
+      "text": "Now let a second person accelerate through that very same space firing a rocket speeding up",
+      "start": 661.14,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "continuously. That accelerating person is immersed in a warm glow of particles. They measure",
+      "start": 667.24,
+      "duration": 6.6200000000000045
+    },
+    {
+      "text": "a temperature and the harder they accelerate the hotter it gets. Same region of space, same underlying",
+      "start": 673.86,
+      "duration": 6.699999999999932
+    },
+    {
+      "text": "state. One observer says vacuum, the other says warmth. The disagreement is real and it's because",
+      "start": 680.56,
+      "duration": 7.6400000000001
+    },
+    {
+      "text": "particle is defined relative to your motion through space time. Acceleration turns the vacuum's hidden",
+      "start": 688.2,
+      "duration": 6.659999999999968
+    },
+    {
+      "text": "jitter into a genuine felt temperature. And gravity by Einstein's equivalence principle is locally",
+      "start": 694.86,
+      "duration": 6.939999999999941
+    },
+    {
+      "text": "the same thing as acceleration. You just wrote the bridge yourself. Standing still in a gravitational",
+      "start": 701.8,
+      "duration": 7.080000000000041
+    },
+    {
+      "text": "field is locally indistinguishable from accelerating. So if acceleration warms up the vacuum, gravity should",
+      "start": 708.88,
+      "duration": 8.419999999999959
+    },
+    {
+      "text": "too. And near a black hole's horizon, gravity is as strong and as sharply varying as it ever gets.",
+      "start": 717.3,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "That's the scent Hawking was following. But he did something more precise and more powerful than",
+      "start": 724.58,
+      "duration": 5.939999999999941
+    },
+    {
+      "text": "the equivalence principle hand wave. He tracked what happens to the vacuum through the entire",
+      "start": 730.52,
+      "duration": 5.7000000000000455
+    },
+    {
+      "text": "act of a black hole forming, a star collapsing and out the other side. Walk me through that. What does",
+      "start": 736.22,
+      "duration": 7.1200000000000045
+    },
+    {
+      "text": "tracking the vacuum through the collapse actually involve? Here's the real core of the calculation",
+      "start": 743.34,
+      "duration": 5.819999999999936
+    },
+    {
+      "text": "in plain language. Think about the quantum fields long before the black hole exists, a big cloud of gas",
+      "start": 749.16,
+      "duration": 7.560000000000059
+    },
+    {
+      "text": "out in space sitting quietly in its vacuum. No particles. Now the cloud collapses and forms a black hole.",
+      "start": 756.72,
+      "duration": 8.240000000000009
+    },
+    {
+      "text": "Wait a while and ask an observer far away at late times. What is the state of the field out here now?",
+      "start": 765.84,
+      "duration": 6.959999999999923
+    },
+    {
+      "text": "To answer, you have to take the empty ripples from the distant past and propagate them,",
+      "start": 773.34,
+      "duration": 5.17999999999995
+    },
+    {
+      "text": "wave by wave through the violently curving space time of the collapse and see what they look like when",
+      "start": 778.94,
+      "duration": 5.899999999999977
+    },
+    {
+      "text": "they finally crawl back out to infinity afterward. And I'm guessing they don't come out looking empty.",
+      "start": 784.84,
+      "duration": 5.699999999999932
+    },
+    {
+      "text": "They come out scrambled in a very particular way. In quantum field theory, the way you define",
+      "start": 790.88,
+      "duration": 6.1200000000000045
+    },
+    {
+      "text": "no particles is by sorting the waves into positive frequency and negative frequency pieces.",
+      "start": 797.0,
+      "duration": 6.1200000000000045
+    },
+    {
+      "text": "Think of it loosely as which way the wave rotates in time. The vacuum is the state built purely",
+      "start": 803.48,
+      "duration": 6.7999999999999545
+    },
+    {
+      "text": "from the positive frequency ones, but the intense time-changing gravity of the collapsing star mixes them.",
+      "start": 810.28,
+      "duration": 6.899999999999977
+    },
+    {
+      "text": "A wave that set out as pure positive frequency gets partly converted into negative frequency",
+      "start": 818.06,
+      "duration": 5.600000000000023
+    },
+    {
+      "text": "by the time it climbs back out. That mixing has a name, the bogal ubov transformation,",
+      "start": 823.66,
+      "duration": 6.280000000000086
+    },
+    {
+      "text": "but the name doesn't matter. What matters is that once positive and negative frequencies",
+      "start": 830.6,
+      "duration": 5.039999999999964
+    },
+    {
+      "text": "are blended, the old vacuum is no longer a vacuum to the new observer. It is full of particles.",
+      "start": 835.64,
+      "duration": 5.840000000000032
+    },
+    {
+      "text": "And is it full of them in some random messy way? Or is there a pattern?",
+      "start": 841.86,
+      "duration": 4.779999999999973
+    },
+    {
+      "text": "This is the hammer blow. When Hawking computed how many particles the far away observer sees at each",
+      "start": 846.88,
+      "duration": 6.17999999999995
+    },
+    {
+      "text": "frequency, the answer was not messy at all. It was a perfect thermal spectrum. The exact same",
+      "start": 853.06,
+      "duration": 6.660000000000082
+    },
+    {
+      "text": "distribution of energies that comes off a hot furnace, a glowing coal, a star. A black body spectrum,",
+      "start": 859.72,
+      "duration": 7.6200000000000045
+    },
+    {
+      "text": "textbook perfect, characterized by a single number, a temperature. The black hole isn't leaking some",
+      "start": 867.72,
+      "duration": 6.959999999999923
+    },
+    {
+      "text": "weird quantum sludge. It is glowing precisely like an object heated to a specific number of degrees.",
+      "start": 874.68,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "That was the moment the debunking became a discovery. He set out to show the temperature was zero",
+      "start": 882.0600000000001,
+      "duration": 5.459999999999923
+    },
+    {
+      "text": "and the mathematics handed him a clean non-zero temperature. You keep saying perfect black body.",
+      "start": 887.52,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "Is it literally perfect? Indistinguishable from a glowing furnace?",
+      "start": 894.22,
+      "duration": 4.199999999999932
+    },
+    {
+      "text": "Very nearly, with one real asterisk worth knowing. The radiation is generated with a perfectly",
+      "start": 899.14,
+      "duration": 6.580000000000041
+    },
+    {
+      "text": "thermal spectrum at the horizon. But to reach us, it has to climb out through the black hole's own",
+      "start": 905.72,
+      "duration": 6.399999999999977
+    },
+    {
+      "text": "gravitational field. And that field acts like a barrier that's easier for some wavelengths to get",
+      "start": 912.12,
+      "duration": 5.860000000000014
+    },
+    {
+      "text": "through than others. Long, lazy wavelengths get partly reflected back in. Others sail out.",
+      "start": 917.98,
+      "duration": 6.919999999999959
+    },
+    {
+      "text": "So the spectrum we finally measure is the perfect black body shape multiplied by a filtering factor.",
+      "start": 925.74,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "Physicists call it the gray body factor precisely because it's a black body tinted by that barrier.",
+      "start": 933.0200000000001,
+      "duration": 5.439999999999941
+    },
+    {
+      "text": "It doesn't change the temperature or the thermal character. It just means the hole is a slightly",
+      "start": 939.1,
+      "duration": 5.419999999999959
+    },
+    {
+      "text": "imperfect radiator filtered by the very gravity that made it. A nice reminder that the horizon is",
+      "start": 944.52,
+      "duration": 6.759999999999991
+    },
+    {
+      "text": "doing double duty, creating the light and then shaping it on the way out. Before we go further,",
+      "start": 951.28,
+      "duration": 5.800000000000068
+    },
+    {
+      "text": "can you give me the intuitive cartoon that people always tell, the one with the pairs at the horizon?",
+      "start": 957.08,
+      "duration": 6.819999999999936
+    },
+    {
+      "text": "Where does that fit? If the real story is this mode mixing?",
+      "start": 964.54,
+      "duration": 4.220000000000027
+    },
+    {
+      "text": "I'm glad you're asking for it with that framing because the cartoon is genuinely useful",
+      "start": 969.04,
+      "duration": 4.600000000000023
+    },
+    {
+      "text": "and also genuinely not the real derivation. Hawking himself offered it only as a heuristic,",
+      "start": 973.64,
+      "duration": 6.300000000000068
+    },
+    {
+      "text": "a picture to hang the result on. Here it is. Remember the vacuum's flickering pairs?",
+      "start": 980.54,
+      "duration": 5.720000000000027
+    },
+    {
+      "text": "Particle and antiparticle popping up and annihilating. Imagine one such pair flickers into",
+      "start": 986.86,
+      "duration": 6.419999999999959
+    },
+    {
+      "text": "existence right at the horizon. Normally they'd find each other and vanish, but right at that one",
+      "start": 993.28,
+      "duration": 6.32000000000005
+    },
+    {
+      "text": "way surface, one of the two can slip inside the horizon while the other is on the outside.",
+      "start": 999.6,
+      "duration": 5.439999999999941
+    },
+    {
+      "text": "And now they can't reunite. The one outside escapes to infinity as a real permanent particle.",
+      "start": 1005.86,
+      "duration": 6.720000000000027
+    },
+    {
+      "text": "That's a piece of the radiation. The one that fell in carries relative to the distant",
+      "start": 1013.46,
+      "duration": 5.319999999999936
+    },
+    {
+      "text": "universe negative energy. So when it swallowed, it actually reduces the black hole's mass.",
+      "start": 1018.78,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "The hole pays for the escaping radiation out of its own mass.",
+      "start": 1025.68,
+      "duration": 3.8199999999999363
+    },
+    {
+      "text": "So the energy budget is, the escaping particle is real and positive. The infalling partner is negative",
+      "start": 1029.8,
+      "duration": 7.660000000000082
+    },
+    {
+      "text": "and the black hole shrinks by exactly that much. That's the bookkeeping and it gives you the",
+      "start": 1037.46,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "right headline. The hole radiates and loses mass in the process. But I want to be careful because the",
+      "start": 1043.66,
+      "duration": 6.919999999999845
+    },
+    {
+      "text": "cartoon oversells its own clarity. It makes it sound like the radiation is created right at the horizon",
+      "start": 1050.58,
+      "duration": 6.380000000000109
+    },
+    {
+      "text": "in a sharp instant. And if you take it too literally, it misleads. The trustworthy statement is the",
+      "start": 1056.96,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "mode mixing one. The collapse converts the early vacuum into a late time thermal bath.",
+      "start": 1064.24,
+      "duration": 5.839999999999918
+    },
+    {
+      "text": "And that bath carries energy away and the hole's mass drops to pay for it. The pair's picture is",
+      "start": 1070.94,
+      "duration": 6.419999999999845
+    },
+    {
+      "text": "the poster. The begollue above calculation is the physics. Hold both but trust the second.",
+      "start": 1077.36,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "I want to press on that negative energy because it sounds like cheating. Energy is supposed to be",
+      "start": 1084.02,
+      "duration": 5.720000000000027
+    },
+    {
+      "text": "positive. How does a particle get to have negative energy? And why doesn't that break everything?",
+      "start": 1089.74,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "It's the fair thing to be suspicious of. And the answer is that energy is not as absolute as it feels.",
+      "start": 1096.16,
+      "duration": 5.519999999999982
+    },
+    {
+      "text": "It's defined relative to a reference and near a black hole, the reference does something unusual.",
+      "start": 1102.48,
+      "duration": 5.559999999999945
+    },
+    {
+      "text": "Far from the hole in ordinary flat space, every real particle has positive energy, full stop.",
+      "start": 1108.96,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "But right near the horizon, space time is tilted so severely that there are states,",
+      "start": 1116.28,
+      "duration": 4.860000000000127
+    },
+    {
+      "text": "ways for a field to wiggle that carry negative energy as book kept by the distant observer.",
+      "start": 1121.68,
+      "duration": 5.539999999999964
+    },
+    {
+      "text": "There's a region around a spinning hole and in a looser sense right at any horizon where",
+      "start": 1127.86,
+      "duration": 5.660000000000082
+    },
+    {
+      "text": "moving forward in time and having positive energy come apart. A particle can fall into that regime",
+      "start": 1133.52,
+      "duration": 7.240000000000009
+    },
+    {
+      "text": "carrying on the far away ledger less than nothing. So the negative energy is only negative from the",
+      "start": 1140.76,
+      "duration": 6.079999999999927
+    },
+    {
+      "text": "outside book keepers point of view. It's a statement about the whole system's energy as measured",
+      "start": 1146.84,
+      "duration": 6.1400000000001
+    },
+    {
+      "text": "at infinity. Exactly. And that's the only ledger that matters for whether the black hole grows or",
+      "start": 1152.98,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "shrinks because the black hole's mass is defined by its gravitational pull on the distant universe.",
+      "start": 1159.28,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "When the negative energy partner crosses the horizon, the total mass energy the outside world",
+      "start": 1166.22,
+      "duration": 5.680000000000064
+    },
+    {
+      "text": "attributes to the hole ticks down. Energy overall is perfectly conserved. The positive energy",
+      "start": 1171.9,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "flying off as radiation exactly matches the negative energy swallowed, summing to the mass the hole",
+      "start": 1178.94,
+      "duration": 6.099999999999909
+    },
+    {
+      "text": "lost. Nothing is created from nothing. The hole is simply converting its own mass into outgoing",
+      "start": 1185.04,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "radiation with the horizon as the accountant that lets the swallowed partner carry a dead.",
+      "start": 1191.78,
+      "duration": 5.539999999999964
+    },
+    {
+      "text": "Fair. Now you keep saying a specific temperature. What sets it? What is a black hole's temperature",
+      "start": 1197.46,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "actually a function of? One thing essentially, it's mass. And here's the feature that makes the",
+      "start": 1204.5,
+      "duration": 5.680000000000064
+    },
+    {
+      "text": "hole subject sing. The temperature is inversely proportional to the mass. The bigger the black hole,",
+      "start": 1210.18,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "the colder it is. The smaller the black hole, the hotter it is. That's backwards from most of our",
+      "start": 1216.64,
+      "duration": 6.379999999999882
+    },
+    {
+      "text": "intuitions about big hot things, and it drives everything that follows. A little black hole is a fierce",
+      "start": 1223.02,
+      "duration": 6.900000000000091
+    },
+    {
+      "text": "hot object. A giant black hole is barely warmer than absolute zero. You said the temperature is set by",
+      "start": 1229.92,
+      "duration": 7.199999999999818
+    },
+    {
+      "text": "the mass, but is that the deepest way to say it? Is there something more local, something about the",
+      "start": 1237.12,
+      "duration": 6.120000000000118
+    },
+    {
+      "text": "horizon itself that fixes the temperature? There is, and it's worth naming because it's what the",
+      "start": 1243.24,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "formula is really about. Surface gravity. Surface gravity is roughly how hard the horizon pulls.",
+      "start": 1249.42,
+      "duration": 7.5
+    },
+    {
+      "text": "The strength of gravity's grip right at that one way surface as measured by a far away observer.",
+      "start": 1257.74,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "And Hawking's temperature is directly proportional to the surface gravity.",
+      "start": 1264.06,
+      "duration": 3.900000000000091
+    },
+    {
+      "text": "Now for a simple black hole, the bigger the mass, the gentler the surface gravity at the horizon,",
+      "start": 1268.92,
+      "duration": 5.2999999999999545
+    },
+    {
+      "text": "which sounds backwards until you remember the horizon is also much larger and further out,",
+      "start": 1274.9,
+      "duration": 4.919999999999845
+    },
+    {
+      "text": "so the pull there is more spread out and mild. So, big hole, small surface gravity, low temperature,",
+      "start": 1280.3,
+      "duration": 7.220000000000027
+    },
+    {
+      "text": "small hole, fierce surface gravity, high temperature. The inversely proportional to mass",
+      "start": 1288.18,
+      "duration": 6.619999999999891
+    },
+    {
+      "text": "statement is really proportional to surface gravity, wearing everyday clothes. And that connects",
+      "start": 1294.8,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "straight back to the unru idea, doesn't it? Acceleration makes a temperature, and surface gravity is basically",
+      "start": 1300.86,
+      "duration": 7.820000000000164
+    },
+    {
+      "text": "the acceleration you'd feel hovering at the horizon. That's the through line of the whole subject.",
+      "start": 1308.68,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "The temperature and accelerating observer feels is proportional to their acceleration.",
+      "start": 1315.32,
+      "duration": 4.600000000000136
+    },
+    {
+      "text": "Hover just outside a black hole's horizon, firing your rockets to keep from falling in,",
+      "start": 1320.66,
+      "duration": 5.259999999999991
+    },
+    {
+      "text": "and the acceleration you need is enormous and set by the surface gravity.",
+      "start": 1326.44,
+      "duration": 4.240000000000009
+    },
+    {
+      "text": "So you hovering there are bathed in a hot unru glow, and the radiation that leaks all the way out",
+      "start": 1331.66,
+      "duration": 6.899999999999864
+    },
+    {
+      "text": "to infinity, redshifted and cooled on the long climb out, is the Hawking radiation.",
+      "start": 1338.56,
+      "duration": 5.2999999999999545
+    },
+    {
+      "text": "It's one effect seen from two distances, scorching at the horizon, a faint whisper by the time",
+      "start": 1344.6,
+      "duration": 6.160000000000082
+    },
+    {
+      "text": "it reaches us. Surface gravity is the dial that sets both. Give me a sense of scale. Take a black hole",
+      "start": 1350.76,
+      "duration": 7.180000000000064
+    },
+    {
+      "text": "like the ones we know are out there, a few times the mass of the sun. How hot is it? Cold, almost",
+      "start": 1357.94,
+      "duration": 7.2000000000000455
+    },
+    {
+      "text": "unimaginably cold. A black hole of a few solar masses has a Hawking temperature of well under a",
+      "start": 1365.14,
+      "duration": 6.459999999999809
+    },
+    {
+      "text": "millionth of a degree above absolute zero, down in the range of tens of nanokelvin, billions of a",
+      "start": 1371.6,
+      "duration": 6.800000000000182
+    },
+    {
+      "text": "degree. To put that next to something familiar, the whole universe is baved in leftover heat from the",
+      "start": 1378.4,
+      "duration": 6.599999999999909
+    },
+    {
+      "text": "big bang, the cosmic microwave background sitting at just under three Kelvin, about 2.7 degrees above",
+      "start": 1385.0,
+      "duration": 7.380000000000109
+    },
+    {
+      "text": "absolute zero. So a stellar black hole today is far far colder than the sky around it,",
+      "start": 1392.38,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "and that has a consequence that surprises people. Since it's colder than its surroundings,",
+      "start": 1399.3000000000002,
+      "duration": 4.899999999999864
+    },
+    {
+      "text": "it actually absorbs more radiation from the cosmic background than it gives off.",
+      "start": 1404.68,
+      "duration": 4.179999999999836
+    },
+    {
+      "text": "Out in the real universe right now, ordinary black holes are still growing, not shrinking.",
+      "start": 1409.8,
+      "duration": 5.120000000000118
+    },
+    {
+      "text": "The evaporation is real, but for big holes it's a whisper drowned out by the ambient warmth of",
+      "start": 1415.82,
+      "duration": 5.680000000000064
+    },
+    {
+      "text": "the cosmos. So the famous black holes evaporate, only really bites for small ones, or for a",
+      "start": 1421.5,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "far future when the sky has cooled down. Precisely. The evaporation matters when the hole is hotter than",
+      "start": 1428.48,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "its surroundings, which means either a very small hole, or a very old universe that has cooled below",
+      "start": 1435.46,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "even the black hole's faint temperature. Let me follow the small hole case because it's spectacular.",
+      "start": 1441.92,
+      "duration": 6.3599999999999
+    },
+    {
+      "text": "Suppose you have a genuinely tiny black hole, not made by a collapsing star, but perhaps in the",
+      "start": 1449.18,
+      "duration": 6.0
+    },
+    {
+      "text": "extreme density of the very early universe, a so-called primordial black hole, maybe the mass of",
+      "start": 1455.18,
+      "duration": 6.599999999999909
+    },
+    {
+      "text": "a mountain squeezed down. Being tiny, it's hot. Being hot, it radiates strongly. Radiating strongly,",
+      "start": 1461.78,
+      "duration": 8.6400000000001
+    },
+    {
+      "text": "it loses mass. And now the inverse relationship turns vicious. Losing mass makes it smaller,",
+      "start": 1470.7,
+      "duration": 7.019999999999982
+    },
+    {
+      "text": "smaller makes it hotter. Hotter makes it radiate even more furiously. It's a runaway.",
+      "start": 1477.72,
+      "duration": 6.759999999999991
+    },
+    {
+      "text": "A feedback loop that accelerates as it goes, so it doesn't fade out gently, it ramps up.",
+      "start": 1485.32,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "It ramps up to a final flash. As the hole approaches its last moments,",
+      "start": 1492.8,
+      "duration": 4.900000000000091
+    },
+    {
+      "text": "it's radiating harder and harder, getting hotter and hotter until the very end when it dumps its",
+      "start": 1498.26,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "remaining mass in a brief, brilliant burst, an explosion, which is why the 1974 announcement was",
+      "start": 1504.44,
+      "duration": 7.480000000000018
+    },
+    {
+      "text": "titled Black Hole Explosions. And the time scale of the whole life story is set by the mass in a steep",
+      "start": 1511.92,
+      "duration": 7.720000000000027
+    },
+    {
+      "text": "way. The lifetime grows with the cube of the mass. That steepness is why the two regimes are so wildly",
+      "start": 1519.64,
+      "duration": 7.639999999999873
+    },
+    {
+      "text": "different. A black hole a few times the sun's mass has a lifetime so long it makes the current age",
+      "start": 1527.28,
+      "duration": 7.0
+    },
+    {
+      "text": "of the universe look like an eye-blink, something like a one followed by 67 zeros in years,",
+      "start": 1534.28,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "unfathomably long. But a primordial hole of about the mass where the arithmetic works out to the",
+      "start": 1541.3,
+      "duration": 6.0
+    },
+    {
+      "text": "present day, very roughly a mountain's worth of mass, a trillion or so kilograms, would be reaching",
+      "start": 1547.3,
+      "duration": 6.779999999999973
+    },
+    {
+      "text": "its explosive finale right about now in our era. People genuinely search the sky for those final",
+      "start": 1554.08,
+      "duration": 7.600000000000136
+    },
+    {
+      "text": "bursts. That's a wild thought that somewhere out there a black hole that's been quietly dying since",
+      "start": 1561.68,
+      "duration": 6.839999999999918
+    },
+    {
+      "text": "the beginning of time could pop off during our lifetime. Has anyone caught one? Not confirmed no.",
+      "start": 1568.52,
+      "duration": 7.339999999999918
+    },
+    {
+      "text": "Astronomers look for the characteristic burst of high energy radiation such an ending would produce",
+      "start": 1576.96,
+      "duration": 5.420000000000073
+    },
+    {
+      "text": "and so far there's no confirmed detection, which itself tells us something useful, namely that such",
+      "start": 1582.96,
+      "duration": 6.539999999999964
+    },
+    {
+      "text": "tiny primordial holes can't be too common, but the deeper reason we can't just point a telescope",
+      "start": 1589.5,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "and settle the whole theory is the coldness we talked about. For any black hole we can actually see",
+      "start": 1595.78,
+      "duration": 6.6400000000001
+    },
+    {
+      "text": "stellar ones or the giant ones in galactic centers, the Hawking Glow is so absurdly faint, so many",
+      "start": 1602.42,
+      "duration": 7.639999999999873
+    },
+    {
+      "text": "orders of magnitude below anything detectable that we will essentially never measure it directly,",
+      "start": 1610.06,
+      "duration": 5.240000000000009
+    },
+    {
+      "text": "which raises the obvious question and it's a good one to sit with. If we can't measure it,",
+      "start": 1615.92,
+      "duration": 5.819999999999936
+    },
+    {
+      "text": "why does everyone believe it? Right, that's exactly what I was going to push on.",
+      "start": 1622.04,
+      "duration": 4.079999999999927
+    },
+    {
+      "text": "This is a prediction from 1975 that we can't check against a real black hole.",
+      "start": 1626.58,
+      "duration": 5.860000000000127
+    },
+    {
+      "text": "What makes it more than a very elegant guess? A few things, and they're worth being clear",
+      "start": 1633.02,
+      "duration": 5.380000000000109
+    },
+    {
+      "text": "about. First, the result doesn't rest on some exotic new assumption. It falls out of combining two",
+      "start": 1638.4,
+      "duration": 7.399999999999864
+    },
+    {
+      "text": "theories we independently trust to enormous precision, quantum field theory and general relativity,",
+      "start": 1645.8,
+      "duration": 6.819999999999936
+    },
+    {
+      "text": "in a regime where both should be valid. It's less an invention than a consequence nobody had",
+      "start": 1653.3,
+      "duration": 5.8400000000001455
+    },
+    {
+      "text": "bothered to compute. Second, it's been rederived many separate ways by different methods that make",
+      "start": 1659.14,
+      "duration": 6.879999999999882
+    },
+    {
+      "text": "different approximations and they all land on the same temperature. That kind of convergence is",
+      "start": 1666.02,
+      "duration": 5.900000000000091
+    },
+    {
+      "text": "hard to fake. And third, there's a growing effort to test the underlying mechanism in the lab,",
+      "start": 1671.92,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "not with real black holes but with stand-ins. Stand-ins. You mean building something that has a horizon",
+      "start": 1678.62,
+      "duration": 6.300000000000182
+    },
+    {
+      "text": "without having a real gravitational black hole? Exactly that, and it's a lovely idea.",
+      "start": 1684.92,
+      "duration": 6.199999999999818
+    },
+    {
+      "text": "The essential ingredient in Hawking's result isn't gravity specifically. It's a horizon,",
+      "start": 1691.7600000000002,
+      "duration": 5.379999999999882
+    },
+    {
+      "text": "a one-way surface past which waves can't return. And you can manufacture that in other media.",
+      "start": 1697.76,
+      "duration": 5.839999999999918
+    },
+    {
+      "text": "Imagine a river flowing faster and faster toward a waterfall. A fish upstream can swim against",
+      "start": 1704.54,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "the current, but past a certain point where the water flows faster than the fish can swim,",
+      "start": 1710.96,
+      "duration": 5.2999999999999545
+    },
+    {
+      "text": "no fish can make headway upstream. It's swept over. That point of no return for the fish is an",
+      "start": 1716.26,
+      "duration": 7.720000000000027
+    },
+    {
+      "text": "acoustic horizon. Now replace fish with sound waves or with ripples on a flowing fluid",
+      "start": 1723.98,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "or with light in especially engineered optical medium. Set up a flow that goes from slower than",
+      "start": 1730.82,
+      "duration": 5.940000000000055
+    },
+    {
+      "text": "the wave to faster than the wave and you've built a horizon that traps waves the way a black hole",
+      "start": 1736.76,
+      "duration": 5.819999999999936
+    },
+    {
+      "text": "traps light. Experimenters have made these in flowing water in ultra-cold atomic gases in light",
+      "start": 1742.58,
+      "duration": 8.019999999999982
+    },
+    {
+      "text": "in fibers and they look for the thermal Hawking-like emission across that analogue horizon.",
+      "start": 1750.6,
+      "duration": 5.8400000000001455
+    },
+    {
+      "text": "Some of these experiments report seeing exactly the kind of thermal paired emission the theory",
+      "start": 1757.14,
+      "duration": 5.959999999999809
+    },
+    {
+      "text": "predicts. So we can't visit a black hole but we can build a little sonic one on a lab bench and watch",
+      "start": 1763.1,
+      "duration": 6.580000000000155
+    },
+    {
+      "text": "it glow. That's the spirit of it and it's one of the more delightful corners of modern physics.",
+      "start": 1769.68,
+      "duration": 5.1599999999998545
+    },
+    {
+      "text": "Chasing a 1970s black hole prediction in a tank of flowing water or a puff of atoms near absolute zero.",
+      "start": 1775.48,
+      "duration": 7.160000000000082
+    },
+    {
+      "text": "It doesn't prove the gravitational case beyond all doubt because the analogy has limits but it",
+      "start": 1783.26,
+      "duration": 6.099999999999909
+    },
+    {
+      "text": "directly tests the mechanism that a horizon plus a quantum or even just a wavy vacuum makes thermal",
+      "start": 1789.36,
+      "duration": 7.520000000000209
+    },
+    {
+      "text": "radiation. Now with the glow established let's collect the prize that started this whole thing",
+      "start": 1796.88,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "because Beckenstein turns out to be vindicated in the most complete way. Right we started with Beckenstein",
+      "start": 1803.4,
+      "duration": 6.779999999999973
+    },
+    {
+      "text": "saying area is entropy and Hawking trying to knock it down. How does it end? It ends with Beckenstein",
+      "start": 1810.18,
+      "duration": 7.759999999999991
+    },
+    {
+      "text": "not just rescued but made exact. Once you know the black hole's temperature thermodynamics lets you",
+      "start": 1817.94,
+      "duration": 6.919999999999845
+    },
+    {
+      "text": "compute its entropy precisely and the answer is stunningly clean. A black hole's entropy is one",
+      "start": 1824.86,
+      "duration": 6.820000000000164
+    },
+    {
+      "text": "quarter of its horizon area measured in natural quantum gravity units. Let me unpack natural units.",
+      "start": 1831.68,
+      "duration": 7.579999999999927
+    },
+    {
+      "text": "There's a fundamental smallest-ish length in physics, the plank length, built out of the",
+      "start": 1840.04,
+      "duration": 5.559999999999945
+    },
+    {
+      "text": "constants of gravity, quantum mechanics and the speed of light. It's the scale where gravity and",
+      "start": 1845.6,
+      "duration": 5.980000000000246
+    },
+    {
+      "text": "quantum theory both matter at once and it is fantastically tiny. Tile the horizon's surface with",
+      "start": 1851.72,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "little squares that size, count them and the black hole's entropy is one quarter of that count.",
+      "start": 1858.7,
+      "duration": 5.8599999999999
+    },
+    {
+      "text": "The entropy of a black hole is quite literally its surface area in plank sized tiles,",
+      "start": 1865.14,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "divided by four. That is a strange and specific fact. Entropy usually scales with volume,",
+      "start": 1871.86,
+      "duration": 6.540000000000191
+    },
+    {
+      "text": "the amount of stuff inside. Why is a black hole's entropy about its surface, its area,",
+      "start": 1878.4,
+      "duration": 6.399999999999864
+    },
+    {
+      "text": "not its volume? You've put your finger on maybe the most consequential clue in theoretical physics",
+      "start": 1885.32,
+      "duration": 5.6400000000001
+    },
+    {
+      "text": "of the last half century. For a box of gas, the entropy, the number of ways to arrange the",
+      "start": 1890.96,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "insides grows with the volume because that's where the stuff is. For a black hole it grows with the",
+      "start": 1897.26,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "area of the boundary and that suggests something almost heretical that all the information about",
+      "start": 1903.84,
+      "duration": 6.040000000000191
+    },
+    {
+      "text": "what's inside a black hole is somehow encoded on its two-dimensional surface, not its three-dimensional",
+      "start": 1909.88,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "interior. That single hint, information living on the boundary, grew into the holographic principle,",
+      "start": 1916.4,
+      "duration": 6.919999999999845
+    },
+    {
+      "text": "the idea that a region of space and everything in it can be fully described by data on its edge,",
+      "start": 1923.88,
+      "duration": 5.739999999999782
+    },
+    {
+      "text": "like a hologram. Whole frameworks for uniting gravity and quantum mechanics are built on it",
+      "start": 1929.62,
+      "duration": 6.040000000000191
+    },
+    {
+      "text": "and it all traces back to that factor. Entropy equals a quarter of the area. Give me a feel for",
+      "start": 1936.3400000000001,
+      "duration": 6.079999999999927
+    },
+    {
+      "text": "how much entropy we're talking about. Is a black hole's entropy a little? A lot? It is and this number",
+      "start": 1942.42,
+      "duration": 7.3599999999999
+    },
+    {
+      "text": "genuinely startles people the first time because the entropy is the horizons area,",
+      "start": 1949.78,
+      "duration": 5.380000000000109
+    },
+    {
+      "text": "counted in those unimaginably tiny plank tiles and even a modest black hole has a horizon that",
+      "start": 1955.16,
+      "duration": 7.059999999999945
+    },
+    {
+      "text": "is enormous compared to that tile, the count is beyond astronomical. A single black hole of a few",
+      "start": 1962.22,
+      "duration": 6.940000000000055
+    },
+    {
+      "text": "solar masses has more entropy, more hidden internal disorder, more microscopic arrangements,",
+      "start": 1969.16,
+      "duration": 6.720000000000027
+    },
+    {
+      "text": "than all the ordinary matter, all the stars and gas in a large chunk of the visible universe combined.",
+      "start": 1976.48,
+      "duration": 6.3599999999999
+    },
+    {
+      "text": "Take our own sun's worth of material. As a star, it has a certain entropy,",
+      "start": 1983.8000000000002,
+      "duration": 5.3599999999999
+    },
+    {
+      "text": "collapse it into a black hole and its entropy leaps up by something like a factor of a billion billion.",
+      "start": 1989.94,
+      "duration": 5.619999999999891
+    },
+    {
+      "text": "Black holes are, by a staggering margin, the most disordered, information-rich objects",
+      "start": 1996.56,
+      "duration": 5.820000000000164
+    },
+    {
+      "text": "the universe knows how to make. They are where entropy goes to pile up.",
+      "start": 2002.38,
+      "duration": 5.139999999999873
+    },
+    {
+      "text": "That reframes them entirely, not empty pits, the most information dense things there are.",
+      "start": 2007.52,
+      "duration": 6.5
+    },
+    {
+      "text": "The densest possible in fact, there's a limit, the beckonstein bound that says a region of a given size",
+      "start": 2014.3,
+      "duration": 6.7000000000000455
+    },
+    {
+      "text": "can hold only so much entropy before it collapses into a black hole and the black hole is the object",
+      "start": 2021.0,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "that saturates that limit exactly. It is the maximally packed hard drive that physics permits and",
+      "start": 2027.96,
+      "duration": 7.259999999999991
+    },
+    {
+      "text": "that's really the deepest reason the area not volume fact matters. The most information you can",
+      "start": 2035.22,
+      "duration": 6.399999999999864
+    },
+    {
+      "text": "cram into any region is set by the area of its boundary, not the volume inside, which brings us to",
+      "start": 2041.62,
+      "duration": 7.380000000000109
+    },
+    {
+      "text": "what that did to physics. So this one paper doesn't just make black holes glow, it reorganises how people",
+      "start": 2049.0,
+      "duration": 7.179999999999836
+    },
+    {
+      "text": "think space and information relate. It does, and there's a neat closing of the circle in the pure",
+      "start": 2056.18,
+      "duration": 6.120000000000346
+    },
+    {
+      "text": "thermodynamics too. Before Hawking people had noticed that the mathematical laws governing black holes",
+      "start": 2062.3,
+      "duration": 6.879999999999654
+    },
+    {
+      "text": "looked eerily like the laws of thermodynamics. There were four of them matching up one for one.",
+      "start": 2069.18,
+      "duration": 6.600000000000364
+    },
+    {
+      "text": "The horizon area played the role of entropy. A quantity called the surface gravity played the",
+      "start": 2076.7,
+      "duration": 6.160000000000309
+    },
+    {
+      "text": "role of temperature. But everyone thought it was a formal analogy, a coincidence of equations",
+      "start": 2082.86,
+      "duration": 5.819999999999709
+    },
+    {
+      "text": "because a black hole obviously had no real temperature. Hawking's radiation is what turned the",
+      "start": 2088.68,
+      "duration": 6.559999999999945
+    },
+    {
+      "text": "analogy into an identity. The surface gravity isn't like a temperature, it is the temperature.",
+      "start": 2095.24,
+      "duration": 6.380000000000109
+    },
+    {
+      "text": "The area isn't like entropy, it is the entropy. Black holes don't merely resemble thermodynamic objects,",
+      "start": 2102.42,
+      "duration": 7.599999999999909
+    },
+    {
+      "text": "they are thermodynamic objects. They have a temperature you could in principle read off a thermometer",
+      "start": 2110.66,
+      "duration": 5.760000000000218
+    },
+    {
+      "text": "an entropy and they obey the same laws as steam and gas. That unification is the quiet triumph of",
+      "start": 2117.06,
+      "duration": 7.300000000000182
+    },
+    {
+      "text": "the paper. You said four laws matching one for one. I want to hear the match because four laws that",
+      "start": 2124.36,
+      "duration": 6.920000000000073
+    },
+    {
+      "text": "line up is a strong claim. What are they? They're a genuinely pretty parallel and physicists wrote them",
+      "start": 2131.28,
+      "duration": 6.639999999999873
+    },
+    {
+      "text": "down deliberately as the four laws of black hole mechanics to mirror the four laws of thermodynamics.",
+      "start": 2137.92,
+      "duration": 6.179999999999836
+    },
+    {
+      "text": "Start with what's called the zeroth law. In thermodynamics the zeroth law says a system in",
+      "start": 2144.74,
+      "duration": 7.260000000000218
+    },
+    {
+      "text": "equilibrium has one uniform temperature throughout, no hot corners. The black hole version says the",
+      "start": 2152.0,
+      "duration": 7.7800000000002
+    },
+    {
+      "text": "surface gravity is the same everywhere across the horizon, uniform like a temperature at equilibrium.",
+      "start": 2159.78,
+      "duration": 6.5
+    },
+    {
+      "text": "That's the first rhyme and it's a real theorem not a slogan. So uniform surface gravity plays the",
+      "start": 2167.0,
+      "duration": 6.7199999999998
+    },
+    {
+      "text": "role of uniform temperature. What's the first law? The first law of thermodynamics is energy",
+      "start": 2173.72,
+      "duration": 6.360000000000127
+    },
+    {
+      "text": "accounting. The change in a system's energy equals its temperature times the change in its entropy",
+      "start": 2180.08,
+      "duration": 6.5
+    },
+    {
+      "text": "plus any work done. The black hole first law has the identical shape. The change in the hole's mass",
+      "start": 2186.58,
+      "duration": 7.800000000000182
+    },
+    {
+      "text": "and mass's energy equals a term with the surface gravity multiplied by the change in horizon area",
+      "start": 2194.92,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "plus work terms if the hole spins or is charged. Put those side by side and surface gravity sits",
+      "start": 2201.38,
+      "duration": 7.380000000000109
+    },
+    {
+      "text": "exactly where temperature sits and area sits exactly where entropy sits. The second law we've already",
+      "start": 2208.76,
+      "duration": 6.799999999999727
+    },
+    {
+      "text": "met twice entropy never decreases, area never decreases, same law and the third law rhymes too.",
+      "start": 2215.56,
+      "duration": 8.320000000000164
+    },
+    {
+      "text": "Thermodynamics says you can't chill anything all the way to absolute zero in finite steps",
+      "start": 2224.58,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "and the black hole version says you can't spin down or discharge a hole to zero surface gravity,",
+      "start": 2230.16,
+      "duration": 6.7400000000002365
+    },
+    {
+      "text": "zero temperature in finite steps either, four for four. But before Hawking everyone read that as a",
+      "start": 2237.44,
+      "duration": 8.099999999999909
+    },
+    {
+      "text": "cute coincidence of equations, not real thermodynamics. Right because the hole edifice had a hole",
+      "start": 2245.54,
+      "duration": 7.360000000000127
+    },
+    {
+      "text": "in it so to speak. If the surface gravity really were a temperature the black hole would have to",
+      "start": 2252.9,
+      "duration": 6.360000000000127
+    },
+    {
+      "text": "radiate at that temperature and it plainly couldn't so people treated the match as a formal curiosity",
+      "start": 2259.26,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "suggestive but surely not literal. The temperature in those laws was a stand-in symbol. Hawking's",
+      "start": 2266.0800000000004,
+      "duration": 7.419999999999618
+    },
+    {
+      "text": "radiation is precisely what removed the surely not. Once the hole actually glows at a temperature",
+      "start": 2273.5,
+      "duration": 6.559999999999945
+    },
+    {
+      "text": "proportional to its surface gravity the surface gravity isn't playing the role of temperature.",
+      "start": 2280.06,
+      "duration": 5.320000000000164
+    },
+    {
+      "text": "It is the temperature with the right proportionality nailed down. The four laws stop",
+      "start": 2285.38,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "being an analogy and become the actual laws of thermodynamics applied to gravity.",
+      "start": 2291.84,
+      "duration": 5.079999999999927
+    },
+    {
+      "text": "That's the closure I meant. The coincidence was upgraded to an identity by the discovery that",
+      "start": 2297.7400000000002,
+      "duration": 5.819999999999709
+    },
+    {
+      "text": "the thing radiates. And yet you promised me it ends by opening a door not closing one. The information",
+      "start": 2303.56,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "paradox lay it out. Here's the door and it's still open today. The radiation coming off the black hole",
+      "start": 2310.52,
+      "duration": 7.420000000000073
+    },
+    {
+      "text": "is thermal. Remember a perfect black-body glow and thermal radiation is by its nature",
+      "start": 2317.94,
+      "duration": 6.920000000000073
+    },
+    {
+      "text": "featureless. It carries no detailed information about what produced it beyond the temperature.",
+      "start": 2324.86,
+      "duration": 6.239999999999782
+    },
+    {
+      "text": "Hot coal, hot iron, hot anything. At the same temperature the glow looks identical.",
+      "start": 2332.04,
+      "duration": 5.800000000000182
+    },
+    {
+      "text": "You can't read the object of its thermal light. Now run the black hole all the way to the end.",
+      "start": 2338.6400000000003,
+      "duration": 6.239999999999782
+    },
+    {
+      "text": "You form it by throwing in something specific. An encyclopedia, a star, your friend's diary,",
+      "start": 2345.58,
+      "duration": 6.7400000000002365
+    },
+    {
+      "text": "some very particular arrangement of matter carrying a huge amount of detailed information.",
+      "start": 2352.88,
+      "duration": 5.039999999999964
+    },
+    {
+      "text": "The hole radiates that mass back out slowly over its lifetime as featureless thermal radiation.",
+      "start": 2358.66,
+      "duration": 6.600000000000364
+    },
+    {
+      "text": "And then it's gone, fully evaporated, vanished. Question, where did the information go?",
+      "start": 2366.2200000000003,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "If the radiation was featureless and the hole is gone then the specific details of whatever",
+      "start": 2373.58,
+      "duration": 6.619999999999891
+    },
+    {
+      "text": "fell in aren't anywhere anymore, they're just erased. And that is a catastrophe because quantum",
+      "start": 2380.2,
+      "duration": 6.660000000000309
+    },
+    {
+      "text": "mechanics is not allowed to erase information. One of the bedrock rules of quantum theory is that",
+      "start": 2386.86,
+      "duration": 6.279999999999745
+    },
+    {
+      "text": "information is never truly lost. The present always retains, in principle, a complete record of the",
+      "start": 2393.14,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "past. It's the quantum version of determinism and it's as central to quantum mechanics as anything.",
+      "start": 2399.6,
+      "duration": 6.2400000000002365
+    },
+    {
+      "text": "So we have a genuine collision between two of our most trusted theories. Hawking's own calculation",
+      "start": 2406.36,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "says the radiation is exactly thermal. Hence information free, hence the information is destroyed",
+      "start": 2412.76,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "when the hole evaporates. Quantum mechanics says that's impossible. The information must come out",
+      "start": 2419.34,
+      "duration": 6.399999999999636
+    },
+    {
+      "text": "somehow, presumably hidden in subtle correlations in the radiation that the leading order calculation",
+      "start": 2425.74,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "misses. Both can't be right. That's the black hole information paradox. And which side one?",
+      "start": 2431.7,
+      "duration": 7.0
+    },
+    {
+      "text": "Half a century is a long time to leave a paradox lying around. The centre of gravity of the field",
+      "start": 2439.6,
+      "duration": 5.700000000000273
+    },
+    {
+      "text": "has shifted over decades toward quantum mechanics wins, the information does come out.",
+      "start": 2445.3,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "Famously, Hawking himself eventually conceded a bet on it. But conceding that it must come out",
+      "start": 2451.86,
+      "duration": 6.299999999999727
+    },
+    {
+      "text": "is not the same as understanding how. And the how is where the real action has been.",
+      "start": 2458.16,
+      "duration": 5.220000000000255
+    },
+    {
+      "text": "It drove the invention of holography, of the deep dualities between gravity and ordinary quantum",
+      "start": 2464.22,
+      "duration": 5.7400000000002365
+    },
+    {
+      "text": "systems. And in just the last several years, a set of new calculations. People talk about",
+      "start": 2469.96,
+      "duration": 6.880000000000109
+    },
+    {
+      "text": "islands and fine-grained entropy that seem to show the information leaking out after all",
+      "start": 2476.84,
+      "duration": 5.859999999999673
+    },
+    {
+      "text": "in exactly the subtle correlations Hawking's approximation dropped. It feels close to resolved in",
+      "start": 2482.7,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "certain idealized settings and still genuinely mysterious in the full realistic case.",
+      "start": 2489.66,
+      "duration": 5.7400000000002365
+    },
+    {
+      "text": "So the fair status is, the door is mostly but not entirely walked through. And every bit of that",
+      "start": 2496.36,
+      "duration": 7.099999999999909
+    },
+    {
+      "text": "50-year conversation is downstream of this one paper's discovery that black holes glow.",
+      "start": 2503.46,
+      "duration": 6.0
+    },
+    {
+      "text": "Let me try to hold the whole thing in one breath. General relativity gives you a perfectly black",
+      "start": 2509.74,
+      "duration": 6.520000000000437
+    },
+    {
+      "text": "eternal hole, with a horizon whose area only ever grows. Beckenstein hears,",
+      "start": 2516.26,
+      "duration": 6.359999999999673
+    },
+    {
+      "text": "only ever grows and says that area is entropy, which saves the second law but forces the hole to",
+      "start": 2523.1,
+      "duration": 7.660000000000309
+    },
+    {
+      "text": "have a temperature. Hawking sets out to prove the temperature is zero, brings in the quantum vacuum,",
+      "start": 2530.76,
+      "duration": 6.9399999999996
+    },
+    {
+      "text": "where empty and particle, depend on the observer, tracks the vacuum through a collapse",
+      "start": 2538.16,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "and finds the far away observer bathed in a perfect thermal glow. Temperature turns out to run",
+      "start": 2544.68,
+      "duration": 6.8400000000001455
+    },
+    {
+      "text": "inversely with mass, so small holes are hot and explosive, and big ones are colder than the sky.",
+      "start": 2551.52,
+      "duration": 7.519999999999982
+    },
+    {
+      "text": "Entropy comes out to exactly a quarter of the horizon area, which hints that information",
+      "start": 2559.82,
+      "duration": 6.2599999999997635
+    },
+    {
+      "text": "lives on surfaces, holography. And because the glow is featureless, evaporation seems to destroy",
+      "start": 2566.08,
+      "duration": 7.700000000000273
+    },
+    {
+      "text": "information, which quantum mechanics forbids, leaving us the paradox we're still chewing on.",
+      "start": 2573.78,
+      "duration": 6.639999999999873
+    },
+    {
+      "text": "That's the whole arc, and the thing I'd want to leave you holding is how little was assumed to get",
+      "start": 2580.72,
+      "duration": 5.260000000000218
+    },
+    {
+      "text": "all of it. Hawking didn't postulate that black holes glow. He didn't add a force or a particle",
+      "start": 2585.98,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "or a new law. He took general relativity and quantum field theory. Two theories built for",
+      "start": 2593.02,
+      "duration": 6.860000000000127
+    },
+    {
+      "text": "completely different purposes, neither one designed with this in mind, and insisted they be true at the",
+      "start": 2599.88,
+      "duration": 6.0
+    },
+    {
+      "text": "same time in the same place around a horizon. And the mere consistency of the two with nothing else",
+      "start": 2605.88,
+      "duration": 6.880000000000109
+    },
+    {
+      "text": "added says, the blackest object in the universe is a warm, glowing, dying thing with an entropy",
+      "start": 2612.76,
+      "duration": 7.239999999999782
+    },
+    {
+      "text": "written on its skin. The horizon plus the vacuum was all it took. And the reason a physicist would",
+      "start": 2620.0,
+      "duration": 6.940000000000055
+    },
+    {
+      "text": "call this beautiful isn't decoration. It's that a single calculation reached across three fields at once.",
+      "start": 2626.94,
+      "duration": 7.519999999999982
+    },
+    {
+      "text": "That's just it. Before this, gravity, quantum theory, and thermodynamics were three separate",
+      "start": 2634.78,
+      "duration": 6.6599999999998545
+    },
+    {
+      "text": "provinces with separate languages. Hawking's temperature is a bridge that touches all three in one",
+      "start": 2641.44,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "equation. Gravity sets the horizon. Quantum theory supplies the vacuum. Thermodynamics reads off",
+      "start": 2647.9,
+      "duration": 7.299999999999727
+    },
+    {
+      "text": "the entropy. It's one of the very few places in physics where you can see all three shaking hands.",
+      "start": 2655.2,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "We don't yet have the full theory of quantum gravity that this is clearly a clue toward. But whatever",
+      "start": 2662.06,
+      "duration": 6.320000000000164
+    },
+    {
+      "text": "that theory turns out to be, it has to reproduce this. A black hole of a given mass has this temperature",
+      "start": 2668.38,
+      "duration": 7.119999999999891
+    },
+    {
+      "text": "and this entropy. It's a fixed point on the map, a known answer that the final theory must return.",
+      "start": 2675.5,
+      "duration": 7.079999999999927
+    },
+    {
+      "text": "That's why half a century on, people are still circling back to a paper about how the darkest",
+      "start": 2683.7,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "thing in the sky manages quietly to shine. Black holes ain't so black. Thanks for walking through",
+      "start": 2689.74,
+      "duration": 7.040000000000418
+    },
+    {
+      "text": "how a debunking turned into a revolution. Next time you picture a black hole, don't picture a perfect",
+      "start": 2696.78,
+      "duration": 7.579999999999927
+    },
+    {
+      "text": "void. Picture something faintly warm, slowly exhaling itself back into the universe.",
+      "start": 2704.36,
+      "duration": 6.5
+    },
+    {
+      "text": "Carrying a secret about where its information went that we're still trying to read.",
+      "start": 2711.6,
+      "duration": 4.660000000000309
+    }
+  ]
+}

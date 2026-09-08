@@ -1,0 +1,1690 @@
+{
+  "file": "Great Papers 05 - Attention Is All You Need, 2017.mp3",
+  "segments": [
+    {
+      "text": "In 2017, a group of researchers at Google publishes a paper with a title that sounds less like science",
+      "start": 0.0,
+      "duration": 6.86
+    },
+    {
+      "text": "and more like a slogan. Attention is all you need. It's about machine translation,",
+      "start": 6.86,
+      "duration": 7.0200000000000005
+    },
+    {
+      "text": "turning English into German, which frankly is not the kind of title that screams,",
+      "start": 14.42,
+      "duration": 5.380000000000001
+    },
+    {
+      "text": "this will change the world. And yet, if you use any modern AI today, a chatbot that writes essays,",
+      "start": 20.3,
+      "duration": 7.539999999999999
+    },
+    {
+      "text": "a system that summarises documents, the thing that auto completes your sentences, you are almost",
+      "start": 27.84,
+      "duration": 6.879999999999999
+    },
+    {
+      "text": "certainly using the architecture this paper introduced. It's called the Transformer. It is the",
+      "start": 34.72,
+      "duration": 7.520000000000003
+    },
+    {
+      "text": "T in GPT. George, I want to understand what was actually in this paper, because it seems to have",
+      "start": 42.24,
+      "duration": 6.780000000000001
+    },
+    {
+      "text": "quietly become the engine of the entire current era of artificial intelligence.",
+      "start": 49.02,
+      "duration": 4.979999999999997
+    },
+    {
+      "text": "What did eight people at Google actually invent? They invented a new way for a machine to read,",
+      "start": 54.620000000000005,
+      "duration": 5.6399999999999935
+    },
+    {
+      "text": "and the reason it mattered so much is subtle, because on the surface, it looks like a modest",
+      "start": 60.74,
+      "duration": 5.039999999999999
+    },
+    {
+      "text": "engineering improvement to translation, and underneath, it's the thing that made today's giant AI",
+      "start": 65.78,
+      "duration": 6.319999999999993
+    },
+    {
+      "text": "models possible at all. So here's our plan for the hour. First, I'll set up the problem they were",
+      "start": 72.1,
+      "duration": 7.180000000000007
+    },
+    {
+      "text": "attacking. How do you get a machine to handle language, which is a sequence, one thing after another,",
+      "start": 79.28,
+      "duration": 6.400000000000006
+    },
+    {
+      "text": "and why the best method at the time had a crippling flaw. Then we'll meet the idea in the title,",
+      "start": 86.24,
+      "duration": 5.88000000000001
+    },
+    {
+      "text": "attention, and I'll build it up from scratch with an analogy you already understand.",
+      "start": 92.68,
+      "duration": 4.3999999999999915
+    },
+    {
+      "text": "Then the radical move. The previous generation used attention as a helper bolted onto something else.",
+      "start": 97.9,
+      "duration": 6.61999999999999
+    },
+    {
+      "text": "This paper rips out that something else and says attention alone is enough,",
+      "start": 105.32,
+      "duration": 4.180000000000007
+    },
+    {
+      "text": "and finally, we'll see why that one architectural choice, which looks like a detail,",
+      "start": 109.98,
+      "duration": 5.339999999999989
+    },
+    {
+      "text": "is precisely what unlocked the scaling that gave us the large language models of today.",
+      "start": 115.84,
+      "duration": 4.8799999999999955
+    },
+    {
+      "text": "The punchline, which we'll earn, the very system helping make this episode is one of these things.",
+      "start": 121.72,
+      "duration": 6.340000000000003
+    },
+    {
+      "text": "The paper describes the machinery that is, in a sense, narrating it.",
+      "start": 128.56,
+      "duration": 4.460000000000008
+    },
+    {
+      "text": "That's a great hook to end on, so let's earn it. Start with the problem. Why is language hard for",
+      "start": 133.02,
+      "duration": 6.639999999999986
+    },
+    {
+      "text": "a machine in a way that, say, recognising a photo isn't? Because language is a sequence,",
+      "start": 139.66,
+      "duration": 5.900000000000006
+    },
+    {
+      "text": "and sequences have an order that carries meaning. A photo you can, in a sense, take in all at once.",
+      "start": 146.12,
+      "duration": 6.759999999999991
+    },
+    {
+      "text": "It's a grid of pixels sitting there in space, but a sentence arrives as a stream. One word,",
+      "start": 153.6,
+      "duration": 6.680000000000007
+    },
+    {
+      "text": "then the next, then the next, and the meaning depends heavily on the order, and on how distant words",
+      "start": 160.28,
+      "duration": 6.199999999999989
+    },
+    {
+      "text": "relate. The dog bit the man, and the man bit the dog, have the exact same words and opposite meanings,",
+      "start": 166.48,
+      "duration": 7.460000000000008
+    },
+    {
+      "text": "and crucially, words that belong together can be far apart. In the sentence, the keys that I left on",
+      "start": 174.66,
+      "duration": 7.039999999999992
+    },
+    {
+      "text": "the kitchen table this morning are gone. The word keys and the word r have to agree.",
+      "start": 181.7,
+      "duration": 5.800000000000011
+    },
+    {
+      "text": "Keys are, not keys is, but there's a whole clause shoved between them.",
+      "start": 187.5,
+      "duration": 6.0800000000000125
+    },
+    {
+      "text": "So a machine handling language has to somehow keep track of relationships between words",
+      "start": 194.1,
+      "duration": 5.039999999999992
+    },
+    {
+      "text": "that might be very far apart in the stream. That's the core challenge, sequence, order,",
+      "start": 199.14,
+      "duration": 6.720000000000027
+    },
+    {
+      "text": "and long distance connections. Okay, so how did people handle that before this paper?",
+      "start": 206.34,
+      "duration": 5.079999999999984
+    },
+    {
+      "text": "What was the state of the art in, say, 2016? The dominant tool was something called a",
+      "start": 211.9,
+      "duration": 5.1200000000000045
+    },
+    {
+      "text": "recurrent neural network. A recurrent net often a particular kind with a name I'll mostly avoid,",
+      "start": 217.02,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "but the idea is what matters. It processes a sentence the way you might read aloud. One word at a time",
+      "start": 223.96,
+      "duration": 7.259999999999991
+    },
+    {
+      "text": "left to right while maintaining a kind of running mental summary, a memory that it updates with each",
+      "start": 231.22,
+      "duration": 6.560000000000002
+    },
+    {
+      "text": "new word. So it reads the updates its memory, reads dog updates its memory reads bit updates again",
+      "start": 237.78,
+      "duration": 11.859999999999985
+    },
+    {
+      "text": "and that running memory is supposed to carry along everything relevant from what it's seen so far",
+      "start": 250.5,
+      "duration": 5.039999999999992
+    },
+    {
+      "text": "when it reaches the end that accumulated memory represents the whole sentence.",
+      "start": 256.42,
+      "duration": 4.639999999999986
+    },
+    {
+      "text": "It's an intuitive design it mimics reading in order and it worked reasonably well",
+      "start": 261.56,
+      "duration": 5.699999999999989
+    },
+    {
+      "text": "but it had two deep problems and this paper is essentially a frontal assault on both.",
+      "start": 267.78,
+      "duration": 5.0400000000000205
+    },
+    {
+      "text": "Lay out the two problems. Problem one is about memory and distance.",
+      "start": 273.04,
+      "duration": 4.099999999999966
+    },
+    {
+      "text": "Everything the network knows about the early part of the sentence has to survive intact",
+      "start": 278.26,
+      "duration": 4.860000000000014
+    },
+    {
+      "text": "in that single running summary, passed hand-to-hand from each word to the next, step after step after step",
+      "start": 283.12,
+      "duration": 7.699999999999989
+    },
+    {
+      "text": "and information degrades over those steps. It's like a game of telephone down the length of the",
+      "start": 291.78000000000003,
+      "duration": 5.159999999999968
+    },
+    {
+      "text": "sentence. By the time the network gets to R at the end, the memory of keys from the beginning",
+      "start": 296.94,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "has been overwritten and diluted by everything in between. So long-range dependencies exactly the",
+      "start": 303.16,
+      "duration": 7.17999999999995
+    },
+    {
+      "text": "hard important case are exactly where these networks struggle most. The further apart two related",
+      "start": 310.34,
+      "duration": 6.580000000000041
+    },
+    {
+      "text": "words are, the more steps their connection has to survive and the weaker it gets.",
+      "start": 316.92,
+      "duration": 4.599999999999966
+    },
+    {
+      "text": "That's the keys are problem. What's problem two? Problem two is in the long run",
+      "start": 321.52,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "even more consequential and it's about speed specifically about parallelism",
+      "start": 327.76,
+      "duration": 5.759999999999991
+    },
+    {
+      "text": "because the network reads strictly in order and each step depends on the memory from the step before",
+      "start": 334.4,
+      "duration": 5.340000000000032
+    },
+    {
+      "text": "you cannot do the steps out of order or at the same time. You cannot start processing word five",
+      "start": 339.74,
+      "duration": 6.699999999999989
+    },
+    {
+      "text": "until you've finished words one through four because word five needs the running memory that words",
+      "start": 346.44,
+      "duration": 5.899999999999977
+    },
+    {
+      "text": "one through four produced. The computation is inherently sequential, a chain each link waiting on the",
+      "start": 352.34,
+      "duration": 7.480000000000018
+    },
+    {
+      "text": "last and that matters enormously because the hardware that powers modern AI, graphics chips,",
+      "start": 359.82,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "GPUs is built to do thousands of calculations simultaneously in parallel. A sequential algorithm",
+      "start": 366.68,
+      "duration": 7.480000000000018
+    },
+    {
+      "text": "can't use that power. It's like having a thousand lane highway and being forced to drive single",
+      "start": 374.16,
+      "duration": 5.859999999999957
+    },
+    {
+      "text": "file. So these networks were slow to train and worse, they were slow in a way that got punishing",
+      "start": 380.02,
+      "duration": 6.420000000000016
+    },
+    {
+      "text": "as you tried to make them bigger and feed them more data. The sequential nature was a wall.",
+      "start": 386.44,
+      "duration": 5.740000000000009
+    },
+    {
+      "text": "So you've got a method that forgets across long distances and can't be sped up by parallel hardware",
+      "start": 392.84,
+      "duration": 6.78000000000003
+    },
+    {
+      "text": "and I'm guessing attention is the fix for at least one of those. Where does the word come from?",
+      "start": 399.62,
+      "duration": 5.5400000000000205
+    },
+    {
+      "text": "Attention actually predates this paper by a few years and it's worth being accurate about that",
+      "start": 405.4,
+      "duration": 5.6200000000000045
+    },
+    {
+      "text": "because the fame of this paper sometimes obscures it. Attention was originally invented as a patch,",
+      "start": 411.02,
+      "duration": 6.8799999999999955
+    },
+    {
+      "text": "a helper bolted onto those very recurrent networks to fix problem one, the forgetting.",
+      "start": 418.24,
+      "duration": 5.699999999999989
+    },
+    {
+      "text": "The idea of the patch was lovely. Instead of forcing all the information about the input",
+      "start": 424.65999999999997,
+      "duration": 5.660000000000025
+    },
+    {
+      "text": "sentence through that one narrow running memory, let the network at each moment look back at all the",
+      "start": 430.32,
+      "duration": 6.660000000000025
+    },
+    {
+      "text": "words of the input directly and decide which ones are relevant right now. When it's translating and",
+      "start": 436.98,
+      "duration": 7.099999999999966
+    },
+    {
+      "text": "about to produce the German word for keys, it can look back over the entire English sentence and pay",
+      "start": 444.08,
+      "duration": 5.8799999999999955
+    },
+    {
+      "text": "attention to the word keys, largely ignoring the rest. That selective looking back, focusing on",
+      "start": 449.96,
+      "duration": 7.360000000000014
+    },
+    {
+      "text": "the relevant parts of the input is attention and it helped a lot with the long-range problem.",
+      "start": 457.32,
+      "duration": 5.4599999999999795
+    },
+    {
+      "text": "So attention lets the model reach back and grab the relevant word directly instead of hoping",
+      "start": 462.98,
+      "duration": 6.1200000000000045
+    },
+    {
+      "text": "it survived in the running memory. That makes sense. So what's left for this paper to do if attention",
+      "start": 469.1,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "already existed? Here's the move and it's the whole paper in one sentence. Before attention was",
+      "start": 476.38,
+      "duration": 6.699999999999989
+    },
+    {
+      "text": "the sidekick, a helper attached to the main recurrent network which was still doing the sequential",
+      "start": 483.08,
+      "duration": 5.220000000000027
+    },
+    {
+      "text": "reading. The author's asked a radical question, what if attention isn't the sidekick? What if attention",
+      "start": 488.3,
+      "duration": 7.159999999999968
+    },
+    {
+      "text": "is the whole thing? What if you throw away the recurrent network entirely? The sequential reading,",
+      "start": 495.46,
+      "duration": 6.080000000000041
+    },
+    {
+      "text": "the running memory, all of it, and build a model out of nothing but attention. That's the meaning",
+      "start": 501.54,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "of the title, attention is all you need. It's a claim that the helper was actually the hero and everything",
+      "start": 507.58,
+      "duration": 6.760000000000048
+    },
+    {
+      "text": "else can be discarded. And when they did that, when they built a model of pure attention with no recurrence,",
+      "start": 514.34,
+      "duration": 6.600000000000023
+    },
+    {
+      "text": "two wonderful things happened at once and both of the old problems dissolved. They named the result",
+      "start": 521.58,
+      "duration": 6.17999999999995
+    },
+    {
+      "text": "the transformer. Before you tell me what dissolved, I need to actually understand what attention is",
+      "start": 527.76,
+      "duration": 6.139999999999986
+    },
+    {
+      "text": "mechanically. You've described it as looking back at the relevant words, but that's a metaphor.",
+      "start": 534.46,
+      "duration": 5.959999999999923
+    },
+    {
+      "text": "What's actually happening when a machine pays attention? Because a machine doesn't have a spotlight",
+      "start": 541.2,
+      "duration": 5.899999999999977
+    },
+    {
+      "text": "of focus. You're right to demand this and there's a clean analogy that makes it click. Think of it as a",
+      "start": 547.1,
+      "duration": 6.1200000000000045
+    },
+    {
+      "text": "soft look up in a database or a search. Imagine a library retrieval system. Every item stored has two",
+      "start": 553.22,
+      "duration": 7.819999999999936
+    },
+    {
+      "text": "parts, a label describing what it's about, call that it's key, and the actual content, call that it's",
+      "start": 561.04,
+      "duration": 7.240000000000009
+    },
+    {
+      "text": "value. And when you want something, you come with a request describing what you're looking for,",
+      "start": 568.28,
+      "duration": 5.259999999999991
+    },
+    {
+      "text": "call that your query. The system compares your query against every key, finds the ones that match",
+      "start": 574.06,
+      "duration": 6.560000000000059
+    },
+    {
+      "text": "and hands you back the content, the values of the best matches. That's an ordinary look up.",
+      "start": 581.26,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "Attention is that with one crucial softening. Instead of returning only the single best match,",
+      "start": 588.38,
+      "duration": 6.080000000000041
+    },
+    {
+      "text": "it returns a blend, a weighted average of all the values, where the weight on each is how well",
+      "start": 594.92,
+      "duration": 5.759999999999991
+    },
+    {
+      "text": "it's key matched your query. A strong match contributes a lot, a weak match contributes a little,",
+      "start": 600.68,
+      "duration": 6.600000000000023
+    },
+    {
+      "text": "nothing is fully ignored and nothing fully dominates. It's a soft blended search.",
+      "start": 607.28,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "A soft look up, you don't get one answer, you get a mixture weighted by relevance.",
+      "start": 614.6,
+      "duration": 5.199999999999932
+    },
+    {
+      "text": "Okay, so how does that map onto words in a sentence? Where do the queries and keys and values come from?",
+      "start": 620.38,
+      "duration": 7.67999999999995
+    },
+    {
+      "text": "This is the clever part. Every word in the sentence generates all three of those roles for itself.",
+      "start": 628.46,
+      "duration": 5.919999999999959
+    },
+    {
+      "text": "Each word produces a query, in effect saying, here's what I'm looking for in the rest of the",
+      "start": 635.1,
+      "duration": 5.579999999999927
+    },
+    {
+      "text": "sentence. Each word also produces a key, here's what I offer, here's what I'm about,",
+      "start": 640.68,
+      "duration": 6.1400000000001
+    },
+    {
+      "text": "and each word produces a value. Here's the actual content I'll contribute if you attend to me.",
+      "start": 647.64,
+      "duration": 5.82000000000005
+    },
+    {
+      "text": "So now take a single word, say R, the verb that needs to find its subject.",
+      "start": 654.14,
+      "duration": 5.360000000000014
+    },
+    {
+      "text": "The word R broadcasts its query out to every other word in the sentence.",
+      "start": 660.46,
+      "duration": 4.539999999999964
+    },
+    {
+      "text": "That query gets compared against the key of every other word. The key of keys matches it strongly,",
+      "start": 665.64,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "a verb looking for its subject, and there's the subject. The keys of kitchen or morning match weekly.",
+      "start": 672.42,
+      "duration": 6.580000000000041
+    },
+    {
+      "text": "Those match scores become the weights, and the word R pulls in a blend of everyone's values,",
+      "start": 679.88,
+      "duration": 5.360000000000014
+    },
+    {
+      "text": "dominated by the value of keys. In one step, R has reached across the whole sentence,",
+      "start": 685.24,
+      "duration": 6.080000000000041
+    },
+    {
+      "text": "and gathered exactly the information it needed, from exactly the right word, no matter how far away it's",
+      "start": 691.74,
+      "duration": 5.899999999999977
+    },
+    {
+      "text": "at. Oh, that's the long-range problem gone. There's no running memory to survive, no telephone game.",
+      "start": 697.64,
+      "duration": 6.340000000000032
+    },
+    {
+      "text": "R just directly queries keys across the whole sentence in a single move. However far apart they are.",
+      "start": 704.8,
+      "duration": 7.100000000000023
+    },
+    {
+      "text": "In a single move, and that's the first of the two things that dissolved.",
+      "start": 711.9,
+      "duration": 3.9200000000000728
+    },
+    {
+      "text": "In the old recurrent network, connecting two words that are far apart meant pushing information through",
+      "start": 716.34,
+      "duration": 6.419999999999959
+    },
+    {
+      "text": "all the steps between them. In attention, every word is directly connected to every other word.",
+      "start": 722.76,
+      "duration": 6.340000000000032
+    },
+    {
+      "text": "The path length between any two words is one. Distance across the sentence simply stops being an",
+      "start": 729.74,
+      "duration": 6.6200000000000045
+    },
+    {
+      "text": "obstacle. The word at the end can attend to the word at the beginning as easily as to its neighbour.",
+      "start": 736.36,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "Long-range dependency, which was the recurrent network's great weakness, becomes trivial.",
+      "start": 743.48,
+      "duration": 5.480000000000018
+    },
+    {
+      "text": "It's the same one step operation for near and far. Back up one step because you keep saying a word",
+      "start": 749.78,
+      "duration": 5.660000000000082
+    },
+    {
+      "text": "produces a query or is a list of numbers. What does it even mean for a word to be numbers?",
+      "start": 755.44,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "This is the foundation under everything, and it has a name, embeddings. A neural network can't",
+      "start": 762.72,
+      "duration": 7.519999999999982
+    },
+    {
+      "text": "work with letters. It only works with numbers. So the very first thing that happens is that each word",
+      "start": 770.24,
+      "duration": 6.17999999999995
+    },
+    {
+      "text": "gets turned into a long list of numbers which you can picture as a point or an arrow in a space with",
+      "start": 776.42,
+      "duration": 6.0
+    },
+    {
+      "text": "many hundreds of dimensions. And these aren't arbitrary numbers. The network learns to place the words",
+      "start": 782.42,
+      "duration": 6.800000000000068
+    },
+    {
+      "text": "so that direction and distance in that space encode meaning. Words with similar meaning end up",
+      "start": 789.22,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "near each other. King and queen and monarch cluster together far away from banana. And relationships show",
+      "start": 795.44,
+      "duration": 8.299999999999955
+    },
+    {
+      "text": "up as consistent directions. The famous example, take the point for king, subtract the direction that",
+      "start": 803.74,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "represents man, add the direction that represents woman, and you land remarkably close to queen.",
+      "start": 810.48,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "Meaning has become geometry. So every word is a point in this learned space of meaning and its",
+      "start": 817.52,
+      "duration": 6.360000000000014
+    },
+    {
+      "text": "query, key, and value are all computed from that point. When I say a word produces a query,",
+      "start": 823.88,
+      "duration": 6.67999999999995
+    },
+    {
+      "text": "I mean you take the words meaning arrow and transform it into another arrow that represents what",
+      "start": 830.98,
+      "duration": 5.3799999999999955
+    },
+    {
+      "text": "this word is looking for. And how exactly is the match between a query and a key computed?",
+      "start": 836.36,
+      "duration": 6.100000000000023
+    },
+    {
+      "text": "You keep saying how well they match. Is there an actual operation there in words?",
+      "start": 843.1800000000001,
+      "duration": 5.439999999999941
+    },
+    {
+      "text": "There is and I'll keep it verbal. A word's query and a word's key are both lists of numbers.",
+      "start": 849.0,
+      "duration": 6.3799999999999955
+    },
+    {
+      "text": "Think of each as an arrow pointing in some direction in a high-dimensional space where direction",
+      "start": 856.2,
+      "duration": 5.6200000000000045
+    },
+    {
+      "text": "encodes meaning. The match score between a query and a key is computed by an operation that's",
+      "start": 861.82,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "large when the two arrows point the same way and small when they don't. Essentially how aligned they",
+      "start": 868.4,
+      "duration": 6.340000000000032
+    },
+    {
+      "text": "are. Aligned query and key, high score, strong attention, misaligned, low score, weak attention.",
+      "start": 874.74,
+      "duration": 8.460000000000036
+    },
+    {
+      "text": "Then all those raw scores across the whole sentence get passed through a step that squashes them into",
+      "start": 883.9,
+      "duration": 6.32000000000005
+    },
+    {
+      "text": "clean positive weights that add up to one. So they behave like proportions, like percentages of attention",
+      "start": 890.22,
+      "duration": 7.039999999999964
+    },
+    {
+      "text": "distributed across the words. The one detail worth naming, they also divide the scores by a scaling",
+      "start": 897.26,
+      "duration": 7.159999999999968
+    },
+    {
+      "text": "factor. The square root of the length of those lists, before squashing, purely to keep the numbers",
+      "start": 904.42,
+      "duration": 6.280000000000086
+    },
+    {
+      "text": "well behaved and stable during training. That's it. Compare query to every key by alignment,",
+      "start": 910.7,
+      "duration": 6.9799999999999045
+    },
+    {
+      "text": "scale for stability, squash into weights that sum to one, take the weighted blend of values.",
+      "start": 918.28,
+      "duration": 5.759999999999991
+    },
+    {
+      "text": "That single recipe is the heart of the transformer. Can you give me a real sentence where I can feel a",
+      "start": 924.74,
+      "duration": 5.819999999999936
+    },
+    {
+      "text": "specific word attending to another and where it actually changes the meaning? The cleanest example is",
+      "start": 930.56,
+      "duration": 6.780000000000086
+    },
+    {
+      "text": "pronouns because a pronoun is empty until you know what it points to. Take the sentence, the animal",
+      "start": 937.34,
+      "duration": 6.719999999999914
+    },
+    {
+      "text": "didn't cross the street because it was too tired. What does it refer to? The animal or the street?",
+      "start": 944.06,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "Obviously the animal streets don't get tired. Now change a single word. The animal didn't cross",
+      "start": 951.2,
+      "duration": 6.759999999999991
+    },
+    {
+      "text": "the street because it was too wide. Now it is the street. Same structure, one word different,",
+      "start": 957.96,
+      "duration": 7.1200000000000045
+    },
+    {
+      "text": "and what the pronoun refers to flips entirely. When a transformer processes the word it,",
+      "start": 965.56,
+      "duration": 5.760000000000105
+    },
+    {
+      "text": "it sends out its query and the attention lands heavily on animal in the first sentence and on",
+      "start": 971.8,
+      "duration": 5.940000000000055
+    },
+    {
+      "text": "street in the second. The model resolves the pronoun by attending to the correct noun,",
+      "start": 977.74,
+      "duration": 5.2000000000000455
+    },
+    {
+      "text": "steered by tired versus wide. And this is not a just-so story. Researchers can actually extract and",
+      "start": 983.44,
+      "duration": 7.8799999999999955
+    },
+    {
+      "text": "visualize those attention weights and you can literally watch a particular head light up the link",
+      "start": 991.32,
+      "duration": 5.559999999999945
+    },
+    {
+      "text": "from it to the noun it refers to. You can in a real sense see the model reading. That's a striking",
+      "start": 996.88,
+      "duration": 7.159999999999968
+    },
+    {
+      "text": "image. You can watch it decide what it means. Got it? And that recipe is the same for every word.",
+      "start": 1004.04,
+      "duration": 8.200000000000045
+    },
+    {
+      "text": "And every word does it at the same time. Which I'm now realizing is the answer to problem two,",
+      "start": 1012.88,
+      "duration": 6.3799999999999955
+    },
+    {
+      "text": "the parallelism one. You just got there before I could tear it up. And yes, that's the second",
+      "start": 1019.78,
+      "duration": 5.460000000000036
+    },
+    {
+      "text": "thing that dissolved and truly the more world changing of the two. Because there's no running memory",
+      "start": 1025.24,
+      "duration": 5.839999999999918
+    },
+    {
+      "text": "being passed hand-to-hand, there's no forced order to the computation. Every word can compute its query,",
+      "start": 1031.08,
+      "duration": 7.019999999999982
+    },
+    {
+      "text": "its keys, its match scores, and its blended result at the very same time as every other word.",
+      "start": 1038.64,
+      "duration": 5.959999999999809
+    },
+    {
+      "text": "The whole sentence's attention can be done in one big simultaneous batch of arithmetic. And that",
+      "start": 1045.5,
+      "duration": 6.420000000000073
+    },
+    {
+      "text": "is exactly the shape of computation that graphics chips devour. Thousands of independent multiplications",
+      "start": 1051.92,
+      "duration": 6.8599999999999
+    },
+    {
+      "text": "happening in parallel. So the transformer maps perfectly onto the hardware where the recurrent network",
+      "start": 1058.78,
+      "duration": 6.880000000000109
+    },
+    {
+      "text": "fought it. Suddenly you could train on far more data, far faster, and build far bigger models",
+      "start": 1065.66,
+      "duration": 6.6599999999998545
+    },
+    {
+      "text": "because you were finally using the full width of the highway instead of driving single file.",
+      "start": 1072.32,
+      "duration": 5.180000000000064
+    },
+    {
+      "text": "So attention didn't just fix the forgetting. It fixed it in a way that happens to also be massively",
+      "start": 1077.8,
+      "duration": 6.380000000000109
+    },
+    {
+      "text": "parallel, which the old sequential reading could never be. Those feel like they should be a trade-off",
+      "start": 1084.18,
+      "duration": 6.559999999999945
+    },
+    {
+      "text": "and instead you got both. Both at once, from one idea. That's exactly why it was such a turning point.",
+      "start": 1090.74,
+      "duration": 7.279999999999973
+    },
+    {
+      "text": "You very rarely get to solve two deep problems with a single move. Usually fixing one aggravates the",
+      "start": 1099.02,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "other. Here replacing read in order and remember, with look at everything at once and wait by relevance,",
+      "start": 1105.42,
+      "duration": 7.539999999999964
+    },
+    {
+      "text": "simultaneously gave direct long-range connections and full parallelism.",
+      "start": 1113.7,
+      "duration": 4.419999999999845
+    },
+    {
+      "text": "And I want to flag something because it's the real lesson of the paper hiding behind the accuracy",
+      "start": 1118.74,
+      "duration": 5.259999999999991
+    },
+    {
+      "text": "numbers. At the time this was presented as a better translation system and it was. It beat the",
+      "start": 1124.0,
+      "duration": 7.119999999999891
+    },
+    {
+      "text": "previous burst while training much faster. But the parallelism is the thing that mattered for history",
+      "start": 1131.12,
+      "duration": 6.020000000000209
+    },
+    {
+      "text": "because it meant the architecture could scale. You could keep making it bigger and feeding it",
+      "start": 1137.14,
+      "duration": 5.7999999999999545
+    },
+    {
+      "text": "more and the hardware could keep up. That scalability is what everything after this is built on.",
+      "start": 1142.94,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "Let me hold that thought about scaling. But first, you mentioned there are a few more pieces.",
+      "start": 1149.62,
+      "duration": 5.260000000000218
+    },
+    {
+      "text": "Multi-head attention was one. What's that? Multi-head attention is a refinement and it's intuitive",
+      "start": 1155.44,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "once you have the basic mechanism. A single attention operation lets each word gather information",
+      "start": 1161.66,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "according to one notion of relevance. But words relate to each other in many different ways at once.",
+      "start": 1167.96,
+      "duration": 5.899999999999864
+    },
+    {
+      "text": "In a sentence, one word might need to find its grammatical subject and also track what a pronoun",
+      "start": 1174.7,
+      "duration": 5.559999999999945
+    },
+    {
+      "text": "refers to and also register the overall topic. Several different kinds of relationship simultaneously.",
+      "start": 1180.26,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "So instead of doing attention just once, the transformer does it several times in parallel",
+      "start": 1187.86,
+      "duration": 5.320000000000164
+    },
+    {
+      "text": "with several independent sets of queries, keys and values. Each one called a head.",
+      "start": 1193.18,
+      "duration": 6.0
+    },
+    {
+      "text": "Each head can learn to specialize in a different type of relationship.",
+      "start": 1199.94,
+      "duration": 3.339999999999918
+    },
+    {
+      "text": "One head might learn to track subject verb agreement. Another might learn to link pronouns to the",
+      "start": 1204.26,
+      "duration": 5.480000000000018
+    },
+    {
+      "text": "nouns they stand for. Another might follow the topic. Then you combine what all the heads found.",
+      "start": 1209.74,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "It's like having several readers examine the same sentence, each looking for a different kind of",
+      "start": 1216.8,
+      "duration": 5.180000000000064
+    },
+    {
+      "text": "connection and then pooling their nodes. Several parallel attention operations. Each learning a different",
+      "start": 1222.18,
+      "duration": 5.939999999999827
+    },
+    {
+      "text": "kind of relationship then merged. That's elegant. And you said something earlier that's been nagging me.",
+      "start": 1228.12,
+      "duration": 7.440000000000055
+    },
+    {
+      "text": "Attention treats the sentence almost like a set, looking at all words at once. But order matters",
+      "start": 1236.1,
+      "duration": 6.920000000000073
+    },
+    {
+      "text": "in language. If it looks at everything simultaneously, how does it know that dog bit man isn't man bit dog?",
+      "start": 1243.02,
+      "duration": 7.880000000000109
+    },
+    {
+      "text": "You have put your finger on the one thing, the mechanism, as I've described it, genuinely lacks.",
+      "start": 1250.9,
+      "duration": 5.2199999999998
+    },
+    {
+      "text": "And the authors had to add a fix for it. You're exactly right. Pure attention is blind to order.",
+      "start": 1256.68,
+      "duration": 6.399999999999864
+    },
+    {
+      "text": "If every word just queries every other word by content, then scrambling the word order would give",
+      "start": 1263.98,
+      "duration": 5.639999999999873
+    },
+    {
+      "text": "the same result. Because the operation doesn't inherently know which word came first. That's a real",
+      "start": 1269.62,
+      "duration": 6.800000000000182
+    },
+    {
+      "text": "problem for language where order is meaning. Their solution is called positional encoding,",
+      "start": 1276.42,
+      "duration": 5.779999999999973
+    },
+    {
+      "text": "and it's almost sneaky in its simplicity. Before the words go into the attention machinery,",
+      "start": 1282.8,
+      "duration": 5.2000000000000455
+    },
+    {
+      "text": "they stamp each word with extra information that encodes its position. First, second, third,",
+      "start": 1288.44,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "and so on. A kind of positional tag mixed into the words representation. So each word carries not",
+      "start": 1295.24,
+      "duration": 7.339999999999918
+    },
+    {
+      "text": "just I am the word keys, but I am the word keys, and I am in the fifth position. Now the attention",
+      "start": 1302.58,
+      "duration": 7.759999999999991
+    },
+    {
+      "text": "mechanism can take order into account because the position is baked right into what each word offers.",
+      "start": 1310.34,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "They restore the sense of sequence not by processing in sequence, but by labeling each word with",
+      "start": 1317.26,
+      "duration": 5.900000000000091
+    },
+    {
+      "text": "where it sits. That's clever. You get to keep the all at once parallelism, and you recover word order",
+      "start": 1323.16,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "by just tagging each word with its position instead of feeding them in order.",
+      "start": 1329.38,
+      "duration": 4.959999999999809
+    },
+    {
+      "text": "So now I think I have the whole machine. Words become queries, keys, and values. Each word",
+      "start": 1335.04,
+      "duration": 7.079999999999927
+    },
+    {
+      "text": "attends to all the others by matching queries to keys and blending values. You do that with multiple",
+      "start": 1342.12,
+      "duration": 6.860000000000127
+    },
+    {
+      "text": "heads for different relationships, and you stamp positions on so order survives. Is that the transformer?",
+      "start": 1348.98,
+      "duration": 7.099999999999909
+    },
+    {
+      "text": "That's the beating heart of it, yes. There's some standard surrounding machinery I'll gesture out",
+      "start": 1356.08,
+      "duration": 5.920000000000073
+    },
+    {
+      "text": "without belaboring. The attention layers are stacked many deep, so the model can build up more",
+      "start": 1362.0,
+      "duration": 5.619999999999891
+    },
+    {
+      "text": "and more abstract relationships layer by layer. There are ordinary processing steps between the",
+      "start": 1367.62,
+      "duration": 6.080000000000155
+    },
+    {
+      "text": "attention layers, and there are engineering tricks that help very deep networks train without falling",
+      "start": 1373.7,
+      "duration": 6.220000000000027
+    },
+    {
+      "text": "apart. And in the original paper, the whole thing is arranged as an encoder and a decoder.",
+      "start": 1379.92,
+      "duration": 6.019999999999982
+    },
+    {
+      "text": "One stack to read and understand the English sentence, another to generate the German one with",
+      "start": 1386.7,
+      "duration": 5.8599999999999
+    },
+    {
+      "text": "attention connecting them. But you don't need those details to hold the essential idea.",
+      "start": 1392.56,
+      "duration": 5.160000000000082
+    },
+    {
+      "text": "The essential idea is a tower of attention layers where at every layer every position looks at every",
+      "start": 1398.34,
+      "duration": 7.5
+    },
+    {
+      "text": "other position and gathers what's relevant in parallel. That's the transformer, and that tower is what",
+      "start": 1405.84,
+      "duration": 7.3400000000001455
+    },
+    {
+      "text": "got scaled up into everything that followed. You mentioned the original had an encoder and a decoder,",
+      "start": 1413.18,
+      "duration": 5.779999999999973
+    },
+    {
+      "text": "a reading half and a writing half. Did that split end up mattering for what came later?",
+      "start": 1419.48,
+      "duration": 5.619999999999891
+    },
+    {
+      "text": "It did in a rather elegant way. The original transformer had those two halves,",
+      "start": 1425.3,
+      "duration": 5.539999999999964
+    },
+    {
+      "text": "an encoder that reads the whole input and builds up a rich understanding of it, and a decoder that",
+      "start": 1430.84,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "generates the output one word at a time. Afterward, people realized you don't always need both,",
+      "start": 1437.28,
+      "duration": 6.880000000000109
+    },
+    {
+      "text": "depending on your goal. If what you want is to understand text, to answer questions about it,",
+      "start": 1444.5,
+      "duration": 6.180000000000064
+    },
+    {
+      "text": "judge its sentiment, fill in missing words, you can keep just the encoder half.",
+      "start": 1451.08,
+      "duration": 4.960000000000036
+    },
+    {
+      "text": "One famous early family of models called Bert took that route. It trained by hiding random words",
+      "start": 1456.92,
+      "duration": 6.779999999999973
+    },
+    {
+      "text": "in a sentence and learning to fill them back in, which forces a deep two directional understanding of",
+      "start": 1463.7,
+      "duration": 6.0
+    },
+    {
+      "text": "language. If instead what you want is to generate text, to continue a prompt, hold a conversation,",
+      "start": 1469.7,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "write an essay, you keep just the decoder half, which produces words one at a time, each new word",
+      "start": 1476.92,
+      "duration": 7.019999999999982
+    },
+    {
+      "text": "attending back over everything written so far. That second route is the GPT family,",
+      "start": 1483.94,
+      "duration": 5.8599999999999
+    },
+    {
+      "text": "and it's the direct lineage behind the conversational assistance everyone now uses.",
+      "start": 1490.3,
+      "duration": 4.660000000000082
+    },
+    {
+      "text": "Same attention machinery from this paper just cleaved two ways. One shape tuned for reading,",
+      "start": 1496.0,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "one for writing. So Bert's style is the reader, GPT style is the writer, and both adjust the attention",
+      "start": 1502.9,
+      "duration": 6.899999999999864
+    },
+    {
+      "text": "tower pointed at different jobs. So let's finally cash the scaling check. The paper is about",
+      "start": 1509.8,
+      "duration": 7.440000000000055
+    },
+    {
+      "text": "translating English to German. How do we get from there to chat GPT to systems that write code",
+      "start": 1517.24,
+      "duration": 7.7000000000000455
+    },
+    {
+      "text": "and hold conversations? That's a huge leap. It is a huge leap, and I want to be careful and clear",
+      "start": 1524.94,
+      "duration": 6.639999999999873
+    },
+    {
+      "text": "about the history here, because it's tempting to pretend the authors saw it all coming,",
+      "start": 1531.58,
+      "duration": 4.560000000000173
+    },
+    {
+      "text": "and the truth is more interesting than that. This paper does not contain the large language models,",
+      "start": 1536.14,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "it doesn't propose chat GPT or anything like it. What it did was hand the field an architecture",
+      "start": 1542.74,
+      "duration": 6.400000000000091
+    },
+    {
+      "text": "with a magic property. It got better in a smooth, reliable way as you made it bigger and fed it more",
+      "start": 1549.14,
+      "duration": 6.740000000000009
+    },
+    {
+      "text": "data, and because of the parallelism you actually could make it bigger and feed it more on real hardware",
+      "start": 1555.88,
+      "duration": 7.339999999999918
+    },
+    {
+      "text": "without hitting the wall the old network's hit. So what happened over the next several years",
+      "start": 1563.22,
+      "duration": 6.119999999999891
+    },
+    {
+      "text": "was that other researchers took the transformer and did something the translation paper didn't emphasize.",
+      "start": 1569.34,
+      "duration": 5.620000000000118
+    },
+    {
+      "text": "They trained enormous versions of it on staggering amounts of ordinary text from the internet",
+      "start": 1575.34,
+      "duration": 5.600000000000136
+    },
+    {
+      "text": "with a beautifully simple training goal. Just predict the next word over and over across essentially",
+      "start": 1580.94,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "everything humans have written. Just predict the next word. That's the whole training task behind",
+      "start": 1587.92,
+      "duration": 5.419999999999845
+    },
+    {
+      "text": "these systems. That feels almost too simple to produce something that can write an essay.",
+      "start": 1593.34,
+      "duration": 5.740000000000009
+    },
+    {
+      "text": "It does feel too simple, and that's one of the genuine surprises of the last decade.",
+      "start": 1599.4,
+      "duration": 4.679999999999836
+    },
+    {
+      "text": "One nobody fully predicted. It turns out that if you take a big enough transformer and train it to",
+      "start": 1604.94,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "predict the next word across a vast enough swath of human writing, then in order to get good at that",
+      "start": 1611.38,
+      "duration": 5.639999999999873
+    },
+    {
+      "text": "one narrow task, it is forced to learn an astonishing amount about language, facts, reasoning,",
+      "start": 1617.02,
+      "duration": 6.6400000000001
+    },
+    {
+      "text": "style, the structure of arguments, because all of those things help you predict what comes next.",
+      "start": 1624.14,
+      "duration": 6.059999999999945
+    },
+    {
+      "text": "To finish the sentence, the capital of France is you have to know a fact.",
+      "start": 1631.26,
+      "duration": 4.8599999999999
+    },
+    {
+      "text": "To continue a story coherently, you have to track characters and plot. To complete a line of a",
+      "start": 1636.76,
+      "duration": 6.460000000000036
+    },
+    {
+      "text": "mathematical argument, you have to do a little reasoning. So, predict the next word,",
+      "start": 1643.22,
+      "duration": 5.539999999999964
+    },
+    {
+      "text": "pursued at enormous scale, quietly forces the model to absorb a working model of the world as expressed",
+      "start": 1649.22,
+      "duration": 6.779999999999973
+    },
+    {
+      "text": "in text. And the vessel that made training at that scale possible, the thing that could soak up all",
+      "start": 1656.0,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "that data on parallel hardware was the transformer from this paper. Was the architecture alone enough",
+      "start": 1662.44,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "to cause all this? Or did other things have to line up at the same time?",
+      "start": 1668.74,
+      "duration": 4.319999999999936
+    },
+    {
+      "text": "Other things absolutely had to line up. And it's important not to hand the architecture all the credit",
+      "start": 1673.48,
+      "duration": 5.779999999999973
+    },
+    {
+      "text": "because it was really the missing third leg of a stool. The other two legs were already there waiting.",
+      "start": 1679.26,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "One was data. By the 2010s, the internet had digitized an almost unimaginable quantity of human writing,",
+      "start": 1686.76,
+      "duration": 6.960000000000036
+    },
+    {
+      "text": "the raw material to learn from. The other was compute. Those graphics chips had become cheap",
+      "start": 1694.3600000000001,
+      "duration": 6.379999999999882
+    },
+    {
+      "text": "and enormously powerful. Oceans of parallel arithmetic available for higher.",
+      "start": 1700.74,
+      "duration": 4.8599999999999
+    },
+    {
+      "text": "But those two legs couldn't hold anything up on their own because the raining architecture,",
+      "start": 1706.54,
+      "duration": 4.460000000000036
+    },
+    {
+      "text": "the sequential recurrent network couldn't actually use them. It couldn't parallelize to soak up the",
+      "start": 1711.5,
+      "duration": 6.380000000000109
+    },
+    {
+      "text": "compute so it couldn't practically be trained on all that data. The data and the compute were like a",
+      "start": 1717.88,
+      "duration": 6.519999999999982
+    },
+    {
+      "text": "loaded spring with nothing to release it. The transformer was the release, an architecture that",
+      "start": 1724.4,
+      "duration": 6.259999999999991
+    },
+    {
+      "text": "could finally pour that much data through that much parallel hardware. That's why it acted like a",
+      "start": 1730.66,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "detonator. The explosive had been sitting there for years. The transformer was the missing trigger.",
+      "start": 1736.9,
+      "duration": 5.879999999999882
+    },
+    {
+      "text": "So the lineage is this paper builds the scalable engine. And then a few years later, people",
+      "start": 1742.78,
+      "duration": 6.660000000000082
+    },
+    {
+      "text": "pour the entire internet through a giant version of it with a predict the next word goal.",
+      "start": 1749.44,
+      "duration": 6.399999999999864
+    },
+    {
+      "text": "And outcome something that can converse. And the names, GPT and the others, those are all",
+      "start": 1756.38,
+      "duration": 6.619999999999891
+    },
+    {
+      "text": "this architecture underneath. All of them underneath are transformers. That tower of attention layers",
+      "start": 1763.0,
+      "duration": 6.7000000000000455
+    },
+    {
+      "text": "scaled up and trained on next word prediction. The systems people call large language models,",
+      "start": 1769.7,
+      "duration": 6.839999999999918
+    },
+    {
+      "text": "the ones behind the AI assistants that have swept through the world in the last few years",
+      "start": 1777.14,
+      "duration": 4.759999999999991
+    },
+    {
+      "text": "are at their core direct descendants of this architecture. The T in the most famous of those names",
+      "start": 1782.42,
+      "duration": 6.919999999999845
+    },
+    {
+      "text": "stands literally for transformer. And it went beyond text. The same attention machinery got applied",
+      "start": 1789.34,
+      "duration": 7.540000000000191
+    },
+    {
+      "text": "to images to audio to biology. The models that predict how proteins fold which transformed a",
+      "start": 1796.88,
+      "duration": 7.519999999999982
+    },
+    {
+      "text": "decades old problem in molecular biology lean on attention. It turned out that let every part of the",
+      "start": 1804.4,
+      "duration": 7.319999999999936
+    },
+    {
+      "text": "input attend to every other part in parallel was a shockingly general recipe far beyond the translation",
+      "start": 1811.72,
+      "duration": 7.099999999999909
+    },
+    {
+      "text": "task it was invented for. This one architecture became a kind of universal engine for machine learning.",
+      "start": 1818.82,
+      "duration": 6.900000000000091
+    },
+    {
+      "text": "Is there a catch to all this? Every word attends to every word sounds like it might get expensive",
+      "start": 1825.72,
+      "duration": 6.5
+    },
+    {
+      "text": "as the text gets longer. It absolutely does and it's the mechanism's central limitation.",
+      "start": 1832.22,
+      "duration": 5.7999999999999545
+    },
+    {
+      "text": "Worth being clear about rather than glossing over. If every word has to compare itself against every",
+      "start": 1838.94,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "other word then the amount of work grows with the square of the number of words. Double the length of",
+      "start": 1845.24,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "text and you quadruple the work. Make it ten times longer and it costs a hundred times more.",
+      "start": 1851.72,
+      "duration": 6.279999999999973
+    },
+    {
+      "text": "For a single sentence that's nothing. For a whole book or a long back and forth conversation",
+      "start": 1858.96,
+      "duration": 5.839999999999918
+    },
+    {
+      "text": "it gets very expensive very fast. That's the technical reason these models have long had a limited",
+      "start": 1864.8,
+      "duration": 6.380000000000109
+    },
+    {
+      "text": "context window. A cap on how much text they can take in at once. And it's why a whole active branch",
+      "start": 1871.18,
+      "duration": 6.819999999999936
+    },
+    {
+      "text": "of research is devoted to making attention cheaper for long inputs approximating that all to all",
+      "start": 1878.0,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "comparison without paying the full square. The very thing that gives attention its power every position",
+      "start": 1884.48,
+      "duration": 6.8599999999999
+    },
+    {
+      "text": "able to talk directly to every other is exactly what makes it costly. Power and cost are two",
+      "start": 1891.34,
+      "duration": 6.6400000000001
+    },
+    {
+      "text": "sides of one coin here. It's striking that a paper aimed at a fairly specific practical goal,",
+      "start": 1897.98,
+      "duration": 6.039999999999964
+    },
+    {
+      "text": "better translation, turned out to contain a general purpose engine nobody fully realized they",
+      "start": 1904.02,
+      "duration": 7.1400000000001
+    },
+    {
+      "text": "were building. That seems to happen a lot with the great papers. It happens again and again and it's",
+      "start": 1911.16,
+      "duration": 6.679999999999836
+    },
+    {
+      "text": "worth sitting with why because it's a real pattern in how breakthroughs work. The authors weren't",
+      "start": 1917.84,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "trying to invent the era of large language models. They were trying to translate faster and better",
+      "start": 1923.82,
+      "duration": 5.660000000000082
+    },
+    {
+      "text": "and they made a clean architectural choice to get there. Drop the sequential part, keep only attention.",
+      "start": 1930.04,
+      "duration": 6.440000000000055
+    },
+    {
+      "text": "But that clean choice happened to remove the exact bottleneck, the sequential wall",
+      "start": 1937.38,
+      "duration": 4.639999999999873
+    },
+    {
+      "text": "that had been quietly capping how big these models could get. And once you remove a bottleneck",
+      "start": 1942.02,
+      "duration": 6.1400000000001
+    },
+    {
+      "text": "you often unleash something much larger than the problem you were solving because everyone else can",
+      "start": 1948.16,
+      "duration": 5.319999999999936
+    },
+    {
+      "text": "now push through the opening. They optimized for translation and accidentally handed the world a",
+      "start": 1953.48,
+      "duration": 6.2999999999999545
+    },
+    {
+      "text": "scalable substrate for intelligence like behavior. The lesson isn't that they foresaw the future,",
+      "start": 1959.78,
+      "duration": 6.120000000000118
+    },
+    {
+      "text": "it's that removing a fundamental constraint tends to have consequences far past your intentions.",
+      "start": 1966.44,
+      "duration": 5.379999999999882
+    },
+    {
+      "text": "All right, you promised me a self-referential closing and I think we've earned it. Make the loop.",
+      "start": 1972.18,
+      "duration": 6.240000000000009
+    },
+    {
+      "text": "Here's the loop. This conversation you're listening to was shaped in part with the help of exactly",
+      "start": 1978.42,
+      "duration": 5.7999999999999545
+    },
+    {
+      "text": "the kind of system we've been describing. A large language model, which is to say a large transformer,",
+      "start": 1984.22,
+      "duration": 6.480000000000018
+    },
+    {
+      "text": "a tall stack of the attention layers from this paper, trained to predict the next word.",
+      "start": 1991.34,
+      "duration": 4.779999999999973
+    },
+    {
+      "text": "So when I described how each word sends out a query and gathers a weighted blend of values from",
+      "start": 1997.0,
+      "duration": 5.539999999999964
+    },
+    {
+      "text": "every other word, I was in a real sense describing the machinery that helped assemble these very sentences.",
+      "start": 2002.54,
+      "duration": 6.660000000000082
+    },
+    {
+      "text": "The paper isn't just influential in the abstract. It's running right now in the tools that made",
+      "start": 2010.18,
+      "duration": 5.899999999999864
+    },
+    {
+      "text": "this episode. It's one of the few papers you can point to and say, the thing reading this to you",
+      "start": 2016.08,
+      "duration": 5.940000000000055
+    },
+    {
+      "text": "is the thing the paper is about. A description of a mechanism narrated by the mechanism it describes.",
+      "start": 2022.02,
+      "duration": 5.900000000000091
+    },
+    {
+      "text": "That genuinely gives me a small chill. Let me try to hold the whole arc in one breath.",
+      "start": 2027.92,
+      "duration": 6.679999999999836
+    },
+    {
+      "text": "Machines had to handle language, which is a sequence, and the reigning method read word by word",
+      "start": 2035.0,
+      "duration": 5.980000000000018
+    },
+    {
+      "text": "with a running memory, which forgot across long distances and couldn't be run in parallel.",
+      "start": 2040.98,
+      "duration": 6.2000000000000455
+    },
+    {
+      "text": "Attention had been invented as a patch to fix the forgetting. Let each word look back and wait",
+      "start": 2048.0,
+      "duration": 6.7800000000002
+    },
+    {
+      "text": "the relevant words. This paper's move was to say attention is all you need, throw away the sequential",
+      "start": 2054.78,
+      "duration": 7.579999999999927
+    },
+    {
+      "text": "reading entirely. Each word becomes a query, a key, and a value. Every word attends to every other",
+      "start": 2062.36,
+      "duration": 9.059999999999945
+    },
+    {
+      "text": "in one parallel step. Multiple heads captured different relationships, positions are stamped on,",
+      "start": 2071.42,
+      "duration": 6.980000000000018
+    },
+    {
+      "text": "so order survives. That fixed long-range links and crucially made the whole thing parallel,",
+      "start": 2078.4,
+      "duration": 6.739999999999782
+    },
+    {
+      "text": "which meant it could scale, and scaling it with a predict the next word goal on enormous text",
+      "start": 2085.46,
+      "duration": 6.739999999999782
+    },
+    {
+      "text": "is what produced the large language models running modern AI.",
+      "start": 2092.7200000000003,
+      "duration": 3.9799999999995634
+    },
+    {
+      "text": "That's the whole arc, and the thing I'd want you to carry is where the real weight sits.",
+      "start": 2097.14,
+      "duration": 5.019999999999982
+    },
+    {
+      "text": "The headline was attention, a genuinely elegant idea, a soft, learned look-up,",
+      "start": 2103.12,
+      "duration": 6.579999999999927
+    },
+    {
+      "text": "letting every word gather from every other. But the deeper reason this paper matters,",
+      "start": 2110.06,
+      "duration": 4.860000000000127
+    },
+    {
+      "text": "more than a hundred cleverer sounding ones is the unglamorous property underneath.",
+      "start": 2115.34,
+      "duration": 4.339999999999691
+    },
+    {
+      "text": "It parallelizes so its scales. The history of this recent AI era is largely the history of taking",
+      "start": 2120.6,
+      "duration": 7.320000000000164
+    },
+    {
+      "text": "this architecture and making it bigger, and that traces to one decision in one 2017 paper,",
+      "start": 2127.92,
+      "duration": 6.900000000000091
+    },
+    {
+      "text": "to trust that attention all by itself was enough, and to throw away the sequential machinery",
+      "start": 2135.5,
+      "duration": 5.960000000000036
+    },
+    {
+      "text": "that everyone assumed you needed. They were right, it was all you needed,",
+      "start": 2141.46,
+      "duration": 5.179999999999836
+    },
+    {
+      "text": "and almost everything the world now calls artificial intelligence is a tower of the attention they",
+      "start": 2147.16,
+      "duration": 5.620000000000346
+    },
+    {
+      "text": "described, scaled past anything they put in the paper. Attention was all you needed,",
+      "start": 2152.78,
+      "duration": 5.319999999999709
+    },
+    {
+      "text": "thanks for pulling apart the paper that quietly became the engine room of modern AI,",
+      "start": 2158.48,
+      "duration": 5.059999999999945
+    },
+    {
+      "text": "and for closing the loop since the engine was, in a way, in the room with us the whole time.",
+      "start": 2164.12,
+      "duration": 5.920000000000073
+    },
+    {
+      "text": "Next time an AI finishes your sentence, you'll know what it's really doing under the hood,",
+      "start": 2170.56,
+      "duration": 5.300000000000182
+    },
+    {
+      "text": "every word it's read, looking at every other word at once, and deciding softly what matters.",
+      "start": 2175.86,
+      "duration": 7.819999999999709
+    }
+  ]
+}

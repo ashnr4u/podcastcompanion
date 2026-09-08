@@ -1,0 +1,264 @@
+{
+  "dataset": [
+    {
+      "id": 1,
+      "question": "What are the two postulates of the theory of special relativity?",
+      "expected_answer": "The two postulates are: 1) The principle of relativity—the laws of physics are the same in every inertial frame of reference; 2) The constancy of the speed of light—light travels at a fixed speed C for every inertial observer, regardless of the source's motion.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+          "start_time": 465.0,
+          "end_time": 587.0,
+          "text_snippet": "Postulate one, the principle of relativity. The laws of physics are exactly the same in every inertial frame of reference... Postulate two, the constancy of the speed of light. Light travels through empty space at that one fixed speed, C, and every inertial observer measures that same speed, regardless of how the source was moving when it emitted the light."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "What is the 'ether' and why did physicists believe in it?",
+      "expected_answer": "The 'luminiferous ether' was a hypothetical, invisible, weightless medium that filled all of space. It was believed to be the medium through which light waves propagated, similar to how sound travels through air. Earth's movement through this ether was expected to create an 'ether wind'.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+          "start_time": 166.0,
+          "end_time": 235.0,
+          "text_snippet": "Everyone reasoned very sensibly that light must be the same. A wave in some medium, and its speed of 300,000 kilometers a second, must be its speed relative to that medium. They even named the medium. They called it the luminiferous ether... The earth must be flying through the ether, and there must be an ether wind blowing past us. Light traveling along the direction of that wind should come out at a slightly different speed than light traveling across it."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What is time dilation and what is the formula for the gamma factor?",
+      "expected_answer": "Time dilation is the phenomenon where a moving clock runs slower as measured by a stationary observer. The amount it slows down is given by the Lorentz factor, γ = 1/√(1 - v²/c²).",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+          "start_time": 1092.0,
+          "end_time": 1154.0,
+          "text_snippet": "The moving clock ticks slower. Time itself as read by that clock is running slow... If the clock moves at speed V then gamma is one divided by the square root of the quantity one minus V squared over C squared... When V is tiny compared to C... gamma is essentially one. But as V climbs towards C... gamma blows up toward infinity."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What is the 'twin paradox' and how is it resolved?",
+      "expected_answer": "The twin paradox involves one twin traveling at high speed and returning home to find they are younger than their stay-at-home sibling. The resolution is that the traveling twin is not in a single inertial frame; they must accelerate to turn around, which breaks the symmetry.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+          "start_time": 1705.0,
+          "end_time": 1965.0,
+          "text_snippet": "Spell it out. Where exactly does the symmetry break? ... The home twin stays in a single inertial frame the whole time... The traveling twin does not. To come back they have to fire the engines, decelerate and accelerate the other way... Acceleration is not relative. There's no ambiguity about who felt it... The symmetry is real and it's only broken by whoever actually changes their motion."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "How does Einstein's theory show that the speed of light is a 'wall' that cannot be crossed?",
+      "expected_answer": "The theory shows this through the velocity addition rule, which prevents any combination of speeds from exceeding C. Furthermore, an object's inertia grows as its speed approaches C, requiring infinite energy to reach it, making it an uncrossable boundary for anything with mass.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 01 - Einstein_s Special Relativity.mp3",
+          "start_time": 1965.0,
+          "end_time": 2249.0,
+          "text_snippet": "How does that fall out? It falls out of asking the most natural question left. How do velocities combine now? ... Once space and time bend by gamma, the rule for adding velocities changes... The correction always pulls the sum back below the speed of light... To actually reach c, a ship with mass would need infinite energy... A particle with no mass like the photon doesn't pay that price. In fact, it is required to travel at exactly c and can do nothing else."
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "What is the black hole information paradox and why is it significant?",
+      "expected_answer": "The paradox is that Hawking radiation is thermal and featureless, carrying no information about the matter that fell into the black hole. When the black hole evaporates, this information appears to be destroyed, which violates the laws of quantum mechanics.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+          "start_time": 2310.0,
+          "end_time": 2510.0,
+          "text_snippet": "The radiation coming off the black hole is thermal... It carries no detailed information about what produced it... The hole radiates that mass back out slowly over its lifetime as featureless thermal radiation. And then it's gone... Question, where did the information go? ... This is a genuine collision between two of our most trusted theories... The door is mostly but not entirely walked through. And every bit of that 50-year conversation is downstream of this one paper's discovery that black holes glow."
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "How did Jacob Bekenstein's idea about black hole entropy lead to the prediction of Hawking radiation?",
+      "expected_answer": "Bekenstein argued that a black hole's horizon area is a measure of its entropy to save the second law of thermodynamics. This implies the black hole must have a temperature, and anything with a temperature must radiate, which seemed impossible. Hawking's calculation showed this radiation actually exists.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+          "start_time": 237.0,
+          "end_time": 514.0,
+          "text_snippet": "The area theorem... says, in any process involving black holes, the total area of the horizons can never decrease... That phrasing is ringing a very specific bell... entropy... A graduate student named Jacob Beckenstein looked at that parallel and did something bold... If a black hole genuinely has entropy then it must have a temperature... So Beckenstein's idea taken seriously demands that a black hole radiate... Hawking's reaction was, reasonably, this shows Beckenstein has gone too far... He set out to show black holes don't radiate and the mathematics dragged him... to the conclusion that they do."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "What is the Unruh effect and how does it relate to black hole radiation?",
+      "expected_answer": "The Unruh effect is the prediction that an accelerating observer will detect a warm bath of particles in a vacuum, while an inertial observer sees nothing. This is related because gravity is locally equivalent to acceleration (the equivalence principle), and the strong gravity near a black hole's horizon can produce a similar effect.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+          "start_time": 633.0,
+          "end_time": 720.0,
+          "text_snippet": "There is no universal everyone agrees answer to the question how many particles are here? ... It's called the unru effect. Take genuinely empty space... let one person float through it unaccelerated. They see nothing... Now let a second person accelerate through that very same space... That accelerating person is immersed in a warm glow of particles... And gravity by Einstein's equivalence principle is locally the same thing as acceleration... So if acceleration warms up the vacuum, gravity should too. And near a black hole's horizon, gravity is as strong and as sharply varying as it ever gets."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "What is the temperature of a stellar-mass black hole (several times the mass of the sun)?",
+      "expected_answer": "A black hole of a few solar masses has an extremely low Hawking temperature, far less than a millionth of a degree above absolute zero (tens of nanokelvin). It is much colder than the 2.7 K cosmic microwave background.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+          "start_time": 1357.0,
+          "end_time": 1425.0,
+          "text_snippet": "A black hole of a few solar masses has a Hawking temperature of well under a millionth of a degree above absolute zero, down in the range of tens of nanokelvin... the whole universe is baved in leftover heat from the big bang, the cosmic microwave background sitting at just under three Kelvin... So a stellar black hole today is far far colder than the sky around it... it actually absorbs more radiation from the cosmic background than it gives off... The evaporation is real, but for big holes it's a whisper drowned out by the ambient warmth of the cosmos."
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "What are the four laws of black hole mechanics and what do they correspond to in thermodynamics?",
+      "expected_answer": "The four laws of black hole mechanics mirror the four laws of thermodynamics: 1) Zeroth law: surface gravity is uniform across the horizon (uniform temperature). 2) First law: change in mass = surface gravity × change in area + work terms (energy accounting). 3) Second law: horizon area never decreases (entropy never decreases). 4) Third law: cannot reduce surface gravity to zero (cannot reach absolute zero).",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 02 - How Black Holes Radiate, Hawking 1975.mp3",
+          "start_time": 2144.0,
+          "end_time": 2286.0,
+          "text_snippet": "Start with what's called the zeroth law. In thermodynamics the zeroth law says a system in equilibrium has one uniform temperature throughout... The black hole version says the surface gravity is the same everywhere across the horizon... The first law of thermodynamics is energy accounting... The black hole first law has the identical shape... The second law we've already met twice entropy never decreases, area never decreases... the third law rhymes too... The four laws stop being an analogy and become the actual laws of thermodynamics applied to gravity."
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "What are the two main jobs a gene must perform?",
+      "expected_answer": "A gene must perform two main jobs: 1) Store information: hold the vast set of instructions to build and run an organism. 2) Copy itself: faithfully reproduce its information every single time a cell divides.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 121.0,
+          "end_time": 204.0,
+          "text_snippet": "Think about what heredity actually requires of a molecule. Job one, it has to store information... The full set of instructions to build and run a living thing... Job two... it has to copy itself faithfully every single time a cell divides... So you need a molecule that is simultaneously a library and a photocopier... That tension is exactly why the structure was such a shock. Because it resolves both at once with a single trick."
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Why did scientists initially believe proteins, not DNA, were the genetic material?",
+      "expected_answer": "Scientists initially favored proteins because they have a complex structure built from 20 different amino acids, which seemed rich enough to encode a complicated message. DNA, with only 4 building blocks, appeared too simple.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 218.0,
+          "end_time": 249.0,
+          "text_snippet": "For a long time the smart money was on proteins, because proteins are built from 20 different building blocks and seemed rich enough to encode a complicated message. DNA by contrast has only four building blocks. It looked too simple, too monotonous, to be the carrier of something as intricate as heredity... A dull repetitive molecule, maybe just packaging for the real genetic protein."
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "What are Chargaff's rules and how did they help in solving the DNA structure?",
+      "expected_answer": "Chargaff's rules state that in DNA, the amount of adenine (A) is always equal to the amount of thymine (T), and the amount of guanine (G) is always equal to the amount of cytosine (C). This suggested a specific pairing mechanism.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 570.0,
+          "end_time": 635.0,
+          "text_snippet": "A biochemist named Irwin Shargaff had measured... The amount of a was always essentially equal to the amount of t. And the amount of g was always essentially equal to the amount of c. Always, a equals t, g equals c... That's the kind of fact that has to mean something... That's a mechanism leaving a fingerprint... In 1952, though, it was just a rule with no reason. Nobody knew why A should care about t."
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "What is Photo 51 and what did it reveal about the structure of DNA?",
+      "expected_answer": "Photo 51 was a sharp X-ray diffraction image of DNA produced by Rosalind Franklin. It revealed two crucial pieces of information: 1) DNA is a helix (indicated by the bold X pattern). 2) The specific dimensions (diameter and repeat interval) of the helix.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 648.0,
+          "end_time": 740.0,
+          "text_snippet": "This is a technique where you shine X-rays through a crystal or a fiber of a molecule... Rosalind Franklin produced an X-ray diffraction image of DNA... To a trained eye, it screams two things. First, the overall pattern is a big bold X shape... And that X is the unmistakable signature of a helix... Second, the spacings between the marks encode the dimensions. How wide the helix is and how far you go along it before the spiral repeats... Franklin's data pinned those numbers down... So clue 3 says it's a helix and here are its measurements."
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "What was the key insight that determined the specific base pairing rules (A-T and G-C) in DNA?",
+      "expected_answer": "The key insight was that a constant width of the double helix requires a 'big' base (a purine, A or G) to always pair with a 'small' base (a pyrimidine, T or C). Chemistry then dictated the specific partners: A pairs with T and G pairs with C via hydrogen bonds.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 1069.0,
+          "end_time": 1220.0,
+          "text_snippet": "The bases point inward and meet in the middle and the question is which base pairs with which? ... The four bases come in two sizes. Two of them, A and G, are bigger... The other two, T and C, are smaller... The double helix has to have a constant width all the way up... The only way to keep every rung exactly the same width is to always pair one big base with one small base... What nails it down to specific partners? ... the chemistry of how the bases can touch, specifically hydrogen bonds... A and T fit together perfectly... G and C fit together perfectly... A equals T, G equals C. That's chargaf, that's the click you told me to wait for."
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "How does the double helix structure explain the copying mechanism of DNA?",
+      "expected_answer": "The copying mechanism is made possible by the complementary base pairing. When the two strands unzip, each single strand acts as a template. An A on the old strand dictates a T on the new one, and a G dictates a C, creating an identical copy from each original strand.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 1464.0,
+          "end_time": 1540.0,
+          "text_snippet": "Suppose you want to duplicate the molecule. You take the double helix and you unzip it down the middle... the two strands separate... each one an exposed row of unpaired bases. But each of those single strands carries in its sequence the complete recipe for its missing partner because of the pairing rule. So the cell just walks along each lonely strand and wherever there's an exposed A, it brings in a fresh T. Wherever there's a G, it brings in a fresh C. Each old strand acts as a template... And when it's done, you don't have one double helix, you have two... That's exactly it, and that's why the structure is the mechanism."
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "What is the 'central dogma' of molecular biology as described by the transcript?",
+      "expected_answer": "The central dogma is the flow of genetic information: DNA is the master archive, which is transcribed into a working copy (RNA), and that RNA copy is then translated to build a protein.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 2064.0,
+          "end_time": 2101.0,
+          "text_snippet": "The flow is the thing biologists call the central dogma... DNA is the master archive kept safe... to use a gene the cell makes a working copy of that stretch in RNA that's transcription... Then that RNA copy is read out and used to assemble a protein that's translation... So the main flow of information is DNA to RNA to protein archive working copy machine... the double helix is the archive at the top of that chain."
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "What is the genetic code and how do three-letter words (codons) work?",
+      "expected_answer": "The genetic code is the set of rules by which DNA's four-letter alphabet is read to build proteins. It is read in three-letter 'words' called codons. Three letters are needed because it provides 64 possible combinations (4^3), enough to specify the ~20 amino acids.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 2184.0,
+          "end_time": 2265.0,
+          "text_snippet": "Proteins are chains built from about 20 different kinds of building blocks 20 amino acids DNA has four letters... How many letters per word do you need one letter gives you four options not enough two letters give you four times four 16 still short of 20 three letters give you four times four times four 64 possibilities comfortably more than enough... So the code is read in three letter words called codons... The full dictionary of which triplet means which amino acid is the genetic code... that code is very nearly the same in every living thing... evidence that everything alive descends from a common ancestor."
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "What is the significance of the famous understated sentence at the end of the Watson and Crick paper?",
+      "expected_answer": "The sentence '...it has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material' was significant because it pointed out that the structure they proposed is itself the mechanism for replication, fulfilling both the storage and copying functions of heredity.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 28.0,
+          "end_time": 116.0,
+          "text_snippet": "They write, roughly, it has not escaped our notice that the specific pairing we have postulated immediately suggests a possible copying mechanism for the genetic material... George, that sentence is doing an enormous amount of quiet work... Here's our plan... Then we'll cash out that understated sentence. How a shape tells you how life copies itself... Two strands and one pairing rule, and the mechanism of heredity falls out."
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "How does the role of Rosalind Franklin factor into the discovery of the DNA double helix?",
+      "expected_answer": "Rosalind Franklin produced Photo 51 and the critical measurements for DNA's helical structure (clue 3). Her data were shown to Watson without her knowledge or consent, significantly aiding the final model. She did not receive proper recognition at the time, partly due to her early death.",
+      "correct_chunks": [
+        {
+          "file": "Great Papers 03 - The Double Helix, Watson and Crick 1953.mp3",
+          "start_time": 2312.0,
+          "end_time": 2430.0,
+          "text_snippet": "Rosalind Franklin where does she sit in what we just described she sits much closer to the center... The X-ray evidence... came in large part from Rosalind Franklin's work photo 51 was her image... her measurements of the diameter and the repeat were among the hardest most decisive numbers. And a crucial fact... that photograph and a report containing her unpublished measurements were shown to Watson without her knowledge or agreement... she didn't share in the recognition the way the others did she did not... during her life her contribution was underweighted... Both of those things are true at once and the mature way to hold this paper is to hold both."
+        }
+      ]
+    }
+  ]
+}

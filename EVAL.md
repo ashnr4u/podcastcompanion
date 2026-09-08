@@ -239,49 +239,9 @@ The CrossEncoder reranking stage can still favor one episode and push relevant e
 
 Because the multi-source subset contains only **3 cases**, this result should be treated as a useful evaluation signal rather than broad evidence that Episode-Balanced is universally superior.
 
-### 4.7 Deep Single-Source Results
-
-| Strategy                   | Source Coverage | Evidence Recall@10 | Precision@10 | Avg Latency |
-| -------------------------- | --------------- | ------------------ | ------------ | ----------- |
-| Global Vector              | 1.000           | **0.583**          | **0.220**    | 40.91s      |
-| Episode-Balanced           | 1.000           | 0.517              | 0.140        | 40.73s      |
-| Context-Aware Parent-Child | 1.000           | 0.367              | 0.180        | **25.10s**  |
-
-**Key Finding:** All strategies achieved perfect source coverage (single source required). Global Vector produced the strongest evidence recall and precision — consistent with V2's stronger performance in Suite A for single-source retrieval.
-
-### 4.8 Precise / Needle Results
-
-| Strategy                   | Source Coverage | Evidence Recall@10 | Precision@10 | Avg Latency | Completion |
-| -------------------------- | --------------- | ------------------ | ------------ | ----------- | ---------- |
-| Context-Aware Parent-Child | **1.000**       | **0.800**          | **0.140**    | **24.48s**  | 5/5        |
-| Global Vector              | 1.000           | 0.750              | 0.075        | 37.66s      | 4/5        |
-| Episode-Balanced           | 1.000           | 0.600              | 0.060        | 35.85s      | 5/5        |
-
-**Key Finding:** Context-Aware Parent-Child performed best on precise retrieval (0.800 evidence recall, 24.48s latency). This suggests that broader parent context is useful when the required evidence is narrow and specific — although this result is based on only five cases.
-
-### 4.9 Error Analysis
-
-One execution encountered an `LLMServiceError`:
-
-```text
-Case 14alt (Black hole entropy ratio)
-
-Strategy: Global Vector
-
-Error: LLMServiceError — language model service failure
-```
-
-**Important:** This was a **generation service failure**, not a retrieval failure.
-
-```text
-Retrieval failure ≠ Generation failure ≠ Service failure
-```
-
-Future improvements should include retry logic and fallback handling for temporary LLM service failures.
-
 ---
 
-## 5. Key Findings Across Both Suites
+### 5. Key Findings Across Both Suites
 
 ### Finding 1 — CrossEncoder Improves Controlled Retrieval
 
@@ -317,16 +277,11 @@ But Evidence Recall increased less:
 | ----------------------------------- | ----------------------------------- | --------------------- |
 | **V2 / Global Vector**              | Single-source, conceptual questions | 95% Recall@5          |
 | **V4 / Context-Aware Parent-Child** | Precise/needle questions            | 0.800 Evidence Recall |
-| **Episode-Balanced**                | Multi-source questions              | 77.8% Source Coverage |
+| **Episode-Balanced**                | Multi-source source coverage        | 77.8% Source Coverage |
 
 > **"There's no single 'best' strategy — each excels at a different query type."**
 
 ---
-## 6. Failure Analysis and Key Findings
-
-The evaluation exposed two important retrieval limitations. First, the Q8 Unruh-effect question showed that parent-child retrieval did not consistently improve multi-step conceptual retrieval; the flat-chunk + CrossEncoder configuration performed better on this case. Second, multi-source questions revealed that global retrieval could be dominated by a single episode, causing evidence from other required episodes to be excluded.
-
-Episode-Balanced retrieval addressed the second problem by increasing **Source Coverage from 44.4% to 77.8%** on the multi-source subset. However, **Evidence Recall@10 increased only from 25.9% to 29.6%**, showing that retrieving the correct source does not necessarily retrieve the required evidence.
 
 ## 7. Final Retrieval Implementation
 
@@ -356,36 +311,21 @@ LLM Answer Generation
 Grounded Answer + Timestamps
 ```
 
-Episode-Balanced was selected because the primary weakness identified during application testing was multi-source retrieval. This choice involves a trade-off: Global Vector remained stronger for deep single-source retrieval, while Episode-Balanced provided substantially better source coverage for multi-source questions.
+Episode-Balanced was selected because the primary weakness identified during application testing was multi-source retrieval. This choice involves a trade-off: **Global Vector remained stronger for deep single-source retrieval, while Episode-Balanced provided substantially better source coverage for multi-source questions.**
 
-## 8. Next Steps
-
-The evaluation suggests three concrete improvements:
-
-1. **Diversity-aware final selection** — preserve relevance while ensuring required sources remain represented in the final context.
-2. **Query decomposition** — split multi-source questions into source-specific retrieval queries before combining the evidence.
-3. **Larger multi-source benchmark** — validate the observed improvement beyond the current three multi-source cases.
-
-## 9. Evaluation Limitations
-
-| Limitation                        | Impact                                                                          |
-| --------------------------------- | ------------------------------------------------------------------------------- |
-| 13 unique Suite B cases           | Insufficient for broad generalization                                           |
-| Only 3 multi-source cases         | Episode-Balanced's advantage requires further validation                        |
-| Manual timestamp annotations      | Ground-truth boundaries involve human judgment                                  |
-| Source Coverage ≠ Evidence Recall | Correct source retrieval does not guarantee correct evidence retrieval          |
-| Different latency scopes          | Suite A measures isolated retrieval; Suite B measures application-level latency |
-| Suite A is single-source          | Source-balancing strategies cannot be evaluated in Suite A                      |
+---
 
 ## 10. Conclusion
 
 The evaluation produced three main findings:
 
 1. **CrossEncoder reranking substantially improved controlled retrieval**, increasing Recall@5 from 70% to 95%.
+
 2. **Multi-source retrieval was the main weakness** of the application. Episode-Balanced retrieval increased Source Coverage from 44.4% to 77.8%, although Evidence Recall@10 improved only modestly from 25.9% to 29.6%.
+
 3. **Retrieval strategy performance depends on query type**: Global Vector performed best for deep single-source retrieval, Context-Aware Parent-Child performed best on the precise/needle subset, and Episode-Balanced performed best for multi-source source coverage.
 
-The final system therefore uses **flat chunks + CrossEncoder reranking with Episode-Balanced retrieval**, while recognizing that further work is needed to improve evidence-level recall for complex multi-source questions.
+The final system therefore uses **flat chunks + CrossEncoder reranking with Episode-Balanced retrieval**, accepting a small reduction in single-source retrieval performance in exchange for improved source diversity and coverage on multi-source questions.
 
 ### Evaluation Summary
 
@@ -396,3 +336,30 @@ The final system therefore uses **flat chunks + CrossEncoder reranking with Epis
 * **Evaluation runs:** 9
 * **Best controlled Recall@5:** 95%
 * **Multi-source Source Coverage:** 44.4% → 77.8%
+
+---
+
+## 11. Final Regression / Sanity Check
+
+After selecting the Episode-Balanced + CrossEncoder strategy as the final retrieval approach, I reran the original 20-question controlled benchmark to verify that the final implementation remained functional and to measure its performance against the earlier retrieval configurations.
+
+The final implementation achieved:
+
+* **Recall@5:** 85.0%
+* **Recall@10:** 95.0%
+* **MRR:** 0.648
+* **Average latency:** 2.678s
+
+Compared with the earlier Global Vector + CrossEncoder configuration (Recall@5: 95%, Recall@10: 100%, MRR: 0.707), the final Episode-Balanced strategy shows a small reduction in single-source retrieval performance. This confirms a trade-off: Episode-Balanced retrieval sacrifices some ranking performance on controlled single-source queries in exchange for improved source diversity and coverage on multi-source queries.
+
+The regression check therefore confirms that the final retrieval pipeline remains functional while highlighting the trade-off introduced by the source-balanced retrieval strategy.
+
+---
+
+## 12. Next Steps / Future Improvements
+
+* **Query-adaptive routing:** Select the retrieval strategy based on query type.
+* **Single-source:** Use Global Vector retrieval.
+* **Multi-source:** Use Episode-Balanced retrieval.
+* **Precise/needle queries:** Use Context-Aware Parent-Child retrieval.
+* **Evaluate:** Rerun the same suites to measure improvements in evidence recall, source coverage, and latency.
