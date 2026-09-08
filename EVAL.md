@@ -322,251 +322,77 @@ But Evidence Recall increased less:
 > **"There's no single 'best' strategy — each excels at a different query type."**
 
 ---
+## 6. Failure Analysis and Key Findings
 
-## 6. What I Learned From Failure Analysis
+The evaluation exposed two important retrieval limitations. First, the Q8 Unruh-effect question showed that parent-child retrieval did not consistently improve multi-step conceptual retrieval; the flat-chunk + CrossEncoder configuration performed better on this case. Second, multi-source questions revealed that global retrieval could be dominated by a single episode, causing evidence from other required episodes to be excluded.
 
-### Q8: Unruh Effect and Black Hole Radiation
-
-**Question:** *"What is the Unruh effect and how does it relate to black hole radiation?"*
-
-**First relevant rank:**
-
-| Pipeline                          | First Relevant Rank |
-| --------------------------------- | ------------------- |
-| V1 — Baseline (Flat)              | 7                   |
-| **V2 — Flat + CrossEncoder**      | **6**               |
-| V3 — Parent-Child + CrossEncoder  | Not found in top 10 |
-| V4 — Context-Aware + CrossEncoder | Not found in top 10 |
-
-**Why this question is difficult:** The explanation is distributed across multiple conceptual steps:
-
-```text
-Unruh effect
-
-    ↓
-
-Acceleration produces perceived temperature
-
-    ↓
-
-Acceleration/gravity equivalence
-
-    ↓
-
-Gravitational field near a horizon
-
-    ↓
-
-Connection to Hawking radiation
-```
-
-**What I learned:** Parent-child retrieval does not automatically improve retrieval of multi-step conceptual explanations. The flat-chunk + CrossEncoder architecture recovered the evidence; parent-child did not. Smaller chunks may have fragmented the explanation.
-
-### Multi-Source Questions
-
-Two cases failed to produce meaningful answers:
-
-| Case    | Question                    | Issue                               |
-| ------- | --------------------------- | ----------------------------------- |
-| Case 01 | Shannon → DNA & Transformer | Retrieved only Shannon evidence     |
-| Case 03 | Transformer → Shannon + DNA | Retrieved only Transformer evidence |
-
-**What I learned:** The system retrieves well from one source but struggles when evidence must be combined across three episodes. Episode-balancing improves source coverage but does not guarantee evidence recall.
-
----
+Episode-Balanced retrieval addressed the second problem by increasing **Source Coverage from 44.4% to 77.8%** on the multi-source subset. However, **Evidence Recall@10 increased only from 25.9% to 29.6%**, showing that retrieving the correct source does not necessarily retrieve the required evidence.
 
 ## 7. Final Retrieval Implementation
 
-Based on the evaluation results, my final retrieval implementation combines the best of both suites:
+Based on the combined evaluation, the final system uses **flat chunks + CrossEncoder reranking with Episode-Balanced retrieval**.
 
-### 7.1 Core Architecture
+| Component          | Final Choice                         | Rationale                                                 |
+| ------------------ | ------------------------------------ | --------------------------------------------------------- |
+| Chunking           | Flat chunks (300 tokens, 50 overlap) | 95% Recall@5 in Suite A                                   |
+| Reranking          | CrossEncoder                         | Improved Recall@5 from 70% to 95%                         |
+| Retrieval strategy | Episode-Balanced                     | Improved multi-source Source Coverage from 44.4% to 77.8% |
 
-| Component              | Selection                            | Rationale                                         |
-| ---------------------- | ------------------------------------ | ------------------------------------------------- |
-| **Chunking**           | Flat chunks (300 tokens, 50 overlap) | V2 achieved 95% Recall@5 in controlled benchmark  |
-| **Reranking**          | CrossEncoder                         | 25-point improvement over baseline                |
-| **Retrieval Strategy** | **Episode-Balanced**                 | 33.4% improvement in multi-source Source Coverage |
-
-### 7.2 Why Episode-Balanced?
-
-| Reason                      | Explanation                                                                                                  |
-| --------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| **Multi-source coverage**   | Global retrieval dominated by one episode; Episode-Balanced forces diversity                                 |
-| **Preserves V2's strength** | Uses same flat chunks + CrossEncoder as V2                                                                   |
-| **Measurable improvement**  | Source Coverage: 44.4% → 77.8%                                                                               |
-| **Single-source trade-off** | Global performed better on the deep single-source subset, but Episode-Balanced remained reasonably effective |
-
-### 7.3 Final Pipeline
+The final pipeline is:
 
 ```text
 User Query
-
     ↓
-
 Episode-Balanced Retrieval
-
-    ├── Episode 1 → Top 6 candidates
-
-    ├── Episode 2 → Top 6 candidates
-
-    ├── Episode 3 → Top 6 candidates
-
-    └── ... (all episodes)
-
     ↓
-
-Combine candidates (N episodes × 6)
-
+Top 6 candidates per episode
     ↓
-
 CrossEncoder Reranking
-
     ↓
-
-Top 10 final chunks
-
+Top 10 chunks
     ↓
-
 LLM Answer Generation
-
     ↓
-
-Grounded Answer with Timestamps
+Grounded Answer + Timestamps
 ```
 
-### 7.4 Summary
+Episode-Balanced was selected because the primary weakness identified during application testing was multi-source retrieval. This choice involves a trade-off: Global Vector remained stronger for deep single-source retrieval, while Episode-Balanced provided substantially better source coverage for multi-source questions.
 
-> **"I selected Episode-Balanced with Flat + CrossEncoder as my final retrieval strategy. It retains V2's strong retrieval architecture while improving source coverage for multi-source questions, where Global retrieval was weakest. However, Episode-Balanced is not universally better — the evaluation showed that Global remained stronger for deep single-source retrieval."**
+## 8. Next Steps
 
----
+The evaluation suggests three concrete improvements:
 
-## 8. What I Would Do Next
-
-### 8.1 Diversity-Aware Final Selection
-
-**Current:**
-
-```text
-Candidate retrieval → CrossEncoder → Top-10
-```
-
-**Proposed:**
-
-```text
-Candidate retrieval → CrossEncoder scores → Diversity-aware selection → Top-10
-```
-
-Preserve relevance while ensuring required sources remain represented.
-
-### 8.2 Source-Aware Retrieval
-
-When a question requires multiple sources, explicitly allocate candidates across relevant episodes.
-
-### 8.3 Query Decomposition
-
-Complex cross-source questions can be decomposed:
-
-```text
-Original question
-
-    ↓
-
-Shannon sub-query
-DNA sub-query
-Transformer sub-query
-
-    ↓
-
-Separate retrieval per source
-
-    ↓
-
-Combine evidence
-```
-
-### 8.4 Query Expansion
-
-Generate multiple retrieval formulations so that concepts expressed differently in the transcript can still be retrieved.
-
-### 8.5 Hybrid Strategy Selection
-
-Based on the findings, I would build a **routing system** that detects query type and selects the appropriate strategy:
-
-```text
-Query Type Detection
-
-    ↓
-
-    ├── Single-source, conceptual → Global Vector (V2)
-
-    ├── Single-source, precise/needle → Context-Aware Parent-Child (V4)
-
-    └── Multi-source → Episode-Balanced
-```
-
-### 8.6 LLM Reliability
-
-Add retry logic and fallback handling for temporary LLM service failures.
-
----
+1. **Diversity-aware final selection** — preserve relevance while ensuring required sources remain represented in the final context.
+2. **Query decomposition** — split multi-source questions into source-specific retrieval queries before combining the evidence.
+3. **Larger multi-source benchmark** — validate the observed improvement beyond the current three multi-source cases.
 
 ## 9. Evaluation Limitations
 
-| Limitation                            | Impact                                                                         |
-| ------------------------------------- | ------------------------------------------------------------------------------ |
-| **13 unique test cases**              | Useful for targeted testing but not enough for broad generalization            |
-| **Only 3 multi-source cases**         | Episode-Balanced's multi-source advantage needs validation on a larger dataset |
-| **Manual timestamp annotations**      | Ground-truth boundaries involve some human judgment                            |
-| **Different metric definitions**      | Suite A and Suite B metrics are not directly comparable                        |
-| **Source Coverage ≠ Evidence Recall** | A system can reach the correct source but miss the correct evidence            |
-| **Different latency scopes**          | Isolated retrieval (0.1-2.5s) vs full application (24-43s)                     |
-| **Single-source only in Suite A**     | Episode-Balanced couldn't be tested in controlled benchmark                    |
-
----
+| Limitation                        | Impact                                                                          |
+| --------------------------------- | ------------------------------------------------------------------------------- |
+| 13 unique Suite B cases           | Insufficient for broad generalization                                           |
+| Only 3 multi-source cases         | Episode-Balanced's advantage requires further validation                        |
+| Manual timestamp annotations      | Ground-truth boundaries involve human judgment                                  |
+| Source Coverage ≠ Evidence Recall | Correct source retrieval does not guarantee correct evidence retrieval          |
+| Different latency scopes          | Suite A measures isolated retrieval; Suite B measures application-level latency |
+| Suite A is single-source          | Source-balancing strategies cannot be evaluated in Suite A                      |
 
 ## 10. Conclusion
 
-### What I Accomplished
+The evaluation produced three main findings:
 
-1. **Built a complete end-to-end system** — audio → transcript → chunks → embeddings → retrieval → reranking → grounded answers
+1. **CrossEncoder reranking substantially improved controlled retrieval**, increasing Recall@5 from 70% to 95%.
+2. **Multi-source retrieval was the main weakness** of the application. Episode-Balanced retrieval increased Source Coverage from 44.4% to 77.8%, although Evidence Recall@10 improved only modestly from 25.9% to 29.6%.
+3. **Retrieval strategy performance depends on query type**: Global Vector performed best for deep single-source retrieval, Context-Aware Parent-Child performed best on the precise/needle subset, and Episode-Balanced performed best for multi-source source coverage.
 
-2. **Ran controlled experiments** — four retrieval architectures compared on 20 curated questions
+The final system therefore uses **flat chunks + CrossEncoder reranking with Episode-Balanced retrieval**, while recognizing that further work is needed to improve evidence-level recall for complex multi-source questions.
 
-3. **Created a rigorous evaluation system** — 13 unique cases, 9 runs, 3 categories, preserved raw results
+### Evaluation Summary
 
-4. **Achieved measurable improvement** — 70% → 95% Recall@5, 0.604 → 0.707 MRR
-
-5. **Identified the main weakness** — multi-source evidence coverage
-
-6. **Discovered strategy-specific strengths** — V2 for single-source, V4 for precise/needle, Episode-Balanced for multi-source source coverage
-
-7. **Selected final implementation** — Episode-Balanced with Flat + CrossEncoder to improve multi-source source coverage
-
-8. **Proposed concrete next steps** — diversity-aware selection, query decomposition, hybrid routing
-
-### The Core Lessons
-
-> **Lesson 1: Retrieving the correct source is not the same as retrieving the correct evidence. A strong RAG system must optimize both evidence relevance and source coverage.**
-
-> **Lesson 2: There is no single "best" retrieval strategy. Different strategies excel at different query types. A production system could route queries to the appropriate strategy.**
-
-> **Lesson 3: Controlled benchmarks (Suite A) and realistic evaluations (Suite B) catch different types of issues. Episode-Balanced was created because Suite B revealed a problem that Suite A's single-source questions couldn't surface.**
-
-### How the Evaluation Maps to Fermi's Criteria
-
-| Fermi Criteria                 | How This Evaluation Addresses It                                            |
-| ------------------------------ | --------------------------------------------------------------------------- |
-| **Define success**             | Recall@5, MRR, Source Coverage, Evidence Recall — clear success definitions |
-| **Varied evaluation set**      | 13 cases across 3 categories (multi-source, deep single, precise)           |
-| **Repeatable runner**          | `python run_eval.py` — one-command execution                                |
-| **Preserve raw outputs**       | 9 JSON result files with full evidence and answers                          |
-| **Inspect successes/failures** | Q8 failure analysis, multi-source degradation                               |
-| **One meaningful improvement** | 70% → 95% Recall@5 with CrossEncoder                                        |
-| **Re-run and explain**         | Baseline-to-final comparison with trade-off analysis                        |
-
----
-
-**Evaluation suites:** 2
-**Controlled benchmark cases:** 20
-**End-to-end unique cases:** 13
-**Total evaluation runs:** 9
+* **Evaluation suites:** 2
+* **Suite A cases:** 20
+* **Suite B cases:** 13
+* **Suite B categories:** 3
+* **Evaluation runs:** 9
+* **Best controlled Recall@5:** 95%
+* **Multi-source Source Coverage:** 44.4% → 77.8%
